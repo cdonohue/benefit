@@ -1,0 +1,49 @@
+---
+name: Size Observer
+---
+
+# Size Observer
+
+import { Playground } from "docz"
+
+import { Box, Code, Heading, SizeObserver } from "../src"
+
+Resize the box below to see the observed changes
+
+<Playground>
+  <SizeObserver>
+    {(props) => {
+      const { bottom, height, left, right, top, width, x, y } = props
+      return (
+        <Box
+          className={`rounded-lg text-white p-2 text-base bg-orange-300 ${
+            width >= 400
+              ? "p-4 text-base bg-blue-300"
+              : ""
+          }`}
+        >
+          <Box
+            style={{
+              display: "grid",
+              gridGap: "1rem",
+              gridTemplateColumns: "repeat(auto-fill, minmax(125px, 1fr))",
+            }}
+          >
+            {["bottom", "height", "left", "right", "top", "width", "x", "y"].map(dimension => (
+
+            <Box className="overflow-hidden text-center rounded">
+              <Heading is="h6" className="capitalize p-2 bg-transparent-shade-100 text-transparent-tint-400">
+                {dimension}
+              </Heading>
+              <Box className="p-2 font-mono h-auto flex items-center justify-center bg-transparent-shade-300">
+                <Box>{props[dimension]}px</Box>
+              </Box>
+            </Box>
+            ))}
+          </Box>
+        </Box>
+      )
+    }}
+
+  </SizeObserver>
+</Playground>

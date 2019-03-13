@@ -1,0 +1,44 @@
+---
+name: Introduction
+route: /
+order: 2000
+---
+
+import { Box } from "../src"
+import SectionHeading from "./components/SectionHeading"
+// import createUtility from "../src/config/createUtility"
+
+# Introduction
+
+UI System is a configurable, utility-first, design system for prototyping/building React applications.
+
+Some key features:
+
+- CSS-in-JS design system
+- Only outputs the CSS that you use
+- Intended to be customized to be _your_ design system
+
+<SectionHeading>Getting Started</SectionHeading>
+
+<Box
+  id="asdf"
+  className="mx-auto text-white rounded p-8 text-xl text-center w-full bg-blue-500"
+>
+  I'm a container
+</Box>
+
+The core of UI System is powered by the `<Box />` component. It serves as a composable UI primitive. `Box` components provide you with the following:
+
+Just import `Box` to get started
+
+```
+import { Box } from "ui-system"
+```
+
+Now, use it like you would use any other React component. Let's use it to make a button.
+
+```
+<Box is="button" className="bg-black text-white rounded-full py-2 px-6 shadow">
+  A Button
+</Box>
+```

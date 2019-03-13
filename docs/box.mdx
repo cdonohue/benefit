@@ -1,0 +1,87 @@
+---
+name: Box
+menu: Components
+---
+
+import { Playground, PropsTable } from "docz"
+
+import LetterBox from "./components/LetterBox"
+
+import { Box, ConfigProvider, ConfigConsumer } from "../src"
+import createUtilitiesFromMap from "../src/config/createUtilitiesFromMap"
+import sampleConfig from "../src/sampleConfig"
+import extendConfig from "../src/config/extendConfig"
+import Alert from "./components/Alert"
+
+# Box
+
+<PropsTable of={Box} />
+
+<Alert type="success" heading="Just so you know...">
+  This example text is going to run a bit longer so that you can see how spacing
+  within an alert works with this kind of content.
+</Alert>
+<Alert type="error" heading="Just so you know...">
+  This example text is going to run a bit longer so that you can see how spacing
+  within an alert works with this kind of content.
+</Alert>
+<Alert type="warning" heading="Just so you know...">
+  This example text is going to run a bit longer so that you can see how spacing
+  within an alert works with this kind of content.
+</Alert>
+<Alert type="info" heading="Just so you know...">
+  This example text is going to run a bit longer so that you can see how spacing
+  within an alert works with this kind of content.
+</Alert>
+
+<Box className="font-sans">
+  <Box className="bg-cool-gray-100 h-48" />
+  <Box className="bg-blue-600 text-white p-8 flex">
+    <Box>
+      <Box is="h2" className="text-2xl medium text-white lh-tight mb-4">
+        Special offer for exisiting customers
+      </Box>
+      <Box is="p" className="text-blue-50 mb-4 light lh-tight">
+        Already a customer? You can renew or extend your license for less.
+      </Box>
+      <Box is="p" className="text-base">
+        Learn about other ways to renew your license &rsaquo;
+      </Box>
+    </Box>
+    <Box className="w-3/5 bg-white text-cool-gray-700 rounded-lg ml-8 -my-16 shadow-lg">
+      <Box className="p-8 pb-6">
+        <Box is="h3" className="bold text-lg mb-2">
+          Renew your license
+        </Box>
+        <Box is="p" className="text-sm lh-snug">
+          You currently have{" "}
+          <Box is="em" className="black inline">
+            2
+          </Box>{" "}
+          seats in your license
+        </Box>
+      </Box>
+      <Box className="bg-cool-gray-50 mx-4 p-4 uppercase rounded-t text-base flex items-center justify-between">
+        License Volumes
+        <Box className="bg-white w-16 rounded shadow-inner text-right px-2 py-1 text-cool-gray-400">
+          4
+        </Box>
+      </Box>
+      <Box className="bg-cool-gray-50 border-t rounded-b border-dotted border-warm-gray-100 mx-4 p-4 flex items-center">
+        <Box className="text-xl bold">$196</Box>
+        <Box className="ml-4 lh-snug text-xs">
+          This price is only available to existing customers
+        </Box>
+      </Box>
+      <Box className="p-4">
+        <Box
+          is="button"
+          className="bg-blue-300 w-full shadow-md bold ls-wide text-base text-white uppercase text-center p-2 rounded"
+        >
+          Renew License
+        </Box>
+      </Box>
+    </Box>
+  </Box>
+  <Box className="bg-cool-gray-100 h-48" />
+</Box>

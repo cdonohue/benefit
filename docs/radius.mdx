@@ -1,0 +1,65 @@
+---
+name: Radius
+route: /radius
+order: 1500
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "./components/ConfigPropertyList"
+import SectionHeading from "./components/SectionHeading"
+import RadiusBox from "./components/RadiusBox"
+import { Box, Heading, Container, ConfigConsumer, Code } from "../src"
+
+# Radius
+
+Use the following utilities to style `border-radius`.
+
+<SectionHeading pattern="rounded{-size?}">All Corners</SectionHeading>
+
+<Box
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(128px, 1fr))",
+    gridGap: "1rem",
+  }}
+>
+  <RadiusBox caption="None" radiusModifier="rounded-none" />
+  <RadiusBox caption="Small" radiusModifier="rounded-sm" />
+  <RadiusBox caption="Default" radiusModifier="rounded" />
+  <RadiusBox caption="Large" radiusModifier="rounded-lg" />
+  <RadiusBox caption="Full" radiusModifier="rounded-full" />
+</Box>
+
+<SectionHeading pattern="rounded-{t|r|b|l}{-size?}">
+  Separate Sides
+</SectionHeading>
+
+<Box
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(128px, 1fr))",
+    gridGap: "1rem",
+  }}
+>
+  <RadiusBox caption="Top" radiusModifier="rounded-t" />
+  <RadiusBox caption="Right" radiusModifier="rounded-r" />
+  <RadiusBox caption="Bottom" radiusModifier="rounded-b" />
+  <RadiusBox caption="Left" radiusModifier="rounded-l" />
+</Box>
+
+<SectionHeading pattern="rounded-{tl|tr|br|bl}{-size?}">
+  Separate Corners
+</SectionHeading>
+
+<Box
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(128px, 1fr))",
+    gridGap: "1rem",
+  }}
+>
+  <RadiusBox caption="Top Left" radiusModifier="rounded-tl" />
+  <RadiusBox caption="Top Right" radiusModifier="rounded-tr" />
+  <RadiusBox caption="Bottom Right" radiusModifier="rounded-br" />
+  <RadiusBox caption="Bottom Left" radiusModifier="rounded-bl" />
+</Box>

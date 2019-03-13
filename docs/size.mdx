@@ -1,0 +1,96 @@
+---
+name: Size
+route: /size
+order: 1700
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "./components/ConfigPropertyList"
+import SectionHeading from "./components/SectionHeading"
+import WidthBox from "./components/WidthBox"
+import HeightBox from "./components/HeightBox"
+import { Box, Heading, Container, ConfigConsumer, Code } from "../src"
+
+# Size
+
+Use the following utilities to style `width`, and `height`.
+
+<SectionHeading pattern="w-{size}">Width</SectionHeading>
+
+> Not all sizes shown below. Refer to the properties further down for all possible width sizes.
+
+<Box
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(128px, 1fr))",
+    gridGap: "1rem",
+  }}
+>
+  <WidthBox widthModifier="w-1/2" />
+  <WidthBox widthModifier="w-2/3" />
+  <WidthBox widthModifier="w-1/4" />
+  <WidthBox widthModifier="w-3/4" />
+  <WidthBox widthModifier="w-1/5" />
+  <WidthBox widthModifier="w-2/5" />
+  <WidthBox widthModifier="w-3/5" />
+  <WidthBox widthModifier="w-4/5" />
+  <WidthBox widthModifier="w-1/6" />
+  <WidthBox widthModifier="w-5/6" />
+  <WidthBox widthModifier="w-full" />
+</Box>
+
+<ConfigPropertyList property="width" />
+
+<br />
+
+<SectionHeading pattern="min-w-{size}">Min Width</SectionHeading>
+
+<ConfigPropertyList property="minWidth" />
+
+<br />
+
+<SectionHeading pattern="max-w-{size}">Max Width</SectionHeading>
+
+<ConfigPropertyList property="maxWidth" />
+
+<br />
+
+<SectionHeading pattern="h-{size}">Height</SectionHeading>
+
+> Not all sizes shown below. Refer to the properties further down for all possible height sizes.
+
+<Box
+  style={{
+    display: "grid",
+    gridTemplateColumns: "repeat(auto-fill, minmax(48px, 1fr))",
+    gridGap: "1rem",
+  }}
+>
+  <HeightBox heightModifier="h-1" />
+  <HeightBox heightModifier="h-2" />
+  <HeightBox heightModifier="h-3" />
+  <HeightBox heightModifier="h-4" />
+  <HeightBox heightModifier="h-5" />
+  <HeightBox heightModifier="h-6" />
+  <HeightBox heightModifier="h-8" />
+  <HeightBox heightModifier="h-10" />
+  <HeightBox heightModifier="h-12" />
+  <HeightBox heightModifier="h-16" />
+  <HeightBox heightModifier="h-24" />
+  <HeightBox heightModifier="h-32" />
+  <HeightBox heightModifier="h-48" />
+</Box>
+
+<ConfigPropertyList property="height" />
+
+<br />
+
+<SectionHeading pattern="min-h-{size}">Min Height</SectionHeading>
+
+<ConfigPropertyList property="minHeight" />
+
+<br />
+
+<SectionHeading pattern="max-h-{size}">Max Height</SectionHeading>
+
+<ConfigPropertyList property="maxHeight" />
