@@ -39,7 +39,8 @@ export default {
   },
   themeConfig: {
     logo: {
-      src: "http://localhost:3000/static/img/benefit-logo.d715b229.svg",
+      src:
+        "https://raw.githubusercontent.com/cdonohue/benefit/master/docs/benefit-logo.svg",
       width: 150,
     },
     showPlaygroundEditor: true,
