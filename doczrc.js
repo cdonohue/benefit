@@ -40,7 +40,7 @@ export default {
   themeConfig: {
     logo: {
       src:
-        "https://raw.githubusercontent.com/cdonohue/benefit/master/docs/benefit-logo.png",
+        "https://github.com/cdonohue/benefit/raw/master/docs/benefit-logo.png",
       width: 150,
     },
     showPlaygroundEditor: true,
