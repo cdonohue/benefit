@@ -1,10 +1,12 @@
-export default function generate(theme) {
-  const { textColor = {} } = theme
+import createUtilitiesFromMap from "../createUtilitiesFromMap"
+import flattenColorConfig from "../flattenColorConfig"
 
-  return Object.keys(textColor).reduce((classNames, modifier) => {
-    return {
-      ...classNames,
-      [`text-${modifier}`]: { color: textColor[modifier] },
-    }
-  }, {})
+export default function generate(theme) {
+  return createUtilitiesFromMap(
+    flattenColorConfig(theme.textColor),
+    (value) => ({
+      color: value,
+    }),
+    "text"
+  )
 }

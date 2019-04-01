@@ -1,12 +1,10 @@
-import createUtility from "../createUtility"
-
 export default function generate() {
   return {
-    ...createUtility("italic", {
+    italic: {
       "font-style": "italic",
-    }),
-    ...createUtility("not-italic", {
+    },
+    "not-italic": {
       "font-style": "normal",
-    }),
+    },
   }
 }

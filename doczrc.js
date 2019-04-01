@@ -1,34 +1,92 @@
 import doczPluginNetlify from "docz-plugin-netlify"
-
 import { colors } from "./src/config/theme"
 
 export default {
-  title: "<CSS System />",
-  description: "CSS System documentation",
+  title: "<Benefit />",
+  description: "Benefit documentation",
+  menu: [
+    "Introduction",
+    "Box",
+    {
+      name: "Utilities",
+      menu: [
+        "Color",
+        "Layout",
+        "Typography",
+        "Background",
+        "Border",
+        "Flexbox",
+        "Space",
+        "Size",
+        "Tables",
+        "Effects",
+        "Interactivity",
+        "Svg",
+      ],
+    },
+    "Customization",
+  ],
   codeSandbox: false,
+  htmlContext: {
+    head: {
+      links: [
+        {
+          rel: "stylesheet",
+          href: "https://codepen.io/cdonohue/pen/gEjydm.css",
+        },
+      ],
+    },
+  },
   themeConfig: {
+    logo: {
+      src: "http://localhost:3000/static/img/benefit-logo.d715b229.svg",
+      width: 150,
+    },
+    showPlaygroundEditor: true,
+    codemirrorTheme: "benefit",
     colors: {
-      primary: colors["blue-300"],
+      primary: colors.blue["500"],
       text: colors.black,
-      link: colors["blue-300"],
-      footerText: colors["cool-gray-200"],
-      sidebarBg: colors["cool-gray-50"],
-      sidebarText: colors["cool-gray-700"],
-      sidebarHighlight: colors["blue-200"],
-      sidebarBorder: colors["cool-gray-100"],
+      link: colors.blue["500"],
+      footerText: colors["cool-gray"]["300"],
+      sidebarBg: colors["cool-gray"]["100"],
+      sidebarText: colors["cool-gray"]["800"],
+      sidebarHighlight: colors.blue["200"],
+      sidebarBorder: colors["cool-gray"]["200"],
       background: colors.white,
-      border: colors["cool-gray-100"],
-      theadColor: colors["cool-gray-600"],
-      theadBg: colors["cool-gray-50"],
-      tableColor: colors["cool-gray-700"],
+      border: colors["cool-gray"]["200"],
+      theadColor: colors["cool-gray"]["700"],
+      theadBg: colors["cool-gray"]["100"],
+      tableColor: colors["cool-gray"]["800"],
       tooltipBg: colors.black,
       tooltipColor: colors.white,
-      codeBg: colors["cool-gray-50"],
-      codeColor: colors["cool-gray-600"],
-      preBg: colors["cool-gray-50"],
-      blockquoteBg: colors["cool-gray-50"],
-      blockquoteBorder: colors["cool-gray-100"],
-      blockquoteColor: colors["cool-gray-600"],
+      codeBg: colors["cool-gray"]["100"],
+      codeColor: colors["cool-gray"]["700"],
+      preBg: colors["cool-gray"]["100"],
+      blockquoteBg: colors["cool-gray"]["100"],
+      blockquoteBorder: colors["cool-gray"]["200"],
+      blockquoteColor: colors["cool-gray"]["700"],
+    },
+    styles: {
+      // body: {
+      //   fontFamily:
+      //     'system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
+      //   lineHeight: 1.6,
+      // },
+      h1: {
+        fontFamily: '"Playfair Display", "serif"',
+      },
+      h2: {
+        fontFamily:
+          'system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
+      },
+      code: {
+        fontFamily:
+          '"SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"',
+      },
+      a: {
+        fontWeight: 400,
+      },
     },
   },
   plugins: [doczPluginNetlify()],

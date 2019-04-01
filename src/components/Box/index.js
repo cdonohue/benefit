@@ -55,9 +55,10 @@ function Box(props) {
   return (
     <ConfigConsumer>
       {({ config, utilities }) => {
-        const { composites = {}, reset = {} } = config
+        const { theme = {}, composites = {}, reset = () => ({}) } = config
         // Get base reset
-        const baseReset = parseDeclarations(reset.base, important).join("")
+        const { base } = reset(theme)
+        const baseReset = parseDeclarations(base, important).join("")
 
         // Get array of active modifiers
         const activeUtilities = getActiveUtilities(

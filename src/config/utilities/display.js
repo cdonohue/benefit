@@ -1,5 +1,4 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
-import createUtility from "../createUtility"
 
 const displayVariants = [
   "block",
@@ -17,6 +16,6 @@ export default function generate() {
     ...createUtilitiesFromMap(displayVariants, (value) => ({
       display: value,
     })),
-    ...createUtility("hidden", { display: "none" }),
+    hidden: { display: "none" },
   }
 }

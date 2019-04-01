@@ -1,0 +1,343 @@
+---
+name: Background
+route: /background
+menu: Utilities
+order: 900
+---
+
+import { Playground } from "docz"
+import InfoBox from "../components/InfoBox"
+import Grid from "../components/Grid"
+import { Box } from "../../src"
+
+# Background
+
+## Background Attachment
+
+<Grid minWidth="200px" className="text-sm">
+  <InfoBox pattern="bg-fixed">
+    <Box
+      className="h-32 rounded bg-fixed overflow-auto p-2 text-white"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    >
+      Swag fixie semiotics affogato, mlkshk fanny pack meditation photo booth
+      chicharrones heirloom four loko. Retro deep v yuccie umami bushwick.
+      Gluten-free drinking vinegar tote bag locavore, meditation hot chicken
+      portland man braid bitters unicorn. Irony post-ironic scenester
+      single-origin coffee bicycle rights wolf. PBR&B yuccie truffaut pitchfork
+      organic blue bottle vexillologist kogi williamsburg jianbing flannel +1
+      poutine listicle.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="bg-local">
+    <Box
+      className="h-32 rounded bg-local overflow-auto p-2 text-white"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    >
+      Swag fixie semiotics affogato, mlkshk fanny pack meditation photo booth
+      chicharrones heirloom four loko. Retro deep v yuccie umami bushwick.
+      Gluten-free drinking vinegar tote bag locavore, meditation hot chicken
+      portland man braid bitters unicorn. Irony post-ironic scenester
+      single-origin coffee bicycle rights wolf. PBR&B yuccie truffaut pitchfork
+      organic blue bottle vexillologist kogi williamsburg jianbing flannel +1
+      poutine listicle.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="bg-scroll">
+    <Box
+      className="h-32 rounded bg-scroll overflow-auto p-2 text-white"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1515266591878-f93e32bc5937?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    >
+      Swag fixie semiotics affogato, mlkshk fanny pack meditation photo booth
+      chicharrones heirloom four loko. Retro deep v yuccie umami bushwick.
+      Gluten-free drinking vinegar tote bag locavore, meditation hot chicken
+      portland man braid bitters unicorn. Irony post-ironic scenester
+      single-origin coffee bicycle rights wolf. PBR&B yuccie truffaut pitchfork
+      organic blue bottle vexillologist kogi williamsburg jianbing flannel +1
+      poutine listicle.
+    </Box>
+  </InfoBox>
+</Grid>
+
+## Background Color
+
+`bg-{color}`
+
+<Playground>
+  <Box className="bg-blue-500 h-32 rounded" />
+</Playground>
+
+## Background Position
+
+`bg-{position}`
+
+<Box className="relative font-bold mb-2">
+  <Box
+    is="img"
+    className="w-full rounded"
+    src="https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=900&fit=max&ixid=eyJhcHBfaWQiOjF9"
+  />
+  <Box
+    style={{ top: 0, left: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-left-top
+  </Box>
+  <Box
+    style={{
+      top: 0,
+      left: "50%",
+      transform: "translate(-50%, 0)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-top
+  </Box>
+  <Box
+    style={{ top: 0, right: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-right-top
+  </Box>
+  <Box
+    style={{
+      top: "50%",
+      right: 0,
+      transform: "translate(0, -50%)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-right
+  </Box>
+  <Box
+    style={{ bottom: ".5rem", right: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-right-bottom
+  </Box>
+  <Box
+    style={{
+      bottom: ".5rem",
+      left: "50%",
+      transform: "translate(-50%, 0)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-bottom
+  </Box>
+  <Box
+    style={{ bottom: ".5rem", left: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-left-bottom
+  </Box>
+  <Box
+    style={{
+      top: "50%",
+      left: 0,
+      transform: "translate(0, -50%)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-left
+  </Box>
+  <Box
+    style={{
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-center
+  </Box>
+</Box>
+
+<Grid minWidth="200px">
+  <InfoBox pattern="bg-left-top">
+    <Box
+      className="h-32 rounded bg-left-top"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-top">
+    <Box
+      className="h-32 rounded bg-top"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-right-top">
+    <Box
+      className="h-32 rounded bg-right-top"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-left">
+    <Box
+      className="h-32 rounded bg-left"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-center">
+    <Box
+      className="h-32 rounded bg-center"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-right">
+    <Box
+      className="h-32 rounded bg-right"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-left-bottom">
+    <Box
+      className="h-32 rounded bg-left-bottom"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-bottom">
+    <Box
+      className="h-32 rounded bg-bottom"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-right-bottom">
+    <Box
+      className="h-32 rounded bg-right-bottom"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+</Grid>
+
+## Background Repeat
+
+<Grid minWidth="320px">
+  <InfoBox pattern="bg-repeat">
+    <Box
+      className="h-64 rounded bg-repeat"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-no-repeat">
+    <Box
+      className="h-64 rounded bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-repeat-x">
+    <Box
+      className="h-64 rounded bg-repeat-x"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-repeat-y">
+    <Box
+      className="h-64 rounded bg-repeat-y"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-round">
+    <Box
+      className="h-64 rounded bg-round"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-space">
+    <Box
+      className="h-64 rounded bg-space"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+</Grid>
+
+## Background Size
+
+<Grid minWidth="200px">
+  <InfoBox pattern="bg-auto">
+    <Box
+      className="h-32 rounded bg-auto"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1453872302360-eed3c5f8ff66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-cover">
+    <Box
+      className="h-32 rounded bg-cover"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1453872302360-eed3c5f8ff66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-contain">
+    <Box
+      className="h-32 rounded bg-contain"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1453872302360-eed3c5f8ff66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+</Grid>

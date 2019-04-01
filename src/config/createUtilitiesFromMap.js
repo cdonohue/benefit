@@ -1,5 +1,3 @@
-import createUtility from "./createUtility"
-
 export default function createUtilitiesFromMap(
   map = {},
   generateDeclarations,
@@ -10,12 +8,9 @@ export default function createUtilitiesFromMap(
     const label = Array.isArray(map) ? value : key
     return {
       ...utilities,
-      ...createUtility(
-        `${prefix}${
-          label === "default" ? "" : `${prefix !== "" ? `-${label}` : label}`
-        }`,
-        generateDeclarations(value)
-      ),
+      [`${prefix}${
+        label === "default" ? "" : `${prefix !== "" ? `-${label}` : label}`
+      }`]: generateDeclarations(value),
     }
   }, {})
 }

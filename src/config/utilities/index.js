@@ -29,10 +29,12 @@ import fontSmoothing from "./fontSmoothing"
 import fontStyle from "./fontStyle"
 import fontWeight from "./fontWeight"
 import height from "./height"
+import inset from "./inset"
 import justifyContent from "./justifyContent"
 import letterSpacing from "./letterSpacing"
 import lineHeight from "./lineHeight"
-import listStyle from "./listStyle"
+import listStylePosition from "./listStylePosition"
+import listStyleType from "./listStyleType"
 import margin from "./margin"
 import objectFit from "./objectFit"
 import objectPosition from "./objectPosition"
@@ -48,6 +50,7 @@ import tableLayout from "./tableLayout"
 import textAlign from "./textAlign"
 import textColor from "./textColor"
 import textDecoration from "./textDecoration"
+import textDecorationColor from "./textDecorationColor"
 import textShadow from "./textShadow"
 import textTransform from "./textTransform"
 import userSelect from "./userSelect"
@@ -55,6 +58,7 @@ import verticalAlign from "./verticalAlign"
 import visibility from "./visibility"
 import whitespace from "./whitespace"
 import width from "./width"
+import wordBreak from "./wordBreak"
 import zIndex from "./zIndex"
 
 const utilities = [
@@ -89,10 +93,12 @@ const utilities = [
   fontStyle,
   fontWeight,
   height,
+  inset,
   justifyContent,
   letterSpacing,
   lineHeight,
-  listStyle,
+  listStylePosition,
+  listStyleType,
   margin,
   objectFit,
   objectPosition,
@@ -108,6 +114,7 @@ const utilities = [
   textAlign,
   textColor,
   textDecoration,
+  textDecorationColor,
   textShadow,
   textTransform,
   userSelect,
@@ -115,6 +122,7 @@ const utilities = [
   visibility,
   whitespace,
   width,
+  wordBreak,
   zIndex,
 ]
 

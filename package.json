@@ -1,10 +1,11 @@
 {
   "name": "benefit",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "dist/benefit.js",
   "umd:main": "dist/benefit.umd.js",
   "repository": "https://github.com/cdonohue/benefit.git",
   "author": "Chad Donohue <chad.donohue@gmail.com>",
+  "description": "Decorate react components using generated utility classes",
   "license": "MIT",
   "files": [
     "dist"
@@ -35,15 +36,11 @@
     "np": "~4.0.2",
     "polychrome": "~4.1.2",
     "prettier": "~1.16.4",
-    "react": "~16.8.4",
-    "react-dom": "~16.8.4"
+    "react": "~16.8.4"
   },
   "peerDependencies": {
     "emotion": "~10.0.7",
-    "react": "~16.7.0",
-    "react-dom": "~16.7.0"
+    "react": "~16.7.0"
   },
-  "dependencies": {
-    "resize-observer-polyfill": "~1.5.1"
-  }
+  "dependencies": {}
 }

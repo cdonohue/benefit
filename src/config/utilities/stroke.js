@@ -1,10 +1,11 @@
-export default function generate(theme) {
-  const { stroke = {} } = theme
+import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-  return Object.keys(stroke).reduce((classNames, modifier) => {
-    return {
-      ...classNames,
-      [`stroke-${modifier}`]: { stroke: stroke[modifier] },
-    }
-  }, {})
+export default function generate(theme) {
+  return createUtilitiesFromMap(
+    theme.stroke,
+    (value) => ({
+      stroke: value,
+    }),
+    "stroke"
+  )
 }

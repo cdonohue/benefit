@@ -1,0 +1,142 @@
+---
+name: Border
+route: /border
+menu: Utilities
+order: 800
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "../components/ConfigPropertyList"
+import Grid from "../components/Grid"
+import InfoBox from "../components/InfoBox"
+import { Box, ConfigConsumer } from "../../src"
+
+# Border
+
+## Border Color
+
+`border-{color}`
+
+<Playground>
+  <Box className="p-4 border border-red-300">A Red Bordered Box</Box>
+</Playground>
+
+## Border Style
+
+`border-{style}`
+
+<Grid minWidth="192px">
+  <InfoBox pattern="border-solid" color="red" isDefault>
+    <Box className="h-16 border-red-300 border border-solid bg-white" />
+  </InfoBox>
+  <InfoBox pattern="border-dashed" color="red">
+    <Box className="h-16 border-red-300 border border-dashed bg-white" />
+  </InfoBox>
+  <InfoBox pattern="border-dotted" color="red">
+    <Box className="h-16 border-red-300 border border-dotted bg-white" />
+  </InfoBox>
+  <InfoBox pattern="border-none" color="red">
+    <Box className="h-16 border-red-300 border border-none bg-white" />
+  </InfoBox>
+</Grid>
+
+## Border Width
+
+`border{-side?}-{width}`
+
+<ConfigPropertyList property="borderWidth" />
+
+<Grid minWidth="192px">
+  <InfoBox pattern="border" color="red">
+    <Box className="h-16 border-red-300 border bg-white" />
+  </InfoBox>
+  <InfoBox pattern="border-2" color="red">
+    <Box className="h-16 border-red-300  border-2 bg-white" />
+  </InfoBox>
+  <InfoBox pattern="border-4" color="red">
+    <Box className="h-16 border-red-300  border-4 bg-white" />
+  </InfoBox>
+  <InfoBox pattern="border-8" color="red">
+    <Box className="h-16 border-red-300  border-8 bg-white" />
+  </InfoBox>
+  <InfoBox pattern="border-0" color="red" isDefault>
+    <Box className="h-16 border-red-300  border-0 bg-white" />
+  </InfoBox>
+</Grid>
+
+<Grid minWidth="192px">
+  <InfoBox caption="Top" pattern="border-t" color="red">
+    <Box className="h-16 border-red-300  border-t bg-white" />
+  </InfoBox>
+  <InfoBox caption="Right" pattern="border-r" color="red">
+    <Box className="h-16 border-red-300  border-r bg-white" />
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="border-b" color="red">
+    <Box className="h-16 border-red-300  border-b bg-white" />
+  </InfoBox>
+  <InfoBox caption="Left" pattern="border-l" color="red">
+    <Box className="h-16 border-red-300  border-l bg-white" />
+  </InfoBox>
+</Grid>
+
+## Border Radius
+
+### All Corners
+
+`rounded{-size?}`
+
+<Grid minWidth="128px">
+  <InfoBox caption="None" pattern="rounded-none" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-none" />
+  </InfoBox>
+  <InfoBox caption="Small" pattern="rounded-sm" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-sm" />
+  </InfoBox>
+  <InfoBox caption="Default" pattern="rounded" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded" />
+  </InfoBox>
+  <InfoBox caption="Large" pattern="rounded-lg" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-lg" />
+  </InfoBox>
+  <InfoBox caption="Full" pattern="rounded-full" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-full" />
+  </InfoBox>
+</Grid>
+
+### Separate Sides
+
+`rounded-{t|r|b|l}{-size?}`
+
+<Grid minWidth="128px">
+  <InfoBox caption="Top" pattern="rounded-t" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-t" />
+  </InfoBox>
+  <InfoBox caption="Right" pattern="rounded-r" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-r" />
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="rounded-b" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-b" />
+  </InfoBox>
+  <InfoBox caption="Left" pattern="rounded-l" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-l" />
+  </InfoBox>
+</Grid>
+
+### Separate Corners
+
+`rounded-{tl|tr|br|bl}{-size?}`
+
+<Grid minWidth="128px">
+  <InfoBox caption="Top Left" pattern="rounded-tl" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-tl" />
+  </InfoBox>
+  <InfoBox caption="Top Right" pattern="rounded-tr" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-tr" />
+  </InfoBox>
+  <InfoBox caption="Bottom Right" pattern="rounded-br" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-br" />
+  </InfoBox>
+  <InfoBox caption="Bottom Left" pattern="rounded-bl" color="red">
+    <Box className="h-8 px-2 bg-red-200 border-4 border-red-300 rounded-bl" />
+  </InfoBox>
+</Grid>

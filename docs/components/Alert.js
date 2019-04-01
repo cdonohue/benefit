@@ -118,16 +118,16 @@ const colorMap = {
 export default function Alert(props) {
   const { children, heading = "", type } = props
 
-  const color = type ? colorMap[type] : "warm-gray"
+  const color = type ? colorMap[type] : "gray"
 
   return (
     <Box
-      className={`font-sans flex flex-col bg-${color}-50 overflow-hidden shadow-lg mb-8 border-t border-${color}-300 border-t-8 rounded-lg`}
+      className={`font-sans flex flex-col bg-${color}-100 overflow-hidden shadow-lg mb-8 border-t border-${color}-400 border-t-8 rounded-lg`}
     >
       <Box className="flex">
         <Box className="p-4">
           <Box
-            className={`rounded-full bg-white border border-4 border-${color}-100 flex p-2 justify-center items-center text-${color}-400`}
+            className={`rounded-full bg-white border border-4 border-${color}-200 flex p-2 justify-center items-center text-${color}-400`}
           >
             {renderAlertIcon(type)}
           </Box>

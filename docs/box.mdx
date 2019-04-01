@@ -1,87 +1,83 @@
 ---
 name: Box
-menu: Components
+route: /box
 ---
 
-import { Playground, PropsTable } from "docz"
-
-import LetterBox from "./components/LetterBox"
-
-import { Box, ConfigProvider, ConfigConsumer } from "../src"
-import createUtilitiesFromMap from "../src/config/createUtilitiesFromMap"
-import sampleConfig from "../src/sampleConfig"
-import extendConfig from "../src/config/extendConfig"
-import Alert from "./components/Alert"
+import { Playground } from "docz"
+import { Box } from "../src"
 
 # Box
 
-<PropsTable of={Box} />
+A `Box` is responsible for:
 
-<Alert type="success" heading="Just so you know...">
-  This example text is going to run a bit longer so that you can see how spacing
-  within an alert works with this kind of content.
-</Alert>
-<Alert type="error" heading="Just so you know...">
-  This example text is going to run a bit longer so that you can see how spacing
-  within an alert works with this kind of content.
-</Alert>
-<Alert type="warning" heading="Just so you know...">
-  This example text is going to run a bit longer so that you can see how spacing
-  within an alert works with this kind of content.
-</Alert>
-<Alert type="info" heading="Just so you know...">
-  This example text is going to run a bit longer so that you can see how spacing
-  within an alert works with this kind of content.
-</Alert>
+- Rendering any `html` tag using the `is` prop
+- Providing a lightweight CSS reset at the element level
+- Adding styles for any of the available built-in utility classes (or your own provided utilities)
+- Optionally marking all utility/reset styles to be `!important`
 
-<Box className="font-sans">
-  <Box className="bg-cool-gray-100 h-48" />
-  <Box className="bg-blue-600 text-white p-8 flex">
-    <Box>
-      <Box is="h2" className="text-2xl medium text-white lh-tight mb-4">
-        Special offer for exisiting customers
-      </Box>
-      <Box is="p" className="text-blue-50 mb-4 light lh-tight">
-        Already a customer? You can renew or extend your license for less.
-      </Box>
-      <Box is="p" className="text-base">
-        Learn about other ways to renew your license &rsaquo;
-      </Box>
-    </Box>
-    <Box className="w-3/5 bg-white text-cool-gray-700 rounded-lg ml-8 -my-16 shadow-lg">
-      <Box className="p-8 pb-6">
-        <Box is="h3" className="bold text-lg mb-2">
-          Renew your license
-        </Box>
-        <Box is="p" className="text-sm lh-snug">
-          You currently have{" "}
-          <Box is="em" className="black inline">
-            2
-          </Box>{" "}
-          seats in your license
-        </Box>
-      </Box>
-      <Box className="bg-cool-gray-50 mx-4 p-4 uppercase rounded-t text-base flex items-center justify-between">
-        License Volumes
-        <Box className="bg-white w-16 rounded shadow-inner text-right px-2 py-1 text-cool-gray-400">
-          4
-        </Box>
-      </Box>
-      <Box className="bg-cool-gray-50 border-t rounded-b border-dotted border-warm-gray-100 mx-4 p-4 flex items-center">
-        <Box className="text-xl bold">$196</Box>
-        <Box className="ml-4 lh-snug text-xs">
-          This price is only available to existing customers
-        </Box>
-      </Box>
-      <Box className="p-4">
-        <Box
-          is="button"
-          className="bg-blue-300 w-full shadow-md bold ls-wide text-base text-white uppercase text-center p-2 rounded"
-        >
-          Renew License
-        </Box>
-      </Box>
-    </Box>
+## The `is` prop
+
+A `Box` defaults to rendering a `<div>`. Provide any valid `html` tag using the `is` prop to control what is rendered.
+
+<Playground>
+  <Box is="span">Some text</Box>
+</Playground>
+
+## CSS reset
+
+By default, a base reset is applied to all `Box` components:
+
+```css
+margin: 0;
+padding: 0;
+border-width: 0;
+border-style: solid;
+/* This is a color derived from the default theme and can be customized */
+border-color: #d4dae1;
+color: inherit;
+font-family: inherit;
+font-size: inherit;
+font-weight: inherit;
+line-height: inherit;
+vertical-align: baseline;
+box-sizing: border-box;
+```
+
+## Adding utility classes
+
+Provide a utility class to a `Box`, and any related styles are injected into the markup for you. Only the styles you use. Nothing extra.
+
+<Playground>
+  <Box is="span" className="text-red-600 font-bold text-3xl">
+    Some text
   </Box>
-  <Box className="bg-cool-gray-100 h-48" />
+</Playground>
+
+## The `important` prop
+
+Add the `important` prop to ensure that any resets and utilities are inlined with `!important` (Really useful for 3rd party distributed components).
+
+<Playground>
+  <Box
+    is="span"
+    important
+    className="text-purple-600 font-bold uppercase text-4xl"
+  >
+    Some text
+  </Box>
+</Playground>
+
+<Box>
+  Now that you know what{" "}
+  <Box
+    is="code"
+    className="font-mono bg-gray-100 text-gray-600 rounded text-base inline-block py-0 px-1"
+  >
+    Box
+  </Box>{" "}
+  components can do, let's explore what{" "}
+  <Box is="a" href="/color" className="text-blue-700 font-bold no-underline">
+    utility classes
+  </Box>{" "}
+  are built in.
 </Box>

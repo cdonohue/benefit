@@ -1,10 +1,11 @@
-export default function generate(theme) {
-  const { zIndex = {} } = theme
+import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-  return Object.keys(zIndex).reduce((classes, modifier) => {
-    return {
-      ...classes,
-      [`z-${modifier}`]: { "z-index": zIndex[modifier] },
-    }
-  }, {})
+export default function generate(theme) {
+  return createUtilitiesFromMap(
+    theme.zIndex,
+    (value) => ({
+      "z-index": value,
+    }),
+    "z"
+  )
 }
