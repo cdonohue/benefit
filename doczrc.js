@@ -27,16 +27,6 @@ export default {
     "Customization",
   ],
   codeSandbox: false,
-  htmlContext: {
-    head: {
-      links: [
-        {
-          rel: "stylesheet",
-          href: "https://codepen.io/cdonohue/pen/gEjydm.css",
-        },
-      ],
-    },
-  },
   themeConfig: {
     logo: {
       src:
@@ -44,7 +34,6 @@ export default {
       width: 150,
     },
     showPlaygroundEditor: true,
-    codemirrorTheme: "benefit",
     colors: {
       primary: colors.blue["500"],
       text: colors.black,
