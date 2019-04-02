@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "../../dist/benefit.js"
+import { Box } from "../../src"
 
 export default function Grid({ children, className, minWidth = "1fr" }) {
   return (

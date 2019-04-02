@@ -6,7 +6,7 @@ order: 2000
 
 #
 
-import { Box } from "../dist/benefit.js"
+import { Box } from "../src"
 import Logo from "./components/Logo"
 import { Playground, Link } from "docz"
 
@@ -67,9 +67,5 @@ Feel free to edit the example. Try adding a class of `text-blue-700`, or `shadow
   >
     Box
   </Box>{" "}
-  works in{" "}
-  <Box is="a" className="text-blue-600 font-bold no-underline" href="/box">
-    more depth
-  </Box>
-  .
+  works in <Link to="/box">more depth</Link>.
 </Box>

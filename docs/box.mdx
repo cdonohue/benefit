@@ -4,7 +4,7 @@ route: /box
 ---
 
 import { Playground } from "docz"
-import { Box } from "../dist/benefit.js"
+import { Box } from "../src"
 
 # Box
 
@@ -66,18 +66,3 @@ Add the `important` prop to ensure that any resets and utilities are inlined wit
     Some text
   </Box>
 </Playground>
-
-<Box>
-  Now that you know what{" "}
-  <Box
-    is="code"
-    className="font-mono bg-gray-100 text-gray-600 rounded text-base inline-block py-0 px-1"
-  >
-    Box
-  </Box>{" "}
-  components can do, let's explore what{" "}
-  <Box is="a" href="/color" className="text-blue-700 font-bold no-underline">
-    utility classes
-  </Box>{" "}
-  are built in.
-</Box>
