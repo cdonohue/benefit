@@ -1,16 +1,15 @@
 import React from "react"
 import polychrome from "polychrome"
 import flattenColorConfig from "../../src/config/flattenColorConfig"
-import { Box, ConfigConsumer } from "../../src"
+import { Box, ConfigConsumer } from "../../dist/benefit.js"
 
 function renderRelatedColors(relatedColors) {
-  console.log(relatedColors)
   if (relatedColors.length > 1) {
     return (
       <Box className="flex flex-col">
         {relatedColors
           .sort((a, b) => b.level - a.level)
-          .map(({ level, name, value }) => {
+          .map(({ name, value }) => {
             const hex = value
 
             const contrast = polychrome(hex)
@@ -33,7 +32,7 @@ export default function ColorSwatch(props) {
   return (
     <ConfigConsumer>
       {({ config }) => {
-        const { color, label } = props
+        const { color } = props
 
         const flattenedColors = flattenColorConfig(config.theme.colors)
 

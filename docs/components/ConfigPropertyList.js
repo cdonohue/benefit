@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, ConfigConsumer } from "../../src"
+import { Box, ConfigConsumer } from "../../dist/benefit.js"
 
 export default function ConfigPropertyList({ property, pattern }) {
   return (
@@ -18,7 +18,7 @@ export default function ConfigPropertyList({ property, pattern }) {
           )}
           <Box className="flex flex-wrap">
             {Object.keys(config.theme[property]).map((key) => (
-              <Box className="flex flex-column rounded-sm font-mono text-sm overflow-hidden mr-2 mb-2">
+              <Box key={`${property}-${key}`} className="flex flex-column rounded-sm font-mono text-sm overflow-hidden mr-2 mb-2">
                 <Box className="bg-gray-500 text-xs flex justify-center items-center px-2 text-white">
                   {key}
                 </Box>

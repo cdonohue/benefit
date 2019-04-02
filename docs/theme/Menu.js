@@ -1,6 +1,6 @@
 import React from "react"
 import { Docs, Link } from "docz"
-import { Box } from "../../src"
+import { Box } from "../../dist/benefit.js"
 
 export default function Menu() {
   return (

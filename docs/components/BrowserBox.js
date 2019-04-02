@@ -1,7 +1,7 @@
 import React from "react"
-import { Box } from "../../src"
+import { Box } from "../../dist/benefit.js"
 
-export default function BrowserBox(props) {
+export default function BrowserBox({ children }) {
   return (
     <Box className="bg-gray-200 p-2 rounded overflow-hidden">
       <Box className="flex mb-2 items-center">
@@ -11,7 +11,7 @@ export default function BrowserBox(props) {
         <Box className="h-4 ml-2 bg-white w-full rounded-full" />
       </Box>
       <Box className="relative bg-gray-100 text-sm p-2 rounded-sm h-24 overflow-auto">
-        {props.children}
+        {children}
       </Box>
     </Box>
   )
