@@ -6,7 +6,7 @@ order: 1000
 ---
 
 import { Playground } from "docz"
-import { Box, ConfigConsumer } from "../../src"
+import { Box, ConfigConsumer } from "../../dist/benefit.js"
 import InfoBox from "../components/InfoBox"
 import Grid from "../components/Grid"
 import ConfigPropertyList from "../components/ConfigPropertyList"
@@ -31,7 +31,7 @@ import ConfigPropertyList from "../components/ConfigPropertyList"
   {({ config }) => (
     <Grid>
       {Object.keys(config.theme.fontFamily).map((fontClass) => (
-        <InfoBox pattern={`font-${fontClass}`}>
+        <InfoBox key={`font-${fontClass}`} pattern={`font-${fontClass}`}>
           <Box>
             <Box className={`bg-white p-2 rounded font-${fontClass}`}>
               Pack my box with five dozen liquor jugs.
@@ -69,7 +69,7 @@ import ConfigPropertyList from "../components/ConfigPropertyList"
   {({ config }) => (
     <Grid minWidth="6rem">
       {Object.keys(config.theme.fontSize).map((size) => (
-        <InfoBox pattern={`text-${size}`}>
+        <InfoBox key={`text-${size}`} pattern={`text-${size}`}>
           <Box
             className={`bg-white rounded h-24 flex justify-center items-center text-${size}`}
           >
@@ -89,7 +89,7 @@ import ConfigPropertyList from "../components/ConfigPropertyList"
   {({ config }) => (
     <Grid>
       {Object.keys(config.theme.fontWeight).map((weight) => (
-        <InfoBox pattern={`font-${weight}`}>
+        <InfoBox key={`font-${weight}`} pattern={`font-${weight}`}>
           <Box className={`bg-white p-2 font-sans font-${weight}`}>
             Pack my box with five dozen liquor jugs.
           </Box>
@@ -107,7 +107,7 @@ import ConfigPropertyList from "../components/ConfigPropertyList"
   {({ config }) => (
     <Grid>
       {Object.keys(config.theme.letterSpacing).map((size) => (
-        <InfoBox pattern={`tracking-${size}`}>
+        <InfoBox key={`tracking-${size}`} pattern={`tracking-${size}`}>
           <Box className={`bg-white p-2 font-sans tracking-${size}`}>
             Pack my box with five dozen liquor jugs.
           </Box>
@@ -125,7 +125,7 @@ import ConfigPropertyList from "../components/ConfigPropertyList"
   {({ config }) => (
     <Grid>
       {Object.keys(config.theme.lineHeight).map((size) => (
-        <InfoBox pattern={`leading-${size}`}>
+        <InfoBox key={`leading-${size}`} pattern={`leading-${size}`}>
           <Box className={`bg-white p-2 font-sans leading-${size}`}>
         Portland flannel trust fund plaid kitsch. Hot chicken everyday carry williamsburg YOLO green juice lomo. Bicycle rights man bun +1 shabby chic migas salvia listicle polaroid paleo.
         </Box>
@@ -149,7 +149,7 @@ List Style Type
   {({ config }) => (
     <Grid minWidth="200px">
       {Object.keys(config.theme.listStyleType).map((type) => (
-        <InfoBox pattern={`list-${type}`}>
+        <InfoBox key={`list-${type}`} pattern={`list-${type}`}>
           <Box
             className={`bg-white rounded p-2 ${
               type !== "none" ? "pl-6" : ""

@@ -6,7 +6,7 @@ order: 2000
 
 #
 
-import { Box } from "../src"
+import { Box } from "../dist/benefit.js"
 import Logo from "./components/Logo"
 import { Playground, Link } from "docz"
 
@@ -20,9 +20,11 @@ import { Playground, Link } from "docz"
   </Box>
 </Box>
 
-Benefit provides a `Box` component to use for composing your application. This primitive allows you to have component level CSS resets and the ability to apply utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) to style and decorate with.
+Benefit helps to solve the problem of React Components inheriting cumbersome styles from other CSS on the page. Component-level-resets and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
 
-You also have the ability to customize the configuration with your own design system rules. Extend the configuration or start from scratch and add your own colors and CSS utilities.
+Another key feature of `Benefit` is that _it only inlines the CSS you use_. So, whether you’re hardening/isolating a single React component or building a full responsive layout, only the CSS for the utilities you use get injected to the page.
+
+You also have the ability to customize the configuration with your own design system rules. Extend the configuration and add your own colors and CSS utilities or start entirely from scratch. It's up to you.
 
 ## Getting Started
 
@@ -43,9 +45,18 @@ A `<p>` tag is rendered using a `Box` below and has a few utility classes added 
 Feel free to edit the example. Try adding a class of `text-blue-700`, or `shadow`.
 
 <Playground>
-  <Box is="p" className="bg-blue-100 p-4 rounded">
-    Hello, World
-  </Box>
+  <div className="example">
+    <style
+      dangerouslySetInnerHTML={{
+        __html: `
+          .example p { background-color: blue; }
+        `,
+      }}
+    />
+    <Box is="p" className="bg-blue-100 p-4 rounded" important>
+      Hello, World
+    </Box>
+  </div>
 </Playground>
 
 <Box>
