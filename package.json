@@ -12,16 +12,19 @@
   ],
   "scripts": {
     "build": "microbundle -i src/index.js --jsx React.createElement",
+    "prestart": "yarn build",
     "start": "docz dev",
+    "predocs:build": "yarn build",
+    "docs:build": "docz build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "release": "np --contents=dist"
   },
+  "sideEffects": false,
   "devDependencies": {
     "babel-eslint": "~10.0.1",
-    "docz": "~0.13.7",
-    "docz-plugin-netlify": "~1.1.4",
-    "docz-theme-default": "~0.13.7",
+    "docz": "^1.0.0-rc.7",
+    "docz-theme-default": "^1.0.0-rc.7",
     "emotion": "^10.0.7",
     "eslint": "~5.14.1",
     "eslint-config-airbnb": "~17.1.0",
@@ -36,7 +39,9 @@
     "np": "~4.0.2",
     "polychrome": "~4.1.2",
     "prettier": "~1.16.4",
-    "react": "~16.8.4"
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "peerDependencies": {
     "emotion": "~10.0.7",

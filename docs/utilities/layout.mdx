@@ -6,7 +6,7 @@ order: 1100
 ---
 
 import { Playground } from "docz"
-import { Box } from "../../src"
+import { Box } from "../../dist/benefit.js"
 import Grid from "../components/Grid"
 import InfoBox from "../components/InfoBox"
 import BrowserBox from "../components/BrowserBox"
@@ -485,7 +485,7 @@ Use the `pin{-edge?}` utilities to pin `absolute` `Box` components
   <InfoBox caption="Visible" pattern="visible" isDefault>
     <Box className="w-full h-16 bg-gray-400 rounded visible" />
   </InfoBox>
-  <InfoBox caption="Visible" pattern="invisible">
+  <InfoBox caption="Invisible" pattern="invisible">
     <Box className="w-full h-16 border border-2 border-dashed rounded" />
   </InfoBox>
 </Box>

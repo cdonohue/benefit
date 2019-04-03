@@ -1,7 +1,6 @@
 import React from "react"
 import polychrome from "polychrome"
-import flattenColorConfig from "../../src/config/flattenColorConfig"
-import { Box, ConfigConsumer } from "../../src"
+import { Box, ConfigConsumer, flattenColorConfig } from "../../dist/benefit.js"
 
 function renderRelatedColors(relatedColors) {
   if (relatedColors.length > 1) {

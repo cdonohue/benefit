@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, ConfigConsumer } from "../../src"
+import { Box, ConfigConsumer } from "../../dist/benefit.js"
 
 export default function ConfigPropertyList({ property, pattern }) {
   return (

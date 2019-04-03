@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "../../src"
+import { Box } from "../../dist/benefit.js"
 
 export default function BrowserBox({ children }) {
   return (

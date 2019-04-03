@@ -1,4 +1,3 @@
-import doczPluginNetlify from "docz-plugin-netlify"
 import { colors } from "./src/config/theme"
 
 export default {
@@ -7,10 +6,10 @@ export default {
   menu: [
     "Introduction",
     "Box",
+    "Color",
     {
       name: "Utilities",
-      menu: [
-        "Color",
+      menu: [    
         "Layout",
         "Typography",
         "Background",
@@ -57,27 +56,5 @@ export default {
       blockquoteBorder: colors["cool-gray"]["200"],
       blockquoteColor: colors["cool-gray"]["700"],
     },
-    styles: {
-      // body: {
-      //   fontFamily:
-      //     'system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
-      //   lineHeight: 1.6,
-      // },
-      h1: {
-        fontFamily: '"Playfair Display", "serif"',
-      },
-      h2: {
-        fontFamily:
-          'system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif',
-      },
-      code: {
-        fontFamily:
-          '"SFMono-Regular", "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", "monospace"',
-      },
-      a: {
-        fontWeight: 400,
-      },
-    },
   },
-  plugins: [doczPluginNetlify()],
 }
