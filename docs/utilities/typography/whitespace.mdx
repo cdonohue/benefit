@@ -1,0 +1,71 @@
+---
+name: Whitespace
+property: whitespace
+parent: Typography
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+<Grid minWidth="200px" className="text-sm">
+  <InfoBox pattern="break-normal">
+    <Box className="p-2 rounded bg-white break-normal">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="break-words">
+    <Box className="p-2 rounded bg-white break-words">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="break-all">
+    <Box className="p-2 rounded bg-white break-all">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="truncate">
+    <Box className="p-2 rounded bg-white truncate">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+</Grid>
+
+<Grid minWidth="200px" className="text-sm">
+  <InfoBox pattern="whitespace-normal">
+    <Box className="p-2 rounded bg-white whitespace-normal">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="whitespace-no-wrap">
+    <Box className="p-2 rounded bg-white whitespace-no-wrap">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="whitespace-pre">
+    <Box className="p-2 rounded bg-white whitespace-pre">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="whitespace-pre-line">
+    <Box className="p-2 rounded bg-white truncate whitespace-pre-line">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="whitespace-pre-wrap">
+    <Box className="p-2 rounded bg-white truncate whitespace-pre-wrap">
+      Hoodie waistcoat mlkshk keytar sustainable, everyday carry tofu squid
+      aesthetic twee tumeric next level hell of heirloom.
+    </Box>
+  </InfoBox>
+</Grid>

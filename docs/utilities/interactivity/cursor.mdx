@@ -1,0 +1,21 @@
+---
+name: Cursor
+property: cursor
+parent: Interactivity
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+`cursor-{type}`
+
+<ConfigPropertyList property="cursor" />
+
+<Playground>
+  <Box className="text-gray-500 uppercase text-center rounded p-4 bg-gray-100 cursor-help">
+    Hover here to see the cursor change
+  </Box>
+</Playground>

@@ -22,7 +22,9 @@
   },
   "sideEffects": false,
   "devDependencies": {
+    "@reach/router": "^1.2.1",
     "babel-eslint": "~10.0.1",
+    "component-playground": "^3.2.1",
     "docz": "^1.0.0-rc.7",
     "docz-theme-default": "^1.0.0-rc.7",
     "emotion": "^10.0.7",
@@ -41,7 +43,9 @@
     "prettier": "~1.16.4",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "react-feather": "^1.1.6",
+    "react-live": "^2.0.0"
   },
   "peerDependencies": {
     "emotion": "~10.0.7",

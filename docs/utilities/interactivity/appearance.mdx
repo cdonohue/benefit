@@ -1,0 +1,34 @@
+---
+name: Appearance
+property: appearance
+parent: Interactivity
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+`appearance-none`
+
+<Grid>
+  <InfoBox>
+    <Box className="bg-white p-2 rounded mb-2">
+      <Box is="select">
+        <option value="">Select an option</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </Box>
+    </Box>
+    <Box className="bg-white p-2 rounded">
+      <Box is="select" className="appearance-none">
+        <option value="">Select an option</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </Box>
+    </Box>
+  </InfoBox>
+</Grid>

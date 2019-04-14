@@ -1,0 +1,60 @@
+---
+name: Flex Direction
+property: flex-direction
+parent: Flexbox
+---
+
+import { Box } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+
+<Grid minWidth="175px">
+  <InfoBox pattern="flex-row" color="teal">
+    <Box className="flex flex-row bg-teal-200 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-row-${item}`}
+          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="flex-row-reverse" color="teal">
+    <Box className="flex flex-row-reverse bg-teal-200 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-row-reverse-${item}`}
+          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="flex-col" color="teal">
+    <Box className="flex flex-col bg-teal-200 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-col-${item}`}
+          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-auto m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="flex-col-reverse" color="teal">
+    <Box className="flex flex-col-reverse bg-teal-200 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-col-reverse-${item}`}
+          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-auto m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+</Grid>

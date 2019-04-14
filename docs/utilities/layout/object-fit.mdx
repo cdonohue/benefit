@@ -1,0 +1,48 @@
+---
+name: Object Fit
+property: object-fit
+parent: Layout
+route: /layout/object-fit
+---
+
+import { Box } from "../../../dist/benefit.js"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+
+<Grid minWidth="150px">
+  <InfoBox caption="Fill" pattern="object-fill">
+    <Box
+      className="object-fill w-full h-24 rounded-sm"
+      is="img"
+      src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1690&q=80"
+    />
+  </InfoBox>
+  <InfoBox caption="Contain" pattern="object-contain">
+    <Box
+      className="object-contain w-full h-24 rounded-sm"
+      is="img"
+      src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1690&q=80"
+    />
+  </InfoBox>
+  <InfoBox caption="Cover" pattern="object-cover">
+    <Box
+      className="object-cover w-full h-24 rounded-sm"
+      is="img"
+      src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1690&q=80"
+    />
+  </InfoBox>
+  <InfoBox caption="None" pattern="object-none">
+    <Box
+      className="object-none w-full h-24 rounded-sm"
+      is="img"
+      src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1690&q=80"
+    />
+  </InfoBox>
+  <InfoBox caption="Scale Down" pattern="object-scale-down">
+    <Box
+      className="object-scale-down w-full h-24 rounded-sm"
+      is="img"
+      src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1690&q=80"
+    />
+  </InfoBox>
+</Grid>

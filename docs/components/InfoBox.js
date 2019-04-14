@@ -11,17 +11,20 @@ export default function LayoutBox({
 }) {
   return (
     <Box
-      className={`bg-${color}-100 p-2 relative rounded-lg shadow overflow-hidden ${className}`}
+      className={`bg-white p-4 relative rounded-lg shadow overflow-hidden ${className}`}
     >
       {isDefault && (
         <Box
-          className={`uppercase tracking-wider font-bold bg-${color}-200 text-xs text-${color}-500 px-2 rounded-bl py-px absolute pin-t pin-r`}
+          className={`uppercase font-semibold bg-${color}-100 text-xs text-${color}-500 p-1 rounded-bl absolute pin-t pin-r`}
         >
           Default
         </Box>
       )}
       {caption && (
-        <Box is="h4" className={`text-${color}-800 text-base font-bold`}>
+        <Box
+          is="h4"
+          className={`text-${color}-800 text-base font-semibold mb-1`}
+        >
           {caption}
         </Box>
       )}

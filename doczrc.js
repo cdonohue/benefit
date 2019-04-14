@@ -3,28 +3,7 @@ import { colors } from "./src/config/theme"
 export default {
   title: "<Benefit />",
   description: "Benefit documentation",
-  menu: [
-    "Introduction",
-    "Box",
-    "Color",
-    {
-      name: "Utilities",
-      menu: [    
-        "Layout",
-        "Typography",
-        "Background",
-        "Border",
-        "Flexbox",
-        "Space",
-        "Size",
-        "Tables",
-        "Effects",
-        "Interactivity",
-        "Svg",
-      ],
-    },
-    "Customization",
-  ],
+  theme: "docs/theme/index",
   codeSandbox: false,
   themeConfig: {
     logo: {

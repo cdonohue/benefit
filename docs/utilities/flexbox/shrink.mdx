@@ -1,0 +1,38 @@
+---
+name: Flex Shrink
+property: flex-shrink
+parent: Flexbox
+---
+
+import { Box } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+
+<Grid>
+  <InfoBox caption="Shrink" pattern="flex-shrink" color="teal">
+    <Box className="text-sm flex bg-teal-200 p-1 rounded mb-2 text-center">
+      <Box className="flex-none p-2 bg-teal-500 rounded-sm text-teal-100 m-1">
+        Will not shrink
+      </Box>
+      <Box className="flex-shrink p-2 bg-teal-700 rounded-sm text-teal-100 m-1">
+        This will shrink, even if it means the content will end up wrapping.
+      </Box>
+      <Box className="flex-none p-2 bg-teal-500 rounded-sm text-teal-100 m-1">
+        Will not shrink
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="No Shrink" pattern="flex-no-shrink" color="teal">
+    <Box className="text-sm flex bg-teal-200 p-1 rounded mb-2 text-center">
+      <Box className="flex-shrink p-2 bg-teal-500 rounded-sm text-teal-100 m-1">
+        Will shrink
+      </Box>
+      <Box className="flex-no-shrink p-2 bg-teal-700 rounded-sm text-teal-100 m-1">
+        Will not shrink below its initial size
+      </Box>
+      <Box className="flex-shrink p-2 bg-teal-500 rounded-sm text-teal-100 m-1">
+        Will shrink
+      </Box>
+    </Box>
+  </InfoBox>
+</Grid>

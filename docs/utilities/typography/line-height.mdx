@@ -1,0 +1,29 @@
+---
+name: Line Height
+property: line-height
+parent: Typography
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+<ConfigPropertyList property="lineHeight" pattern="leading-{size}" />
+
+<ConfigConsumer>
+  {({ config }) => (
+    <Grid>
+      {Object.keys(config.theme.lineHeight).map((size) => (
+        <InfoBox key={`leading-${size}`} pattern={`leading-${size}`}>
+          <Box className={`bg-white p-2 font-sans leading-${size}`}>
+        Portland flannel trust fund plaid kitsch. Hot chicken everyday carry williamsburg YOLO green juice lomo. Bicycle rights man bun +1 shabby chic migas salvia listicle polaroid paleo.
+        </Box>
+        </InfoBox>
+      ))}
+    </Grid>
+
+)}
+
+</ConfigConsumer>

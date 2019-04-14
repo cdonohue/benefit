@@ -1,0 +1,36 @@
+---
+name: Display
+property: display
+parent: Flexbox
+---
+
+import { Box } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+
+<Grid>
+  <InfoBox pattern="flex" color="teal">
+    <Box className="flex bg-teal-200 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`display-flex-${item}`}
+          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 m-1 flex-grow"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="inline-flex" color="teal">
+    <Box className="flex bg-teal-200 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`display-inline-flex-${item}`}
+          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+</Grid>

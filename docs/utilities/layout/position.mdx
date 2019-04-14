@@ -1,0 +1,195 @@
+---
+name: Position
+property: position
+parent: Layout
+route: /layout/position
+---
+
+import { Box } from "../../../dist/benefit.js"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import BrowserBox from "../../components/BrowserBox"
+
+Use any of the classes below to position `Box` components. A few examples are listed below in an attempt to show the many relationships of combining the different position values.
+
+<Grid minWidth="250px">
+  <InfoBox caption="Static Parent">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className={`h-20 p-2 bg-gray-400 rounded static`}>
+        <Box className="mb-2">static</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-100 rounded inline-flex pin-b pin-r justify-center items-center absolute`}
+        >
+          <Box className="inline">absolute</Box>
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Relative Parent">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className={`h-20 p-2 bg-gray-400 rounded relative`}>
+        <Box className="mb-2">relative</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-100 rounded inline-flex pin-b pin-r justify-center items-center absolute`}
+        >
+          <Box className="inline">absolute</Box>
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Static Sibling">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className="mb-2">relative</Box>
+      <Box className={`h-20 p-2 bg-gray-400 rounded static`}>
+        <Box className="mb-2">static</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-100 rounded inline-flex pin-b pin-r justify-center items-center static`}
+        >
+          static
+        </Box>
+        <Box
+          className={`h-8 ml-2 px-4 w-auto bg-gray-100 text-gray-700 rounded inline-flex pin-b pin-l justify-center items-center static`}
+        >
+          static
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Absolute Sibling">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className="mb-2">relative</Box>
+      <Box className={`h-20 p-2 bg-gray-400 rounded static`}>
+        <Box className="mb-2">static</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-100 rounded inline-flex pin-b pin-r justify-center items-center absolute`}
+        >
+          absolute
+        </Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-100 text-gray-700 rounded inline-flex pin-b pin-l justify-center items-center static`}
+        >
+          static
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+
+<InfoBox caption="Fixed">
+  <BrowserBox>
+    <Box className="font-mono text-sm bg-gray-700 absolute rounded-t-sm pin-x pin-t p-1 text-gray-100 z-10 mr-4">
+      fixed
+    </Box>
+    <Box className="absolute pin overflow-auto p-1 pt-8">
+      <Box className="text-gray-400">Scroll down!</Box>
+      Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated
+      charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko.
+      Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar
+      keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu
+      hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical
+      seitan man bun leggings small batch synth.
+    </Box>
+  </BrowserBox>
+</InfoBox>
+
+  <InfoBox caption="Sticky">
+    <Box className="overflow-auto p-1 h-32 text-sm">
+        <Box className="font-mono text-sm bg-gray-700 sticky rounded-sm pin-x pin-t p-1 text-gray-100 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">1</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+        <Box className="font-mono text-sm bg-gray-700 sticky rounded-sm pin-x pin-t p-1 text-gray-100 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">2</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+        <Box className="font-mono text-sm bg-gray-700 sticky rounded-sm pin-x pin-t p-1 text-gray-100 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">3</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+        <Box className="font-mono text-sm bg-gray-700 sticky rounded-sm pin-x pin-t p-1 text-gray-100 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">4</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+        <Box className="font-mono text-sm bg-gray-700 sticky rounded-sm pin-x pin-t p-1 text-gray-100 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">5</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+      </Box>
+  </InfoBox>
+</Grid>
+
+## Pinning
+
+Use the `pin{-edge?}` utilities to pin `absolute` `Box` components
+
+<Grid minWidth="120px">
+  <InfoBox caption="Top" pattern="pin-x pin-t">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-x pin-t`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Right" pattern="pin-y pin-r">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-y pin-r`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="pin-x pin-b">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-x pin-b`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Left" pattern="pin-y pin-l">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-y pin-l`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="All" pattern="pin">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Top Left" pattern="pin-l pin-t">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-l pin-t`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Top Right" pattern="pin-r pin-t">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-r pin-t`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom Right" pattern="pin-r pin-b">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-r pin-b`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom Left" pattern="pin-l pin-b">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-400 rounded absolute pin-l pin-b`}
+      />
+    </Box>
+  </InfoBox>
+</Grid>

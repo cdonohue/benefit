@@ -333,9 +333,7 @@ export const maxWidth = {
   "3xl": "48rem",
   "4xl": "56rem",
   "5xl": "64rem",
-  "7xl": "72rem",
-  "8xl": "80rem",
-  "9xl": "90rem",
+  "6xl": "72rem",
   full: "100%",
   screen: "100vw",
 }

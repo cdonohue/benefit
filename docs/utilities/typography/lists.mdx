@@ -1,0 +1,60 @@
+---
+name: Lists
+property: list-style-type
+parent: Typography
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+List Style Type
+
+`list-{type}`
+
+<ConfigPropertyList property="listStyleType" />
+
+<ConfigConsumer>
+  {({ config }) => (
+    <Grid minWidth="200px">
+      {Object.keys(config.theme.listStyleType).map((type) => (
+        <InfoBox key={`list-${type}`} pattern={`list-${type}`}>
+          <Box className={`${type !== "none" ? "pl-4" : ""} text-sm`}>
+            <Box is="ul" className={`list-${type}`}>
+              <Box is="li" className="bg-gray-200 rounded-sm h-5 mb-2" />
+              <Box is="li" className="bg-gray-200 rounded-sm h-5 w-1/2 mb-2" />
+              <Box is="li" className="bg-gray-200 rounded-sm h-5 w-2/3" />
+            </Box>
+          </Box>
+        </InfoBox>
+      ))}
+    </Grid>
+  )}
+</ConfigConsumer>
+
+List Style Position
+
+`list-{inside|outside}`
+
+<Grid>
+  <InfoBox pattern="list-inside">
+    <Box className="pl-4">
+      <Box is="ul" className="list-inside">
+        <Box is="li" className="bg-gray-200 rounded-sm h-5 mb-2" />
+        <Box is="li" className="bg-gray-200 rounded-sm h-5 w-1/2 mb-2" />
+        <Box is="li" className="bg-gray-200 rounded-sm h-5 w-2/3" />
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="list-outside">
+    <Box className="pl-4">
+      <Box is="ul" className="list-outside">
+        <Box is="li" className="bg-gray-200 rounded-sm h-5 mb-2" />
+        <Box is="li" className="bg-gray-200 rounded-sm h-5 w-1/2 mb-2" />
+        <Box is="li" className="bg-gray-200 rounded-sm h-5 w-2/3" />
+      </Box>
+    </Box>
+  </InfoBox>
+</Grid>

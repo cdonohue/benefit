@@ -1,0 +1,32 @@
+---
+name: Opacity
+property: opacity
+parent: Effects
+---
+
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+`opacity-{level}`
+
+<ConfigPropertyList property="opacity" />
+
+<Grid className="font-mono text-sm">
+  <Box className="rounded bg-gray-800 text-white p-4 opacity-100">
+    opacity-100
+  </Box>
+  <Box className="rounded bg-gray-800 text-white p-4 opacity-75">
+    opacity-75
+  </Box>
+  <Box className="rounded bg-gray-800 text-white p-4 opacity-50">
+    opacity-50
+  </Box>
+  <Box className="rounded bg-gray-800 text-white p-4 opacity-25">
+    opacity-25
+  </Box>
+  <Box className="rounded border border-dashed text-gray-300 border-2 p-4">
+    opacity-0
+  </Box>
+</Grid>

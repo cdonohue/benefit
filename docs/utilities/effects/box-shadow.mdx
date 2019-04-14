@@ -1,0 +1,39 @@
+---
+name: Box Shadow
+property: box-shadow
+parent: Effects
+---
+
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+`shadow{-variant?}`
+
+<Grid minWidth="150px">
+  <InfoBox caption="Default" pattern="shadow">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow`} />
+  </InfoBox>
+  <InfoBox caption="Medium" pattern="shadow-md">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow-md`} />
+  </InfoBox>
+  <InfoBox caption="Large" pattern="shadow-lg">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow-lg`} />
+  </InfoBox>
+  <InfoBox caption="XL" pattern="shadow-xl">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow-xl`} />
+  </InfoBox>
+  <InfoBox caption="2XL" pattern="shadow-2xl">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow-2xl`} />
+  </InfoBox>
+  <InfoBox caption="Inner" pattern="shadow-inner">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow-inner`} />
+  </InfoBox>
+  <InfoBox caption="Outline" pattern="shadow-outline">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow-outline`} />
+  </InfoBox>
+  <InfoBox caption="None" pattern="shadow-none">
+    <Box className={`h-16 w-full px-2 bg-white rounded shadow-none`} />
+  </InfoBox>
+</Grid>

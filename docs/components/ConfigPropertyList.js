@@ -18,11 +18,14 @@ export default function ConfigPropertyList({ property, pattern }) {
           )}
           <Box className="flex flex-wrap">
             {Object.keys(config.theme[property]).map((key) => (
-              <Box key={`${property}-${key}`} className="flex flex-column rounded-sm font-mono text-sm overflow-hidden mr-2 mb-2">
-                <Box className="bg-gray-500 text-xs flex justify-center items-center px-2 text-white">
+              <Box
+                key={`${property}-${key}`}
+                className="flex flex-column rounded-sm font-mono text-sm overflow-hidden mr-2 mb-2"
+              >
+                <Box className="bg-gray-500 text-sm flex justify-center items-center px-2 py-px text-white">
                   {key}
                 </Box>
-                <Box className="bg-gray-200 flex justify-center text-xs items-center px-3">
+                <Box className="bg-gray-200 flex justify-center text-sm items-center py-px px-3">
                   {config.theme[property][key]}
                 </Box>
               </Box>

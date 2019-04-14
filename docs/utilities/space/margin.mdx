@@ -1,0 +1,69 @@
+---
+name: Margin
+property: margin
+parent: Space
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+
+`m{side?}-{size}`
+
+<ConfigPropertyList property="margin" />
+
+<Grid minWidth="100px">
+  <InfoBox caption="All" pattern="m-{size}" color="orange">
+    <Box className="bg-orange-200 rounded border border-orange-200">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-orange-300 border-4 m-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Horizontal" pattern="mx-{size}" color="orange">
+    <Box className="bg-orange-200 rounded border border-orange-200">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-orange-300 border-4 mx-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Vertical" pattern="my-{size}" color="orange">
+    <Box className="bg-orange-200 rounded border border-orange-200">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-orange-300 border-4 my-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Top" pattern="mt-{size}" color="orange">
+    <Box className="bg-orange-200 rounded border border-orange-200">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-orange-300 border-4 mt-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Right" pattern="mr-{size}" color="orange">
+    <Box className="bg-orange-200 rounded border border-orange-200">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-orange-300 border-4 mr-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="mb-{size}" color="orange">
+    <Box className="bg-orange-200 rounded border border-orange-200">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-orange-300 border-4 mb-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Left" pattern="ml-{size}" color="orange">
+    <Box className="bg-orange-200 rounded border border-orange-200">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-orange-300 border-4 ml-4`}
+      />
+    </Box>
+  </InfoBox>
+</Grid>
+
+> Negative margin utilities are also available. Use `-m{side?}-{size}`

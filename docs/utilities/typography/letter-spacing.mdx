@@ -1,0 +1,27 @@
+---
+name: Letter Spacing
+property: letter-spacing
+parent: Typography
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+<ConfigConsumer>
+  {({ config }) => (
+    <Grid minWidth="150px">
+      {Object.keys(config.theme.letterSpacing).map((size) => (
+        <InfoBox key={`tracking-${size}`} pattern={`tracking-${size}`}>
+          <Box className={`bg-white font-sans tracking-${size}`}>
+            Pack my box with five dozen liquor jugs.
+          </Box>
+        </InfoBox>
+      ))}
+    </Grid>
+  )}
+</ConfigConsumer>
+
+<ConfigPropertyList property="letterSpacing" />

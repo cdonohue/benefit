@@ -1,0 +1,183 @@
+---
+name: Background Position
+property: background-position
+parent: Background
+---
+
+import { Playground } from "docz"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import { Box } from "../../../dist/benefit.js"
+
+`bg-{position}`
+
+<Box className="relative font-bold mb-2">
+  <Box
+    is="img"
+    className="w-full rounded"
+    src="https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=900&fit=max&ixid=eyJhcHBfaWQiOjF9"
+  />
+  <Box
+    style={{ top: 0, left: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-left-top
+  </Box>
+  <Box
+    style={{
+      top: 0,
+      left: "50%",
+      transform: "translate(-50%, 0)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-top
+  </Box>
+  <Box
+    style={{ top: 0, right: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-right-top
+  </Box>
+  <Box
+    style={{
+      top: "50%",
+      right: 0,
+      transform: "translate(0, -50%)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-right
+  </Box>
+  <Box
+    style={{ bottom: ".5rem", right: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-right-bottom
+  </Box>
+  <Box
+    style={{
+      bottom: ".5rem",
+      left: "50%",
+      transform: "translate(-50%, 0)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-bottom
+  </Box>
+  <Box
+    style={{ bottom: ".5rem", left: 0, background: "rgba(0,0,0,.54)" }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-left-bottom
+  </Box>
+  <Box
+    style={{
+      top: "50%",
+      left: 0,
+      transform: "translate(0, -50%)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-left
+  </Box>
+  <Box
+    style={{
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      background: "rgba(0,0,0,.54)",
+    }}
+    className="rounded absolute z-10 p-2 font-mono text-xs text-center w-1/4 h-16 sm:h-20 flex justify-center items-center text-white"
+  >
+    bg-center
+  </Box>
+</Box>
+
+<Grid minWidth="200px">
+  <InfoBox pattern="bg-left-top">
+    <Box
+      className="h-32 rounded bg-left-top"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-top">
+    <Box
+      className="h-32 rounded bg-top"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-right-top">
+    <Box
+      className="h-32 rounded bg-right-top"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-left">
+    <Box
+      className="h-32 rounded bg-left"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-center">
+    <Box
+      className="h-32 rounded bg-center"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-right">
+    <Box
+      className="h-32 rounded bg-right"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-left-bottom">
+    <Box
+      className="h-32 rounded bg-left-bottom"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-bottom">
+    <Box
+      className="h-32 rounded bg-bottom"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-right-bottom">
+    <Box
+      className="h-32 rounded bg-right-bottom"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1511912067142-80cfe131e059?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1024&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+</Grid>
