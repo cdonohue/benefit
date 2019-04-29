@@ -1,8 +1,64 @@
 ---
 name: Getting Started
 route: /getting-started
+previousRoute: /
+previousLabel: Introduction
+nextRoute: /how-it-works
+nextLabel: How it works
 ---
 
-# Hello
+import { Box } from "../dist/benefit.js"
 
-Clicking on this link which refers to B2B Marketing awards shortlist will take you to the awards page of the FirstSpriti Digital Experience Platform. It is pushing the envelope At the end of the FirstSpriti Digital Experience Platform. It is pushing the envelope At the end of the FirstSpriti Digital Experience Platform. Spriti introduced new capabilities of the customer journey. Helping marketers serve unmatched cross-phase personalized experiences at every step of the FirstSpriti Digital Experience Platform. Spriti introduced new capabilities to the awards page of the FirstSpriti Digital Experience Platform. Helping marketers serve unmatched cross-phase personalized experiences at every step of the FirstSpriti Digital Experience Platform. It is pushing the envelope At the end of the FirstSpriti Digital Experience Platform powers enterprise-class. Spriti introduced new capabilities to the awards page of the customer journey. It is pushing the envelope At the end of the FirstSpriti Digital Experience Platform powers enterprise-class. Helping marketers serve unmatched cross-phase personalized experiences at every step of the FirstSpriti Digital Experience Platform. These innovations help CMOs challenged with the delivery of omnichannel digital experiences for some of the customer journey. These innovations help CMOs challenged with the delivery of omnichannel digital experiences for some of the FirstSpriti Digital Experience Platform powers enterprise-class.
+### Install dependencies
+
+First, add `benefit` to your project along with its peer dependencies.
+
+```bash
+yarn add benefit react emotion
+```
+
+### Setup transpilation
+
+Next, set the jsx pragma at the top of your source file where you intend to use `benefit`.
+
+```js
+/** @jsx jsx */
+```
+
+> Similar to a comment containing linter configuration, this configures the jsx babel plugin to use the `jsx` function instead of `React.createElement`.
+>
+> [JSX Pragma Documentation](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx#pragma)
+
+Import the `jsx` function from `benefit`
+
+```js
+/** @jsx jsx */
+import { jsx } from "benefit"
+```
+
+### Use built in utility classes (or add your own)
+
+Now, you're free to use any available utility classes to style your components
+
+```js
+/** @jsx jsx */
+import { jsx } from "benefit"
+
+function MyComponent() {
+  return (
+    <div className="p-4 bg-orange-300 rounded">
+      <p className="p-4 bg-white shadow rounded-sm">
+        Williamsburg stumptown iPhone, gastropub vegan banh mi
+        microdosingpost-ironic pok pok +1 bespoke dreamcatcher bushwick brunch.
+      </p>
+    </div>
+  )
+}
+```
+
+<Box className="p-4 bg-orange-300 rounded">
+  <Box is="p" className="p-4 bg-white shadow rounded-sm">
+    Williamsburg stumptown iPhone, gastropub vegan banh mi microdosing
+    post-ironic pok pok +1 bespoke dreamcatcher bushwick brunch.
+  </Box>
+</Box>

@@ -22,7 +22,6 @@
   },
   "sideEffects": false,
   "devDependencies": {
-    "@reach/router": "^1.2.1",
     "babel-eslint": "~10.0.1",
     "component-playground": "^3.2.1",
     "docz": "^1.0.0-rc.7",

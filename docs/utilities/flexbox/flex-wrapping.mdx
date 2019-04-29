@@ -9,33 +9,33 @@ import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 
 <Grid minWidth="175px">
-  <InfoBox pattern="flex-no-wrap" color="teal">
-    <Box className="flex flex-no-wrap bg-teal-200 p-1 rounded">
+  <InfoBox pattern="flex-no-wrap">
+    <Box className="flex flex-no-wrap bg-blue-100 p-1 rounded">
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
         <Box key={`flex-no-wrap-${item}`} className="w-1/5 p-1">
-          <Box className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 p-2 h-8">
+          <Box className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 p-2 h-8">
             {item}
           </Box>
         </Box>
       ))}
     </Box>
   </InfoBox>
-  <InfoBox pattern="flex-wrap" color="teal">
-    <Box className="flex flex-wrap bg-teal-200 p-1 rounded">
+  <InfoBox pattern="flex-wrap">
+    <Box className="flex flex-wrap bg-blue-100 p-1 rounded">
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
         <Box key={`flex-wrap-${item}`} className="w-1/5 p-1">
-          <Box className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 p-2 h-8">
+          <Box className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 p-2 h-8">
             {item}
           </Box>
         </Box>
       ))}
     </Box>
   </InfoBox>
-  <InfoBox pattern="flex-wrap-reverse" color="teal">
-    <Box className="flex flex-wrap-reverse bg-teal-200 p-1 rounded">
+  <InfoBox pattern="flex-wrap-reverse">
+    <Box className="flex flex-wrap-reverse bg-blue-100 p-1 rounded">
       {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item) => (
         <Box key={`flex-wrap-reverse-${item}`} className="w-1/5 p-1">
-          <Box className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 p-2 h-8">
+          <Box className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 p-2 h-8">
             {item}
           </Box>
         </Box>

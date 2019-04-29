@@ -3,6 +3,9 @@ export default function createUtilitiesFromMap(
   generateDeclarations,
   prefix = ""
 ) {
+  if (!map) {
+    return {}
+  }
   return Object.keys(map).reduce((utilities, key) => {
     const value = map[key]
     const label = Array.isArray(map) ? value : key

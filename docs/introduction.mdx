@@ -1,117 +1,19 @@
 ---
 name: Introduction
 route: /
-order: 2000
+nextRoute: /getting-started
+nextLabel: Getting Started
+showLogo: true
 ---
 
 import { Box } from "../dist/benefit.js"
 import Logo from "./components/Logo"
 import { Playground, Link } from "docz"
 
-<Box
-  is="section"
-  className="border-b border-blue-100 flex flex-col items-center justify-center p-8"
->
-  <Logo className="w-3/4 sm:w-1/2 " />
-  <Box className="text-base text-center mt-4 text-blue-700">
-    A utility system for decorating react components.
-  </Box>
-</Box>
+### A utility system for decorating react components
 
-Benefit helps to solve the problem of React Components inheriting cumbersome styles from other CSS on the page. Component-level-resets and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
+`benefit` helps to solve the problem of React Components inheriting cumbersome styles from other CSS on the page. Component-level-resets and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
 
-Another key feature of `Benefit` is that _it only inlines the CSS you use_. So, whether you’re hardening/isolating a single React component or building a full responsive layout, only the CSS for the utilities you use get injected to the page.
+Another key feature of `benefit` is that _it only inlines the CSS for the utilities that you use_. So, whether you’re hardening/isolating a single React component or building a full responsive layout, only the CSS for the utilities you use get injected to the page.
 
 You also have the ability to customize the configuration with your own design system rules. Extend the configuration and add your own colors and CSS utilities or start entirely from scratch. It's up to you.
-
-## Getting Started
-
-First, add `benefit` to your project along with its peer dependencies. Then, import and use a `Box` like you would render any other react component.
-
-```bash
-yarn add benefit react emotion
-```
-
-```javascript
-import { Box } from "benefit"
-```
-
-## Quick Example
-
-A `<p>` tag is rendered using a `Box` below and has a few utility classes added to it.
-
-Feel free to edit the example. Try adding a class of `text-blue-700`, or `shadow`.
-
-<Playground>
-  <div className="example">
-    <style
-      dangerouslySetInnerHTML={{
-        __html: `
-          .example p { background-color: blue; }
-        `,
-      }}
-    />
-    <Box is="p" className="bg-blue-100 p-4 rounded" important>
-      Hello, World
-    </Box>
-  </div>
-</Playground>
-
-A `Box` is responsible for:
-
-- Rendering any `html` tag using the `is` prop
-- Providing a lightweight CSS reset at the element level
-- Adding styles for any of the available built-in utility classes (or your own provided utilities)
-- Optionally marking all utility/reset styles to be `!important`
-
-## The `is` prop
-
-A `Box` defaults to rendering a `<div>`. Provide any valid `html` tag using the `is` prop to control what is rendered.
-
-<Playground>
-  <Box is="span">Some text</Box>
-</Playground>
-
-## CSS reset
-
-By default, a base reset is applied to all `Box` components:
-
-```css
-margin: 0;
-padding: 0;
-border-width: 0;
-border-style: solid;
-/* This is a color derived from the default theme and can be customized */
-border-color: #d4dae1;
-color: inherit;
-font-family: inherit;
-font-size: inherit;
-font-weight: inherit;
-line-height: inherit;
-vertical-align: baseline;
-box-sizing: border-box;
-```
-
-## Adding utility classes
-
-Provide a utility class to a `Box`, and any related styles are injected into the markup for you. Only the styles you use. Nothing extra.
-
-<Playground>
-  <Box is="span" className="text-red-600 font-bold text-3xl">
-    Some text
-  </Box>
-</Playground>
-
-## The `important` prop
-
-Add the `important` prop to ensure that any resets and utilities are inlined with `!important` (Really useful for 3rd party distributed components).
-
-<Playground>
-  <Box
-    is="span"
-    important
-    className="text-purple-600 font-bold uppercase text-4xl"
-  >
-    Some text
-  </Box>
-</Playground>

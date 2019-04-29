@@ -11,3 +11,4 @@ export {
   default as createVariantsFromMap,
 } from "./config/createVariantsFromMap"
 export { default as flattenColorConfig } from "./config/flattenColorConfig"
+export { default as jsx } from "./jsx"

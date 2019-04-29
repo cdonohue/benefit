@@ -8,63 +8,63 @@ import { Box } from "../../../dist/benefit.js"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 
-> Control positioning of items on the main axis.
+Control positioning of items on the main axis.
 
 <Grid minWidth="175px">
-  <InfoBox caption="Start" pattern="justify-start" color="teal">
-    <Box className="flex justify-start bg-teal-200 p-1 rounded">
+  <InfoBox caption="Start" pattern="justify-start">
+    <Box className="flex justify-start bg-blue-100 p-1 rounded">
       {[1, 2, 3].map((item) => (
         <Box
           key={`flex-justify-start-${item}`}
-          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
         >
           {item}
         </Box>
       ))}
     </Box>
   </InfoBox>
-  <InfoBox caption="Center" pattern="justify-center" color="teal">
-    <Box className="flex justify-center bg-teal-200 p-1 rounded">
+  <InfoBox caption="Center" pattern="justify-center">
+    <Box className="flex justify-center bg-blue-100 p-1 rounded">
       {[1, 2, 3].map((item) => (
         <Box
           key={`flex-justify-center-${item}`}
-          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
         >
           {item}
         </Box>
       ))}
     </Box>
   </InfoBox>
-  <InfoBox caption="End" pattern="justify-end" color="teal">
-    <Box className="flex justify-end bg-teal-200 p-1 rounded">
+  <InfoBox caption="End" pattern="justify-end">
+    <Box className="flex justify-end bg-blue-100 p-1 rounded">
       {[1, 2, 3].map((item) => (
         <Box
           key={`flex-justify-end-${item}`}
-          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
         >
           {item}
         </Box>
       ))}
     </Box>
   </InfoBox>
-  <InfoBox caption="Space Around" pattern="justify-around" color="teal">
-    <Box className="flex justify-around bg-teal-200 p-1 rounded">
+  <InfoBox caption="Space Around" pattern="justify-around">
+    <Box className="flex justify-around bg-blue-100 p-1 rounded">
       {[1, 2, 3].map((item) => (
         <Box
           key={`flex-justify-around-${item}`}
-          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
         >
           {item}
         </Box>
       ))}
     </Box>
   </InfoBox>
-  <InfoBox caption="Space Between" pattern="justify-between" color="teal">
-    <Box className="flex justify-between bg-teal-200 p-1 rounded">
+  <InfoBox caption="Space Between" pattern="justify-between">
+    <Box className="flex justify-between bg-blue-100 p-1 rounded">
       {[1, 2, 3].map((item) => (
         <Box
           key={`flex-justify-between-${item}`}
-          className="text-sm bold flex items-center justify-center bg-teal-500 rounded-sm text-teal-100 h-8 w-8 m-1"
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
         >
           {item}
         </Box>

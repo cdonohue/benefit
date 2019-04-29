@@ -1,4 +1,5 @@
 import React from "react"
+import { css } from "emotion"
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from "react-live"
 import { Box } from "../../../dist/benefit.js"
 
@@ -66,15 +67,30 @@ const theme = {
   ],
 }
 
+const formattedCode = css`
+  /* & textarea {
+    padding: 0 !important;
+  }
+  & pre {
+    padding: 0 !important;
+  }
+
+  & pre .token-line:last-child {
+    display: none;
+  } */
+`
+
 export default function Playground(props) {
   return (
     <LiveProvider code={props.code} scope={props.scope} theme={theme}>
       <Box className="overflow-hidden rounded shadow mb-4">
-        <Box className="p-3 bg-gray-800 text-white">
+        <Box
+          className={`${formattedCode} bg-gray-800 p-4 mb-8 text-sm rounded leading-relaxed relative overflow-hidden shadow-inner`}
+        >
           <LiveEditor />
         </Box>
 
-        <Box className="bg-white  p-4">
+        <Box className="bg-white p-4">
           <LivePreview />
           <LiveError />
         </Box>

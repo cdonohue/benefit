@@ -5,14 +5,18 @@ export default function createVariantsFromMap(
   map,
   generateDeclarations
 ) {
-  return Object.keys(map).reduce((variants, key) => {
-    return {
+  if (!map) {
+    return {}
+  }
+  return Object.keys(map).reduce(
+    (variants, key) => ({
       ...variants,
       ...createVariant(
         utilities,
         (value) => generateDeclarations(map[key], value),
         key
       ),
-    }
-  }, {})
+    }),
+    {}
+  )
 }

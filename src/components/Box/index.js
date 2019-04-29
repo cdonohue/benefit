@@ -41,8 +41,6 @@ function getActiveUtilities(classList, utilities, composites) {
     )
 }
 
-// https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1690&q=80
-
 function Box(props) {
   const {
     children,

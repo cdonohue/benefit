@@ -12,56 +12,56 @@ const theme = {
     {
       types: ["prolog", "constant", "builtin"],
       style: {
-        color: "rgb(189, 147, 249)",
+        color: "#81e6d9",
       },
     },
     {
       types: ["inserted", "function"],
       style: {
-        color: "rgb(80, 250, 123)",
+        color: "#d6bcfa",
       },
     },
     {
       types: ["deleted"],
       style: {
-        color: "rgb(255, 85, 85)",
+        color: "#dd6b20",
       },
     },
     {
       types: ["changed"],
       style: {
-        color: "rgb(255, 184, 108)",
+        color: "#f6ad55",
       },
     },
     {
       types: ["punctuation", "symbol"],
       style: {
-        color: "rgb(248, 248, 242)",
+        color: "#B3BDC7",
       },
     },
     {
       types: ["string", "char", "tag", "selector"],
       style: {
-        color: "rgb(255, 121, 198)",
+        color: "#feb2b2",
       },
     },
     {
       types: ["keyword", "variable"],
       style: {
-        color: "rgb(189, 147, 249)",
-        fontStyle: "italic",
+        color: "#90cdf4",
       },
     },
     {
       types: ["comment"],
       style: {
-        color: "rgb(98, 114, 164)",
+        color: "#319795",
+        fontStyle: "italic",
       },
     },
     {
       types: ["attr-name"],
       style: {
-        color: "rgb(241, 250, 140)",
+        color: "#fefcbf",
       },
     },
   ],
@@ -72,22 +72,7 @@ const formattedCode = css`
     padding: 0 !important;
   }
   & pre {
-    counter-reset: code;
     padding: 0 !important;
-  }
-
-  & pre .token-line {
-    padding-left: 2rem;
-    position: relative;
-    &::before {
-      color: rgba(255, 255, 255, 0.26);
-      position: absolute;
-      left: 0;
-      counter-increment: code;
-      content: counter(code);
-      width: 1.25rem;
-      text-align: right;
-    }
   }
 
   & pre .token-line:last-child {
@@ -100,7 +85,7 @@ export default function Code(props) {
   return (
     <LiveProvider code={props.children.props.children} disabled theme={theme}>
       <Box
-        className={`${formattedCode} bg-gray-800 p-4 mb-4 text-sm text-base rounded relative overflow-hidden`}
+        className={`${formattedCode} bg-gray-900 p-4 mb-8 text-sm rounded leading-relaxed relative overflow-hidden shadow-inner`}
       >
         <LiveEditor />
       </Box>

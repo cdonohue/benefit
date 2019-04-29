@@ -4,14 +4,7 @@ export default {
   title: "<Benefit />",
   description: "Benefit documentation",
   theme: "docs/theme/index",
-  codeSandbox: false,
   themeConfig: {
-    logo: {
-      src:
-        "https://github.com/cdonohue/benefit/raw/master/docs/benefit-logo.png",
-      width: 150,
-    },
-    showPlaygroundEditor: true,
     colors: {
       primary: colors.blue["500"],
       text: colors.black,
