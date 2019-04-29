@@ -76,9 +76,9 @@ Read more about generating utility classes below.
 
 ### Reset
 
-The `reset` key holds any rules used for applying any base css prior to adding any parsed utility classes. These keys should be named after the element they represent (like `a` or `section`), except for a special `base` key that will be applied to all elements. Provide a function as the value of the `reset` key and have access to any `theme` values you define above.
+The `reset` key holds any rules used for applying any base css prior to adding any parsed utility classes. These keys should be named after the element they represent (like `a` or `section`), except for a special `default` key that will be applied to all elements. Provide a function as the value of the `reset` key and have access to any `theme` values you define above.
 
-Using the default `base` reset as an example here to showcase using the defined theme values to help you apply any reset styles:
+Using the default reset as an example here to showcase using the defined theme values to help you apply any reset styles:
 
 ```js
 import { ConfigProvider, jsx } from "benefit"
@@ -90,7 +90,7 @@ return (
         ...config,
         reset: (theme) => {
           return {
-            base: {
+            default: {
               margin: "0",
               padding: "0",
               "border-width": "0",
@@ -150,7 +150,7 @@ return (
 `benefit` becomes more powerful, though, when you want to map over `theme` values and generate styles. We'll use a helper function (`createUtilitiesFromMap`) to surround elements with emojis.
 
 ```js
-import { ConfigProvider, jsx } from "benefit"
+import { ConfigProvider, jsx, createUtilitiesFromMap } from "benefit"
 
 return (
   <ConfigProvider
@@ -319,7 +319,12 @@ You can use two helper methods to generate your variants:
 Let's now try to create a variant of our emoji utility from above so that we can apply it to a hover state.
 
 ```js
-import { ConfigProvider, jsx } from "benefit"
+import {
+  ConfigProvider,
+  jsx,
+  createUtilitiesFromMap,
+  createVariant
+} from "benefit"
 
 return (
   <ConfigProvider
@@ -469,7 +474,12 @@ screens: {
 So, we'll make sure and spread the `theme` in our config so we avoid overwriting it.
 
 ```js
-import { ConfigProvider, jsx } from "benefit"
+import {
+  ConfigProvider,
+  jsx,
+  createUtilitiesFromMap,
+  createVariantsFromMap
+} from "benefit"
 
 return (
   <ConfigProvider

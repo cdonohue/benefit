@@ -1,6 +1,6 @@
 export default function generateReset(theme) {
   return {
-    base: {
+    default: {
       margin: "0",
       padding: "0",
       "border-width": "0",

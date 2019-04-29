@@ -55,8 +55,15 @@ function Box(props) {
       {({ config, utilities }) => {
         const { theme = {}, composites = {}, reset = () => ({}) } = config
         // Get base reset
-        const { base } = reset(theme)
-        const baseReset = parseDeclarations(base, important).join("")
+        const resetStyles = reset(theme)
+        const defaultReset = parseDeclarations(
+          resetStyles.default,
+          important
+        ).join("")
+
+        const elementReset = parseDeclarations(resetStyles[is], important).join(
+          ""
+        )
 
         // Get array of active modifiers
         const activeUtilities = getActiveUtilities(
@@ -75,8 +82,13 @@ function Box(props) {
         )
 
         // Single out the base reset
-        const baseResetClass = css`
-          ${baseReset}
+        const defaultResetClass = css`
+          ${defaultReset}
+        `
+
+        // Single out the base reset
+        const elementResetClass = css`
+          ${elementReset}
         `
 
         // Single out each of the modifiers
@@ -87,7 +99,7 @@ function Box(props) {
             `
         )
 
-        remainingProps.className = `${baseResetClass} ${activeUtilityClasses.join(
+        remainingProps.className = `${defaultResetClass} ${elementResetClass} ${activeUtilityClasses.join(
           " "
         )} ${classList}`.trim()
 
