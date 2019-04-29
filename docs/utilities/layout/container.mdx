@@ -4,7 +4,7 @@ property: max-width
 parent: Layout
 route: /layout/container
 previousRoute: /utilities
-previousLabel: Utilities Overview
+previousLabel: Utilities
 nextRoute: /layout/float
 nextLabel: Float
 ---
@@ -21,15 +21,21 @@ Built-in breakpoints are defined by the `screens` value in the configuration.
 
 <ConfigPropertyList property="screens" />
 
-<Playground>
-  <Box className="mx-auto container bg-gray-100 rounded p-4">
-    <Box
-      is="h1"
-      className="text-2xl tracking-tighter uppercase font-bold text-center"
-    >
-      Business at the speed of light.
-    </Box>
+```js
+<div className="mx-auto container bg-gray-200 rounded p-4">
+  <h1 className="text-2xl tracking-tighter uppercase font-bold text-center">
+    Business at the speed of light.
+  </h1>
+</div>
+```
+
+<Box className="mx-auto container bg-gray-200 rounded p-4">
+  <Box
+    is="h1"
+    className="text-2xl tracking-tighter uppercase font-bold text-center"
+  >
+    Business at the speed of light.
   </Box>
-</Playground>
+</Box>
 
 > The above `container` has a utility of `mx-auto` added so it is centered horizontally within the parent.

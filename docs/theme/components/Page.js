@@ -7,7 +7,7 @@ import { Box, ConfigConsumer } from "../../../dist/benefit.js"
 import Container from "./Container"
 import Logo from "../../components/Logo"
 import { colors } from "../../../src/config/theme"
-import {
+import Icon, {
   Layout,
   Type,
   Background,
@@ -172,7 +172,7 @@ const pagingLink = css`
     width: 16px;
   }
 
-  min-width: 4rem;
+  min-width: 6rem;
 
   &,
   &:visited,
@@ -256,6 +256,9 @@ function SideBar() {
           <Link className={`${styledLink}`} to="/customization">
             Customization
           </Link>
+          {renderSubMenu(menuItems, "Color", () => (
+            <Icon name="droplet" />
+          ))}
           {renderSubMenu(menuItems, "Layout", Layout)}
           {renderSubMenu(menuItems, "Typography", Type)}
           {renderSubMenu(menuItems, "Background", Background)}
@@ -275,20 +278,6 @@ function SideBar() {
 
 function Content({ children }) {
   return <Box className="bg-gray-100 flex-1 z-10">{children}</Box>
-}
-
-function Icon(props) {
-  const icon = css`
-    & svg {
-      width: 16px;
-    }
-  `
-
-  return (
-    <Box className={`${icon}`}>
-      <ChevronRight />
-    </Box>
-  )
 }
 
 const accent = css`

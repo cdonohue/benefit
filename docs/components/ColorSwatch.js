@@ -73,7 +73,7 @@ export default function ColorSwatch(props) {
                   boxShadow:
                     color === "white" ? "inset 0 1px rgba(0,0,0,.06)" : "",
                 }}
-                className="flex items-center py-1 px-2"
+                className="flex items-center py-1 px-2 bg-white"
               >
                 <Box
                   className={`w-3 h-3 mr-2 shadow-inner rounded-full bg-${color}-400 bg-${color}`}

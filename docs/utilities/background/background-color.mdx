@@ -11,6 +11,17 @@ import { Box } from "../../../dist/benefit.js"
 
 `bg-{color}`
 
-<Playground>
-  <Box className="bg-blue-500 h-32 rounded" />
-</Playground>
+Uses the keys defined in `backgroundColor` within the `theme` object of the configuration. Default color palettes can be viewed in the [Palettes](/color/palettes) section.
+
+_Shown here using the `blue` palette_
+
+<Grid>
+  {[...Array(9).keys()].reverse().map((level) => (
+    <InfoBox pattern={`bg-blue-${(level + 1) * 100}`}>
+      <Box
+        key={level}
+        className={`rounded-sm h-16 bg-blue-${(level + 1) * 100}`}
+      />
+    </InfoBox>
+  ))}
+</Grid>

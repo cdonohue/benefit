@@ -24,18 +24,15 @@ function parseDeclarations(declarations = {}, isImportant = false) {
   })
 }
 
-function getActiveUtilities(classList, utilities, composites) {
-  const activeComposites = classList
-    .split(" ")
-    .filter((name) => composites[name])
+function getActiveUtilities(classList, utilities, apply) {
+  const activeApply = classList.split(" ").filter((name) => apply[name])
 
   return classList
     .split(" ")
     .filter((name) => utilities[name])
     .concat(
-      activeComposites.reduce(
-        (allComposites, composite) =>
-          allComposites.concat(composites[composite]),
+      activeApply.reduce(
+        (allApply, composite) => allApply.concat(apply[composite]),
         []
       )
     )
@@ -53,24 +50,20 @@ function Box(props) {
   return (
     <ConfigConsumer>
       {({ config, utilities }) => {
-        const { theme = {}, composites = {}, reset = () => ({}) } = config
-        // Get base reset
+        const { theme = {}, apply = {}, reset = () => ({}) } = config
+        // Get default reset
         const resetStyles = reset(theme)
         const defaultReset = parseDeclarations(
           resetStyles.default,
           important
         ).join("")
-
+        // Get element reset
         const elementReset = parseDeclarations(resetStyles[is], important).join(
           ""
         )
 
         // Get array of active modifiers
-        const activeUtilities = getActiveUtilities(
-          className,
-          utilities,
-          composites
-        )
+        const activeUtilities = getActiveUtilities(className, utilities, apply)
 
         const classList = className
           .split(" ")
@@ -86,7 +79,7 @@ function Box(props) {
           ${defaultReset}
         `
 
-        // Single out the base reset
+        // Single out the element reset
         const elementResetClass = css`
           ${elementReset}
         `

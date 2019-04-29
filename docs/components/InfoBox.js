@@ -29,7 +29,7 @@ export default function LayoutBox({
         </Box>
       )}
       {pattern && (
-        <Box is="code" className={`font-mono text-${color}-700 text-sm block`}>
+        <Box is="code" className={`font-mono text-${color}-500 text-sm block`}>
           {pattern}
         </Box>
       )}

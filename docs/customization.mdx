@@ -33,7 +33,11 @@ The `config` object has the following shape:
 
 ```js
 {
-  theme, reset, utilities, variants, apply
+  theme: {},
+  reset: (theme) => ({}),
+  utilities: [(theme) => ({}), (theme) => ({}), ...],
+  variants: [(utilities, theme) => ({}), (utilities, theme) => ({}), ...],
+  apply: {}
 }
 ```
 
@@ -62,10 +66,11 @@ return (
             extrabold: 800,
             black: 900,
           },
-        }
+        },
       }
-    }} />
-   ...
+    }}
+  >
+    ...
   </ConfigProvider>
 )
 ```
@@ -107,7 +112,8 @@ return (
           }
         }
       }
-  }} />
+    }}
+  >
     ...
   </ConfigProvider>
 ```
@@ -141,7 +147,7 @@ return (
         ]
       }
     }}
-  />
+  >
     ...
   </ConfigProvider>
 )
@@ -177,10 +183,10 @@ return (
               }),
               "emoji"
             ),
-        ]
+        ],
       }
     }}
-  />
+  >
     ...
   </ConfigProvider>
 )
@@ -323,7 +329,7 @@ import {
   ConfigProvider,
   jsx,
   createUtilitiesFromMap,
-  createVariant
+  createVariant,
 } from "benefit"
 
 return (
@@ -355,11 +361,15 @@ return (
         ],
         variants: [
           (utilities) =>
-            createVariant(utilities, (value) => ({ "&:hover": value }), "hover")
-        ]
+            createVariant(
+              utilities,
+              (value) => ({ "&:hover": value }),
+              "hover"
+            ),
+        ],
       }
     }}
-  />
+  >
     ...
   </ConfigProvider>
 )
@@ -518,7 +528,7 @@ return (
         ]
       }
     }}
-  />
+  >
     ...
   </ConfigProvider>
 )
@@ -592,3 +602,55 @@ Let's now test our emojis at different screen sizes by adding a some variant cla
 </Box>
 
 ### Apply
+
+Once you start noticing patterns of repeated classes in your component/application, you can use the `apply` key to map a more appropriate name to an array of utility classes.
+
+```js
+import { ConfigProvider, jsx } from "benefit"
+
+return (
+  <ConfigProvider
+    config={(config) => {
+      return {
+        ...config,
+        apply: {
+          "hero-banner": [
+            "p-8",
+            "text-2xl",
+            "text-center",
+            "uppercase",
+            "bg-blue-500",
+            "text-white",
+            "tracking-tight",
+          ],
+        },
+      }
+    }}
+  >
+    <section className="hero-banner">Business at the speed of light</section>
+  </ConfigProvider>
+)
+```
+
+<ConfigProvider
+  config={(config) => {
+    return {
+      ...config,
+      apply: {
+        "hero-banner": [
+          "p-8",
+          "text-2xl",
+          "text-center",
+          "uppercase",
+          "bg-blue-500",
+          "text-white",
+          "tracking-tight",
+        ],
+      },
+    }
+  }}
+>
+  <Box is="section" className="hero-banner">
+    Business at the speed of light
+  </Box>
+</ConfigProvider>

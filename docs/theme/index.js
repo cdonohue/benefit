@@ -75,14 +75,14 @@ const map = {
   h2: (props) => (
     <Box
       is="h2"
-      className="text-2xl leading-tight mt-4 mb-4 pb-2 text-gray-800"
+      className="text-2xl leading-tight mt-6 mb-4 pb-2 text-gray-800"
       {...props}
     />
   ),
   h3: (props) => (
     <Box
       is="h3"
-      className="text-xl leading-tight mt-4 mb-4 border-b pb-2 text-gray-800"
+      className="text-xl leading-tight mt-6 mb-4 border-b pb-2 text-gray-800"
       {...props}
     />
   ),
@@ -92,7 +92,6 @@ const map = {
   // h5: components.H5,
   // h6: components.H6,
   // ul: components.List,
-  loading: () => <Loader />,
   // table: components.Table,
   a: (props) => (
     <Box

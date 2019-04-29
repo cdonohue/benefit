@@ -7,11 +7,24 @@ route: typography/text-color
 
 import { Playground } from "docz"
 import { Box } from "../../../dist/benefit.js"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
 
 `text-{color}`
 
-<Playground>
-  <Box className="text-purple-500">
-    Pack my box with five dozen liquor jugs.
-  </Box>
-</Playground>
+Uses the keys defined in `textColor` within the `theme` object of the configuration. Default color palettes can be viewed in the [Palettes](/color/palettes) section.
+
+_Shown here using the `blue` palette_
+
+<Grid>
+  {[...Array(9).keys()].reverse().map((level) => (
+    <InfoBox pattern={`text-blue-${(level + 1) * 100}`}>
+      <Box
+        key={level}
+        className={`p-4 border rounded-sm text-blue-${(level + 1) * 100}`}
+      >
+        Pack my box with five dozen liquor jugs.
+      </Box>
+    </InfoBox>
+  ))}
+</Grid>
