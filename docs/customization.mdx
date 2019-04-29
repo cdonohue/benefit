@@ -254,7 +254,7 @@ Before we move on to variants, here's some info about that helper function above
   <Box is="code" className="font-mono p-4 block border-b">
     createUtilitiesFromMap(<Box className="inline text-purple-600">map</Box>,{" "}
     <Box className="inline text-orange-600">generateDeclarations</Box>,{" "}
-    <Box className="inline text-green-600">?prefix</Box>)
+    <Box className="inline text-green-600">prefix</Box>)
   </Box>
   <Box className="p-4">
     <Box className="bg-purple-100 rounded p-2 mb-2 border border-purple-200">
@@ -442,8 +442,8 @@ One more method availble here is the `createVariantsFromMap` method:
   <Box is="code" className="font-mono p-4 block border-b">
     createVariantsFromMap(
     <Box className="inline text-purple-600">utilities</Box>, <Box className="inline text-orange-600">
-      generateDeclarations
-    </Box>, <Box className="inline text-green-600">prefix</Box>)
+      map
+    </Box>, <Box className="inline text-green-600">generateDeclarations</Box>)
   </Box>
   <Box className="p-4">
     <Box className="bg-purple-100 rounded p-2 mb-2 border border-purple-200">
