@@ -5,8 +5,15 @@
   "umd:main": "dist/benefit.umd.js",
   "repository": "https://github.com/cdonohue/benefit.git",
   "author": "Chad Donohue <chad.donohue@gmail.com>",
-  "description": "Decorate react components using generated utility classes",
+  "description": "A utility system for decorating react components",
   "license": "MIT",
+  "keywords": [
+    "react",
+    "utility-classes",
+    "emotion",
+    "css-in-js",
+    "css"
+  ],
   "files": [
     "dist"
   ],
