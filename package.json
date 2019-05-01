@@ -25,7 +25,7 @@
     "docs:build": "docz build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "np --contents=dist"
+    "release": "np"
   },
   "sideEffects": false,
   "devDependencies": {
