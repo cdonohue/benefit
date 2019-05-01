@@ -85,7 +85,6 @@ const formattedCode = css`
 `
 
 export default function Code(props) {
-  const [_, language] = props.children.props.props.className.split("-")
   return (
     <LiveProvider code={props.children.props.children} disabled theme={theme}>
       <Box

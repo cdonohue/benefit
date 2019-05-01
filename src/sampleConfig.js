@@ -43,8 +43,8 @@ export default function(config) {
           })
         ),
     ],
-    composites: {
-      "my-composite": [
+    apply: {
+      test: [
         "emoji-smile",
         "bg-black",
         "p-8",
