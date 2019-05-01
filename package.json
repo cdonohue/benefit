@@ -1,6 +1,6 @@
 {
   "name": "benefit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/benefit.js",
   "umd:main": "dist/benefit.umd.js",
   "repository": "https://github.com/cdonohue/benefit.git",
