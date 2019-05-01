@@ -13,7 +13,7 @@ import {
   createVariantsFromMap,
 } from "../dist/benefit.js"
 
-By importing and using the `ConfigProvider` from `benefit`, you have the ability to modify the existing configuration or start entirely from scratch using your own design system.
+`benefit` is largely a simple library used to translate a well thought out configuration into an expressive suite of CSS utilities. You have the ability to modify the existing configuration or start entirely from scratch to create your own design system.
 
 ```js
 import { ConfigProvider, jsx } from "benefit"
@@ -128,7 +128,7 @@ utilities: [
 ]
 ```
 
-If you wanted to add a single utility for branding, like `bg-primary`, you would do the following:
+Here's how you would add a single utility, like `bg-primary` to use as a class name.
 
 ```js
 import { ConfigProvider, jsx } from "benefit"
@@ -167,6 +167,7 @@ return (
             smile: "😄",
             grimacing: "😬",
             scream: "😱",
+            joy: "😂",
           },
         },
         utilities: [

@@ -75,6 +75,10 @@ const formattedCode = css`
     padding: 0 !important;
   }
 
+  & pre .token-line {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
   & pre .token-line:last-child {
     display: none;
   }

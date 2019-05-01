@@ -64,6 +64,7 @@ const map = {
   p: (props) => <Box is="p" className="mt-2 mb-4 leading-relaxed" {...props} />,
   // notFound: components.NotFound,
   // render: components.Render,
+  Loading: (props) => <Loader {...props} />,
   h1: (props) => (
     <Box
       is="h1"
