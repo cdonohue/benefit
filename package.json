@@ -21,7 +21,6 @@
   ],
   "scripts": {
     "build": "microbundle",
-    "build:utils": "microbundle -i src/utils.js -o dist/utils",
     "prestart": "yarn build",
     "start": "docz dev",
     "predocs:build": "yarn build",
