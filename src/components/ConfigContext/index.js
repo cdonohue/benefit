@@ -1,65 +1,27 @@
 import React from "react"
+import createUtilitiesFromConfig from "../../createUtilitiesFromConfig"
 
-import defaultConfig from "../../config/defaultConfig"
-
-function createUtilityMap(allUtilities = [], theme) {
-  return allUtilities
-    .map((utilityFn) => utilityFn(theme))
-    .reduce((allRules, utility) => ({ ...allRules, ...utility }), {})
-}
-
-function createVariantMap(allVariants = [], utilityMap = {}, theme) {
-  return allVariants
-    .map((variantFn) => variantFn(utilityMap, theme))
-    .reduce((allRules, variant) => ({ ...allRules, ...variant }), {})
-}
-
-const { theme, utilities, variants } = defaultConfig
-
-const defaultUtilities = createUtilityMap(utilities, theme)
-const defaultVariants = createVariantMap(variants, defaultUtilities, theme)
+const configuredUtilities = createUtilitiesFromConfig()
 
 const ConfigContext = React.createContext({
-  config: defaultConfig,
-  utilities: {
-    ...defaultUtilities,
-    ...defaultVariants,
-  },
+  ...configuredUtilities,
 })
 
 export class ConfigProvider extends React.Component {
   state = {
-    config: defaultConfig,
-    utilities: {
-      ...defaultUtilities,
-      ...defaultVariants,
-    },
+    ...configuredUtilities,
   }
 
   componentDidMount() {
-    const { config } = this.props
+    const { config: configFn } = this.props
 
-    if (config) {
-      const providedConfig = config(defaultConfig)
+    const { config, utilities, styleWith } = createUtilitiesFromConfig(configFn)
 
-      const { theme, utilities = [], variants = [] } = providedConfig
-
-      const providedUtilities = createUtilityMap(utilities, theme)
-
-      const providedVariants = createVariantMap(
-        variants,
-        providedUtilities,
-        theme
-      )
-
-      this.setState({
-        config: providedConfig,
-        utilities: {
-          ...providedUtilities,
-          ...providedVariants,
-        },
-      })
-    }
+    this.setState({
+      config,
+      utilities,
+      styleWith,
+    })
   }
 
   render() {
