@@ -1,4 +1,4 @@
-export { default as createBenefit } from "./createUtilitiesFromConfig"
+export { default as benefit } from "./createUtilitiesFromConfig"
 
 export {
   default as createUtilitiesFromMap,

@@ -69,12 +69,12 @@ First, add `benefit` to your project along with its peer dependencies.
 yarn add benefit emotion
 ```
 
-Next, import `createBenefit` from `benefit`
+Next, import `benefit` from `benefit`
 
 ```
-import { createBenefit } from "benefit"
+import { benefit } from "benefit"
 
-const { styleWith } = createBenefit()
+const { styleWith } = benefit()
 ```
 
 Use `styleWith(...)` to pass in [utility classes](https://benefit.netlify.com/utilities) and output `emotion` processed css classes
