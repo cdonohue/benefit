@@ -10,10 +10,11 @@
   "description": "A utility system for styling web applications",
   "license": "MIT",
   "keywords": [
-    "utility-classes",
-    "emotion",
+    "atomic",
+    "css",
     "css-in-js",
-    "css"
+    "emotion",
+    "utility-classes"
   ],
   "files": [
     "dist"
