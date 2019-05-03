@@ -1,19 +1,25 @@
 # `<Benefit />`
 
-### A utility system for decorating react components
+### A utility system for decorating web applications
 
-`benefit` helps to solve the problem of React Components inheriting cumbersome styles from other CSS on the page. Component-level-resets and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
+`benefit` helps to solve the problem of elements inheriting cumbersome styles from other CSS on the page. Component-level-resets and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
 
 Another key feature of `benefit` is that _it only inlines the CSS for the utilities that you use_. So, whether you’re hardening/isolating a single React component or building a full responsive layout, only the CSS for the utilities you use get injected to the page.
 
 You also have the ability to customize the configuration with your own design system rules. Extend the configuration and add your own colors and CSS utilities or start entirely from scratch. It's up to you.
+
+`benefit` is framework agnostic, but also exports some react helpers.
+
+---
+
+## React-specific
 
 ### Install dependencies
 
 First, add `benefit` to your project along with its peer dependencies.
 
 ```bash
-yarn add benefit react emotion
+yarn add benefit emotion react
 ```
 
 ### Setup transpilation
@@ -35,9 +41,7 @@ Import the `jsx` function from `benefit`
 import { jsx } from "benefit"
 ```
 
-### Use built in utility classes (or add your own)
-
-Now, you're free to use any available utility classes to style your components
+Now, you're free to use any available [utility classes](https://benefit.netlify.com/utilities) to style your components
 
 ```js
 /** @jsx jsx */
@@ -54,4 +58,29 @@ function MyComponent() {
   )
 }
 ```
+
 ![Benefit Example](/docs/images/benefit-example.png)
+
+## Framework agnostic
+
+First, add `benefit` to your project along with its peer dependencies.
+
+```bash
+yarn add benefit emotion
+```
+
+Next, import `createBenefit` from `benefit`
+
+```
+import { createBenefit } from "benefit"
+
+const { styleWith } = createBenefit()
+```
+
+Use `styleWith(...)` to pass in [utility classes](https://benefit.netlify.com/utilities) and output `emotion` processed css classes
+
+```
+<div class={styleWith("p-4 bg-white text-blue-700")}>
+  ...
+</div>
+```

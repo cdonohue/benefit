@@ -20,7 +20,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "microbundle",
+    "build": "microbundle --external react --jsx React.createElement",
     "prestart": "yarn build",
     "start": "docz dev",
     "predocs:build": "yarn build",
