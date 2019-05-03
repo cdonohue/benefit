@@ -72,7 +72,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     ...generatedVariants,
   }
 
-  const styleWith = (classNames, isImportant = false) => {
+  const styleWith = (classNames = "", isImportant = false) => {
     const resetStyles = parseDeclarations(reset(theme), isImportant).join("")
 
     const activeUtilities = getActiveUtilities(
