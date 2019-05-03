@@ -2,4 +2,100 @@
 name: Display
 property: display
 parent: Layout
+route: /layout/display
+previousRoute: /layout/container
+previousLabel: Container
+nextRoute: /layout/float
+nextLabel: Float
 ---
+
+import { Box } from "../../../dist/benefit.js"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+
+<Grid>
+  <InfoBox pattern="inline" isDefault>
+    <Box className="bg-gray-100 p-4 rounded">
+      Lorem ipsum dolor sit{" "}
+      <Box className="text-white px-2 rounded-sm inline font-bold bg-blue-400">
+        amet
+      </Box>
+      , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="inline-block">
+    <Box className="bg-gray-100 p-4 rounded">
+      Lorem ipsum dolor sit{" "}
+      <Box className="text-white p-2 px-4 rounded-sm inline-block font-bold bg-blue-400">
+        amet
+      </Box>
+      , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="block">
+    <Box className="bg-gray-100 p-4 rounded">
+      Lorem ipsum dolor sit{" "}
+      <Box className="text-white p-2 rounded-sm block font-bold bg-blue-400">
+        amet
+      </Box>
+      , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="table">
+    <Box className="bg-gray-100 p-4 rounded">
+      Lorem ipsum dolor sit{" "}
+      <Box className="text-white p-2 rounded-sm table font-bold bg-blue-400">
+        amet
+      </Box>
+      , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="table-row">
+    <Box className="bg-gray-100 p-4 rounded">
+      Lorem ipsum dolor sit{" "}
+      <Box className="text-white p-2 rounded-sm table-row font-bold bg-blue-400">
+        amet
+      </Box>
+      , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="table-cell">
+    <Box className="bg-gray-100 p-4 rounded">
+      Lorem ipsum dolor sit{" "}
+      <Box className="text-white p-2 rounded-sm table-cell font-bold bg-blue-400">
+        amet
+      </Box>
+      , consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+      dolore magna aliqua.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="flex">
+    <Box className="flex bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`display-flex-${item}`}
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 m-1 flex-grow"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="inline-flex">
+    <Box className="flex bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`display-inline-flex-${item}`}
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+</Grid>
