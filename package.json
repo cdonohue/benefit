@@ -1,6 +1,6 @@
 {
   "name": "benefit",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "source": "src/index.js",
   "main": "dist/benefit.js",
   "module": "dist/benefit.mjs",
