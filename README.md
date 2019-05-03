@@ -1,4 +1,6 @@
-![Benefit Logo](/docs/benefit-logo.png)
+![Benefit Logo](/docs/benefit-logo.svg)
+
+---
 
 ### A utility system for styling web applications
 
