@@ -1,6 +1,6 @@
-# `<Benefit />`
+![Benefit Logo](/docs/benefit-logo.png)
 
-### A utility system for decorating web applications
+### A utility system for styling web applications
 
 `benefit` helps to solve the problem of elements inheriting cumbersome styles from other CSS on the page. Component-level-resets and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
 
