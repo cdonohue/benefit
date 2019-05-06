@@ -16,9 +16,6 @@
     "emotion",
     "utility-classes"
   ],
-  "files": [
-    "dist"
-  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react --jsx React.createElement",
