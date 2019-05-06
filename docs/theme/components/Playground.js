@@ -1,7 +1,7 @@
 import React from "react"
 import { css } from "emotion"
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from "react-live"
-import { Box } from "../../../dist/benefit.js"
+import { Box } from "../../../dist/react.js"
 
 const theme = {
   plain: {

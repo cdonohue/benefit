@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "../../../dist/benefit.js"
+import { Box } from "../../../dist/react.js"
 
 export default function H1(props) {
   return (

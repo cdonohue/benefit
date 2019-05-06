@@ -2,9 +2,9 @@
   "name": "benefit",
   "version": "0.2.0",
   "source": "src/index.js",
-  "main": "dist/benefit.js",
-  "module": "dist/benefit.mjs",
-  "unpkg": "dist/benefit.umd.js",
+  "main": "benefit.js",
+  "module": "benefit.mjs",
+  "unpkg": "benefit.umd.js",
   "repository": "https://github.com/cdonohue/benefit.git",
   "author": "Chad Donohue <chad.donohue@gmail.com>",
   "description": "A utility system for styling web applications",
@@ -20,14 +20,17 @@
     "dist"
   ],
   "scripts": {
-    "build": "microbundle --external react --jsx React.createElement",
+    "prebuild": "rimraf dist",
+    "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react --jsx React.createElement",
+    "postbuild": "cp -rf package.json dist",
     "prestart": "yarn build",
     "start": "docz dev",
     "predocs:build": "yarn build",
     "docs:build": "docz build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "release": "np"
+    "prerelease": "yarn build",
+    "release": "np --contents dist"
   },
   "sideEffects": false,
   "devDependencies": {

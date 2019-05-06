@@ -1,5 +1,5 @@
 import React from "react"
-import { Box } from "../../dist/benefit.js"
+import { Box } from "../../dist/react.js"
 import svgUrl from "../benefit-logo.svg"
 import svgUrlDark from "../benefit-logo-dark.svg"
 

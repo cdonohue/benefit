@@ -8,7 +8,7 @@ import Playground from "./components/Playground"
 import Code from "./components/Code"
 import H1 from "./components/H1"
 
-import { Box, ConfigProvider } from "../../dist/benefit.js"
+import { Box, ConfigProvider } from "../../dist/react.js"
 import Loader from "./components/Loader"
 
 injectGlobal`

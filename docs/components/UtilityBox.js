@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { useMenus, Link } from "docz"
 import { css } from "emotion"
-import { jsx } from "../../dist/benefit.js"
+import { jsx } from "../../dist/react.js"
 
 import Icon from "./Icons"
 import Grid from "./Grid"

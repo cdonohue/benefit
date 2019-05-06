@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { css, keyframes } from "emotion"
-import { jsx } from "../../../dist/benefit.js"
+import { jsx } from "../../../dist/react.js"
 
 const scale = keyframes`
   0% {
