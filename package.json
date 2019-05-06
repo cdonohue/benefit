@@ -21,6 +21,7 @@
   ],
   "scripts": {
     "build": "microbundle --external react --jsx React.createElement",
+    "prebuild": "rimraf dist",
     "prestart": "yarn build",
     "start": "docz dev",
     "predocs:build": "yarn build",
