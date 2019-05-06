@@ -26,10 +26,10 @@ const page = css`
   display: grid;
   height: 100vh;
   overflow-y: scroll;
-  grid-template-columns: [content-start] minmax(auto, 960px) [content-end];
-  @media (min-width: 961px) {
+  grid-template-columns: [content-start] minmax(auto, 1024px) [content-end];
+  @media (min-width: 1025px) {
     grid-template-columns:
-      [fullbleed-start] minmax(1.2rem, 1fr) [content-start] minmax(auto, 960px)
+      [fullbleed-start] minmax(1.2rem, 1fr) [content-start] minmax(auto, 1024px)
       [content-end] minmax(1.2rem, 1fr) [fullbleed-end];
   }
 `
@@ -37,9 +37,6 @@ const page = css`
 function PageContainer({ children }) {
   return <Box className={page}>{children}</Box>
 }
-
-// background-color: #f6f8fa;
-// background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%2322292f' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
 
 const rightBg = css`
   background-color: #f6f8fa;
