@@ -1,6 +1,6 @@
 {
   "name": "benefit",
-  "version": "0.2.5",
+  "version": "0.2.4",
   "source": "src/index.js",
   "main": "benefit.js",
   "module": "benefit.mjs",
@@ -26,8 +26,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prerelease": "yarn build",
-    "release": "np --contents dist",
-    "prepublish": "cp -rf package.json dist"
+    "release": "np --contents dist"
   },
   "sideEffects": false,
   "devDependencies": {
