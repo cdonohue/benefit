@@ -1,4 +1,4 @@
-![Benefit Logo](/docs/benefit-logo.svg)
+![Benefit Logo](https://raw.githubusercontent.com/cdonohue/benefit/master/docs/benefit-logo.svg)
 
 ---
 
@@ -40,14 +40,14 @@ Import the `jsx` function from `benefit`
 
 ```js
 /** @jsx jsx */
-import { jsx } from "benefit"
+import { jsx } from "benefit/react"
 ```
 
 Now, you're free to use any available [utility classes](https://benefit.netlify.com/utilities) to style your components
 
 ```js
 /** @jsx jsx */
-import { jsx } from "benefit"
+import { jsx } from "benefit/react"
 
 function MyComponent() {
   return (
@@ -74,7 +74,7 @@ yarn add benefit emotion
 Import and use the `benefit` function to create your utility classes
 
 ```
-import { benefit } from "benefit"
+import benefit from "benefit"
 
 const { styleWith } = benefit()
 ```
