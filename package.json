@@ -26,6 +26,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prerelease": "yarn build",
+    "postversion": "cp -rf package.json dist && cp -rf README.md dist && cp -rf LICENSE dist",
     "release": "np --contents dist"
   },
   "sideEffects": false,
