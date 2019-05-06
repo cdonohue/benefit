@@ -19,7 +19,6 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react --jsx React.createElement",
-    "postbuild": "cp -rf package.json dist",
     "prestart": "yarn build",
     "start": "docz dev",
     "predocs:build": "yarn build",
@@ -27,7 +26,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prerelease": "yarn build",
-    "release": "np --contents dist"
+    "release": "np --contents dist",
+    "prepublish": "cp -rf package.json dist"
   },
   "sideEffects": false,
   "devDependencies": {
