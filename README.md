@@ -1,4 +1,6 @@
-![Benefit Logo](/docs/benefit-logo.png)
+![Benefit Logo](/docs/benefit-logo.svg)
+
+---
 
 ### A utility system for styling web applications
 
@@ -16,7 +18,7 @@ You also have the ability to customize the configuration with your own design sy
 
 ### Install dependencies
 
-First, add `benefit` to your project along with its peer dependencies.
+Add `benefit` to your project along with its peer dependencies.
 
 ```bash
 yarn add benefit emotion react
@@ -24,7 +26,7 @@ yarn add benefit emotion react
 
 ### Setup transpilation
 
-Next, set the jsx pragma at the top of your source file where you intend to use `benefit`.
+Set the jsx pragma at the top of your source file where you intend to use `benefit`.
 
 ```js
 /** @jsx jsx */
@@ -63,13 +65,13 @@ function MyComponent() {
 
 ## Framework agnostic
 
-First, add `benefit` to your project along with its peer dependencies.
+Add `benefit` to your project along with its peer dependencies.
 
 ```bash
 yarn add benefit emotion
 ```
 
-Next, import `benefit` from `benefit`
+Import and use the `benefit` function to create your utility classes
 
 ```
 import { benefit } from "benefit"
