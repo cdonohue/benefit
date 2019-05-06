@@ -1,4 +1,4 @@
-![Benefit Logo](https://raw.githubusercontent.com/cdonohue/benefit/master/docs/benefit-logo.svg)
+![Benefit Logo](https://github.com/cdonohue/benefit/blob/master/docs/benefit-logo.svg)
 
 ---
 
