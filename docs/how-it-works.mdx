@@ -16,7 +16,7 @@ At it's core, `benefit` is doing a few things:
 
 ### Injecting utility styles
 
-`benefit` scans the classes that you provide to elements/components and looks for any supported [utilities](/utilities). If any are found, the corresponding styles are injected into the document using `emotion`.
+`benefit` scans the classes that you provide to the `styleWith` function or elements/components (in the case of react) and looks for any supported [utilities](/utilities). If any are found, the corresponding styles are injected into the document using `emotion`.
 
 ### Style reset
 
@@ -39,11 +39,16 @@ box-sizing: border-box;
 
 > These reset rules can be overridden. See the [customization](/customization) section for more info.
 
-### Important prop
+### Important rules
 
-You also have the option of telling `benefit` to append `!important` to all utility and reset styles. Just provide an `important` prop to the element/component that you want to isolate.
+You also have the option of telling `benefit` to append `!important` to all utility and reset styles.
+Just pass a boolean to `styleWith` following your utility classes, or provide an `important` prop to the element/component that you want to isolate.
 
 Example:
+
+```js
+<div className={styleWith("text-red-500 font-bold", true)}>Error</div>
+```
 
 ```jsx
 <div className="text-red-500 font-bold" important>

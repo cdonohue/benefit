@@ -16,17 +16,35 @@ import {
 `benefit` is largely a simple library used to translate a well thought out configuration into an expressive suite of CSS utilities. You have the ability to modify the existing configuration or start entirely from scratch to create your own design system.
 
 ```js
-import { ConfigProvider, jsx } from "benefit"
+const myConfig = (config) => {
+  /* modify existing config and return */
+}
+```
 
-return (
-  <ConfigProvider
-    config={(config) => {
-      /* modify existing config and return */
-    }}
-  >
-    /* Access to any new generated utility classes */
-  </ConfigProvider>
-)
+Your configuration function can be passed into the `benefit` function or into a react `ConfigProvider`.
+
+```js
+import benefit from "benefit"
+
+const myConfig = (config) => {
+  /* modify existing config and return */
+}
+
+const { styleWith } = benefit(myConfig)
+
+// styleWith is now capable of parsing/injecting any custom utilities that you have created
+```
+
+```js
+import { ConfigProvider } from "benefit/react"
+
+const myConfig = (config) => {
+  /* modify existing config and return */
+}
+
+;<ConfigProvider config={myConfig}>
+  {/* Use any utility classes within here */}
+</ConfigProvider>
 ```
 
 The `config` object has the following shape:
