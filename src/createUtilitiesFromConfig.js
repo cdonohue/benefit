@@ -36,6 +36,10 @@ function getActiveUtilities(classList, utilities, apply) {
     )
 }
 
+function getPassThroughClassNames(classList, utilities) {
+  return classList.split(" ").filter((name) => !utilities[name])
+}
+
 function createUtilityMap(allUtilities = [], theme) {
   return allUtilities
     .map((utilityFn) => utilityFn(theme))
@@ -81,6 +85,11 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       apply
     )
 
+    const passThroughClasses = getPassThroughClassNames(
+      classNames,
+      utilityClasses
+    )
+
     const activeUtilityRules = activeUtilities.map((name) =>
       parseDeclarations(utilityClasses[name], isImportant).join("")
     )
@@ -96,7 +105,9 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
         `
     )
 
-    return `${defaultResetClass} ${activeUtilityClasses.join(" ")}`
+    return `${defaultResetClass} ${activeUtilityClasses.join(
+      " "
+    )} ${passThroughClasses.join(" ")}`
   }
 
   return {
