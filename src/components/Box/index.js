@@ -13,10 +13,10 @@ function Box(props) {
 
   return (
     <ConfigConsumer>
-      {({ styleWith = () => "" }) => {
+      {({ styleWith = () => className }) => {
         remainingProps.className = `${styleWith(className, !!important)}`.trim()
 
-        return React.createElement(is, remainingProps, children)
+        return React.createElement(is, remainingProps, ...children)
       }}
     </ConfigConsumer>
   )

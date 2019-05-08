@@ -1,12 +1,14 @@
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { screens = {} } = theme
+
   return {
     container: {
       width: "100%",
-      ...Object.keys(theme.screens).reduce(
+      ...Object.keys(screens).reduce(
         (mediaQueries, containerSize) => ({
           ...mediaQueries,
-          [`@media (min-width: ${theme.screens[containerSize]})`]: {
-            "max-width": theme.screens[containerSize],
+          [`@media (min-width: ${screens[containerSize]})`]: {
+            "max-width": screens[containerSize],
           },
         }),
         {}
