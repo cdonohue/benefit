@@ -1,0 +1,12 @@
+---
+name: Test
+route: /test
+---
+
+import benefit from "../dist/benefit"
+console.time("init")
+const { utilities, styleWith } = benefit()
+console.timeEnd("init")
+console.time("kitchen sink")
+styleWith(Object.keys(utilities).join(" "))
+console.timeEnd("kitchen sink")

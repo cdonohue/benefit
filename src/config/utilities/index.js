@@ -115,7 +115,6 @@ const utilities = [
   textColor,
   textDecoration,
   textDecorationColor,
-  textShadow,
   textTransform,
   userSelect,
   verticalAlign,

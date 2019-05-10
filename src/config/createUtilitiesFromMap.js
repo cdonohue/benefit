@@ -9,11 +9,11 @@ export default function createUtilitiesFromMap(
   return Object.keys(map).reduce((utilities, key) => {
     const value = map[key]
     const label = Array.isArray(map) ? value : key
-    return {
-      ...utilities,
-      [`${prefix}${
+    utilities[
+      `${prefix}${
         label === "default" ? "" : `${prefix !== "" ? `-${label}` : label}`
-      }`]: generateDeclarations(value),
-    }
+      }`
+    ] = generateDeclarations(value)
+    return utilities
   }, {})
 }

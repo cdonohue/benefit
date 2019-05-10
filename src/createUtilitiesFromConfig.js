@@ -23,15 +23,31 @@ function parseDeclarations(declarations = {}, isImportant = false) {
 }
 
 function createUtilityMap(allUtilities = [], theme) {
-  return allUtilities
-    .map((utilityFn) => utilityFn(theme))
-    .reduce((allRules, utility) => ({ ...allRules, ...utility }), {})
+  const map = {}
+  for (let i = 0; i < allUtilities.length; i++) {
+    const utilityFn = allUtilities[i]
+    const rulesMap = utilityFn(theme) || {}
+
+    Object.keys(rulesMap).forEach((key) => {
+      map[key] = rulesMap[key]
+    })
+  }
+
+  return map
 }
 
 function createVariantMap(allVariants = [], utilityMap = {}, theme) {
-  return allVariants
-    .map((variantFn) => variantFn(utilityMap, theme))
-    .reduce((allRules, variant) => ({ ...allRules, ...variant }), {})
+  const map = {}
+  for (let i = 0; i < allVariants.length; i++) {
+    const variantFn = allVariants[i]
+    const rulesMap = variantFn(utilityMap, theme) || {}
+
+    Object.keys(rulesMap).forEach((key) => {
+      map[key] = rulesMap[key]
+    })
+  }
+
+  return map
 }
 
 export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
@@ -53,46 +69,45 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     theme
   )
 
-  const utilityClasses = {
-    ...generatedUtilities,
-    ...generatedVariants,
-  }
+  const utilityClasses = {}
+  Object.keys(generatedUtilities).forEach(
+    (key) => (utilityClasses[key] = generatedUtilities[key])
+  )
+  Object.keys(generatedVariants).forEach(
+    (key) => (utilityClasses[key] = generatedVariants[key])
+  )
 
   const styleWith = (classNames = "", isImportant = false) => {
-    const resetStyles = parseDeclarations(reset(theme), isImportant).join("")
-
-    const passThroughClasses = classNames
-      .split(" ")
-      .filter((name) => !utilities[name])
-
     const activeApply = classNames.split(" ").filter((name) => apply[name])
 
     const defaultResetClass = css`
-      ${resetStyles}
+      ${parseDeclarations(reset(theme), isImportant).join("")}
     `
 
-    const activeUtilities = classNames
-      .split(" ")
-      .filter((className) => utilityClasses[className])
-      .concat(
-        activeApply.reduce(
-          (allApply, composite) => allApply.concat(apply[composite]),
-          []
-        )
-      )
-      .reduce(
-        (allActiveUtilityClasses, className) =>
-          allActiveUtilityClasses.concat(
-            css`
-              ${parseDeclarations(utilityClasses[className]).join("")}
-            `
-          ),
-        []
-      )
+    const classList = classNames.split(" ")
 
-    return `${defaultResetClass} ${activeUtilities.join(
+    for (let i = 0; i < activeApply.length; i++) {
+      const applyClasses = apply[activeApply[i]]
+      Array.prototype.push.apply(classList, applyClasses)
+    }
+
+    const ignoredClasses = []
+    const activeUtilityClasses = []
+    for (let i = 0; i < classList.length; i++) {
+      const className = classList[i]
+
+      if (utilityClasses[className]) {
+        activeUtilityClasses.push(css`
+          ${parseDeclarations(utilityClasses[className]).join("")}
+        `)
+      } else {
+        ignoredClasses.push(className)
+      }
+    }
+
+    return `${defaultResetClass} ${activeUtilityClasses.join(
       " "
-    )} ${passThroughClasses.join(" ")}`
+    )} ${ignoredClasses.join(" ")}`
   }
 
   return {
