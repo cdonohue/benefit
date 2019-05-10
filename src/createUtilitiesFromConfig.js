@@ -22,24 +22,6 @@ function parseDeclarations(declarations = {}, isImportant = false) {
   })
 }
 
-function getActiveUtilities(classList, utilities, apply) {
-  const activeApply = classList.split(" ").filter((name) => apply[name])
-
-  return classList
-    .split(" ")
-    .filter((name) => utilities[name])
-    .concat(
-      activeApply.reduce(
-        (allApply, composite) => allApply.concat(apply[composite]),
-        []
-      )
-    )
-}
-
-function getPassThroughClassNames(classList, utilities) {
-  return classList.split(" ").filter((name) => !utilities[name])
-}
-
 function createUtilityMap(allUtilities = [], theme) {
   return allUtilities
     .map((utilityFn) => utilityFn(theme))
@@ -79,33 +61,36 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const styleWith = (classNames = "", isImportant = false) => {
     const resetStyles = parseDeclarations(reset(theme), isImportant).join("")
 
-    const activeUtilities = getActiveUtilities(
-      classNames,
-      utilityClasses,
-      apply
-    )
+    const passThroughClasses = classNames
+      .split(" ")
+      .filter((name) => !utilities[name])
 
-    const passThroughClasses = getPassThroughClassNames(
-      classNames,
-      utilityClasses
-    )
-
-    const activeUtilityRules = activeUtilities.map((name) =>
-      parseDeclarations(utilityClasses[name], isImportant).join("")
-    )
+    const activeApply = classNames.split(" ").filter((name) => apply[name])
 
     const defaultResetClass = css`
       ${resetStyles}
     `
 
-    const activeUtilityClasses = activeUtilityRules.map(
-      (rules) =>
-        css`
-          ${rules}
-        `
-    )
+    const activeUtilities = classNames
+      .split(" ")
+      .filter((className) => utilityClasses[className])
+      .concat(
+        activeApply.reduce(
+          (allApply, composite) => allApply.concat(apply[composite]),
+          []
+        )
+      )
+      .reduce(
+        (allActiveUtilityClasses, className) =>
+          allActiveUtilityClasses.concat(
+            css`
+              ${parseDeclarations(utilityClasses[className]).join("")}
+            `
+          ),
+        []
+      )
 
-    return `${defaultResetClass} ${activeUtilityClasses.join(
+    return `${defaultResetClass} ${activeUtilities.join(
       " "
     )} ${passThroughClasses.join(" ")}`
   }
