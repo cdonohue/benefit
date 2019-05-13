@@ -1,9 +1,9 @@
-import React from "react"
-import { useEffect } from "react"
+/** @jsx jsx */
+import React, { useEffect, useState } from "react"
 import { useConfig, useMenus, useDocs, Link, doczState } from "docz"
 import { css, keyframes } from "emotion"
 import { ArrowLeft, ArrowRight, GitHub, ChevronsRight } from "react-feather"
-import { Box, ConfigConsumer } from "../../../dist/react.js"
+import { Box, ConfigConsumer, jsx } from "../../../dist/react.js"
 import Container from "./Container"
 import Logo from "../../components/Logo"
 import { colors } from "../../../src/config/theme"
@@ -26,6 +26,7 @@ const page = css`
   display: grid;
   height: 100vh;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   grid-template-columns: [content-start] minmax(auto, 1024px) [content-end];
   @media (min-width: 1025px) {
     grid-template-columns:
@@ -68,21 +69,6 @@ function FullBleed() {
   )
 }
 
-function Header() {
-  return (
-    <Box className="z-10 bg-white border-b fixed w-full">
-      <Container className="p-4 flex justify-between">
-        <Box>asdf</Box>
-        <Box className="flex">
-          {useMenus().map((menuItem) => (
-            <Box className="ml-2">{menuItem.name}</Box>
-          ))}
-        </Box>
-      </Container>
-    </Box>
-  )
-}
-
 function Main({ children }) {
   return (
     <Box
@@ -118,25 +104,16 @@ const styledLink = css`
   &:visited,
   &:active {
     text-decoration: none;
-    color: ${colors["cool-gray"]["300"]};
-  }
-  padding: 0.5rem 2rem;
-  display: block;
-  position: relative;
-  cursor: pointer;
-  &:hover {
-    color: white;
+    color: ${colors.gray["300"]};
   }
 
   &.active {
     position: relative;
     font-weight: bold;
     color: white;
-    border-top-left-radius: 0.4rem;
-    border-bottom-left-radius: 0.4rem;
     background: linear-gradient(
       to left,
-      ${colors["cool-gray"]["900"]},
+      ${colors.gray["900"]},
       ${colors.black}
     );
   }
@@ -154,7 +131,7 @@ const menuHeading = css`
     background: linear-gradient(
       to left,
       transparent 0.25rem,
-      ${colors["cool-gray"]["800"]},
+      ${colors.gray["800"]},
       transparent
     );
   }
@@ -185,19 +162,23 @@ const pagingLink = css`
   }
 `
 
-function renderSubMenu(menuItems, category, MenuIcon) {
+function renderSubMenu(menuItems, category, iconName) {
   return (
     <>
       <Box
-        className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-8 text-gray-500 mt-4`}
+        className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-4 md:px-8 text-gray-500 mt-4`}
       >
         {category}
-        {MenuIcon && <MenuIcon className="w-4 text-gray-200" />}
+        <Icon name={iconName} className="w-4 text-gray-500" />
       </Box>
       {menuItems
         .filter((item) => item.parent === category)
         .map((item) => (
-          <Link className={`${styledLink}`} key={item.id} to={item.route}>
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            key={item.id}
+            to={item.route}
+          >
             {item.name}
           </Link>
         ))}
@@ -216,13 +197,13 @@ const sideMenuHeader = css`
     width: 100%;
     background-image: linear-gradient(
       to left,
-      ${colors["cool-gray"]["800"]},
+      ${colors.gray["800"]},
       transparent
     );
   }
 `
 
-function SideBar() {
+function SideBar({ isOpen, onClose }) {
   const menuItems = useMenus()
 
   useEffect(() => {
@@ -235,38 +216,89 @@ function SideBar() {
   })
 
   return (
-    <Box className="bg-black text-gray-300 relative md:w-64">
-      <Box className="side-menu h-screen md:sticky pin-t overflow-auto">
-        <Box className="py-8">
-          <Link className={`${styledLink}`} to="/">
+    <Box
+      className={`bg-black text-gray-300 relative md:w-64 ${
+        isOpen ? "z-30" : ""
+      } absolute pin md:static`}
+    >
+      <Box className="side-menu h-screen md:sticky pin-t overflow-y-auto scrolling-touch">
+        <Box className="py-8 pt-16 md:pt-8">
+          <Box className="absolute pin-t pin-x bg-black z-10 p-4 md:hidden">
+            <Box
+              is="button"
+              className="bg-transparent"
+              type="button"
+              onClick={onClose}
+            >
+              <Icon name="x" />
+            </Box>
+          </Box>
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/"
+          >
             Introduction
           </Link>
-          <Link className={`${styledLink}`} to="/getting-started">
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/getting-started"
+          >
             Getting Started
           </Link>
-          <Link className={`${styledLink}`} to="/how-it-works">
-            How it Works
+          <Box
+            className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-4 md:px-8 text-gray-500 mt-4`}
+          >
+            Customization
+            <Icon name="settings" className="w-4 text-gray-500" />
+          </Box>
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/customization/overview"
+          >
+            Overview
           </Link>
-          <Link className={`${styledLink}`} to="/utilities">
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/customization/theme"
+          >
+            Theme
+          </Link>
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/customization/normalize"
+          >
+            Normalize
+          </Link>
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/customization/utilities"
+          >
             Utilities
           </Link>
-          <Link className={`${styledLink}`} to="/customization">
-            Customization
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/customization/variants"
+          >
+            Variants
           </Link>
-          {renderSubMenu(menuItems, "Color", () => (
-            <Icon name="droplet" />
-          ))}
-          {renderSubMenu(menuItems, "Layout", Layout)}
-          {renderSubMenu(menuItems, "Typography", Type)}
-          {renderSubMenu(menuItems, "Background", Background)}
-          {renderSubMenu(menuItems, "Border", Border)}
-          {renderSubMenu(menuItems, "Flexbox", Flexbox)}
-          {renderSubMenu(menuItems, "Space", Space)}
-          {renderSubMenu(menuItems, "Size", Size)}
-          {renderSubMenu(menuItems, "Tables", Table)}
-          {renderSubMenu(menuItems, "Effects", Effects)}
-          {renderSubMenu(menuItems, "Interactivity", Interactivity)}
-          {renderSubMenu(menuItems, "Svg", Svg)}
+          <Link
+            className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
+            to="/customization/apply"
+          >
+            Apply
+          </Link>
+
+          {renderSubMenu(menuItems, "Layout", "layout")}
+          {renderSubMenu(menuItems, "Typography", "type")}
+          {renderSubMenu(menuItems, "Background", "image")}
+          {renderSubMenu(menuItems, "Border", "square")}
+          {renderSubMenu(menuItems, "Flexbox", "columns")}
+          {renderSubMenu(menuItems, "Space", "maximize")}
+          {renderSubMenu(menuItems, "Size", "move")}
+          {renderSubMenu(menuItems, "Tables", "align-justify")}
+          {renderSubMenu(menuItems, "Effects", "loader")}
+          {renderSubMenu(menuItems, "Interactivity", "mouse-pointer")}
+          {renderSubMenu(menuItems, "Svg", "pen-tool")}
         </Box>
       </Box>
     </Box>
@@ -274,7 +306,7 @@ function SideBar() {
 }
 
 function Content({ children }) {
-  return <Box className="bg-gray-100 flex-1 z-10">{children}</Box>
+  return <Box className="bg-gray-100 flex-1 z-10 pt-16 md:pt-0">{children}</Box>
 }
 
 const accent = css`
@@ -324,19 +356,31 @@ function contentEnter(delay = "0s") {
 }
 
 export default function Page({ children, doc, location }) {
+  const [isMenuOpen, toggleMenu] = useState(false)
+
   return (
     <PageContainer>
       <FullBleed />
       <Main>
-        <SideBar />
+        <SideBar isOpen={isMenuOpen} onClose={() => toggleMenu(!isMenuOpen)} />
         <Content>
           <Box
-            className={`p-8 flex justify-between items-center ${fadingBorder}`}
+            className={`absolute pin-t pin-x z-50 bg-white p-4 md:relative md:bg-transparent md:p-8 flex justify-between items-center ${fadingBorder}`}
             style={{
               backgroundImage: "linear-gradient(to right, white, transparent)",
             }}
           >
-            <Logo className="w-24" />
+            <Box
+              is="button"
+              className="md:hidden"
+              type="button"
+              onClick={() => toggleMenu(!isMenuOpen)}
+            >
+              <Icon name="menu" />
+            </Box>
+            <Link to="/">
+              <Logo className="w-24" />
+            </Link>
             <Box
               className={`${css`
                 & svg {
@@ -344,14 +388,21 @@ export default function Page({ children, doc, location }) {
                 }
               `} text-blue-500 rounded-full inline-flex items-center justify-center`}
             >
-              <GitHub />
+              <Box
+                is="a"
+                href="https://github.com/cdonohue/benefit"
+                className="hover:text-blue-800"
+              >
+                <GitHub />
+              </Box>
             </Box>
           </Box>
-          <Box className="p-8">
-            <Box
-              className={`${accent} pb-4 mb-8 text-4xl font-thin text-gray-700`}
-            >
-              {doc.name}
+          <Box className="p-4 md:p-8">
+            <Box className="text-4xl mb-8 font-thin text-gray-700">
+              <Box className="text-sm uppercase font-hairline text-gray-400">
+                {doc.parent}
+              </Box>
+              <Box className={`${accent} py-4`}>{doc.name}</Box>
             </Box>
 
             {children}
@@ -359,7 +410,10 @@ export default function Page({ children, doc, location }) {
             <Box className="flex justify-between border-t mt-8 pt-4 border-dashed">
               <div>
                 {doc.previousRoute && (
-                  <Link className={pagingLink} to={doc.previousRoute}>
+                  <Link
+                    className={`${pagingLink} text-blue-500 no-underline hover:text-blue-700`}
+                    to={doc.previousRoute}
+                  >
                     <Box className="flex justify-between items-center text-sm">
                       <ArrowLeft />
                       Previous
@@ -370,7 +424,10 @@ export default function Page({ children, doc, location }) {
               </div>
               <div>
                 {doc.nextRoute && (
-                  <Link className={pagingLink} to={doc.nextRoute}>
+                  <Link
+                    className={`${pagingLink} text-blue-500 no-underline hover:text-blue-700`}
+                    to={doc.nextRoute}
+                  >
                     <Box className="flex justify-between items-center text-sm">
                       Next
                       <ArrowRight />

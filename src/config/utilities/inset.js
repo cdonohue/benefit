@@ -1,9 +1,10 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { inset = {} } = theme
   return {
     ...createUtilitiesFromMap(
-      theme.inset,
+      inset,
       (value) => ({
         top: value,
         right: value,
@@ -13,7 +14,7 @@ export default function generate(theme) {
       "inset"
     ),
     ...createUtilitiesFromMap(
-      theme.inset,
+      inset,
       (value) => ({
         right: value,
         left: value,
@@ -21,7 +22,7 @@ export default function generate(theme) {
       "inset-x"
     ),
     ...createUtilitiesFromMap(
-      theme.inset,
+      inset,
       (value) => ({
         top: value,
         bottom: value,
@@ -29,28 +30,28 @@ export default function generate(theme) {
       "inset-y"
     ),
     ...createUtilitiesFromMap(
-      theme.inset,
+      inset,
       (value) => ({
         top: value,
       }),
       "top"
     ),
     ...createUtilitiesFromMap(
-      theme.inset,
+      inset,
       (value) => ({
         right: value,
       }),
       "right"
     ),
     ...createUtilitiesFromMap(
-      theme.inset,
+      inset,
       (value) => ({
         bottom: value,
       }),
       "bottom"
     ),
     ...createUtilitiesFromMap(
-      theme.inset,
+      inset,
       (value) => ({
         left: value,
       }),

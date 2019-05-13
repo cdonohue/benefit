@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { backgroundPosition = {} } = theme
   return createUtilitiesFromMap(
-    theme.backgroundPosition,
+    backgroundPosition,
     (value) => ({
       "background-position": value,
     }),

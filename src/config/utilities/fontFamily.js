@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { fontFamily = {} } = theme
   return createUtilitiesFromMap(
-    theme.fontFamily,
+    fontFamily,
     (value) => ({
       "font-family": value.join(","),
     }),

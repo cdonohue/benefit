@@ -1,9 +1,10 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 import flattenColorConfig from "../flattenColorConfig"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { backgroundColor = {} } = theme
   return createUtilitiesFromMap(
-    flattenColorConfig(theme.backgroundColor),
+    flattenColorConfig(backgroundColor),
     (value) => ({
       "background-color": value,
     }),

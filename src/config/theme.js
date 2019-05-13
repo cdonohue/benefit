@@ -4,7 +4,7 @@ export const colors = {
   black: "#22292f",
   white: "#ffffff",
 
-  "cool-gray": {
+  gray: {
     900: "#29343D",
     800: "#3B4653",
     700: "#4D5A68",
@@ -15,19 +15,6 @@ export const colors = {
     200: "#D4DAE1",
     100: "#F6F8FA",
   },
-
-  "warm-gray": {
-    900: "#3D3D3D",
-    800: "#525252",
-    700: "#686868",
-    600: "#7F7F7F",
-    500: "#969696",
-    400: "#AEAEAE",
-    300: "#C7C7C7",
-    200: "#E0E0E0",
-    100: "#FAFAFA",
-  },
-
   red: {
     100: "#fff5f5",
     200: "#fed7d7",
@@ -168,14 +155,13 @@ export const fontFamily = {
     "Arial",
     '"Noto Sans"',
     "sans-serif",
-    "'Apple Color Emoji'",
-    "'Segoe UI Emoji'",
-    "'Segoe UI Symbol'",
-    "'Noto Color Emoji'",
+    '"Apple Color Emoji"',
+    '"Segoe UI Emoji"',
+    '"Segoe UI Symbol"',
+    '"Noto Color Emoji"',
   ],
   serif: ["Georgia", "Cambria", '"Times New Roman"', "Times", "serif"],
   mono: [
-    "SFMono-Regular",
     "Menlo",
     "Monaco",
     "Consolas",
@@ -186,15 +172,16 @@ export const fontFamily = {
 }
 
 export const fontSize = {
-  tiny: ".512rem",
-  xs: ".64rem",
-  sm: ".8rem",
+  xs: "0.75rem",
+  sm: "0.875rem",
   base: "1rem",
-  lg: "1.25rem",
-  xl: "1.5625rem",
-  "2xl": "1.953125rem",
-  "3xl": "2.44140625rem",
-  "4xl": "3.051757812rem",
+  lg: "1.125rem",
+  xl: "1.25rem",
+  "2xl": "1.5rem",
+  "3xl": "1.875rem",
+  "4xl": "2.25rem",
+  "5xl": "3rem",
+  "6xl": "4rem",
 }
 
 export const fontWeight = {
@@ -227,9 +214,9 @@ export const letterSpacing = {
   widest: ".1em",
 }
 
-export const textColor = { ...colors, gray: colors["cool-gray"] }
+export const textColor = { ...colors }
 
-export const backgroundColor = { ...colors, gray: colors["cool-gray"] }
+export const backgroundColor = { ...colors }
 
 export const backgroundPosition = {
   bottom: "bottom",
@@ -259,8 +246,7 @@ export const borderWidth = {
 
 export const borderColor = {
   ...colors,
-  gray: colors["cool-gray"],
-  default: colors["cool-gray"]["200"],
+  default: colors.gray["200"],
 }
 
 export const borderRadius = {
@@ -294,13 +280,28 @@ export const width = {
   "1/3": "33.33333%",
   "2/3": "66.66667%",
   "1/4": "25%",
+  "2/4": "50%",
   "3/4": "75%",
   "1/5": "20%",
   "2/5": "40%",
   "3/5": "60%",
   "4/5": "80%",
   "1/6": "16.66667%",
+  "2/6": "33.33333%",
+  "3/6": "50%",
+  "4/6": "66.66667%",
   "5/6": "83.33333%",
+  "1/12": "8.33333%",
+  "2/12": "16.66667%",
+  "3/12": "25%",
+  "4/12": "33.33333%",
+  "5/12": "41.66667%",
+  "6/12": "50%",
+  "7/12": "58.33333%",
+  "8/12": "66.66667%",
+  "9/12": "75%",
+  "10/12": "83.33333%",
+  "11/12": "91.66667%",
   full: "100%",
   screen: "100vw",
 }
@@ -369,13 +370,14 @@ export const objectPosition = {
 }
 
 export const boxShadow = {
-  default: "0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06)",
-  md: "0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06)",
-  lg: "0 10px 15px -3px rgba(0, 0, 0, .1), 0 4px 6px -2px rgba(0, 0, 0, .05)",
-  xl: "0 20px 25px -5px rgba(0, 0, 0, .1), 0 10px 10px -5px rgba(0, 0, 0, .04)",
-  "2xl": "0 25px 50px -12px rgba(0, 0, 0, .25)",
-  inner: "inset 0 2px 4px 0 rgba(0,0,0,0.06)",
-  outline: "0 0 0 3px rgba(66,153,225,0.5)",
+  default: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+  lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+  xl:
+    "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+  "2xl": "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+  inner: "inset 0 2px 4px 0 rgba(0, 0, 0, 0.06)",
+  outline: "0 0 0 3px rgba(66, 153, 225, 0.5)",
   none: "none",
 }
 
@@ -430,6 +432,24 @@ export const flexShrink = {
   default: 1,
 }
 
+export const order = {
+  first: "-9999",
+  last: "9999",
+  none: "0",
+  "1": "1",
+  "2": "2",
+  "3": "3",
+  "4": "4",
+  "5": "5",
+  "6": "6",
+  "7": "7",
+  "8": "8",
+  "9": "9",
+  "10": "10",
+  "11": "11",
+  "12": "12",
+}
+
 export const listStyleType = {
   none: "none",
   circle: "circle",
@@ -478,6 +498,7 @@ export default {
   flex,
   flexGrow,
   flexShrink,
+  order,
   listStyleType,
   inset,
 }

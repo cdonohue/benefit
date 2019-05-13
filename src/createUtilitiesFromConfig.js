@@ -55,7 +55,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
 
   const {
     theme = {},
-    reset = () => ({}),
+    normalize = () => ({}),
     utilities = [],
     variants = [],
     apply = {},
@@ -80,8 +80,8 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const styleWith = (classNames = "", isImportant = false) => {
     const activeApply = classNames.split(" ").filter((name) => apply[name])
 
-    const defaultResetClass = css`
-      ${parseDeclarations(reset(theme), isImportant).join("")}
+    const normalizeClass = css`
+      ${parseDeclarations(normalize(theme), isImportant).join("")}
     `
 
     const classList = classNames.split(" ")
@@ -98,16 +98,21 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
 
       if (utilityClasses[className]) {
         activeUtilityClasses.push(css`
-          ${parseDeclarations(utilityClasses[className]).join("")}
+          ${parseDeclarations(utilityClasses[className], isImportant).join("")}
         `)
       } else {
         ignoredClasses.push(className)
       }
     }
 
-    return `${defaultResetClass} ${activeUtilityClasses.join(
-      " "
-    )} ${ignoredClasses.join(" ")}`
+    const utilityClassNames = activeUtilityClasses.length
+      ? activeUtilityClasses.join(" ")
+      : ""
+    const ignoredClassNames = ignoredClasses.length
+      ? ignoredClasses.join(" ")
+      : ""
+
+    return `${normalizeClass} ${utilityClassNames} ${ignoredClassNames}`.trim()
   }
 
   return {

@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { fontSize = {} } = theme
   return createUtilitiesFromMap(
-    theme.fontSize,
+    fontSize,
     (value) => ({ "font-size": value }),
     "text"
   )

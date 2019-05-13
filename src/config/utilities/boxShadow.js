@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { boxShadow = {} } = theme
   return createUtilitiesFromMap(
-    theme.boxShadow,
+    boxShadow,
     (value) => ({
       "box-shadow": value,
     }),

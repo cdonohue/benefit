@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { opacity = {} } = theme
   return createUtilitiesFromMap(
-    theme.opacity,
+    opacity,
     (value) => ({
       opacity: value,
     }),

@@ -1,9 +1,10 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 import flattenColorConfig from "../flattenColorConfig"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { borderColor = {} } = theme
   return createUtilitiesFromMap(
-    flattenColorConfig(theme.borderColor),
+    flattenColorConfig(borderColor),
     (value) => ({
       "border-color": value,
     }),

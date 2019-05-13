@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { cursor = {} } = theme
   return createUtilitiesFromMap(
-    theme.cursor,
+    cursor,
     (value) => ({
       cursor: value,
     }),

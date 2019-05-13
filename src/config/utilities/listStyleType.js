@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { listStyleType = {} } = theme
   return createUtilitiesFromMap(
-    theme.listStyleType,
+    listStyleType,
     (value) => ({
       "list-style-type": value,
     }),

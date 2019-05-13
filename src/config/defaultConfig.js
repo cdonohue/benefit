@@ -1,11 +1,11 @@
 import theme from "./theme"
-import reset from "./reset"
+import normalize from "./normalize"
 import utilities from "./utilities"
 import variants from "./variants"
 
 export default {
   theme,
-  reset,
+  normalize,
   utilities,
   variants,
 }

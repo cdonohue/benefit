@@ -1,6 +1,6 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate() {
   return {
     clearfix: {
       "&::after": {

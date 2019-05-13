@@ -1,16 +1,17 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { padding = {} } = theme
   return {
     ...createUtilitiesFromMap(
-      theme.padding,
+      padding,
       (value) => ({
         padding: value,
       }),
       "p"
     ),
     ...createUtilitiesFromMap(
-      theme.padding,
+      padding,
       (value) => ({
         "padding-left": value,
         "padding-right": value,
@@ -18,7 +19,7 @@ export default function generate(theme) {
       "px"
     ),
     ...createUtilitiesFromMap(
-      theme.padding,
+      padding,
       (value) => ({
         "padding-top": value,
         "padding-bottom": value,
@@ -26,28 +27,28 @@ export default function generate(theme) {
       "py"
     ),
     ...createUtilitiesFromMap(
-      theme.padding,
+      padding,
       (value) => ({
         "padding-top": value,
       }),
       "pt"
     ),
     ...createUtilitiesFromMap(
-      theme.padding,
+      padding,
       (value) => ({
         "padding-right": value,
       }),
       "pr"
     ),
     ...createUtilitiesFromMap(
-      theme.padding,
+      padding,
       (value) => ({
         "padding-bottom": value,
       }),
       "pb"
     ),
     ...createUtilitiesFromMap(
-      theme.padding,
+      padding,
       (value) => ({
         "padding-left": value,
       }),

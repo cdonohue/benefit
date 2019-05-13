@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { flex = {} } = theme
   return createUtilitiesFromMap(
-    theme.flex,
+    flex,
     (value) => ({
       flex: value,
     }),

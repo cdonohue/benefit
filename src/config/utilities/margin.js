@@ -1,16 +1,17 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { margin = {}, negativeMargin = {} } = theme
   return {
     ...createUtilitiesFromMap(
-      theme.margin,
+      margin,
       (value) => ({
         margin: value,
       }),
       "m"
     ),
     ...createUtilitiesFromMap(
-      theme.margin,
+      margin,
       (value) => ({
         "margin-left": value,
         "margin-right": value,
@@ -18,7 +19,7 @@ export default function generate(theme) {
       "mx"
     ),
     ...createUtilitiesFromMap(
-      theme.margin,
+      margin,
       (value) => ({
         "margin-top": value,
         "margin-bottom": value,
@@ -26,42 +27,42 @@ export default function generate(theme) {
       "my"
     ),
     ...createUtilitiesFromMap(
-      theme.margin,
+      margin,
       (value) => ({
         "margin-top": value,
       }),
       "mt"
     ),
     ...createUtilitiesFromMap(
-      theme.margin,
+      margin,
       (value) => ({
         "margin-right": value,
       }),
       "mr"
     ),
     ...createUtilitiesFromMap(
-      theme.margin,
+      margin,
       (value) => ({
         "margin-bottom": value,
       }),
       "mb"
     ),
     ...createUtilitiesFromMap(
-      theme.margin,
+      margin,
       (value) => ({
         "margin-left": value,
       }),
       "ml"
     ),
     ...createUtilitiesFromMap(
-      theme.negativeMargin,
+      negativeMargin,
       (value) => ({
         margin: `-${value}`,
       }),
       "-m"
     ),
     ...createUtilitiesFromMap(
-      theme.negativeMargin,
+      negativeMargin,
       (value) => ({
         "margin-left": `-${value}`,
         "margin-right": `-${value}`,
@@ -69,7 +70,7 @@ export default function generate(theme) {
       "-mx"
     ),
     ...createUtilitiesFromMap(
-      theme.negativeMargin,
+      negativeMargin,
       (value) => ({
         "margin-top": `-${value}`,
         "margin-bottom": `-${value}`,
@@ -77,28 +78,28 @@ export default function generate(theme) {
       "-my"
     ),
     ...createUtilitiesFromMap(
-      theme.negativeMargin,
+      negativeMargin,
       (value) => ({
         "margin-top": `-${value}`,
       }),
       "-mt"
     ),
     ...createUtilitiesFromMap(
-      theme.negativeMargin,
+      negativeMargin,
       (value) => ({
         "margin-right": `-${value}`,
       }),
       "-mr"
     ),
     ...createUtilitiesFromMap(
-      theme.negativeMargin,
+      negativeMargin,
       (value) => ({
         "margin-bottom": `-${value}`,
       }),
       "-mb"
     ),
     ...createUtilitiesFromMap(
-      theme.negativeMargin,
+      negativeMargin,
       (value) => ({
         "margin-left": `-${value}`,
       }),

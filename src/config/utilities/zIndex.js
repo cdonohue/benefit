@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { zIndex } = theme
   return createUtilitiesFromMap(
-    theme.zIndex,
+    zIndex,
     (value) => ({
       "z-index": value,
     }),

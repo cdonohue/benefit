@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { flexGrow = {} } = theme
   return createUtilitiesFromMap(
-    theme.flexGrow,
+    flexGrow,
     (value) => ({ "flex-grow": value }),
     "flex-grow"
   )

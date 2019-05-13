@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { flexShrink = {} } = theme
   return createUtilitiesFromMap(
-    theme.flexShrink,
+    flexShrink,
     (value) => ({ "flex-shrink": value }),
     "flex-shrink"
   )

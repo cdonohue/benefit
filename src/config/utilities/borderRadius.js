@@ -1,16 +1,17 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { borderRadius = {} } = theme
   return {
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-radius": value,
       }),
       "rounded"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-top-left-radius": value,
         "border-top-right-radius": value,
@@ -18,7 +19,7 @@ export default function generate(theme) {
       "rounded-t"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-top-right-radius": value,
         "border-bottom-right-radius": value,
@@ -26,7 +27,7 @@ export default function generate(theme) {
       "rounded-r"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-bottom-right-radius": value,
         "border-bottom-left-radius": value,
@@ -34,7 +35,7 @@ export default function generate(theme) {
       "rounded-b"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-bottom-left-radius": value,
         "border-top-left-radius": value,
@@ -42,28 +43,28 @@ export default function generate(theme) {
       "rounded-l"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-top-left-radius": value,
       }),
       "rounded-tl"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-top-right-radius": value,
       }),
       "rounded-tr"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-bottom-right-radius": value,
       }),
       "rounded-br"
     ),
     ...createUtilitiesFromMap(
-      theme.borderRadius,
+      borderRadius,
       (value) => ({
         "border-bottom-left-radius": value,
       }),

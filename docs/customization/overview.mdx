@@ -1,0 +1,55 @@
+---
+name: Overview
+route: /customization/overview
+parent: Customization
+rank: 1
+---
+
+`benefit` is largely a simple library used to translate a well thought out configuration into an expressive suite of CSS utilities. You have the ability to modify the existing configuration or start entirely from scratch to create your own design system.
+
+```js
+const myConfig = (config) => {
+  /* modify existing config and return */
+}
+```
+
+Your configuration function can be passed into the `benefit` function...
+
+```js
+import benefit from "benefit"
+
+const myConfig = (config) => {
+  /* modify existing config and return */
+}
+
+const { styleWith } = benefit(myConfig)
+
+// styleWith is now capable of parsing/injecting any custom utilities that you have created
+```
+
+...or into a react `ConfigProvider`.
+
+```js
+import { ConfigProvider } from "benefit/react"
+
+const myConfig = (config) => {
+  /* modify existing config and return */
+}
+const App = () => (
+  <ConfigProvider config={myConfig}>
+    {/* Use any utility classes within here */}
+  </ConfigProvider>
+)
+```
+
+The configuration function will be passed in the default configuration should you need to borrow any values to compose with. The `config` object has the following shape:
+
+```js
+{
+  theme: {},
+  normalize: (theme) => ({}),
+  utilities: [(theme) => ({}), (theme) => ({}), ...],
+  variants: [(utilities, theme) => ({}), (utilities, theme) => ({}), ...],
+  apply: {}
+}
+```

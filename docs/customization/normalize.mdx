@@ -1,0 +1,36 @@
+---
+name: Normalize
+route: /customization/normalize
+parent: Customization
+rank: 3
+---
+
+The `normalize` key is your hook to provide any base css to be applied before any utility classes are parsed and applied. Supply a function here that returns your normalized styles as an object.
+
+We'll use the defaults as an example here to showcase using the defined `theme` values to help you apply any normalize styles:
+
+```js
+;(config) => {
+  return {
+    ...config,
+    normalize: (theme) => {
+      return {
+        margin: "0",
+        padding: "0",
+        "border-width": "0",
+        "border-style": "solid",
+        "border-color": theme.borderColor.default,
+        color: "inherit",
+        "font-family": "inherit",
+        "font-size": "inherit",
+        "font-weight": "inherit",
+        "line-height": "inherit",
+        "vertical-align": "baseline",
+        "box-sizing": "border-box",
+      }
+    },
+  }
+}
+``
+`
+```

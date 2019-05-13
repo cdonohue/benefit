@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { stroke = {} } = theme
   return createUtilitiesFromMap(
-    theme.stroke,
+    stroke,
     (value) => ({
       stroke: value,
     }),

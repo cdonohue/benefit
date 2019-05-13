@@ -1,23 +1,24 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { width = {}, maxWidth = {}, minWidth = {} } = theme
   return {
     ...createUtilitiesFromMap(
-      theme.width,
+      width,
       (value) => ({
         width: value,
       }),
       "w"
     ),
     ...createUtilitiesFromMap(
-      theme.maxWidth,
+      maxWidth,
       (value) => ({
         "max-width": value,
       }),
       "max-w"
     ),
     ...createUtilitiesFromMap(
-      theme.minWidth,
+      minWidth,
       (value) => ({
         "min-width": value,
       }),

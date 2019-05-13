@@ -20,14 +20,14 @@ import Grid from "../../components/Grid"
   {({ config }) => (
     <Grid>
       {Object.keys(config.theme.fontFamily).map((fontClass) => (
-          <Box className="rounded-lg shadow overflow-hidden">
+          <Box key={fontClass} className="rounded-lg shadow overflow-hidden">
             <Box className={`bg-white p-4 font-${fontClass}`}>
               <Box className="font-mono text-gray-400 text-sm mb-4">font-{fontClass}</Box>
               Pack my box with five dozen liquor jugs.
             </Box>
             <Box className="flex flex-wrap p-4 bg-gray-100 pb-2">
               {config.theme.fontFamily[fontClass].map((typeface) => (
-                <Box className="bg-white shadow px-3 py-1 text-xs font-mono rounded mr-2 mb-2">
+                <Box key={typeface} className="bg-white shadow px-3 py-1 text-xs font-mono rounded mr-2 mb-2">
                   {typeface}
                 </Box>
               ))}

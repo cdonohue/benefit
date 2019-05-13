@@ -50,8 +50,6 @@ import tableLayout from "./tableLayout"
 import textAlign from "./textAlign"
 import textColor from "./textColor"
 import textDecoration from "./textDecoration"
-import textDecorationColor from "./textDecorationColor"
-import textShadow from "./textShadow"
 import textTransform from "./textTransform"
 import userSelect from "./userSelect"
 import verticalAlign from "./verticalAlign"
@@ -114,7 +112,6 @@ const utilities = [
   textAlign,
   textColor,
   textDecoration,
-  textDecorationColor,
   textTransform,
   userSelect,
   verticalAlign,

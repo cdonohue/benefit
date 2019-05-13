@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { backgroundSize } = theme
   return createUtilitiesFromMap(
-    theme.backgroundSize,
+    backgroundSize,
     (value) => ({
       "background-size": value,
     }),

@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { objectPosition = {} } = theme
   return createUtilitiesFromMap(
-    theme.objectPosition,
+    objectPosition,
     (value) => ({
       "object-position": value,
     }),

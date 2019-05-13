@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { letterSpacing = {} } = theme
   return createUtilitiesFromMap(
-    theme.letterSpacing,
+    letterSpacing,
     (value) => ({
       "letter-spacing": value,
     }),

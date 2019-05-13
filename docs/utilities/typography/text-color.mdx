@@ -22,7 +22,7 @@ _Shown here using the `blue` palette_
 
 <Grid>
   {[...Array(9).keys()].reverse().map((level) => (
-    <InfoBox pattern={`text-blue-${(level + 1) * 100}`}>
+    <InfoBox key={level} pattern={`text-blue-${(level + 1) * 100}`}>
       <Box
         key={level}
         className={`p-4 border rounded-sm text-blue-${(level + 1) * 100}`}

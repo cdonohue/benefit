@@ -1,12 +1,10 @@
 import React from "react"
 import { theme, useConfig, ComponentsProvider, Routes } from "docz"
 import { injectGlobal, css } from "emotion"
-import { Router } from "@reach/router"
 import { colors } from "../../src/config/theme"
 import Page from "./components/Page"
 import Playground from "./components/Playground"
 import Code from "./components/Code"
-import H1 from "./components/H1"
 
 import { Box, ConfigProvider } from "../../dist/react.js"
 import Loader from "./components/Loader"
@@ -20,9 +18,13 @@ injectGlobal`
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
       Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 400;
-    font-size: 16px;
+    font-size: 13px;
     color: #272727;
     text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+
+    @media screen and (min-width: 768px) {
+      font-size: 16px;
+    }
   }
 
   *,

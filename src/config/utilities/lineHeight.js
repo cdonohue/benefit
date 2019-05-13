@@ -1,8 +1,9 @@
 import createUtilitiesFromMap from "../createUtilitiesFromMap"
 
-export default function generate(theme) {
+export default function generate(theme = {}) {
+  const { lineHeight = {} } = theme
   return createUtilitiesFromMap(
-    theme.lineHeight,
+    lineHeight,
     (value) => ({
       "line-height": value,
     }),
