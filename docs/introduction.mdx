@@ -10,27 +10,19 @@ import { Box, ConfigProvider } from "../dist/react.js"
 import Logo from "./components/Logo"
 import Alert from "./components/Alert"
 import { Playground, Link } from "docz"
+import Output from "./components/Output"
 
-### A utility system for styling web applications
+## Style web applications using generated utility classes
 
-`benefit` helps to solve the problem of elements inheriting cumbersome styles from other CSS on the page. Element-level-normalization and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
+`benefit` is a _5Kb_, utility CSS framework that's fully compatible with TailwindCSS.
 
-Another key feature of `benefit` is that _it only inlines the CSS for the utilities that you use_. So, whether you’re hardening/isolating a single React component or building a full responsive layout, only the CSS for the utilities you use get injected to the page.
+- Small runtime
+- No build step
+- Element [normalization](/customization/normalize)
+- Style isolation
+- Fully [Customizable](/customization/overview)
+- Works with [TailwindCSS](https://tailwindcss.com) class names out of box
 
-You also have the ability to customize the configuration with your own design system rules. Extend the configuration and add your own colors and CSS utilities or start entirely from scratch. It's up to you.
+And... it only inlines the CSS for the utilities that you actually use:
 
-```js
-<div className="p-4 bg-orange-300 rounded">
-  <p className="p-4 bg-white shadow rounded-sm">
-    Williamsburg stumptown iPhone, gastropub vegan banh mi
-    microdosingpost-ironic pok pok +1 bespoke dreamcatcher bushwick brunch.
-  </p>
-</div>
-```
-
-<Box className="p-4 bg-orange-300 rounded">
-  <Box is="p" className="p-4 bg-white shadow rounded-sm">
-    Williamsburg stumptown iPhone, gastropub vegan banh mi microdosing
-    post-ironic pok pok +1 bespoke dreamcatcher bushwick brunch.
-  </Box>
-</Box>
+<Output utilityClasses={["bg-blue-500", "text-white", "p-8", "rounded"]} />

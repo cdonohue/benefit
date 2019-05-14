@@ -1,7 +1,7 @@
 import { css } from "emotion"
 import defaultConfig from "./config/defaultConfig"
 
-function formatDeclaration(property, value, isImportant) {
+export function formatDeclaration(property, value, isImportant) {
   const declaration = `${property}: ${value}`
   return `${declaration}${isImportant ? " !important" : ""};`
 }
@@ -54,6 +54,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const config = configFn(defaultConfig)
 
   const {
+    prefix = "",
     theme = {},
     normalize = () => ({}),
     utilities = [],
@@ -69,12 +70,14 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     theme
   )
 
+  const prefixStr = prefix ? `${prefix}-` : ""
+
   const utilityClasses = {}
   Object.keys(generatedUtilities).forEach(
-    (key) => (utilityClasses[key] = generatedUtilities[key])
+    (key) => (utilityClasses[`${prefixStr}${key}`] = generatedUtilities[key])
   )
   Object.keys(generatedVariants).forEach(
-    (key) => (utilityClasses[key] = generatedVariants[key])
+    (key) => (utilityClasses[`${prefixStr}${key}`] = generatedVariants[key])
   )
 
   const styleWith = (classNames = "", isImportant = false) => {
