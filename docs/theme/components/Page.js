@@ -164,7 +164,7 @@ const pagingLink = css`
 
 function renderSubMenu(menuItems, category, iconName) {
   return (
-    <>
+    <React.Fragment>
       <Box
         className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-4 md:px-8 text-gray-500 mt-4`}
       >
@@ -182,7 +182,7 @@ function renderSubMenu(menuItems, category, iconName) {
             {item.name}
           </Link>
         ))}
-    </>
+    </React.Fragment>
   )
 }
 

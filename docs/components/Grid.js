@@ -6,13 +6,12 @@ export default function Grid({ children, className, minWidth = "1fr" }) {
     <Box
       style={{
         display: "grid",
-        marginBottom: "2rem",
         gridTemplateColumns: `repeat(auto-fill, minmax(${minWidth}, 1fr))`,
         gridGap: "1rem",
       }}
       className={className}
     >
-      <>{children}</>
+      {children}
     </Box>
   )
 }
