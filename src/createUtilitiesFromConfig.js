@@ -80,6 +80,10 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     (key) => (utilityClasses[`${prefixStr}${key}`] = generatedVariants[key])
   )
 
+  const cssForUtility = (className, isImportant = false) => {
+    return parseDeclarations(utilityClasses[className], isImportant).join(" ")
+  }
+
   const styleWith = (classNames = "", isImportant = false) => {
     const activeApply = classNames.split(" ").filter((name) => apply[name])
 
@@ -120,6 +124,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
 
   return {
     config,
+    cssForUtility,
     utilities: utilityClasses,
     styleWith,
   }
