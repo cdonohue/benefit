@@ -28,6 +28,7 @@
     "prerelease": "yarn build",
     "postversion": "cp -rf package.json dist && cp -rf README.md dist && cp -rf LICENSE dist && cp benefit-logo.svg dist",
     "release": "np --contents dist",
+    "pretest": "yarn build",
     "test": "jest"
   },
   "sideEffects": false,
