@@ -19,6 +19,7 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react --jsx React.createElement",
+    "postbuild": "./scripts/benefit.css.js",
     "prestart": "yarn build",
     "start": "docz dev",
     "predocs:build": "yarn build",
