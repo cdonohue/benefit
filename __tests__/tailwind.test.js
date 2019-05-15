@@ -22,12 +22,8 @@ const findTailwindRules = () => {
       return aString.localeCompare(bString) || aNumber - bNumber
     })
     .reduce((rules, cssRule) => {
-      const selector = cssRule.selectorText
-        .slice(1)
-        .replace("\\", "")
-        .replace(":hover", "")
-
-      const text = cssRule.cssText.replace(cssRule.selectorText, "").trim()
+      const selector = cssRule.selectorText.slice(1).replace("\\", "")
+      const text = cssRule.style.cssText
 
       rules[selector] = text
 
@@ -37,7 +33,7 @@ const findTailwindRules = () => {
   return cssRules
 }
 
-describe("TailwindCSS rules", () => {
+describe("TailwindCSS", () => {
   let tailwindRules
 
   beforeAll(async () => {
