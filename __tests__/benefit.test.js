@@ -15,5 +15,7 @@ describe("benefit()", () => {
     it("should match snapshot", () => {
       expect(benefit.utilities).toMatchSnapshot()
     })
+
+    it.todo("should match Tailwind utilities")
   })
 })
