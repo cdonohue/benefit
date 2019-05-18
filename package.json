@@ -55,7 +55,8 @@
     "react": "~16.8.6",
     "react-dom": "~16.8.6",
     "react-feather": "~1.1.6",
-    "react-live": "~2.0.0"
+    "react-live": "~2.0.0",
+    "tailwindcss": "^1.0.1"
   },
   "peerDependencies": {
     "emotion": "~8.0.0"
