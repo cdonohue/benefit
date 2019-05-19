@@ -7188,7 +7188,7 @@ jest-dev-server@^4.1.1:
     tree-kill "^1.2.1"
     wait-on "^3.2.0"
 
-jest-diff@^24.0.0, jest-diff@^24.8.0:
+jest-diff@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-diff/-/jest-diff-24.8.0.tgz#146435e7d1e3ffdf293d53ff97e193f1d1546172"
   integrity sha512-wxetCEl49zUpJ/bvUmIFjd/o52J+yWcoc5ZyPq4/W1LUKGEhRYDIbP1KcF6t+PvqNrGAFk4/JhtxDq/Nnzs66g==
@@ -7430,7 +7430,7 @@ jest-serializer@^24.4.0:
   resolved "https://registry.yarnpkg.com/jest-serializer/-/jest-serializer-24.4.0.tgz#f70c5918c8ea9235ccb1276d232e459080588db3"
   integrity sha512-k//0DtglVstc1fv+GY/VHDIjrtNjdYvYjMlbLUed4kxrE92sIUewOi5Hj3vrpB8CXfkJntRPDRjCrCvUhBdL8Q==
 
-jest-snapshot@^24.0.0, jest-snapshot@^24.8.0:
+jest-snapshot@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/jest-snapshot/-/jest-snapshot-24.8.0.tgz#3bec6a59da2ff7bc7d097a853fb67f9d415cb7c6"
   integrity sha512-5ehtWoc8oU9/cAPe6fez6QofVJLBKyqkY2+TlKTOf0VllBB/mqUNdARdcjlZrs9F1Cv+/HKoCS/BknT0+tmfPg==
@@ -10271,7 +10271,7 @@ pretty-bytes@^5.1.0:
   resolved "https://registry.yarnpkg.com/pretty-bytes/-/pretty-bytes-5.2.0.tgz#96c92c6e95a0b35059253fb33c03e260d40f5a1f"
   integrity sha512-ujANBhiUsl9AhREUDUEY1GPOharMGm8x8juS7qOHybcLi7XsKfrYQ88hSly1l2i0klXHTDYrlL8ihMCG55Dc3w==
 
-pretty-format@^24.0.0, pretty-format@^24.8.0:
+pretty-format@^24.8.0:
   version "24.8.0"
   resolved "https://registry.yarnpkg.com/pretty-format/-/pretty-format-24.8.0.tgz#8dae7044f58db7cb8be245383b565a963e3c27f2"
   integrity sha512-P952T7dkrDEplsR+TuY7q3VXDae5Sr7zmQb12JU/NDQa/3CH7/QW0yvqLcGN6jL+zQFKaoJcPc+yJxMTGmosqw==
@@ -11864,16 +11864,6 @@ snapdragon@^0.8.1:
     source-map "^0.5.6"
     source-map-resolve "^0.5.0"
     use "^3.1.0"
-
-snapshot-diff@^0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/snapshot-diff/-/snapshot-diff-0.5.1.tgz#8a74d11a4f89662d3f934dcbeccc4f773a817010"
-  integrity sha512-XBj1NE3oJiqdH/EcNzLSqSeCEnU458T57ZnbptrQ2/mKw+Z2Txu06vPMWG+morlbQp7nY6kkY7zPnHi1dgy6qg==
-  dependencies:
-    jest-diff "^24.0.0"
-    jest-snapshot "^24.0.0"
-    pretty-format "^24.0.0"
-    strip-ansi "^5.0.0"
 
 sockjs-client@1.3.0:
   version "1.3.0"
