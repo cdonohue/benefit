@@ -40,7 +40,7 @@ const findCssRules = () => {
 let benefitRules = {}
 let tailwindRules = {}
 
-beforeEach(async () => {
+beforeAll(async () => {
   const benefitPage = await browser.newPage()
   const tailwindPage = await browser.newPage()
 
@@ -53,37 +53,42 @@ beforeEach(async () => {
   tailwindRules = await tailwindPage.evaluate(findCssRules)
 })
 
-describe("TailwindCSS", () => {
+describe("benefit/utilities.css", () => {
+  it("should match snapshot", async () => {
+    expect(benefitRules).toMatchSnapshot()
+  })
+})
+
+describe("tailwindcss/dist/utilities.css", () => {
   it("should match snapshot", async () => {
     expect(tailwindRules).toMatchSnapshot()
   })
 
-  describe("utilities", () => {
-    it("should exist in benefit", () => {
-      const missing = Object.keys(tailwindRules).filter(
-        (className) => !benefitRules[className]
-      )
+  it("should exist in benefit", () => {
+    const missing = Object.keys(tailwindRules).filter(
+      (className) => !benefitRules[className]
+    )
 
-      expect(missing).toHaveLength(0)
+    expect(missing).toHaveLength(0)
+  })
+
+  it("should be the same values in benefit", () => {
+    const matchingBenefitRules = {}
+    const matchingTailwindRules = {}
+
+    Object.keys(tailwindRules).forEach((className) => {
+      if (benefitRules[className]) {
+        matchingBenefitRules[className] = benefitRules[className]
+        matchingTailwindRules[className] = tailwindRules[className]
+      }
     })
 
-    it("should be the same values in benefit", () => {
-      const matchingBenefitRules = {}
-      const matchingTailwindRules = {}
+    const diff = snapshotDiff(matchingTailwindRules, matchingBenefitRules)
 
-      Object.keys(tailwindRules).forEach((className) => {
-        if (benefitRules[className]) {
-          matchingBenefitRules[className] = benefitRules[className]
-          matchingTailwindRules[className] = tailwindRules[className]
-        }
-      })
+    expect(diff).toMatchInlineSnapshot(`
 
-      const diff = snapshotDiff(matchingTailwindRules, matchingBenefitRules)
-
-      expect(diff).toMatchInlineSnapshot(`
         "Snapshot Diff:
         Compared values have no visual difference."
       `)
-    })
   })
 })

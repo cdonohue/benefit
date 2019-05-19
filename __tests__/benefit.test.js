@@ -11,10 +11,4 @@ describe("benefit()", () => {
       ]
     `)
   })
-
-  describe("utilities", () => {
-    it("should match snapshot", () => {
-      expect(benefit.utilities).toMatchSnapshot()
-    })
-  })
 })
