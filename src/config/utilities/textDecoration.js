@@ -1,7 +1,7 @@
 export default function generate() {
   return {
-    underline: { "text-decoration-line": "underline" },
-    "line-through": { "text-decoration-line": "line-through" },
+    underline: { "text-decoration": "underline" },
+    "line-through": { "text-decoration": "line-through" },
     "no-underline": { "text-decoration": "none" },
   }
 }
