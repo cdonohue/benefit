@@ -1,3 +1,5 @@
+const snapshotDiff = require("snapshot-diff")
+
 const findCssRules = () => {
   const styleSheet = document.styleSheets[0]
 
@@ -63,6 +65,25 @@ describe("TailwindCSS", () => {
       )
 
       expect(missing).toHaveLength(0)
+    })
+
+    it("should be the same values in benefit", () => {
+      const matchingBenefitRules = {}
+      const matchingTailwindRules = {}
+
+      Object.keys(tailwindRules).forEach((className) => {
+        if (benefitRules[className]) {
+          matchingBenefitRules[className] = benefitRules[className]
+          matchingTailwindRules[className] = tailwindRules[className]
+        }
+      })
+
+      const diff = snapshotDiff(matchingTailwindRules, matchingBenefitRules)
+
+      expect(diff).toMatchInlineSnapshot(`
+        "Snapshot Diff:
+        Compared values have no visual difference."
+      `)
     })
   })
 })
