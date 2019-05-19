@@ -3,7 +3,7 @@ export default function createVariant(utilities, generateDeclarations, prefix) {
     return {}
   }
   return Object.keys(utilities).reduce((variants, utilityKey) => {
-    variants[`${prefix}:${utilityKey}`] = generateDeclarations(
+    variants[`${prefix}\\:${utilityKey}`] = generateDeclarations(
       utilities[utilityKey]
     )
     return variants
