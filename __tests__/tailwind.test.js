@@ -41,7 +41,7 @@ describe("TailwindCSS", () => {
     await page.setContent(`
       <link
         crossorigin="anonymous"
-        href="https://unpkg.com/tailwindcss/dist/tailwind.min.css"
+        href="https://unpkg.com/tailwindcss/dist/utilities.min.css"
         rel="stylesheet"
       >
     `)

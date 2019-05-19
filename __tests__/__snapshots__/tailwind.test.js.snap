@@ -383,7 +383,6 @@ Object {
   "break-words": "overflow-wrap: break-word;",
   "capitalize": "text-transform: capitalize;",
   "clearfix::after": "content: \\"\\"; display: table; clear: both;",
-  "container": "width: 100%;",
   "content-around": "align-content: space-around;",
   "content-between": "align-content: space-between;",
   "content-center": "align-content: center;",
