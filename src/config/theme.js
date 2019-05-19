@@ -237,7 +237,7 @@ export const backgroundSize = {
 }
 
 export const borderWidth = {
-  default: "1px",
+  "": "1px",
   "0": "0",
   "2": "2px",
   "4": "4px",
@@ -246,13 +246,13 @@ export const borderWidth = {
 
 export const borderColor = {
   ...colors,
-  default: colors.gray["200"],
+  "": colors.gray["200"],
 }
 
 export const borderRadius = {
   none: "0",
   sm: ".125rem",
-  default: ".25rem",
+  "": ".25rem",
   lg: ".5rem",
   full: "9999px",
 }
@@ -370,7 +370,7 @@ export const objectPosition = {
 }
 
 export const boxShadow = {
-  default: "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
   md: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
   lg: "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
   xl:
@@ -424,12 +424,12 @@ export const flex = {
 
 export const flexGrow = {
   "0": 0,
-  default: 1,
+  "": 1,
 }
 
 export const flexShrink = {
   "0": 0,
-  default: 1,
+  "": 1,
 }
 
 export const order = {
