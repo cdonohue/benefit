@@ -1,5 +1,3 @@
-const snapshotDiff = require("snapshot-diff")
-
 const findCssRules = () => {
   const styleSheet = document.styleSheets[0]
 
@@ -83,12 +81,6 @@ describe("tailwindcss/dist/utilities.css", () => {
       }
     })
 
-    const diff = snapshotDiff(matchingTailwindRules, matchingBenefitRules)
-
-    expect(diff).toMatchInlineSnapshot(`
-
-        "Snapshot Diff:
-        Compared values have no visual difference."
-      `)
+    expect(matchingBenefitRules).toEqual(matchingTailwindRules)
   })
 })
