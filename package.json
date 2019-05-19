@@ -6,7 +6,10 @@
   "module": "benefit.m.js",
   "unpkg": "benefit.umd.js",
   "repository": "https://github.com/cdonohue/benefit.git",
-  "author": "Chad Donohue <chad.donohue@gmail.com>",
+  "contributors": [
+    "Chad Donohue <chad.donohue@gmail.com>",
+    "Eric Clemmons <eric@smarterspam.com>"
+  ],
   "description": "A utility system for styling web applications",
   "license": "MIT",
   "keywords": [
