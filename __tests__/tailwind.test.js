@@ -26,7 +26,6 @@ const findCssRules = () => {
     .reduce((rules, cssRule) => {
       const selector = cssRule.selectorText.slice(1).replace("\\", "")
 
-      delete cssRule.style.removeProperty("-webkit-align-items")
       delete cssRule.style.removeProperty("-webkit-box-align")
       delete cssRule.style.removeProperty("-webkit-box-flex")
       delete cssRule.style.removeProperty("-webkit-box-pack")
