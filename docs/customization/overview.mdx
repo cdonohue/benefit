@@ -5,7 +5,7 @@ parent: Customization
 rank: 1
 ---
 
-`benefit` is largely a simple library used to translate a well thought out configuration into an expressive suite of CSS utilities. You have the ability to modify the existing configuration or start entirely from scratch to create your own design system.
+`benefit` exposes the methods used to build its own default configuration. You have the option of keeping as much or as little as you want of it. Similar to how you would override a `webpack` config in other tools, just supply a function that will return your configuration.
 
 ```js
 const myConfig = (config) => {
@@ -42,10 +42,14 @@ const App = () => (
 )
 ```
 
-The configuration function will be passed in the default configuration should you need to borrow any values to compose with. The `config` object has the following shape:
+The configuration function will be passed in the default configuration should you need to borrow any values to compose with.
+
+The `config` object has the following shape:
 
 ```js
 {
+  // This prefix will prepend all utility class names
+  prefix: "",
   theme: {},
   normalize: (theme) => ({}),
   utilities: [(theme) => ({}), (theme) => ({}), ...],

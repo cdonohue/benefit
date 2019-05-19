@@ -96,10 +96,18 @@ const map = {
   // h6: components.H6,
   // ul: components.List,
   // table: components.Table,
+  ul: (props) => (
+    <Box
+      is="ul"
+      className="border-t border-b border-dashed pt-2 pb-4 list-inside"
+      {...props}
+    />
+  ),
+  li: (props) => <Box is="li" className="pt-2" {...props} />,
   a: (props) => (
     <Box
       is="a"
-      className="text-blue-500 no-decoration hover:text-blue-700"
+      className="text-blue-500 no-underline hover:text-blue-700"
       {...props}
     />
   ),

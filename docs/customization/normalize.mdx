@@ -10,7 +10,7 @@ The `normalize` key is your hook to provide any base css to be applied before an
 We'll use the defaults as an example here to showcase using the defined `theme` values to help you apply any normalize styles:
 
 ```js
-;(config) => {
+function myConfig(config) {
   return {
     ...config,
     normalize: (theme) => {
@@ -31,6 +31,14 @@ We'll use the defaults as an example here to showcase using the defined `theme` 
     },
   }
 }
-``
-`
+```
+
+```js
+const { styleWith } = benefit(myConfig)
+```
+
+or
+
+```js
+<ConfigProvider config={myConfig} />
 ```
