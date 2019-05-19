@@ -1,9 +1,11 @@
-const findTailwindRules = () => {
-  const tailwind = Array.from(document.styleSheets).find((styleSheet) =>
-    styleSheet.href.includes("tailwind")
-  )
+const findCssRules = () => {
+  const styleSheet = document.styleSheets[0]
 
-  const cssRules = Array.from(tailwind.cssRules)
+  if (!styleSheet) {
+    throw new Error("document.styleSheets is empty")
+  }
+
+  const cssRules = Array.from(styleSheet.cssRules)
     .filter((cssRule) => {
       if (cssRule.type !== 1) {
         return false
@@ -33,23 +35,34 @@ const findTailwindRules = () => {
   return cssRules
 }
 
-describe("TailwindCSS", () => {
-  let tailwindRules
+let benefitRules = {}
+let tailwindRules = {}
 
-  beforeAll(async () => {
-    // Need to have crossorigin="anonymous" to pull rules
-    await page.setContent(`
-      <link
-        crossorigin="anonymous"
-        href="https://unpkg.com/tailwindcss/dist/utilities.min.css"
-        rel="stylesheet"
-      >
-    `)
+beforeEach(async () => {
+  const benefitPage = await browser.newPage()
+  const tailwindPage = await browser.newPage()
 
-    tailwindRules = await page.evaluate(findTailwindRules)
+  await benefitPage.addStyleTag({ path: "dist/utilities.css" })
+  await tailwindPage.addStyleTag({
+    path: "node_modules/tailwindcss/dist/utilities.css",
   })
 
+  benefitRules = await benefitPage.evaluate(findCssRules)
+  tailwindRules = await tailwindPage.evaluate(findCssRules)
+})
+
+describe("TailwindCSS", () => {
   it("should match snapshot", async () => {
     expect(tailwindRules).toMatchSnapshot()
+  })
+
+  describe("utilities", () => {
+    it("should exist in benefit", () => {
+      const missing = Object.keys(tailwindRules).filter(
+        (className) => !benefitRules[className]
+      )
+
+      expect(missing).toHaveLength(0)
+    })
   })
 })
