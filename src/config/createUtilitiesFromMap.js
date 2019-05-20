@@ -9,7 +9,10 @@ export default function createUtilitiesFromMap(
   return Object.keys(map).reduce((utilities, key) => {
     const value = map[key]
     const label = Array.isArray(map) ? value : key
-    const className = [prefix, label].filter(Boolean).join("-")
+    const className = [prefix, label === "default" ? null : label]
+      .filter(Boolean)
+      .join("-")
+
     const declarations = generateDeclarations(value)
 
     utilities[className] = declarations
