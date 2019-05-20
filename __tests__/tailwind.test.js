@@ -67,7 +67,7 @@ describe("tailwindcss/dist/utilities.css", () => {
 
   it("should exist in benefit", () => {
     const missing = Object.keys(tailwindRules).filter(
-      (className) => !benefitRules[className]
+      (className) => !benefitRules.hasOwnProperty(className)
     )
 
     expect(missing).toHaveLength(0)
