@@ -13,14 +13,14 @@ export default function generate(theme = {}) {
     ...createUtilitiesFromMap(
       maxHeight,
       (value) => ({
-        height: value,
+        "max-height": value,
       }),
       "max-h"
     ),
     ...createUtilitiesFromMap(
       minHeight,
       (value) => ({
-        height: value,
+        "min-height": value,
       }),
       "min-h"
     ),

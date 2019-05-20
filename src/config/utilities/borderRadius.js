@@ -37,8 +37,8 @@ export default function generate(theme = {}) {
     ...createUtilitiesFromMap(
       borderRadius,
       (value) => ({
-        "border-bottom-left-radius": value,
         "border-top-left-radius": value,
+        "border-bottom-left-radius": value,
       }),
       "rounded-l"
     ),

@@ -6,6 +6,6 @@ export default function generate(utilityMap) {
     (value) => ({
       "&:focus-within": value,
     }),
-    "focus"
+    "focus-within"
   )
 }
