@@ -10,9 +10,9 @@
 
 - Small runtime
 - No build step
-- Element [normalization](/customization/normalize)
+- Element [normalization](https://benefit.netlify.com/customization/normalize)
 - Style isolation
-- Fully [Customizable](/customization/overview)
+- Fully [Customizable](https://benefit.netlify.com/customization/overview)
 - Works with [TailwindCSS](https://tailwindcss.com) class names out of box
 
 And... it only inlines the CSS for the utilities that you actually use
