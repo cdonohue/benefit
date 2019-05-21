@@ -4,7 +4,7 @@
 
 ## Style web applications using generated utility classes
 
-`benefit` is a _5kb_, utility CSS framework that's fully compatible with TailwindCSS.
+`benefit` is a `5kb`, utility CSS framework that is compatible with [TailwindCSS](https://tailwindcss.com).
 
 [Documentation](https://benefit.netlify.com)
 

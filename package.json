@@ -10,7 +10,7 @@
     "Chad Donohue <chad.donohue@gmail.com>",
     "Eric Clemmons <eric@smarterspam.com>"
   ],
-  "description": "5kB utility CSS framework that's fully compatible with TailwindCSS",
+  "description": "5kB utility CSS framework that is compatible with TailwindCSS",
   "license": "MIT",
   "keywords": [
     "atomic",

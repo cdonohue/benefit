@@ -25,7 +25,6 @@ import Loader from "./Loader.js"
 const page = css`
   display: grid;
   height: 100vh;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   grid-template-columns: [content-start] minmax(auto, 1024px) [content-end];
   @media (min-width: 1025px) {
@@ -35,8 +34,16 @@ const page = css`
   }
 `
 
-function PageContainer({ children }) {
-  return <Box className={page}>{children}</Box>
+function PageContainer({ children, isMenuOpen }) {
+  return (
+    <Box
+      className={`${page} ${
+        isMenuOpen ? "overflow-y-hidden" : "overflow-y-scroll"
+      }`}
+    >
+      {children}
+    </Box>
+  )
 }
 
 const rightBg = css`
@@ -45,7 +52,7 @@ const rightBg = css`
   background-image: linear-gradient(
       to right,
       ${colors.gray[200]} 520px,
-      transparent
+      rgba(255, 255, 255, 0)
     ),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%2322292f' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
 `
@@ -142,9 +149,9 @@ const menuHeading = css`
     width: 100%;
     background: linear-gradient(
       to left,
-      transparent 0.25rem,
+      rgba(255, 255, 255, 0) 0.25rem,
       ${colors.gray["800"]},
-      transparent
+      rgba(255, 255, 255, 0)
     );
   }
 
@@ -230,19 +237,23 @@ function SideBar({ isOpen, onClose }) {
   return (
     <Box
       className={`bg-gray-900 text-gray-300 relative md:w-64 ${
-        isOpen ? "z-30" : ""
-      } absolute inset-0 md:static`}
+        isOpen ? "z-30 block" : "hidden"
+      } absolute inset-0 md:static md:block`}
     >
-      <Box className="side-menu h-screen md:sticky top-0 overflow-y-auto scrolling-touch">
+      <Box
+        className={`side-menu h-screen md:sticky top-0 ${
+          isOpen ? "overflow-y-auto" : "overflow-y-hidden"
+        } overflow-x-hidden md:overflow-y-scroll scrolling-touch`}
+      >
         <Box className="py-8 pt-16 md:pt-8">
-          <Box className="absolute top-0 inset-x-0 bg-black z-10 p-4 md:hidden">
+          <Box className="fixed block top-0 inset-x-0 bg-gray-900 z-10 md:hidden">
             <Box
               is="button"
-              className="bg-transparent"
+              className="bg-gray-800 w-full shadow p-4 flex items-center justify-between"
               type="button"
               onClick={onClose}
             >
-              <Icon name="x" />
+              Close Menu <Icon name="x" className="text-gray-700" />
             </Box>
           </Box>
           <Link
@@ -317,8 +328,16 @@ function SideBar({ isOpen, onClose }) {
   )
 }
 
-function Content({ children }) {
-  return <Box className="bg-gray-200 flex-1 z-10 pt-16 md:pt-0">{children}</Box>
+function Content({ children, isMenuOpen }) {
+  return (
+    <Box
+      className={`${
+        isMenuOpen ? "hidden" : "block"
+      } bg-gray-200 flex-1 z-10 pt-16 md:pt-0`}
+    >
+      {children}
+    </Box>
+  )
 }
 
 const accent = css`
@@ -345,7 +364,11 @@ const fadingBorder = css`
     position: absolute;
     height: 1px;
     width: 100%;
-    background-image: linear-gradient(to right, #d4dae1, transparent);
+    background-image: linear-gradient(
+      to right,
+      #d4dae1,
+      rgba(255, 255, 255, 0)
+    );
   }
 `
 
@@ -371,15 +394,16 @@ export default function Page({ children, doc, location }) {
   const [isMenuOpen, toggleMenu] = useState(false)
 
   return (
-    <PageContainer>
+    <PageContainer isMenuOpen={isMenuOpen}>
       <FullBleed />
       <Main>
         <SideBar isOpen={isMenuOpen} onClose={() => toggleMenu(!isMenuOpen)} />
-        <Content>
+        <Content isMenuOpen={isMenuOpen}>
           <Box
-            className={`absolute top-0 inset-x-0 z-50 bg-white p-4 md:relative md:bg-transparent md:p-8 flex justify-between items-center ${fadingBorder}`}
+            className={`fixed top-0 inset-x-0 z-50 bg-white p-4 md:relative md:bg-transparent md:p-8 flex justify-between items-center ${fadingBorder}`}
             style={{
-              backgroundImage: "linear-gradient(to right, white, transparent)",
+              backgroundImage:
+                "linear-gradient(to right, white, rgba(255, 255, 255, 0))",
             }}
           >
             <Box
