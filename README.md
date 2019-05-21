@@ -1,16 +1,18 @@
-![Benefit Logo](benefit-logo.svg)
+[![Benefit Logo](benefit-logo.svg)](https://benefit.netlify.com)
 
 ---
 
-## A _5Kb_, Tailwind-compatible utility CSS-in-JS design system.
+## Style web applications using generated utility classes
+
+`benefit` is a _5kb_, utility CSS framework that's fully compatible with TailwindCSS.
 
 [Documentation](https://benefit.netlify.com)
 
 - Small runtime
 - No build step
-- Element normalization
+- Element [normalization](/customization/normalize)
 - Style isolation
-- Fully Customizable
+- Fully [Customizable](/customization/overview)
 - Works with [TailwindCSS](https://tailwindcss.com) class names out of box
 
 And... it only inlines the CSS for the utilities that you actually use
