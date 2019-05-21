@@ -9,10 +9,11 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 import { Box, ConfigConsumer } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`h-{size}`
+<UtilityInfo pattern="h-{size}" themeProperty="height" />
 
-<ConfigPropertyList property="height" />
+---
 
 <Grid minWidth="72px">
   <InfoBox pattern="h-2" className="justify-between flex flex-col">
@@ -54,12 +55,12 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 
 ## Min Height
 
-`min-h-{size}`
+<UtilityInfo pattern="min-h-{size}" themeProperty="minHeight" />
 
-<ConfigPropertyList property="minHeight" />
+---
 
 ## Max Height
 
-`max-h-{size}`
+<UtilityInfo pattern="max-h-{size}" themeProperty="maxHeight" />
 
-<ConfigPropertyList property="maxHeight" />
+---

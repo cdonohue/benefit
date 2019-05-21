@@ -9,10 +9,11 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 import { Box, ConfigConsumer } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`border{-side?}-{width}`
+<UtilityInfo pattern="border{-side?}-{width}" themeProperty="borderWidth" />
 
-<ConfigPropertyList property="borderWidth" />
+---
 
 <Grid minWidth="192px">
   <InfoBox pattern="border">

@@ -2,6 +2,11 @@
 name: Border Color
 property: border-color
 parent: Border
+route: /border/border-color
+previousRoute: /background/background-size
+previousLabel: Background Size
+nextRoute: /border/border-radius
+nextLabel: Border Radius
 ---
 
 import { Playground } from "docz"
@@ -10,8 +15,21 @@ import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 import { Box, ConfigConsumer } from "../../../dist/react.js"
 
-`border-{color}`
+import UtilityInfo from "../../components/UtilityInfo"
 
-<Playground>
-  <Box className="p-4 border border-blue-300">A Blue Bordered Box</Box>
-</Playground>
+<UtilityInfo pattern="border-{color}" themeProperty="borderColor" hasColors />
+
+---
+
+_Shown here using the `blue` palette_
+
+<Grid>
+  {[...Array(9).keys()].reverse().map((level) => (
+    <InfoBox pattern={`border-blue-${(level + 1) * 100}`}>
+      <Box
+        key={level}
+        className={`border rounded-sm h-16 border-blue-${(level + 1) * 100}`}
+      />
+    </InfoBox>
+  ))}
+</Grid>

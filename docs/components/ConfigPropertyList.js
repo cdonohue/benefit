@@ -30,9 +30,16 @@ export default function ConfigPropertyList({ property }) {
                 )
               }
 
-              if (typeof variant === "object") {
+              if (property === "boxShadow") {
                 return (
-                  <Color name={key} colors={variant} className="mr-3 mb-3" />
+                  <div className="w-full mb-4">
+                    <div className="text-sm w-full font-mono pb-2 rounded-sm text-gray-600 py-px">
+                      {key}
+                    </div>
+                    <div className="rounded-sm font-mono text-sm bg-gray-200 p-2 block">
+                      {variant}
+                    </div>
+                  </div>
                 )
               }
 

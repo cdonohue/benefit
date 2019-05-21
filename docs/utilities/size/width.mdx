@@ -9,10 +9,11 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 import { Box, ConfigConsumer } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`w-{size}`
+<UtilityInfo pattern="w-{size}" themeProperty="width" />
 
-<ConfigPropertyList property="width" />
+---
 
 <Grid minWidth="128px">
   <InfoBox pattern="w-1/2" color="blue">
@@ -74,12 +75,12 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 
 ## Min Width
 
-`min-w-{size}`
+<UtilityInfo pattern="min-w-{size}" themeProperty="minWidth" />
 
-<ConfigPropertyList property="minWidth" />
+---
 
 ## Max Width
 
-`max-w-{size}`
+<UtilityInfo pattern="max-w-{size}" themeProperty="maxWidth" />
 
-<ConfigPropertyList property="maxWidth" />
+---
