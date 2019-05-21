@@ -2,21 +2,26 @@
 
 ---
 
-### A utility system for styling web applications
+## A _5Kb_, Tailwind-compatible utility CSS-in-JS design system.
 
-`benefit` helps to solve the problem of elements inheriting cumbersome styles from other CSS on the page. Component-level-resets and delightfully composable utility classes (inspired by [TailwindCSS](https://tailwindcss.com)) allow each component to render precisely as expected despite inherited CSS.
+[Documentation](https://benefit.netlify.com)
 
-Another key feature of `benefit` is that _it only inlines the CSS for the utilities that you use_. So, whether you’re hardening/isolating a single React component or building a full responsive layout, only the CSS for the utilities you use get injected to the page.
+- Small runtime
+- No build step
+- Element normalization
+- Style isolation
+- Fully Customizable
+- Works with [TailwindCSS](https://tailwindcss.com) class names out of box
 
-You also have the ability to customize the configuration with your own design system rules. Extend the configuration and add your own colors and CSS utilities or start entirely from scratch. It's up to you.
+And... it only inlines the CSS for the utilities that you actually use
 
 `benefit` is framework agnostic, but also exports some react helpers.
 
 ---
 
-## React-specific
+### React-specific
 
-### Install dependencies
+#### Install dependencies
 
 Add `benefit` to your project along with its peer dependencies.
 
@@ -24,7 +29,7 @@ Add `benefit` to your project along with its peer dependencies.
 yarn add benefit emotion react
 ```
 
-### Setup transpilation
+#### Setup transpilation
 
 Set the jsx pragma at the top of your source file where you intend to use `benefit`.
 
@@ -63,7 +68,7 @@ function MyComponent() {
 
 ![Benefit Example](/docs/images/benefit-example.png)
 
-## Framework agnostic
+### Framework agnostic
 
 Add `benefit` to your project along with its peer dependencies.
 
