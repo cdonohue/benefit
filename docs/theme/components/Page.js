@@ -40,16 +40,24 @@ function PageContainer({ children }) {
 }
 
 const rightBg = css`
-  background-color: #f6f8fa;
+  background-color: ${colors.gray[200]};
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%2322292f' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-image: linear-gradient(to right, #f6f8fa 520px, transparent),
+  background-image: linear-gradient(
+      to right,
+      ${colors.gray[200]} 520px,
+      transparent
+    ),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%2322292f' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
 `
 
 const leftBg = css`
-  background-color: #22292f;
+  background-color: ${colors.gray[900]};
   background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23f6f8fa' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
-  background-image: linear-gradient(to left, #22292f 520px, transparent),
+  background-image: linear-gradient(
+      to left,
+      ${colors.gray[900]} 520px,
+      transparent
+    ),
     url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 20.5V18H0v-2h20v-2H0v-2h20v-2H0V8h20V6H0V4h20V2H0V0h22v20h2V0h2v20h2V0h2v20h2V0h2v20h2V0h2v20h2v2H20v-1.5zM0 20h2v20H0V20zm4 0h2v20H4V20zm4 0h2v20H8V20zm4 0h2v20h-2V20zm4 0h2v20h-2V20zm4 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2zm0 4h20v2H20v-2z' fill='%23f6f8fa' fill-opacity='0.02' fill-rule='evenodd'/%3E%3C/svg%3E");
 `
 
@@ -104,17 +112,21 @@ const styledLink = css`
   &:visited,
   &:active {
     text-decoration: none;
-    color: ${colors.gray["300"]};
+    color: ${colors.gray["500"]};
+  }
+
+  transition: 0.15s ease-in-out;
+
+  &:hover:not(.active) {
+    transform: translateX(0.25rem);
   }
 
   &.active {
-    position: relative;
-    font-weight: bold;
     color: white;
     background: linear-gradient(
       to left,
-      ${colors.gray["900"]},
-      ${colors.black}
+      ${colors.gray["800"]},
+      ${colors.gray["900"]}
     );
   }
 `
@@ -166,10 +178,10 @@ function renderSubMenu(menuItems, category, iconName) {
   return (
     <React.Fragment>
       <Box
-        className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-4 md:px-8 text-gray-500 mt-4`}
+        className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-4 md:px-8 text-gray-700 mt-4`}
       >
         {category}
-        <Icon name={iconName} className="w-4 text-gray-500" />
+        <Icon name={iconName} className="w-4 text-gray-700" />
       </Box>
       {menuItems
         .filter((item) => item.parent === category)
@@ -217,13 +229,13 @@ function SideBar({ isOpen, onClose }) {
 
   return (
     <Box
-      className={`bg-black text-gray-300 relative md:w-64 ${
+      className={`bg-gray-900 text-gray-300 relative md:w-64 ${
         isOpen ? "z-30" : ""
-      } absolute pin md:static`}
+      } absolute inset-0 md:static`}
     >
-      <Box className="side-menu h-screen md:sticky pin-t overflow-y-auto scrolling-touch">
+      <Box className="side-menu h-screen md:sticky top-0 overflow-y-auto scrolling-touch">
         <Box className="py-8 pt-16 md:pt-8">
-          <Box className="absolute pin-t pin-x bg-black z-10 p-4 md:hidden">
+          <Box className="absolute top-0 inset-x-0 bg-black z-10 p-4 md:hidden">
             <Box
               is="button"
               className="bg-transparent"
@@ -246,10 +258,10 @@ function SideBar({ isOpen, onClose }) {
             Getting Started
           </Link>
           <Box
-            className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-4 md:px-8 text-gray-500 mt-4`}
+            className={`${menuHeading} ${partialUnderline} uppercase tracking-wide text-xs flex justify-between items-center py-2 px-4 md:px-8 text-gray-700 mt-4`}
           >
             Customization
-            <Icon name="settings" className="w-4 text-gray-500" />
+            <Icon name="settings" className="w-4 text-gray-700" />
           </Box>
           <Link
             className={`px-4 md:px-8 py-2 no-underline hover:text-white block ${styledLink}`}
@@ -306,7 +318,7 @@ function SideBar({ isOpen, onClose }) {
 }
 
 function Content({ children }) {
-  return <Box className="bg-gray-100 flex-1 z-10 pt-16 md:pt-0">{children}</Box>
+  return <Box className="bg-gray-200 flex-1 z-10 pt-16 md:pt-0">{children}</Box>
 }
 
 const accent = css`
@@ -365,7 +377,7 @@ export default function Page({ children, doc, location }) {
         <SideBar isOpen={isMenuOpen} onClose={() => toggleMenu(!isMenuOpen)} />
         <Content>
           <Box
-            className={`absolute pin-t pin-x z-50 bg-white p-4 md:relative md:bg-transparent md:p-8 flex justify-between items-center ${fadingBorder}`}
+            className={`absolute top-0 inset-x-0 z-50 bg-white p-4 md:relative md:bg-transparent md:p-8 flex justify-between items-center ${fadingBorder}`}
             style={{
               backgroundImage: "linear-gradient(to right, white, transparent)",
             }}
@@ -398,8 +410,8 @@ export default function Page({ children, doc, location }) {
             </Box>
           </Box>
           <Box className="p-4 md:p-8">
-            <Box className="text-4xl mb-8 font-thin text-gray-700">
-              <Box className="text-sm uppercase font-hairline text-gray-400">
+            <Box className="text-5xl mb-8 font-thin text-gray-700">
+              <Box className="text-sm uppercase font-hairline text-gray-500">
                 {doc.parent}
               </Box>
               <Box className={`${accent} py-4`}>{doc.name}</Box>

@@ -13,30 +13,20 @@ import { Playground } from "docz"
 import { Box, ConfigConsumer } from "../../../dist/react.js"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`font-{family}`
+<UtilityInfo pattern="font-{family}" themeProperty="fontFamily" />
 
-<ConfigConsumer>
-  {({ config }) => (
-    <Grid>
-      {Object.keys(config.theme.fontFamily).map((fontClass) => (
-          <Box key={fontClass} className="rounded-lg shadow overflow-hidden">
-            <Box className={`bg-white p-4 font-${fontClass}`}>
-              <Box className="font-mono text-gray-400 text-sm mb-4">font-{fontClass}</Box>
-              Pack my box with five dozen liquor jugs.
-            </Box>
-            <Box className="flex flex-wrap p-4 bg-gray-100 pb-2">
-              {config.theme.fontFamily[fontClass].map((typeface) => (
-                <Box key={typeface} className="bg-white shadow px-3 py-1 text-xs font-mono rounded mr-2 mb-2">
-                  {typeface}
-                </Box>
-              ))}
-            </Box>
-          </Box>
+---
 
-      ))}
-    </Grid>
+<InfoBox pattern="font-sans">
+  <Box className="font-sans">Pack my box with five dozen liquor jugs.</Box>
+</InfoBox>
 
-)}
+<InfoBox pattern="font-serif" className="mt-4">
+  <Box className="font-serif">Pack my box with five dozen liquor jugs.</Box>
+</InfoBox>
 
-</ConfigConsumer>
+<InfoBox pattern="font-mono" className="mt-4">
+  <Box className="font-mono">Pack my box with five dozen liquor jugs.</Box>
+</InfoBox>

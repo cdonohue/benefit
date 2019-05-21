@@ -246,7 +246,7 @@ export const borderWidth = {
 
 export const borderColor = {
   ...colors,
-  default: colors.gray["200"],
+  default: colors.gray["300"],
 }
 
 export const borderRadius = {

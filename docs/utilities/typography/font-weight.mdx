@@ -15,6 +15,12 @@ import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
 
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="font-{weight}" themeProperty="fontWeight" />
+
+---
+
 <ConfigConsumer>
   {({ config }) => (
     <Grid>
@@ -28,5 +34,3 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
     </Grid>
   )}
 </ConfigConsumer>
-
-<ConfigPropertyList property="fontWeight" />

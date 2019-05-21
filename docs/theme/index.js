@@ -10,17 +10,14 @@ import { Box, ConfigProvider } from "../../dist/react.js"
 import Loader from "./components/Loader"
 
 injectGlobal`
-  @import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css');
-  @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat');
-
   html {
     box-sizing: border-box;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
       Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-weight: 400;
     font-size: 13px;
-    color: #272727;
-    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+    color: ${colors.gray[800]};
+    /* text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07); */
 
     @media screen and (min-width: 768px) {
       font-size: 16px;
@@ -38,7 +35,7 @@ injectGlobal`
     padding: 0;
     min-height: 100vh;
     height: 100vh;
-    background: #F6F8FA;
+    background: ${colors.gray[200]} ;
   }
   
   #root {
@@ -115,14 +112,14 @@ const map = {
   blockquote: (props) => (
     <Box
       is="blockquote"
-      className="rounded overflow-hidden bg-white shadow px-4 py-2 text-gray-600 border-l-4 border-blue-300 my-4"
+      className="rounded-sm overflow-hidden bg-gray-300 px-4 py-2 text-gray-800 my-4"
       {...props}
     />
   ),
   inlineCode: (props) => (
     <Box
       is="span"
-      className="rounded-sm bg-white overflow-hidden px-1 font-mono text-gray-600 border"
+      className="rounded-sm bg-white overflow-hidden px-1 font-mono text-gray-700 border"
       {...props}
     />
   ),

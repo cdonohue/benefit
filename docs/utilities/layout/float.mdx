@@ -14,13 +14,17 @@ import { Box } from "../../../dist/react.js"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 
-`float-{left|right|none}`
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="float-{left|right|none}" />
+
+---
 
 <Grid>
-  <InfoBox>
+  <InfoBox pattern="float-left">
     <Box className="text-gray-800">
-      <Box className="font-mono text-sm py-2 px-4 rounded-sm bg-blue-400 text-white mr-2 inline-block float-left">
-        float-left
+      <Box className="text-sm py-2 px-4 rounded-sm bg-blue-400 text-white mr-2 inline-block float-left">
+        I'm floated
       </Box>
       <Box is="p">
         Church-key mixtape poutine next level direct trade shabby chic everyday
@@ -32,10 +36,10 @@ import InfoBox from "../../components/InfoBox"
       </Box>
     </Box>
   </InfoBox>
-  <InfoBox>
+  <InfoBox pattern="float-right">
     <Box className="text-gray-800">
-      <Box className="font-mono text-sm py-2 px-4 rounded-sm bg-blue-400 text-white mr-2 inline-block float-right">
-        float-right
+      <Box className="text-sm py-2 px-4 rounded-sm bg-blue-400 text-white mr-2 inline-block float-right">
+        I'm floated
       </Box>
       <Box is="p">
         Church-key mixtape poutine next level direct trade shabby chic everyday
@@ -47,10 +51,10 @@ import InfoBox from "../../components/InfoBox"
       </Box>
     </Box>
   </InfoBox>
-  <InfoBox isDefault>
+  <InfoBox pattern="float-none" isDefault>
     <Box className="text-gray-800">
-      <Box className="font-mono text-sm py-2 px-4 rounded-sm bg-blue-400 text-white mr-2 inline-block float-none">
-        float-none
+      <Box className="text-sm py-2 px-4 rounded-sm bg-blue-400 text-white mr-2 inline-block float-none">
+        I'm not floated
       </Box>
       <Box is="p">
         Church-key mixtape poutine next level direct trade shabby chic everyday

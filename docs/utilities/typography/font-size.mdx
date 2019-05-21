@@ -14,8 +14,11 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`text-{size}`
+<UtilityInfo pattern="text-{size}" themeProperty="fontSize" />
+
+---
 
 <ConfigConsumer>
   {({ config }) => (
@@ -30,5 +33,3 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
     </Grid>
   )}
 </ConfigConsumer>
-
-<ConfigPropertyList property="fontSize" />

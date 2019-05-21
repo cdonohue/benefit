@@ -11,11 +11,11 @@ export default function LayoutBox({
 }) {
   return (
     <Box
-      className={`bg-white p-4 relative rounded-lg shadow overflow-hidden ${className}`}
+      className={`bg-white p-4 relative rounded shadow overflow-hidden ${className}`}
     >
       {isDefault && (
         <Box
-          className={`uppercase font-semibold bg-${color}-100 text-xs text-${color}-500 p-1 rounded-bl absolute pin-t pin-r`}
+          className={`uppercase font-semibold bg-${color}-200 text-xs text-${color}-600 p-1 rounded-bl absolute top-0 right-0`}
         >
           Default
         </Box>
@@ -29,7 +29,7 @@ export default function LayoutBox({
         </Box>
       )}
       {pattern && (
-        <Box is="code" className={`font-mono text-${color}-500 text-sm block`}>
+        <Box is="code" className="font-mono text-blue-500 text-sm block">
           {pattern}
         </Box>
       )}
