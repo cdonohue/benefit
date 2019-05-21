@@ -9,10 +9,13 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 import { Box, ConfigConsumer } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
 
 ### All Corners
 
-`rounded{-size?}`
+<UtilityInfo pattern="rounded{-size?}" themeProperty="borderRadius" />
+
+---
 
 <Grid minWidth="128px">
   <InfoBox caption="None" pattern="rounded-none">
@@ -34,7 +37,9 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 
 ### Separate Sides
 
-`rounded-{t|r|b|l}{-size?}`
+<UtilityInfo pattern="rounded-{t|r|b|l}{-size?}" />
+
+---
 
 <Grid minWidth="128px">
   <InfoBox caption="Top" pattern="rounded-t">
@@ -53,7 +58,9 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 
 ### Separate Corners
 
-`rounded-{tl|tr|br|bl}{-size?}`
+<UtilityInfo pattern="rounded-{tl|tr|br|bl}{-size?}" />
+
+---
 
 <Grid minWidth="128px">
   <InfoBox caption="Top Left" pattern="rounded-tl">

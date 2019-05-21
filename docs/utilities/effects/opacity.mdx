@@ -8,25 +8,26 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`opacity-{level}`
+<UtilityInfo pattern="opacity-{level}" themeProperty="opacity" />
 
-<ConfigPropertyList property="opacity" />
+---
 
 <Grid className="font-mono text-sm">
-  <Box className="rounded bg-blue-400 text-white p-4 opacity-100">
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-100">
     opacity-100
   </Box>
-  <Box className="rounded bg-blue-400 text-white p-4 opacity-75">
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-75">
     opacity-75
   </Box>
-  <Box className="rounded bg-blue-400 text-white p-4 opacity-50">
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-50">
     opacity-50
   </Box>
-  <Box className="rounded bg-blue-400 text-white p-4 opacity-25">
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-25">
     opacity-25
   </Box>
-  <Box className="rounded border border-blue-200 border-dashed text-blue-300 border-2 p-4">
+  <Box className="rounded border border-gray-400 border-dashed text-gray-400 border-2 p-4">
     opacity-0
   </Box>
 </Grid>

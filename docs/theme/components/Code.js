@@ -84,7 +84,7 @@ export default function Code(props) {
   return (
     <LiveProvider code={props.children.props.children} disabled theme={theme}>
       <Box
-        className={`${formattedCode} bg-gray-900 p-4 mb-4 text-sm rounded leading-relaxed relative overflow-hidden shadow-inner`}
+        className={`${formattedCode} bg-gray-800 p-4 mb-4 text-sm rounded leading-relaxed relative overflow-hidden shadow-inner`}
       >
         <LiveEditor />
       </Box>

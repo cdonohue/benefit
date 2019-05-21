@@ -14,14 +14,13 @@ import { Box } from "../../../dist/react.js"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`container`
+<UtilityInfo pattern="container" themeProperty="screens" />
 
-Containers provide a nice, responsive way to wrap your content. Add a `container` class to your `Box` to have its `max-width` match the `min-width` of the current breakpoint. All containers have a `width: 100%` applied.
+---
 
-Built-in breakpoints are defined by the `screens` value in the configuration.
-
-<ConfigPropertyList property="screens" />
+Containers provide a nice, responsive way to wrap your content. Add a `container` class to make an element's `max-width` match the `min-width` of the current breakpoint. All containers have a `width: 100%` applied.
 
 ```js
 <div className="mx-auto container bg-gray-200 rounded p-4">
@@ -30,14 +29,5 @@ Built-in breakpoints are defined by the `screens` value in the configuration.
   </h1>
 </div>
 ```
-
-<Box className="mx-auto container bg-gray-200 rounded p-4">
-  <Box
-    is="h1"
-    className="text-2xl tracking-tighter uppercase font-bold text-center"
-  >
-    Business at the speed of light.
-  </Box>
-</Box>
 
 > The above `container` has a utility of `mx-auto` added so it is centered horizontally within the parent.

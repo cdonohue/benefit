@@ -2,6 +2,11 @@
 name: Background Position
 property: background-position
 parent: Background
+route: /background/background-position
+previousRoute: /background/background-color
+previousLabel: Background Color
+nextRoute: /background/background-repeat
+nextLabel: Background Repeat
 ---
 
 import { Playground } from "docz"
@@ -9,7 +14,11 @@ import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import { Box } from "../../../dist/react.js"
 
-`bg-{position}`
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="bg-{position}" themeProperty="backgroundPosition" />
+
+---
 
 <Box className="relative font-bold mb-2">
   <Box

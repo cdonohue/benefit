@@ -13,7 +13,13 @@ import { Box } from "../../../dist/react.js"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 
-<Grid minWidth="120px">
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="{visible|invisible}" />
+
+---
+
+<Grid minWidth="200px">
   <InfoBox caption="Visible" pattern="visible" isDefault>
     <Box className="w-full h-16 bg-blue-400 rounded visible" />
   </InfoBox>

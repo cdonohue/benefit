@@ -3,7 +3,7 @@ import { Box } from "../../dist/react.js"
 
 export default function BrowserBox({ children }) {
   return (
-    <Box className="bg-gray-200 p-2 rounded overflow-hidden">
+    <Box className="bg-gray-400 p-2 rounded overflow-hidden">
       <Box className="flex mb-2 items-center">
         <Box className="w-2 h-2 flex-shrink-0 rounded-full bg-gray-300" />
         <Box className="w-2 ml-1 h-2 flex-shrink-0 rounded-full bg-gray-500" />

@@ -13,72 +13,74 @@ import { Box } from "../../../dist/react.js"
 import InfoBox from "../../components/InfoBox"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
 
-<ConfigPropertyList property="zIndex" />
+import UtilityInfo from "../../components/UtilityInfo"
 
-<InfoBox>
-  <Box className="relative h-48">
-    <Box className="shadow-lg overflow-hidden w-1/3 h-24 bg-blue-700 rounded absolute z-50 flex items-end font-mono text-xs">
-      <Box
-        className="flex-grow text-right text-blue-100 p-1"
-        style={{ backgroundColor: "rgba(0,0,0,.12)" }}
-      >
-        z-50
-      </Box>
-    </Box>
+<UtilityInfo pattern="z-{level}" themeProperty="zIndex" />
+
+---
+
+<Box className="relative h-48">
+  <Box className="shadow-lg overflow-hidden w-1/3 h-24 bg-gray-700 rounded absolute z-50 flex items-end font-mono text-xs">
     <Box
-      style={{ marginLeft: "20%", transform: "translateX(-20%)" }}
-      className="shadow-lg overflow-hidden w-1/3 h-24 bg-blue-600 rounded absolute mt-4 z-40 flex items-end font-mono text-xs"
+      className="flex-grow text-right text-gray-100 p-1"
+      style={{ backgroundColor: "rgba(0,0,0,.12)" }}
     >
-      <Box
-        className="flex-grow text-right text-blue-100 p-1"
-        style={{ backgroundColor: "rgba(0,0,0,.12)" }}
-      >
-        z-40
-      </Box>
-    </Box>
-    <Box
-      style={{ marginLeft: "40%", transform: "translateX(-40%)" }}
-      className="shadow-lg overflow-hidden w-1/3 h-24 bg-blue-500 rounded absolute mt-8 z-30 flex items-end font-mono text-xs"
-    >
-      <Box
-        className="flex-grow text-right text-blue-100 p-1"
-        style={{ backgroundColor: "rgba(0,0,0,.12)" }}
-      >
-        z-30
-      </Box>
-    </Box>
-    <Box
-      style={{ marginLeft: "60%", transform: "translateX(-60%)" }}
-      className="shadow-lg overflow-hidden w-1/3 h-24 bg-blue-400 rounded absolute mt-12 z-20 flex items-end font-mono text-xs"
-    >
-      <Box
-        className="flex-grow text-right text-blue-100 p-1"
-        style={{ backgroundColor: "rgba(0,0,0,.12)" }}
-      >
-        z-20
-      </Box>
-    </Box>
-    <Box
-      style={{ marginLeft: "80%", transform: "translateX(-80%)" }}
-      className="shadow-lg overflow-hidden w-1/3 h-24 bg-blue-300 rounded absolute mt-16 z-10 flex items-end font-mono text-xs"
-    >
-      <Box
-        className="flex-grow text-right text-blue-900 p-1"
-        style={{ backgroundColor: "rgba(255,255,255,.26)" }}
-      >
-        z-10
-      </Box>
-    </Box>
-    <Box
-      style={{ right: "0" }}
-      className="shadow-lg overflow-hidden w-1/3 h-24 bg-blue-200 rounded absolute mt-20 z-0 flex items-end font-mono text-xs"
-    >
-      <Box
-        className="flex-grow text-right text-blue-900 p-1"
-        style={{ backgroundColor: "rgba(255,255,255,.54)" }}
-      >
-        z-0
-      </Box>
+      z-50
     </Box>
   </Box>
-</InfoBox>
+  <Box
+    style={{ marginLeft: "20%", transform: "translateX(-20%)" }}
+    className="shadow-lg overflow-hidden w-1/3 h-24 bg-gray-600 rounded absolute mt-4 z-40 flex items-end font-mono text-xs"
+  >
+    <Box
+      className="flex-grow text-right text-gray-100 p-1"
+      style={{ backgroundColor: "rgba(0,0,0,.12)" }}
+    >
+      z-40
+    </Box>
+  </Box>
+  <Box
+    style={{ marginLeft: "40%", transform: "translateX(-40%)" }}
+    className="shadow-lg overflow-hidden w-1/3 h-24 bg-gray-500 rounded absolute mt-8 z-30 flex items-end font-mono text-xs"
+  >
+    <Box
+      className="flex-grow text-right text-gray-100 p-1"
+      style={{ backgroundColor: "rgba(0,0,0,.12)" }}
+    >
+      z-30
+    </Box>
+  </Box>
+  <Box
+    style={{ marginLeft: "60%", transform: "translateX(-60%)" }}
+    className="shadow-lg overflow-hidden w-1/3 h-24 bg-gray-400 rounded absolute mt-12 z-20 flex items-end font-mono text-xs"
+  >
+    <Box
+      className="flex-grow text-right text-gray-100 p-1"
+      style={{ backgroundColor: "rgba(0,0,0,.12)" }}
+    >
+      z-20
+    </Box>
+  </Box>
+  <Box
+    style={{ marginLeft: "80%", transform: "translateX(-80%)" }}
+    className="shadow-lg overflow-hidden w-1/3 h-24 bg-gray-300 rounded absolute mt-16 z-10 flex items-end font-mono text-xs"
+  >
+    <Box
+      className="flex-grow text-right text-gray-900 p-1"
+      style={{ backgroundColor: "rgba(255,255,255,.26)" }}
+    >
+      z-10
+    </Box>
+  </Box>
+  <Box
+    style={{ right: "0" }}
+    className="shadow-lg overflow-hidden w-1/3 h-24 bg-gray-100 rounded absolute mt-20 z-0 flex items-end font-mono text-xs"
+  >
+    <Box
+      className="flex-grow text-right text-gray-900 p-1"
+      style={{ backgroundColor: "rgba(255,255,255,.54)" }}
+    >
+      z-0
+    </Box>
+  </Box>
+</Box>

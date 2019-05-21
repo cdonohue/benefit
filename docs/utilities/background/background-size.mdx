@@ -2,12 +2,23 @@
 name: Background Size
 property: background-size
 parent: Background
+route: /background/background-size
+previousRoute: /background/background-repeat
+previousLabel: Background Repeat
+nextRoute: /border/border-color
+nextLabel: Border Color
 ---
 
 import { Playground } from "docz"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import { Box } from "../../../dist/react.js"
+
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="bg-{auto|cover|contain}" />
+
+---
 
 <Grid minWidth="200px">
   <InfoBox pattern="bg-auto">

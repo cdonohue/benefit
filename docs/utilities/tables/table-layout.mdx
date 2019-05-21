@@ -7,8 +7,11 @@ parent: Tables
 import { Box } from "../../../dist/react.js"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`table-{layout}`
+<UtilityInfo pattern="table-{auto|fixed}" />
+
+---
 
 <Grid minWidBox="200px">
   <InfoBox caption="Auto" pattern="table-auto" isDefault>

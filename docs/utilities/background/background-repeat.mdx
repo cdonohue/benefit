@@ -2,12 +2,22 @@
 name: Background Repeat
 property: background-repeat
 parent: Background
+route: /background/background-repeat
+previousRoute: /background/background-position
+previousLabel: Background Position
+nextRoute: /background/background-size
+nextLabel: Background Size
 ---
 
 import { Playground } from "docz"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import { Box } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="bg-{round|space|repeat(-x|-y)|no-repeat}" />
+
+---
 
 <Grid minWidth="320px">
   <InfoBox pattern="bg-repeat">

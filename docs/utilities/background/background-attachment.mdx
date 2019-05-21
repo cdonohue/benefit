@@ -2,12 +2,22 @@
 name: Background Attachment
 property: background-attachment
 parent: Background
+route: /background/background-attachment
+previousRoute: /typography/whitespace
+previousLabel: Whitespace
+nextRoute: /background/background-color
+nextLabel: Background Color
 ---
 
 import { Playground } from "docz"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import { Box } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="bg-{variant}" />
+
+---
 
 <Grid minWidth="200px" className="text-sm">
   <InfoBox pattern="bg-fixed">

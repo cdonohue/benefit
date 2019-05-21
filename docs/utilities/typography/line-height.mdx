@@ -15,9 +15,11 @@ import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
 
-`leading-{size}`
+import UtilityInfo from "../../components/UtilityInfo"
 
-<ConfigPropertyList property="lineHeight" />
+<UtilityInfo pattern="leading-{size}" themeProperty="lineHeight" />
+
+---
 
 <ConfigConsumer>
   {({ config }) => (

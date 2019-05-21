@@ -9,8 +9,11 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
 import Grid from "../../components/Grid"
 import InfoBox from "../../components/InfoBox"
 import { Box, ConfigConsumer } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`p{side?}-{size}`
+<UtilityInfo pattern="p{side?}-{size}" themeProperty="padding" />
+
+---
 
 <Grid minWidth="100px">
   <InfoBox caption="All" pattern="p-{size}">
@@ -63,5 +66,3 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
     </Box>
   </InfoBox>
 </Grid>
-
-<ConfigPropertyList property="padding" />

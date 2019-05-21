@@ -14,12 +14,13 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
+import UtilityInfo from "../../components/UtilityInfo"
 
-List Style Type
+### List Style Type
 
-`list-{type}`
+<UtilityInfo pattern="list-{type}" themeProperty="listStyleType" />
 
-<ConfigPropertyList property="listStyleType" />
+---
 
 <ConfigConsumer>
   {({ config }) => (
@@ -39,9 +40,11 @@ List Style Type
   )}
 </ConfigConsumer>
 
-List Style Position
+### List Style Position
 
-`list-{inside|outside}`
+<UtilityInfo pattern="list-{inside|outside}" />
+
+---
 
 <Grid>
   <InfoBox pattern="list-inside">
