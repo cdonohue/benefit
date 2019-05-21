@@ -112,7 +112,7 @@ const styledLink = css`
   &:visited,
   &:active {
     text-decoration: none;
-    color: ${colors.gray["500"]};
+    color: ${colors.gray["500"]} !important;
   }
 
   transition: 0.15s ease-in-out;
@@ -122,7 +122,7 @@ const styledLink = css`
   }
 
   &.active {
-    color: white;
+    color: white !important;
     background: linear-gradient(
       to left,
       ${colors.gray["800"]},
