@@ -31,7 +31,10 @@ const utilities = Object.keys(benefit.utilities)
     const inserted = emotion.cache.inserted[hash]
 
     // Replae `css-1234` with `hover:opacity-0`
-    return inserted.replace(emotionclassName, utility)
+    return inserted.replace(
+      emotionclassName,
+      utility.replace(":", "\\:").replace("/", "\\/")
+    )
   })
   .join("\n")
   .concat("\n")
