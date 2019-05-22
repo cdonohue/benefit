@@ -15,7 +15,7 @@ export default function Color({ className, name, colors }) {
   }
 
   const baseContrast = polychrome(baseColor)
-    .contrast(colors[900] || "#000", colors[100] || "#fff")
+    .contrast()
     .hex()
   return (
     <div
@@ -28,8 +28,11 @@ export default function Color({ className, name, colors }) {
             ? "repeating-linear-gradient(-45deg,#f5f5f5,#f5f5f5 10px,#e7e7e7 10px,#e7e7e7 20px)"
             : baseColor,
         }}
-        className="text-xs px-2 py-1 flex shadow h-8 relative"
-      />
+        className="text-xs p-2 flex shadow h-8 relative"
+      >
+        {name}
+        {!isSingleColor && "-{level}"}
+      </div>
       {!isSingleColor && (
         <div className="flex">
           {Object.keys(colors).map((shade) => {
@@ -38,7 +41,7 @@ export default function Color({ className, name, colors }) {
               .hex()
             return (
               <div
-                style={{ color: shadeContrast, fontSize: "6px" }}
+                style={{ color: shadeContrast, fontSize: "10px" }}
                 className={`p-1 font-thin text-center flex-grow text-xs bg-${name}-${shade}`}
               >
                 {shade}
@@ -47,10 +50,6 @@ export default function Color({ className, name, colors }) {
           })}
         </div>
       )}
-      <div className="text-xs px-2 py-1 flex text-gray-700 shadow relative bg-white">
-        {name}
-        {!isSingleColor && "-{level}"}
-      </div>
     </div>
   )
 }

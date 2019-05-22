@@ -9,7 +9,7 @@ import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import UtilityInfo from "../../components/UtilityInfo"
 
-<UtilityInfo pattern="flex-{shrink|no-shrink}" />
+<UtilityInfo pattern="flex-shrink{-variant?}" themeProperty="flexShrink" />
 
 ---
 
@@ -32,7 +32,7 @@ import UtilityInfo from "../../components/UtilityInfo"
       <Box className="flex-shrink p-2 bg-blue-400 rounded-sm text-blue-100 m-1">
         Will shrink
       </Box>
-      <Box className="flex-no-shrink p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+      <Box className="flex-shrink-0 p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
         Will not shrink below its initial size
       </Box>
       <Box className="flex-shrink p-2 bg-blue-400 rounded-sm text-blue-100 m-1">

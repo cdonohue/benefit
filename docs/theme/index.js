@@ -86,7 +86,9 @@ const map = {
       {...props}
     />
   ),
-  hr: (props) => <Box is="hr" className="my-4 border-b" {...props} />,
+  hr: (props) => (
+    <Box is="hr" className="my-4 border-b border-gray-400" {...props} />
+  ),
   // h3: components.H3,
   // h4: components.H4,
   // h5: components.H5,

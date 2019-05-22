@@ -9,7 +9,7 @@ import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import UtilityInfo from "../../components/UtilityInfo"
 
-<UtilityInfo pattern="flex-{grow|no-grow}" />
+<UtilityInfo pattern="flex-grow{-variant?}" themeProperty="flexGrow" />
 
 ---
 
@@ -32,7 +32,7 @@ import UtilityInfo from "../../components/UtilityInfo"
       <Box className="flex-grow p-2 bg-blue-400 rounded-sm text-blue-100 m-1">
         Will grow
       </Box>
-      <Box className="flex-no-grow p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+      <Box className="flex-grow-0 p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
         Will not grow
       </Box>
       <Box className="flex-grow p-2 bg-blue-400 rounded-sm text-blue-100 m-1">

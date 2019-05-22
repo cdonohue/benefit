@@ -42,56 +42,30 @@ export default function Output({
           </div>
         </div>
         <div className="text-gray-800 p-4">
-          Utility classes are parsed and converted into css declarations with
-          deterministic hashes.
+          Utility classes are parsed and converted into css declarations.
         </div>
       </div>
       <div className="flex flex-auto justify-center text-gray-800 py-4">
         <Icon name="arrow-down" />
       </div>
       <div className="bg-white rounded shadow-xl overflow-hidden">
-        <Grid minWidth="200px" className="p-4 bg-gray-700">
+        <Grid minWidth="200px" className="p-4 bg-gray-700 mb-0" important>
           {styles.map((block) => (
             <div
               style={{ fontSize: "10px" }}
               className="bg-white font-mono p-2 rounded shadow"
             >
               <pre>
-                <code className="block py-1">
-                  .{block.selector} {"{"}
-                </code>
                 {block.rules.map((rule) => (
-                  <code className="block py-1">
-                    {"  "}
-                    {rule}
-                  </code>
+                  <code className="block py-1">{rule}</code>
                 ))}
-                <code className="block py-1">{"}"}</code>
               </pre>
             </div>
           ))}
         </Grid>
         <div className="text-gray-800 p-4">
-          These converted declarations are inserted into the DOM and the
-          targeted elements are given the new hash names as classes.
-        </div>
-      </div>
-      <div className="flex flex-auto justify-center text-gray-800 py-4">
-        <Icon name="arrow-down" />
-      </div>
-      <div className="bg-white rounded shadow-xl overflow-hidden">
-        <div className="bg-gray-700 text-gray-100 items-center text-sm justify-center flex p-4">
-          <div className="font-mono">
-            {"<div class='"}
-            <div className="bg-white inline-block px-2 py-1 rounded-sm text-gray-800">
-              {styles.map((declaration) => declaration.selector).join(" ")}
-            </div>
-            {"'>...<div>"}
-          </div>
-        </div>
-        <div className="text-gray-800 p-4">
-          Declarations are only inserted once so many elements can dynamically
-          use the same utility class with one insert.
+          These converted declarations are inserted into the DOM and referenced
+          by any elements that need the styles.
         </div>
       </div>
       <div>

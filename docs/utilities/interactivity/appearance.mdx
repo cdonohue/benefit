@@ -9,12 +9,18 @@ import { Box, ConfigConsumer } from "../../../dist/react.js"
 import InfoBox from "../../components/InfoBox"
 import Grid from "../../components/Grid"
 import ConfigPropertyList from "../../components/ConfigPropertyList"
+import UtilityInfo from "../../components/UtilityInfo"
 
-`appearance-none`
+<UtilityInfo pattern="appearance-none" />
+
+---
+
+Use this utility to reset any platform-native styling based on the operating system's theme
 
 <Grid>
-  <InfoBox>
-    <Box className="bg-white p-2 rounded mb-2">
+  <InfoBox caption="Select Box example">
+    <Box className="text-gray-700 text-sm mb-2">Native</Box>
+    <Box className="bg-gray-200 p-2 rounded mb-2">
       <Box is="select">
         <option value="">Select an option</option>
         <option value="1">One</option>
@@ -22,13 +28,34 @@ import ConfigPropertyList from "../../components/ConfigPropertyList"
         <option value="3">Three</option>
       </Box>
     </Box>
-    <Box className="bg-white p-2 rounded">
+    <Box className="text-gray-700 text-sm mb-2">
+      Using{" "}
+      <Box className="font-mono inline-block text-blue-500">
+        appearance-none
+      </Box>
+    </Box>
+    <Box className="bg-gray-200 p-2 rounded">
       <Box is="select" className="appearance-none">
         <option value="">Select an option</option>
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
       </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Checkbox example">
+    <Box className="text-gray-700 text-sm mb-2">Native</Box>
+    <Box className="bg-gray-200 p-2 rounded mb-2">
+      <Box is="input" type="checkbox" />
+    </Box>
+    <Box className="text-gray-700 text-sm mb-2">
+      Using{" "}
+      <Box className="font-mono inline-block text-blue-500">
+        appearance-none
+      </Box>
+    </Box>
+    <Box className="bg-gray-200 p-2 rounded">
+      <Box is="input" type="checkbox" className="appearance-none" />
     </Box>
   </InfoBox>
 </Grid>

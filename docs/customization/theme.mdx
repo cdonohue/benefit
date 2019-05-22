@@ -2,7 +2,10 @@
 name: Theme
 route: /customization/theme
 parent: Customization
-rank: 2
+previousRoute: /customization/overview
+previousLabel: Customization
+nextRoute: /customization/normalize
+nextLabel: Normalize
 ---
 
 The `theme` key is a way of holding all of your design system rules to iterate over with any `utilities` defined later. For example, one of the keys in the default `theme` is `fontWeight`:
@@ -35,4 +38,4 @@ return (
 )
 ```
 
-You would then be able to generate utility classes and iterate over these keys to generate utility classes like `font-hairline`, `font-thin`, etc.
+You would then be able to iterate over these keys to generate utility classes like `font-hairline`, `font-thin`, etc.

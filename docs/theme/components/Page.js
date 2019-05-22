@@ -443,7 +443,7 @@ export default function Page({ children, doc, location }) {
 
             {children}
 
-            <Box className="flex justify-between border-t mt-8 pt-4 border-dashed">
+            <Box className="flex justify-between border-t mt-8 pt-4 border-gray-400 border-dashed">
               <div>
                 {doc.previousRoute && (
                   <Link
@@ -454,7 +454,9 @@ export default function Page({ children, doc, location }) {
                       <ArrowLeft />
                       Previous
                     </Box>
-                    <Box className="font-bold">{doc.previousLabel}</Box>
+                    <Box className="font-bold text-right">
+                      {doc.previousLabel}
+                    </Box>
                   </Link>
                 )}
               </div>

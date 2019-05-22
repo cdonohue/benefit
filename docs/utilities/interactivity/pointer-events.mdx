@@ -3,3 +3,42 @@ name: Pointer Events
 property: pointer-events
 parent: Interactivity
 ---
+
+import { Box } from "../../../dist/react.js"
+import UtilityInfo from "../../components/UtilityInfo"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+
+<UtilityInfo pattern="pointer-events-{none|auto}" />
+
+---
+
+This sets whether or not a particular element can become the target of pointer events. The two examples below attempt to show an alert box on click. Notice how the second button never triggers the alert.
+
+<Grid minWidth="250px">
+  <InfoBox pattern="pointer-events-auto" caption="Default Button">
+    <Box
+      is="button"
+      type="button"
+      onClick={() => alert("Button clicked")}
+      className="bg-gray-600 text-white w-full p-4 rounded shadow-lg font-semibold uppercase"
+    >
+      A Button
+    </Box>
+  </InfoBox>
+  <InfoBox
+    pattern="pointer-events-none"
+    caption="Button (Ignoring pointer events)"
+  >
+    <Box
+      is="button"
+      type="button"
+      onClick={() => alert("Button clicked")}
+      className="pointer-events-none bg-gray-600 text-white w-full p-4 rounded shadow-lg font-semibold uppercase"
+    >
+      A Button
+    </Box>
+  </InfoBox>
+</Grid>
+
+> In addition to indicating that the element is not the target of pointer events, the value `none` instructs the pointer event to go "through" the element and target whatever is "underneath" that element instead.

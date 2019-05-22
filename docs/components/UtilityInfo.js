@@ -18,12 +18,26 @@ function renderProperties(themeProperty, hasColors = false) {
       <ConfigConsumer>
         {({ config }) => {
           const propertyValue = config.theme[themeProperty]
+          const singleColors = Object.keys(propertyValue).filter(
+            (c) => typeof propertyValue[c] === "string"
+          )
+          const multipleColors = Object.keys(propertyValue).filter(
+            (c) => typeof propertyValue[c] !== "string"
+          )
           return (
-            <Grid minWidth="200px" className="p-4 border-t">
-              {Object.keys(propertyValue).map((key) => (
-                <Color name={key} colors={propertyValue[key]} />
-              ))}
-            </Grid>
+            <div>
+              <Grid minWidth="200px" className="p-4 border-t mb-0" important>
+                {multipleColors.map((key) => (
+                  <Color name={key} colors={propertyValue[key]} />
+                ))}
+              </Grid>
+
+              <Grid minWidth="200px" className="p-4 border-t mb-0" important>
+                {singleColors.map((key) => (
+                  <Color name={key} colors={propertyValue[key]} />
+                ))}
+              </Grid>
+            </div>
           )
         }}
       </ConfigConsumer>
