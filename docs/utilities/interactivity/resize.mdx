@@ -2,6 +2,11 @@
 name: Resize
 property: resize
 parent: Interactivity
+route: /interactivity/resize
+previousRoute: /interactivity/pointer-events
+previousLabel: Pointer Events
+nextRoute: /interactivity/user-select
+nextLabel: User Select
 ---
 
 import { Box } from "../../../dist/react.js"
@@ -12,6 +17,8 @@ import Grid from "../../components/Grid"
 <UtilityInfo pattern="resize{-none|y|x?}" />
 
 ---
+
+For any of these `resize` utilities to work, you must apply an [overflow](/layout/overflow) class other than the default `visible` behavior. These example all have `overflow-hidden` applied as an example.
 
 <Grid minWidth="250px">
   <InfoBox pattern="resize" caption="Both">
