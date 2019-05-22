@@ -41,7 +41,7 @@ export default function Color({ className, name, colors }) {
               .hex()
             return (
               <div
-                style={{ color: shadeContrast, fontSize: "10px" }}
+                style={{ color: shadeContrast, fontSize: "8px" }}
                 className={`p-1 font-thin text-center flex-grow text-xs bg-${name}-${shade}`}
               >
                 {shade}
