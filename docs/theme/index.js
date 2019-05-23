@@ -82,13 +82,11 @@ const map = {
   h3: (props) => (
     <Box
       is="h3"
-      className="text-xl leading-tight mt-6 mb-4 border-b pb-2 text-gray-800"
+      className="text-xl leading-tight mt-6 mb-4 border-b pb-2 border-gray-400 text-gray-800"
       {...props}
     />
   ),
-  hr: (props) => (
-    <Box is="hr" className="my-4 border-b border-gray-400" {...props} />
-  ),
+  hr: (props) => <Box is="hr" className="my-4 border-gray-400" {...props} />,
   // h3: components.H3,
   // h4: components.H4,
   // h5: components.H5,
@@ -98,7 +96,7 @@ const map = {
   ul: (props) => (
     <Box
       is="ul"
-      className="border-t border-b border-dashed pt-2 pb-4 list-inside"
+      className="border-t border-b border-gray-400 border-dashed pt-2 pb-4 list-inside"
       {...props}
     />
   ),
@@ -114,7 +112,7 @@ const map = {
   blockquote: (props) => (
     <Box
       is="blockquote"
-      className="rounded-sm overflow-hidden bg-gray-300 px-4 py-2 text-gray-800 my-4"
+      className="rounded overflow-hidden shadow-inner bg-gray-300 px-4 py-2 text-gray-800 my-4"
       {...props}
     />
   ),
