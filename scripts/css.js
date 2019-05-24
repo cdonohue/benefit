@@ -35,8 +35,11 @@ const utilities = Object.keys(benefit.utilities)
 
 const outputDir = resolve(__dirname, "../dist")
 
-console.info(`> Output ${resolve(outputDir, "benefit.css")}`)
-writeFileSync(resolve(outputDir, "benefit.css"), [base, utilities].join("\n"))
+console.info(`> Output ${resolve(outputDir, "base.css")}`)
+writeFileSync(resolve(outputDir, "base.css"), base)
 
 console.info(`> Output ${resolve(outputDir, "utilities.css")}`)
 writeFileSync(resolve(outputDir, "utilities.css"), utilities)
+
+console.info(`> Output ${resolve(outputDir, "benefit.css")}`)
+writeFileSync(resolve(outputDir, "benefit.css"), [base, utilities].join("\n"))
