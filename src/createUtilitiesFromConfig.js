@@ -1,4 +1,4 @@
-import { css } from "emotion"
+import { cx, css } from "emotion"
 import defaultConfig from "./config/defaultConfig"
 
 export function formatDeclaration(property, value, isImportant) {
@@ -128,7 +128,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       ? ignoredClasses.join(" ")
       : ""
 
-    return `${normalizeClass} ${utilityClassNames} ${ignoredClassNames}`.trim()
+    return cx(normalizeClass, ...activeUtilityClasses, ...ignoredClasses)
   }
 
   return {
