@@ -14,7 +14,10 @@ const utilities = Object.keys(benefit.utilities)
   .map((utility) => {
     // Call `styleWith` as if it was being used & extract the non-reset class
     // (e.g. `css-1234`)
-    const [, emotionclassName] = benefit.styleWith(utility).split(" ")
+    const emotionclassName = benefit
+      .styleWith(utility)
+      .split(" ")
+      .pop()
 
     // Remove the `css-` prefix
     // (e.g. `1234`)
