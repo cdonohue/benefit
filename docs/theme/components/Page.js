@@ -236,7 +236,7 @@ function SideBar({ isOpen, onClose }) {
 
   return (
     <Box
-      className={`bg-gray-900 text-gray-300 relative md:w-64 ${
+      className={`bg-gray-900 text-gray-300 md:w-64 ${
         isOpen ? "z-30 block" : "hidden"
       } absolute inset-0 md:static md:block`}
     >
