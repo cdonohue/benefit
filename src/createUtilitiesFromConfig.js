@@ -90,10 +90,6 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const styleWith = (classNames = "", isImportant = false) => {
     const activeApply = classNames.split(" ").filter((name) => apply[name])
 
-    const normalizeClass = css`
-      ${parseDeclarations(normalize(theme), isImportant).join("")}
-    `
-
     const classList = classNames
       .split(" ")
       .map((className) => className.trim())
@@ -121,14 +117,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       }
     }
 
-    const utilityClassNames = activeUtilityClasses.length
-      ? activeUtilityClasses.join(" ")
-      : ""
-    const ignoredClassNames = ignoredClasses.length
-      ? ignoredClasses.join(" ")
-      : ""
-
-    return cx(normalizeClass, ...activeUtilityClasses, ...ignoredClasses)
+    return cx(...activeUtilityClasses, ...ignoredClasses)
   }
 
   return {
