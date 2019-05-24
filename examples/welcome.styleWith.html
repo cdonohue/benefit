@@ -15,7 +15,7 @@
 <script type="module">
   import { html, render } from 'https://unpkg.com/htm/preact/standalone.mjs';
 
-  const { styleWith } = benefit()
+  const { cx } = benefit()
 
   // ! TODO Make this a utility of benefit
   const styleWithHtml = (...args) => {
@@ -23,7 +23,7 @@
 
     (function replaceClassWithBenefit(vdom) {
       if (vdom.attributes && vdom.attributes.class) {
-        vdom.attributes.class = styleWith(vdom.attributes.class)
+        vdom.attributes.class = cx(vdom.attributes.class)
       }
 
       if (vdom.children) {
