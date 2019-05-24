@@ -117,12 +117,18 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       }
     }
 
-    return cx(...activeUtilityClasses, ...ignoredClasses)
+    return [...activeUtilityClasses, ...ignoredClasses].join(" ")
   }
 
   return {
     config,
     cssForUtility,
+    cx(...args) {
+      const appliedClasses = cx(...args)
+      const styledClasses = styleWith(appliedClasses)
+
+      return cx(styledClasses)
+    },
     utilities: utilityClasses,
     styleWith,
   }
