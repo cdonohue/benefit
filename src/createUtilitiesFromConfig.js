@@ -1,4 +1,4 @@
-import { css } from "emotion"
+import { cx, css } from "emotion"
 import defaultConfig from "./config/defaultConfig"
 
 export function formatDeclaration(property, value, isImportant) {
@@ -80,6 +80,9 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     (key) => (utilityClasses[`${prefixStr}${key}`] = generatedVariants[key])
   )
 
+  // Not actually sorted, but we rely on the key order
+  const sortedUtilityClasses = Object.keys(utilityClasses)
+
   const cssForUtility = (className, isImportant = false) => {
     return parseDeclarations(utilityClasses[className], isImportant).join(" ")
   }
@@ -91,7 +94,13 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       ${parseDeclarations(normalize(theme), isImportant).join("")}
     `
 
-    const classList = classNames.split(" ")
+    const classList = classNames
+      .split(" ")
+      .map((className) => className.trim())
+      .filter(Boolean)
+      .sort((a, b) => {
+        return sortedUtilityClasses.indexOf(a) - sortedUtilityClasses.indexOf(b)
+      })
 
     for (let i = 0; i < activeApply.length; i++) {
       const applyClasses = apply[activeApply[i]]
@@ -112,19 +121,20 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       }
     }
 
-    const utilityClassNames = activeUtilityClasses.length
-      ? activeUtilityClasses.join(" ")
-      : ""
-    const ignoredClassNames = ignoredClasses.length
-      ? ignoredClasses.join(" ")
-      : ""
-
-    return `${normalizeClass} ${utilityClassNames} ${ignoredClassNames}`.trim()
+    return [normalizeClass, ...activeUtilityClasses, ...ignoredClasses].join(
+      " "
+    )
   }
 
   return {
     config,
     cssForUtility,
+    cx(...args) {
+      const appliedClasses = cx(...args)
+      const styledClasses = styleWith(appliedClasses)
+
+      return cx(styledClasses)
+    },
     utilities: utilityClasses,
     styleWith,
   }

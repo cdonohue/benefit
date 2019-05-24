@@ -11,16 +11,13 @@ const base = readFileSync(require.resolve("tailwindcss/dist/base.css"), "utf8")
 
 // Benefit's utility CSS
 const utilities = Object.keys(benefit.utilities)
-  .sort((a, b) => {
-    const [aString, aNumber] = a.split(/(\d+$)/)
-    const [bString, bNumber] = b.split(/(\d+$)/)
-
-    return aString.localeCompare(bString) || aNumber - bNumber
-  })
   .map((utility) => {
     // Call `styleWith` as if it was being used & extract the non-reset class
     // (e.g. `css-1234`)
-    const [, emotionclassName] = benefit.styleWith(utility).split(" ")
+    const emotionclassName = benefit
+      .styleWith(utility)
+      .split(" ")
+      .pop()
 
     // Remove the `css-` prefix
     // (e.g. `1234`)
@@ -41,8 +38,11 @@ const utilities = Object.keys(benefit.utilities)
 
 const outputDir = resolve(__dirname, "../dist")
 
-console.info(`> Output ${resolve(outputDir, "benefit.css")}`)
-writeFileSync(resolve(outputDir, "benefit.css"), [base, utilities].join("\n"))
+console.info(`> Output ${resolve(outputDir, "base.css")}`)
+writeFileSync(resolve(outputDir, "base.css"), base)
 
 console.info(`> Output ${resolve(outputDir, "utilities.css")}`)
 writeFileSync(resolve(outputDir, "utilities.css"), utilities)
+
+console.info(`> Output ${resolve(outputDir, "benefit.css")}`)
+writeFileSync(resolve(outputDir, "benefit.css"), [base, utilities].join("\n"))

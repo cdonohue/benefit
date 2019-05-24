@@ -6,6 +6,7 @@ describe("benefit()", () => {
       Array [
         "config",
         "cssForUtility",
+        "cx",
         "utilities",
         "styleWith",
       ]
