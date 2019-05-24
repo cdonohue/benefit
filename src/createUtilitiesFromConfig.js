@@ -81,11 +81,16 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   )
 
   // Not actually sorted, but we rely on the key order
-  const sortedUtilityClasses = Object.keys(utilityClasses)
+  const sortedUtilityClasses = Object.keys(utilityClasses).reduce(
+    (map, key, i) => {
+      map[key] = i
+      return map
+    },
+    {}
+  )
 
-  const cssForUtility = (className, isImportant = false) => {
-    return parseDeclarations(utilityClasses[className], isImportant).join(" ")
-  }
+  const cssForUtility = (className, isImportant = false) =>
+    parseDeclarations(utilityClasses[className], isImportant).join(" ")
 
   const styleWith = (classNames = "", isImportant = false) => {
     const activeApply = classNames.split(" ").filter((name) => apply[name])
@@ -98,9 +103,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       .split(" ")
       .map((className) => className.trim())
       .filter(Boolean)
-      .sort((a, b) => {
-        return sortedUtilityClasses.indexOf(a) - sortedUtilityClasses.indexOf(b)
-      })
+      .sort((a, b) => sortedUtilityClasses[a] - sortedUtilityClasses[b])
 
     for (let i = 0; i < activeApply.length; i++) {
       const applyClasses = apply[activeApply[i]]
