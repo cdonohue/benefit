@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react --jsx React.createElement",
+    "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react,@emotion --jsx React.createElement",
     "postbuild": "./scripts/css.js",
     "prestart": "yarn build",
     "start": "docz dev",
@@ -61,6 +61,7 @@
     "jest-puppeteer": "^4.1.1",
     "microbundle": "~0.9.0",
     "np": "~4.0.2",
+    "parcel-bundler": "^1.12.3",
     "polychrome": "~4.1.2",
     "prettier": "~1.16.4",
     "prop-types": "^15.7.2",

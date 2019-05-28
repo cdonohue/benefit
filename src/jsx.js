@@ -1,9 +1,10 @@
 import React from "react"
+import { jsx } from "@emotion/core"
 import Box from "./components/Box"
 
-export default function jsx(type, props, ...children) {
+export default function h(type, props, ...children) {
   return (
-    <Box is={type} {...props}>
+    <Box h={jsx} is={type} {...props}>
       {children}
     </Box>
   )
