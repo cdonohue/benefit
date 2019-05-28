@@ -28,8 +28,12 @@ And... it only inlines the CSS for the utilities that you actually use
 Add `benefit` to your project along with its peer dependencies.
 
 ```bash
-yarn add benefit emotion react
+yarn add benefit emotion react @emotion/core
 ```
+
+> `@emotion/core` enables support for the `css` prop when using [emotion](https://emotion.sh/docs/css-prop)
+
+Set the jsx pragma at the top of your source file where you intend to use `benefit`.
 
 #### Setup transpilation
 
