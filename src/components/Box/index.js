@@ -5,7 +5,7 @@ import { ConfigConsumer } from "../ConfigContext"
 function Box(props) {
   const {
     children,
-    className = "",
+    className = null,
     h = React.createElement,
     important,
     is = "div",
@@ -15,7 +15,9 @@ function Box(props) {
   return (
     <ConfigConsumer>
       {({ styleWith = () => className }) => {
-        remainingProps.className = `${styleWith(className, !!important)}`.trim()
+        if (className) {
+          remainingProps.className = `${styleWith(className, !!important)}`.trim()
+        }
 
         return h(is, remainingProps, ...children)
       }}
