@@ -1,5 +1,5 @@
 import React from "react"
-
+import { css, jsx } from "@emotion/core"
 import { ConfigConsumer } from "../ConfigContext"
 
 function Box(props) {
@@ -14,12 +14,19 @@ function Box(props) {
 
   return (
     <ConfigConsumer>
-      {({ styleWith = () => className }) => {
+      {({ getDeclarationsForClasses, processDeclarations }) => {
         if (className) {
-          remainingProps.className = `${styleWith(className, !!important)}`.trim()
+          const { declarations, ignoredClasses } = getDeclarationsForClasses(className)
+          const processedDeclarations = processDeclarations(declarations, (declaration) => css`${declaration}`)
+        
+          remainingProps.css = css`
+            ${processedDeclarations}
+          `
+
+          remainingProps.className = ignoredClasses.join(" ").trim()
         }
 
-        return h(is, remainingProps, ...children)
+        return jsx(is, remainingProps, ...children)
       }}
     </ConfigConsumer>
   )
