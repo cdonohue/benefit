@@ -92,12 +92,10 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const cssForUtility = (className, isImportant = false) =>
     parseDeclarations(utilityClasses[className], isImportant).join(" ")
 
-  const styleWith = (classNames = "", isImportant = false) => {
+  const getDeclarationsForClasses = (classNames = "", isImportant = false) => {
     const activeApply = classNames.split(" ").filter((name) => apply[name])
 
-    const normalizeClass = css`
-      ${parseDeclarations(normalize(theme), isImportant).join("")}
-    `
+    const normalizeDeclarations = parseDeclarations(normalize(theme), isImportant).join("")
 
     const classList = classNames
       .split(" ")
@@ -111,22 +109,33 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     }
 
     const ignoredClasses = []
-    const activeUtilityClasses = []
+    const activeDeclarations = []
     for (let i = 0; i < classList.length; i++) {
       const className = classList[i]
 
       if (utilityClasses[className]) {
-        activeUtilityClasses.push(css`
-          ${parseDeclarations(utilityClasses[className], isImportant).join("")}
-        `)
+        activeDeclarations.push(parseDeclarations(utilityClasses[className], isImportant).join(""))
       } else {
         ignoredClasses.push(className)
       }
     }
 
-    return [normalizeClass, ...activeUtilityClasses, ...ignoredClasses].join(
-      " "
-    )
+    return { 
+      declarations: [normalizeDeclarations, ...activeDeclarations],
+      ignoredClasses,
+    }
+  }
+
+  const processDeclarations = (declarations, processFn) => {
+    return declarations.map(processFn)
+  }
+
+  const styleWith = (classNames = "", isImportant = false) => {
+    const { declarations, ignoredClasses } = getDeclarationsForClasses(classNames, isImportant)
+
+    return [...processDeclarations(declarations, (declaration) => {
+      return css`${declaration}`
+    }), ...ignoredClasses].join(" ")
   }
 
   return {
@@ -139,6 +148,8 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       return cx(styledClasses)
     },
     utilities: utilityClasses,
+    getDeclarationsForClasses,
+    processDeclarations,
     styleWith,
   }
 }
