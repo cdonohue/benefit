@@ -16,9 +16,17 @@ function Box(props) {
     <ConfigConsumer>
       {({ getDeclarationsForClasses, processDeclarations }) => {
         if (className) {
-          const { declarations, ignoredClasses } = getDeclarationsForClasses(className)
-          const processedDeclarations = processDeclarations(declarations, (declaration) => css`${declaration}`)
-        
+          const { declarations, ignoredClasses } = getDeclarationsForClasses(
+            className
+          )
+          const processedDeclarations = processDeclarations(
+            declarations,
+            (declaration) =>
+              css`
+                ${declaration}
+              `
+          )
+
           remainingProps.css = processedDeclarations
           remainingProps.className = ignoredClasses.join(" ").trim()
         }

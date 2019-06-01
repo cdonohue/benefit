@@ -95,7 +95,10 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const getDeclarationsForClasses = (classNames = "", isImportant = false) => {
     const activeApply = classNames.split(" ").filter((name) => apply[name])
 
-    const normalizeDeclarations = parseDeclarations(normalize(theme), isImportant).join("")
+    const normalizeDeclarations = parseDeclarations(
+      normalize(theme),
+      isImportant
+    ).join("")
 
     const classList = classNames
       .split(" ")
@@ -114,28 +117,39 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       const className = classList[i]
 
       if (utilityClasses[className]) {
-        activeDeclarations.push(parseDeclarations(utilityClasses[className], isImportant).join(""))
+        activeDeclarations.push(
+          parseDeclarations(utilityClasses[className], isImportant).join("")
+        )
       } else {
         ignoredClasses.push(className)
       }
     }
 
-    return { 
+    return {
       declarations: [normalizeDeclarations, ...activeDeclarations],
       ignoredClasses,
     }
   }
 
-  const processDeclarations = (declarations, processFn) => {
-    return declarations.map(processFn)
-  }
+  const processDeclarations = (declarations, processFn) =>
+    declarations.map(processFn)
 
   const styleWith = (classNames = "", isImportant = false) => {
-    const { declarations, ignoredClasses } = getDeclarationsForClasses(classNames, isImportant)
+    const { declarations, ignoredClasses } = getDeclarationsForClasses(
+      classNames,
+      isImportant
+    )
 
-    return [...processDeclarations(declarations, (declaration) => {
-      return css`${declaration}`
-    }), ...ignoredClasses].join(" ")
+    return [
+      ...processDeclarations(
+        declarations,
+        (declaration) =>
+          css`
+            ${declaration}
+          `
+      ),
+      ...ignoredClasses,
+    ].join(" ")
   }
 
   return {
