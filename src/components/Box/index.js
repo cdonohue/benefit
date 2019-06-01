@@ -19,16 +19,10 @@ function Box(props) {
           const { declarations, ignoredClasses } = getDeclarationsForClasses(
             className
           )
-          const processedDeclarations = processDeclarations(
-            declarations,
-            (declaration) =>
-              css`
-                ${declaration}
-              `
-          )
+          const processedDeclarations = processDeclarations(declarations, css)
 
           remainingProps.css = processedDeclarations
-          remainingProps.className = ignoredClasses.join(" ").trim()
+          remainingProps.className = ignoredClasses.join(" ")
         }
 
         return jsx(is, remainingProps, ...children)
