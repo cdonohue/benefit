@@ -50,14 +50,20 @@ export default function Output({
       </div>
       <div className="bg-white rounded shadow-xl overflow-hidden">
         <Grid minWidth="200px" className="p-4 bg-gray-700 mb-0" important>
-          {styles.map((block) => (
+          {styles.map((block, i) => (
             <div
+              key={`ouput-declaration-${i + 1}`}
               style={{ fontSize: "10px" }}
               className="bg-white font-mono p-2 rounded shadow"
             >
-              <pre>
-                {block.rules.map((rule) => (
-                  <code className="block py-1">{rule}</code>
+              <pre className="p-0">
+                {block.rules.map((rule, j) => (
+                  <code
+                    key={`ouput-declaration-line-${j + 1}`}
+                    className="block py-1"
+                  >
+                    {rule}
+                  </code>
                 ))}
               </pre>
             </div>
