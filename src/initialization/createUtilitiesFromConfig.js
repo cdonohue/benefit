@@ -1,56 +1,14 @@
-import { cx, css } from "emotion"
-import defaultConfig from "./config/defaultConfig"
+import defaultConfig from "../config/defaultConfig"
+import createUtilityMap from "./createUtilityMap"
+import createVariantMap from "./createVariantMap"
+import parseDeclarations from "./parseDeclarations"
 
-export function formatDeclaration(property, value, isImportant) {
-  const declaration = `${property}: ${value}`
-  return `${declaration}${isImportant ? " !important" : ""};`
-}
+export default function createUtilitiesFromConfig(
+  configFn = (cfg) => cfg,
+  options = {}
+) {
+  const { processDeclarationFn = (d) => d, cxFn = () => {} } = options
 
-function parseDeclarations(declarations = {}, isImportant = false) {
-  return Object.keys(declarations).map((property) => {
-    if (property.indexOf("&") > -1 || property.indexOf("@") > -1) {
-      // Assume we have a nested selector
-      const nestedDeclarations = parseDeclarations(
-        declarations[property],
-        isImportant
-      )
-
-      return `${property} { ${nestedDeclarations.join("")} }`
-    }
-
-    return formatDeclaration(property, declarations[property], isImportant)
-  })
-}
-
-function createUtilityMap(allUtilities = [], theme) {
-  const map = {}
-  for (let i = 0; i < allUtilities.length; i++) {
-    const utilityFn = allUtilities[i]
-    const rulesMap = utilityFn(theme) || {}
-
-    Object.keys(rulesMap).forEach((key) => {
-      map[key] = rulesMap[key]
-    })
-  }
-
-  return map
-}
-
-function createVariantMap(allVariants = [], utilityMap = {}, theme) {
-  const map = {}
-  for (let i = 0; i < allVariants.length; i++) {
-    const variantFn = allVariants[i]
-    const rulesMap = variantFn(utilityMap, theme) || {}
-
-    Object.keys(rulesMap).forEach((key) => {
-      map[key] = rulesMap[key]
-    })
-  }
-
-  return map
-}
-
-export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const config = configFn(defaultConfig)
 
   const {
@@ -137,28 +95,19 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
       isImportant
     )
 
-    return [
-      ...declarations.map(
-        (declaration) =>
-          css`
-            ${declaration}
-          `
-      ),
-      ...ignoredClasses,
-    ].join(" ")
+    return [...declarations.map(processDeclarationFn), ...ignoredClasses].join(
+      " "
+    )
   }
+
+  const cx = (...args) => cxFn(styleWith, args)
 
   return {
     config,
     cssForUtility,
-    cx(...args) {
-      const appliedClasses = cx(...args)
-      const styledClasses = styleWith(appliedClasses)
-
-      return cx(styledClasses)
-    },
-    utilities: utilityClasses,
+    cx,
     getDeclarationsForClasses,
     styleWith,
+    utilities: utilityClasses,
   }
 }

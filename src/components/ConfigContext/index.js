@@ -1,5 +1,5 @@
 import React from "react"
-import createUtilitiesFromConfig from "../../createUtilitiesFromConfig"
+import createUtilitiesFromConfig from "../../initialization/createUtilitiesFromConfig"
 
 const configuredUtilities = createUtilitiesFromConfig()
 
