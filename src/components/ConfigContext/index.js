@@ -15,12 +15,18 @@ export class ConfigProvider extends React.Component {
   componentDidMount() {
     const { config: configFn } = this.props
 
-    const { config, utilities, styleWith } = createUtilitiesFromConfig(configFn)
+    const {
+      config,
+      utilities,
+      styleWith,
+      getDeclarationsForClasses,
+    } = createUtilitiesFromConfig(configFn)
 
     this.setState({
       config,
       utilities,
       styleWith,
+      getDeclarationsForClasses,
     })
   }
 
