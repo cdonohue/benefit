@@ -1,12 +1,13 @@
 import React from "react"
-
+import { css as processCss, jsx } from "@emotion/core"
 import { ConfigConsumer } from "../ConfigContext"
 
 function Box(props) {
   const {
     children,
-    className = null,
-    h = React.createElement,
+    className = "",
+    css = null,
+    h = jsx,
     important,
     is = "div",
     ...remainingProps
@@ -14,9 +15,22 @@ function Box(props) {
 
   return (
     <ConfigConsumer>
-      {({ styleWith = () => className }) => {
+      {({ getDeclarationsForClasses }) => {
         if (className) {
-          remainingProps.className = `${styleWith(className, !!important)}`.trim()
+          const { declarations, ignoredClasses } = getDeclarationsForClasses(
+            className,
+            important
+          )
+          const processedDeclarations = declarations.map(
+            (declaration) => processCss`${declaration}`
+          )
+
+          if (css) {
+            processedDeclarations.push(css)
+          }
+
+          remainingProps.css = processedDeclarations
+          remainingProps.className = ignoredClasses.join(" ")
         }
 
         return h(is, remainingProps, ...children)

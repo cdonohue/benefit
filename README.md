@@ -25,13 +25,11 @@ And... it only inlines the CSS for the utilities that you actually use
 
 #### Install dependencies
 
-Add `benefit` to your project along with its peer dependencies.
+Add `benefit` to your project along with `@emotion/core`.
 
 ```bash
-yarn add benefit emotion react @emotion/core
+yarn add benefit @emotion/core
 ```
-
-> `@emotion/core` enables support for the `css` prop when using [emotion](https://emotion.sh/docs/css-prop)
 
 Set the jsx pragma at the top of your source file where you intend to use `benefit`.
 
@@ -76,7 +74,7 @@ function MyComponent() {
 
 ### Framework agnostic
 
-Add `benefit` to your project along with its peer dependencies.
+Add `benefit` to your project along with `emotion`.
 
 ```bash
 yarn add benefit emotion

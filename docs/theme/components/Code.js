@@ -2,6 +2,7 @@ import React from "react"
 import { LiveProvider, LiveEditor, LivePreview, LiveError } from "react-live"
 import { css } from "emotion"
 import { Box } from "../../../dist/react.js"
+import Icon from "../../components/Icons"
 
 const theme = {
   plain: {
@@ -81,12 +82,19 @@ const formattedCode = css`
 `
 
 export default function Code(props) {
+  console.log(props)
+
   return (
     <LiveProvider code={props.children.props.children} disabled theme={theme}>
-      <Box
-        className={`${formattedCode} bg-gray-800 p-4 mb-4 text-sm rounded leading-relaxed relative overflow-hidden shadow-inner select-text`}
-      >
-        <LiveEditor />
+      <Box className="overflow-hidden bg-gray-800 rounded relative mb-4 border-t-4 border-blue-300">
+        <Box className="inline-block absolute right-0 bg-blue-300 text-blue-700 font-bold py-px px-2 rounded-bl text-xs uppercase font-mono">
+          {props.children.props.className.split("-")[1]}
+        </Box>
+        <Box
+          className={`${formattedCode} p-4 text-sm leading-relaxed select-text`}
+        >
+          <LiveEditor />
+        </Box>
       </Box>
     </LiveProvider>
   )

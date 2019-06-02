@@ -1,6 +1,7 @@
 import React from "react"
 import { theme, useConfig, ComponentsProvider, Routes } from "docz"
-import { injectGlobal, css } from "emotion"
+import { injectGlobal } from "emotion"
+import { css } from "@emotion/core"
 import { colors } from "../../src/config/theme"
 import Page from "./components/Page"
 import Playground from "./components/Playground"
@@ -40,20 +41,6 @@ injectGlobal`
   
   #root {
     height: 100%;
-  }
-`
-
-const partialUnderline = css`
-  position: relative;
-  &:before {
-    content: "";
-    position: absolute;
-    bottom: -6px;
-    height: 4px;
-    left: 0px;
-    width: 30%;
-    border-radius: 12px;
-    background: ${colors.blue[400]};
   }
 `
 
@@ -112,7 +99,15 @@ const map = {
   blockquote: (props) => (
     <Box
       is="blockquote"
-      className="rounded overflow-hidden shadow-inner bg-gray-300 px-4 py-2 text-gray-800 my-4"
+      className="border-l-4 border-blue-400 rounded-sm italic overflow-hidden bg-gray-300 px-4 py-2 text-gray-800 my-4"
+      css={css`
+        & p {
+          margin: 0;
+        }
+        & p + p {
+          margin-top: 1rem;
+        }
+      `}
       {...props}
     />
   ),

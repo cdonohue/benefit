@@ -8,6 +8,7 @@ describe("benefit()", () => {
         "cssForUtility",
         "cx",
         "utilities",
+        "getDeclarationsForClasses",
         "styleWith",
       ]
     `)

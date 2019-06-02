@@ -10,7 +10,7 @@
     "Chad Donohue <chad.donohue@gmail.com>",
     "Eric Clemmons <eric@smarterspam.com>"
   ],
-  "description": "5kB utility CSS framework that is compatible with TailwindCSS",
+  "description": "5kB utility CSS library that is compatible with TailwindCSS",
   "license": "MIT",
   "keywords": [
     "atomic",
@@ -26,7 +26,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react,@emotion --jsx React.createElement",
+    "build": "microbundle --entry src/index.js --entry src/util.js --entry src/react.js --output dist --external react,emotion,@emotion --jsx React.createElement",
     "postbuild": "./scripts/css.js",
     "prestart": "yarn build",
     "start": "docz dev",
@@ -71,9 +71,6 @@
     "react-feather": "~1.1.6",
     "react-live": "~2.0.0",
     "tailwindcss": "^1.0.1"
-  },
-  "peerDependencies": {
-    "emotion": "~10.0.0"
   },
   "dependencies": {}
 }
