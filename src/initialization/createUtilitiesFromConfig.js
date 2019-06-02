@@ -3,12 +3,7 @@ import createUtilityMap from "./createUtilityMap"
 import createVariantMap from "./createVariantMap"
 import parseDeclarations from "./parseDeclarations"
 
-export default function createUtilitiesFromConfig(
-  configFn = (cfg) => cfg,
-  options = {}
-) {
-  const { processDeclarationFn = (d) => d, cxFn = () => {} } = options
-
+export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const config = configFn(defaultConfig)
 
   const {
@@ -89,25 +84,10 @@ export default function createUtilitiesFromConfig(
     }
   }
 
-  const styleWith = (classNames = "", isImportant = false) => {
-    const { declarations, ignoredClasses } = getDeclarationsForClasses(
-      classNames,
-      isImportant
-    )
-
-    return [...declarations.map(processDeclarationFn), ...ignoredClasses].join(
-      " "
-    )
-  }
-
-  const cx = (...args) => cxFn(styleWith, args)
-
   return {
     config,
     cssForUtility,
-    cx,
     getDeclarationsForClasses,
-    styleWith,
     utilities: utilityClasses,
   }
 }
