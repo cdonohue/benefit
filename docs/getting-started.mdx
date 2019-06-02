@@ -9,15 +9,13 @@ nextLabel: Customization
 
 import { Box } from "../dist/react.js"
 
-First, add `benefit` to your project along with its peer dependencies.
+`benefit` can be consumed in a few different ways:
+
+## Framework agnostic
 
 ```bash
 yarn add benefit emotion
 ```
-
-`benefit` can now be consumed in a few different ways:
-
-## Framework agnostic
 
 ```js
 import benefit from "benefit"
@@ -34,7 +32,7 @@ const { styleWith } = benefit()
 ## React
 
 ```bash
-yarn add @emotion/core
+yarn add benefit react @emotion/core
 ```
 
 > `@emotion/core` enables support for the `css` prop when using [emotion](https://emotion.sh/docs/css-prop)
