@@ -1,13 +1,13 @@
 import React from "react"
-import { css as processCss } from "@emotion/core"
+import { css as processCss, jsx } from "@emotion/core"
 import { ConfigConsumer } from "../ConfigContext"
 
 function Box(props) {
   const {
     children,
-    className = null,
+    className = "",
     css = null,
-    h = React.createElement,
+    h = jsx,
     important,
     is = "div",
     ...remainingProps
@@ -15,21 +15,23 @@ function Box(props) {
 
   return (
     <ConfigConsumer>
-      {({ getDeclarationsForClasses, processDeclarations }) => {
-        const { declarations, ignoredClasses } = getDeclarationsForClasses(
-          className
-        )
-        const processedDeclarations = processDeclarations(
-          declarations,
-          (declaration) => processCss`${declaration}`
-        )
+      {({ getDeclarationsForClasses }) => {
+        if (className) {
+          const { declarations, ignoredClasses } = getDeclarationsForClasses(
+            className,
+            important
+          )
+          const processedDeclarations = declarations.map(
+            (declaration) => processCss`${declaration}`
+          )
 
-        if (css) {
-          processedDeclarations.push(css)
+          if (css) {
+            processedDeclarations.push(css)
+          }
+
+          remainingProps.css = processedDeclarations
+          remainingProps.className = ignoredClasses.join(" ")
         }
-
-        remainingProps.css = processedDeclarations
-        remainingProps.className = ignoredClasses.join(" ")
 
         return h(is, remainingProps, ...children)
       }}
