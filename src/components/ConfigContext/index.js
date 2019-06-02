@@ -18,14 +18,12 @@ export class ConfigProvider extends React.Component {
     const {
       config,
       utilities,
-      styleWith,
       getDeclarationsForClasses,
     } = createUtilitiesFromConfig(configFn)
 
     this.setState({
       config,
       utilities,
-      styleWith,
       getDeclarationsForClasses,
     })
   }
