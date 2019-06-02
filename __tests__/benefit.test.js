@@ -9,7 +9,6 @@ describe("benefit()", () => {
         "cx",
         "utilities",
         "getDeclarationsForClasses",
-        "processDeclarations",
         "styleWith",
       ]
     `)

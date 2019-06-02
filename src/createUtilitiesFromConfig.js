@@ -131,9 +131,6 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     }
   }
 
-  const processDeclarations = (declarations, processFn) =>
-    declarations.map(processFn)
-
   const styleWith = (classNames = "", isImportant = false) => {
     const { declarations, ignoredClasses } = getDeclarationsForClasses(
       classNames,
@@ -141,8 +138,7 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     )
 
     return [
-      ...processDeclarations(
-        declarations,
+      ...declarations.map(
         (declaration) =>
           css`
             ${declaration}
@@ -163,7 +159,6 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     },
     utilities: utilityClasses,
     getDeclarationsForClasses,
-    processDeclarations,
     styleWith,
   }
 }
