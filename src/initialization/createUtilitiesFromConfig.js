@@ -1,54 +1,7 @@
-import { cx, css } from "emotion"
-import defaultConfig from "./config/defaultConfig"
-
-export function formatDeclaration(property, value, isImportant) {
-  const declaration = `${property}: ${value}`
-  return `${declaration}${isImportant ? " !important" : ""};`
-}
-
-function parseDeclarations(declarations = {}, isImportant = false) {
-  return Object.keys(declarations).map((property) => {
-    if (property.indexOf("&") > -1 || property.indexOf("@") > -1) {
-      // Assume we have a nested selector
-      const nestedDeclarations = parseDeclarations(
-        declarations[property],
-        isImportant
-      )
-
-      return `${property} { ${nestedDeclarations.join("")} }`
-    }
-
-    return formatDeclaration(property, declarations[property], isImportant)
-  })
-}
-
-function createUtilityMap(allUtilities = [], theme) {
-  const map = {}
-  for (let i = 0; i < allUtilities.length; i++) {
-    const utilityFn = allUtilities[i]
-    const rulesMap = utilityFn(theme) || {}
-
-    Object.keys(rulesMap).forEach((key) => {
-      map[key] = rulesMap[key]
-    })
-  }
-
-  return map
-}
-
-function createVariantMap(allVariants = [], utilityMap = {}, theme) {
-  const map = {}
-  for (let i = 0; i < allVariants.length; i++) {
-    const variantFn = allVariants[i]
-    const rulesMap = variantFn(utilityMap, theme) || {}
-
-    Object.keys(rulesMap).forEach((key) => {
-      map[key] = rulesMap[key]
-    })
-  }
-
-  return map
-}
+import defaultConfig from "../config/defaultConfig"
+import createUtilityMap from "./createUtilityMap"
+import createVariantMap from "./createVariantMap"
+import parseDeclarations from "./parseDeclarations"
 
 export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
   const config = configFn(defaultConfig)
@@ -131,34 +84,10 @@ export default function createUtilitiesFromConfig(configFn = (cfg) => cfg) {
     }
   }
 
-  const styleWith = (classNames = "", isImportant = false) => {
-    const { declarations, ignoredClasses } = getDeclarationsForClasses(
-      classNames,
-      isImportant
-    )
-
-    return [
-      ...declarations.map(
-        (declaration) =>
-          css`
-            ${declaration}
-          `
-      ),
-      ...ignoredClasses,
-    ].join(" ")
-  }
-
   return {
     config,
     cssForUtility,
-    cx(...args) {
-      const appliedClasses = cx(...args)
-      const styledClasses = styleWith(appliedClasses)
-
-      return cx(styledClasses)
-    },
-    utilities: utilityClasses,
     getDeclarationsForClasses,
-    styleWith,
+    utilities: utilityClasses,
   }
 }

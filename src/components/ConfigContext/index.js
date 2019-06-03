@@ -1,5 +1,5 @@
 import React from "react"
-import createUtilitiesFromConfig from "../../createUtilitiesFromConfig"
+import createUtilitiesFromConfig from "../../initialization/createUtilitiesFromConfig"
 
 const configuredUtilities = createUtilitiesFromConfig()
 
@@ -18,14 +18,12 @@ export class ConfigProvider extends React.Component {
     const {
       config,
       utilities,
-      styleWith,
       getDeclarationsForClasses,
     } = createUtilitiesFromConfig(configFn)
 
     this.setState({
       config,
       utilities,
-      styleWith,
       getDeclarationsForClasses,
     })
   }
