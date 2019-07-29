@@ -15,7 +15,7 @@ function createStyleTag(className: string, rule: string) {
 
   return styleTag
 }
-asdf.
+
 interface Options {
   prefix?: string
   theme?: { [key: string]: any }
