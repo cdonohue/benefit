@@ -1,5 +1,7 @@
 import App, { Container } from "next/app"
-import { ConfigProvider, jsx } from "../../../dist/react"
+import { react } from "../../../dist/benefit.esm"
+
+const { ConfigProvider, jsx } = react
 
 export default class MyApp extends App {
   static async getInitialProps({ Component, ctx }) {
@@ -9,7 +11,9 @@ export default class MyApp extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    return { pageProps: { ...pageProps, primaryColor: ctx.query.primary } }
+    return {
+      pageProps: { ...pageProps, primaryColor: (ctx.query.primary = "#00f") },
+    }
   }
 
   render() {
