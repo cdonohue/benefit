@@ -1,0 +1,90 @@
+---
+name: Align Items
+property: align-items
+parent: Flexbox
+route: /flexbox/align-items
+previousRoute: /flexbox/align-content
+previousLabel: Align Content
+nextRoute: /flexbox/align-self
+nextLabel: Align Self
+---
+
+import { Box } from "benefit-react"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="items-{stretch|start|center|end|baseline}" />
+
+---
+
+Control positioning of items on the cross axis.
+
+<Grid minWidth="175px">
+  <InfoBox caption="Stretch" pattern="items-stretch">
+    <Box className="flex h-32 items-stretch bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-items-stretch-${item}`}
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 flex-1 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Start" pattern="items-start">
+    <Box className="flex h-32 items-start bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-items-start-${item}`}
+          className={`text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 flex-1 m-1 h-${item *
+            8}`}
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Center" pattern="items-center">
+    <Box className="flex h-32 items-center bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-items-center-${item}`}
+          className={`text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 flex-1 m-1 h-${item *
+            8}`}
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="End" pattern="items-end">
+    <Box className="flex h-32 items-end bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-items-end-${item}`}
+          className={`text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 flex-1 m-1 h-${item *
+            8}`}
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Baseline" pattern="items-baseline">
+    <Box className="flex h-32 items-baseline bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-items-baseline-${item}`}
+          className={`text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 flex-1 m-1 h-${item *
+            8}`}
+        >
+          <Box className="border-b border-blue-200 w-full mx-2 text-center">
+            {item}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+</Grid>

@@ -1,0 +1,83 @@
+---
+name: Border Radius
+property: border-radius
+parent: Border
+route: /border/border-radius
+previousRoute: /border/border-color
+previousLabel: Border Color
+nextRoute: /border/border-style
+nextLabel: Border Style
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import { Box, ConfigConsumer } from "benefit-react"
+import UtilityInfo from "../../components/UtilityInfo"
+
+### All Corners
+
+<UtilityInfo pattern="rounded{-size?}" themeProperty="borderRadius" />
+
+---
+
+<Grid minWidth="128px">
+  <InfoBox caption="None" pattern="rounded-none">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-none" />
+  </InfoBox>
+  <InfoBox caption="Small" pattern="rounded-sm">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-sm" />
+  </InfoBox>
+  <InfoBox caption="Default" pattern="rounded">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded" />
+  </InfoBox>
+  <InfoBox caption="Large" pattern="rounded-lg">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-lg" />
+  </InfoBox>
+  <InfoBox caption="Full" pattern="rounded-full">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-full" />
+  </InfoBox>
+</Grid>
+
+### Separate Sides
+
+<UtilityInfo pattern="rounded-{t|r|b|l}{-size?}" />
+
+---
+
+<Grid minWidth="128px">
+  <InfoBox caption="Top" pattern="rounded-t">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-t" />
+  </InfoBox>
+  <InfoBox caption="Right" pattern="rounded-r">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-r" />
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="rounded-b">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-b" />
+  </InfoBox>
+  <InfoBox caption="Left" pattern="rounded-l">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-l" />
+  </InfoBox>
+</Grid>
+
+### Separate Corners
+
+<UtilityInfo pattern="rounded-{tl|tr|br|bl}{-size?}" />
+
+---
+
+<Grid minWidth="128px">
+  <InfoBox caption="Top Left" pattern="rounded-tl">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-tl" />
+  </InfoBox>
+  <InfoBox caption="Top Right" pattern="rounded-tr">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-tr" />
+  </InfoBox>
+  <InfoBox caption="Bottom Right" pattern="rounded-br">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-br" />
+  </InfoBox>
+  <InfoBox caption="Bottom Left" pattern="rounded-bl">
+    <Box className="h-8 px-2 bg-blue-200 border-4 border-blue-300 rounded-bl" />
+  </InfoBox>
+</Grid>

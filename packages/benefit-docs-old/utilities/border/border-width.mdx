@@ -1,0 +1,56 @@
+---
+name: Border Width
+property: border-width
+parent: Border
+route: /border/border-width
+previousRoute: /border/border-style
+previousLabel: Border Style
+nextRoute: /flexbox/align-content
+nextLabel: Align Content
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import { Box, ConfigConsumer } from "benefit-react"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="border{-side?}-{width}" themeProperty="borderWidth" />
+
+---
+
+<Grid minWidth="192px">
+  <InfoBox pattern="border">
+    <Box className="h-16 border-blue-300 border bg-gray-100" />
+  </InfoBox>
+  <InfoBox pattern="border-2">
+    <Box className="h-16 border-blue-300  border-2 bg-gray-100" />
+  </InfoBox>
+  <InfoBox pattern="border-4">
+    <Box className="h-16 border-blue-300  border-4 bg-gray-100" />
+  </InfoBox>
+  <InfoBox pattern="border-8">
+    <Box className="h-16 border-blue-300  border-8 bg-gray-100" />
+  </InfoBox>
+  <InfoBox pattern="border-0" isDefault>
+    <Box className="h-16 border-blue-300  border-0 bg-gray-100" />
+  </InfoBox>
+</Grid>
+
+---
+
+<Grid minWidth="192px">
+  <InfoBox caption="Top" pattern="border-t">
+    <Box className="h-16 border-blue-300  border-t bg-gray-100" />
+  </InfoBox>
+  <InfoBox caption="Right" pattern="border-r">
+    <Box className="h-16 border-blue-300  border-r bg-gray-100" />
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="border-b">
+    <Box className="h-16 border-blue-300  border-b bg-gray-100" />
+  </InfoBox>
+  <InfoBox caption="Left" pattern="border-l">
+    <Box className="h-16 border-blue-300  border-l bg-gray-100" />
+  </InfoBox>
+</Grid>

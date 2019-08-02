@@ -1,0 +1,38 @@
+---
+name: Opacity
+property: opacity
+parent: Effects
+route: /effects/opacity
+previousRoute: /effects/box-shadow
+previousLabel: Box Shadow
+nextRoute: /interactivity/appearance
+nextLabel: Appearance
+---
+
+import { Box, ConfigConsumer } from "benefit-react"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="opacity-{level}" themeProperty="opacity" />
+
+---
+
+<Grid className="font-mono text-sm">
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-100">
+    opacity-100
+  </Box>
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-75">
+    opacity-75
+  </Box>
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-50">
+    opacity-50
+  </Box>
+  <Box className="rounded bg-gray-600 text-white p-4 opacity-25">
+    opacity-25
+  </Box>
+  <Box className="rounded border border-gray-400 border-dashed text-gray-400 border-2 p-4">
+    opacity-0
+  </Box>
+</Grid>

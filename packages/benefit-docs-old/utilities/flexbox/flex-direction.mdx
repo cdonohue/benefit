@@ -1,0 +1,70 @@
+---
+name: Flex Direction
+property: flex-direction
+parent: Flexbox
+route: /flexbox/flex-direction
+previousRoute: /flexbox/flex
+previousLabel: Flex
+nextRoute: /flexbox/flex-display
+nextLabel: Flex Display
+---
+
+import { Box } from "benefit-react"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="flex-{row|row-reverse|col|col-reverse}" />
+
+---
+
+<Grid minWidth="175px">
+  <InfoBox pattern="flex-row">
+    <Box className="flex flex-row bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-row-${item}`}
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="flex-row-reverse">
+    <Box className="flex flex-row-reverse bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-row-reverse-${item}`}
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-8 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="flex-col">
+    <Box className="flex flex-col bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-col-${item}`}
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-auto m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="flex-col-reverse">
+    <Box className="flex flex-col-reverse bg-blue-100 p-1 rounded">
+      {[1, 2, 3].map((item) => (
+        <Box
+          key={`flex-col-reverse-${item}`}
+          className="text-sm bold flex items-center justify-center bg-blue-400 rounded-sm text-blue-100 h-8 w-auto m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+</Grid>

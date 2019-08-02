@@ -1,0 +1,71 @@
+---
+name: Getting Started
+route: /getting-started
+previousRoute: /
+previousLabel: Introduction
+nextRoute: /customization/overview
+nextLabel: Customization
+---
+
+import { Box } from "benefit-react"
+
+`benefit` can be consumed in a few different ways:
+
+## Framework agnostic
+
+```bash
+yarn add benefit emotion
+```
+
+```js
+import benefit from "benefit"
+```
+
+`benefit` is a function that will return a `styleWith` property that you can call as a function. Use this when you want to output any utility classes to your elements/components.
+
+```js
+const { styleWith } = benefit()
+
+<div class={styleWith("bg-blue-400 text-black p-4")}>...</div>
+```
+
+## React
+
+```bash
+yarn add benefit react @emotion/core
+```
+
+> `@emotion/core` enables support for the `css` prop when using [emotion](https://emotion.sh/docs/css-prop)
+
+Set the jsx pragma at the top of your source file where you intend to use `benefit`.
+
+```js
+/** @jsx jsx */
+```
+
+> Similar to a comment containing linter configuration, this configures the jsx babel plugin to use the `jsx` function instead of `React.createElement`.
+>
+> [JSX Pragma Documentation](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx#pragma)
+
+Import the `jsx` function from `benefit`
+
+```js
+/** @jsx jsx */
+import { jsx } from "benefit/react"
+```
+
+```js
+<div className="bg-blue-400 text-black p-4">...</div>
+```
+
+As an alternative to the `jsx` approach, you can also import the `Box` component and use that as you would render any other component. The same example from above using a `Box` would look like the following:
+
+```js
+import { Box } from "benefit/react"
+```
+
+```js
+<Box is="div" className="bg-blue-400 text-black p-4">...</div>
+```
+
+_The `jsx` function is really just passing all of your elements through the `Box` component and applying utility styles. It's up to you which one to use. The `jsx` pragma approach just saves you a bit of typing_

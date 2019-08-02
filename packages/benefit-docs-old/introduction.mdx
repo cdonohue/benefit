@@ -1,0 +1,28 @@
+---
+name: Introduction
+route: /
+nextRoute: /getting-started
+nextLabel: Getting Started
+showLogo: true
+---
+
+import { Box, ConfigProvider } from "benefit-react"
+import Logo from "./components/Logo"
+import Alert from "./components/Alert"
+import { Playground, Link } from "docz"
+import Output from "./components/Output"
+
+## Style web applications using generated utility classes
+
+`benefit` is a _5Kb_, utility CSS library that is compatible with TailwindCSS.
+
+- Small runtime
+- No build step
+- Element [normalization](/customization/normalize)
+- Style isolation
+- Fully [Customizable](/customization/overview)
+- Works with [TailwindCSS](https://tailwindcss.com) class names out of box
+
+And... it only inlines the CSS for the utilities that you actually use:
+
+<Output utilityClasses={["bg-blue-500", "text-white", "p-8", "rounded"]} />

@@ -1,0 +1,98 @@
+---
+name: Flex
+property: flex
+parent: Flexbox
+route: /flexbox/flex
+previousRoute: /flexbox/align-self
+previousLabel: Align Self
+nextRoute: /flexbox/flex-direction
+nextLabel: Flex Direction
+---
+
+import { Box } from "benefit-react"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="flex-{value}" themeProperty="flex" />
+
+---
+
+<Grid>
+  <InfoBox caption="Initial" pattern="flex-initial" isDefault>
+    <Box className="text-sm flex bg-blue-100 p-1 rounded mb-2">
+      <Box className="p-2 bg-blue-400 rounded-sm text-blue-100 m-1">Small</Box>
+      <Box className="p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+        A little more
+      </Box>
+    </Box>
+    <Box className="text-sm flex bg-blue-100 p-1 rounded">
+      <Box className="p-2 bg-blue-400 rounded-sm text-blue-100 m-1">Small</Box>
+      <Box className="p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+        A little more
+      </Box>
+      <Box className="p-2 bg-blue-800 rounded-sm text-blue-100 m-1">
+        Raclette unicorn pickled man bun edison bulb literally forage vegan
+        sriracha quinoa iceland. Snackwave iceland ugh bicycle rights retro echo
+        park.
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Flex 1" pattern="flex-1">
+    <Box className="text-sm flex bg-blue-100 p-1 rounded mb-2">
+      <Box className="p-2 bg-blue-400 rounded-sm text-blue-100 m-1">Small</Box>
+      <Box className="p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+        A little more
+      </Box>
+      <Box className="p-2 bg-blue-800 rounded-sm text-blue-100 m-1">
+        Way more content in this box
+      </Box>
+    </Box>
+    <Box className="text-sm flex bg-blue-100 p-1 rounded">
+      <Box className="flex-1 p-2 bg-blue-400 rounded-sm text-blue-100 m-1">
+        Small
+      </Box>
+      <Box className="flex-1 p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+        A little more
+      </Box>
+      <Box className="flex-1 p-2 bg-blue-800 rounded-sm text-blue-100 m-1">
+        Way more content in this box
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Auto" pattern="flex-auto">
+    <Box className="text-sm flex bg-blue-100 p-1 rounded mb-2">
+      <Box className="p-2 bg-blue-400 rounded-sm text-blue-100 m-1">Small</Box>
+      <Box className="p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+        A little more
+      </Box>
+      <Box className="p-2 bg-blue-800 rounded-sm text-blue-100 m-1">
+        Way more content in this box
+      </Box>
+    </Box>
+    <Box className="text-sm flex bg-blue-100 p-1 rounded">
+      <Box className="flex-auto p-2 bg-blue-400 rounded-sm text-blue-100 m-1">
+        Small
+      </Box>
+      <Box className="flex-auto p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+        A little more
+      </Box>
+      <Box className="flex-auto p-2 bg-blue-800 rounded-sm text-blue-100 m-1">
+        Way more content in this box
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="None" pattern="flex-none">
+    <Box className="text-sm flex bg-blue-100 p-1 rounded mb-2 text-center">
+      <Box className="flex-grow p-2 bg-blue-400 rounded-sm text-blue-100 m-1">
+        Flexible
+      </Box>
+      <Box className="flex-none p-2 bg-blue-600 rounded-sm text-blue-100 m-1">
+        Can't grow or shrink
+      </Box>
+      <Box className="flex-grow p-2 bg-blue-400 rounded-sm text-blue-100 m-1">
+        Flexible
+      </Box>
+    </Box>
+  </InfoBox>
+</Grid>

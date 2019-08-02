@@ -1,0 +1,84 @@
+---
+name: Vertical Alignment
+property: vertical-align
+parent: Typography
+route: /typography/vertical-alignment
+previousRoute: /typography/text-color
+previousLabel: Text Color
+nextRoute: /typography/whitespace
+nextLabel: Whitespace
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "benefit-react"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="align-{variant}" />
+
+---
+
+<Grid minWidth="250px" className="text-sm">
+  <InfoBox pattern="align-baseline">
+    <Box className="p-2 bg-gray-200 rounded">
+      An example of a box:
+      <Box
+        is="img"
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWJveCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi44OSAxLjQ1bDggNEEyIDIgMCAwIDEgMjIgNy4yNHY5LjUzYTIgMiAwIDAgMS0xLjExIDEuNzlsLTggNGEyIDIgMCAwIDEtMS43OSAwbC04LTRhMiAyIDAgMCAxLTEuMS0xLjhWNy4yNGEyIDIgMCAwIDEgMS4xMS0xLjc5bDgtNGEyIDIgMCAwIDEgMS43OCAweiIvPgo8cG9seWxpbmUgcG9pbnRzPSIyLjMyIDYuMTYgMTIgMTEgMjEuNjggNi4xNiIvPgo8bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjIyLjc2IiB5Mj0iMTEiLz4KPC9zdmc+"
+        className="align-baseline w-12 ml-2 bg-gray-400 rounded-full p-2"
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="align-top">
+    <Box className="p-2 rounded bg-gray-200">
+      An example of a box:
+      <Box
+        is="img"
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWJveCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi44OSAxLjQ1bDggNEEyIDIgMCAwIDEgMjIgNy4yNHY5LjUzYTIgMiAwIDAgMS0xLjExIDEuNzlsLTggNGEyIDIgMCAwIDEtMS43OSAwbC04LTRhMiAyIDAgMCAxLTEuMS0xLjhWNy4yNGEyIDIgMCAwIDEgMS4xMS0xLjc5bDgtNGEyIDIgMCAwIDEgMS43OCAweiIvPgo8cG9seWxpbmUgcG9pbnRzPSIyLjMyIDYuMTYgMTIgMTEgMjEuNjggNi4xNiIvPgo8bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjIyLjc2IiB5Mj0iMTEiLz4KPC9zdmc+"
+        className="align-top w-12 ml-2 bg-gray-400 rounded-full p-2"
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="align-middle">
+    <Box className="p-2 rounded bg-gray-200">
+      An example of a box:
+      <Box
+        is="img"
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWJveCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi44OSAxLjQ1bDggNEEyIDIgMCAwIDEgMjIgNy4yNHY5LjUzYTIgMiAwIDAgMS0xLjExIDEuNzlsLTggNGEyIDIgMCAwIDEtMS43OSAwbC04LTRhMiAyIDAgMCAxLTEuMS0xLjhWNy4yNGEyIDIgMCAwIDEgMS4xMS0xLjc5bDgtNGEyIDIgMCAwIDEgMS43OCAweiIvPgo8cG9seWxpbmUgcG9pbnRzPSIyLjMyIDYuMTYgMTIgMTEgMjEuNjggNi4xNiIvPgo8bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjIyLjc2IiB5Mj0iMTEiLz4KPC9zdmc+"
+        className="align-middle w-12 ml-2 bg-gray-400 rounded-full p-2"
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="align-bottom">
+    <Box className="p-2 rounded bg-gray-200">
+      An example of a box:
+      <Box
+        is="img"
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWJveCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi44OSAxLjQ1bDggNEEyIDIgMCAwIDEgMjIgNy4yNHY5LjUzYTIgMiAwIDAgMS0xLjExIDEuNzlsLTggNGEyIDIgMCAwIDEtMS43OSAwbC04LTRhMiAyIDAgMCAxLTEuMS0xLjhWNy4yNGEyIDIgMCAwIDEgMS4xMS0xLjc5bDgtNGEyIDIgMCAwIDEgMS43OCAweiIvPgo8cG9seWxpbmUgcG9pbnRzPSIyLjMyIDYuMTYgMTIgMTEgMjEuNjggNi4xNiIvPgo8bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjIyLjc2IiB5Mj0iMTEiLz4KPC9zdmc+"
+        className="align-bottom w-12 ml-2 bg-gray-400 rounded-full p-2"
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="align-text-top">
+    <Box className="p-2 rounded bg-gray-200">
+      An example of a box:
+      <Box
+        is="img"
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWJveCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi44OSAxLjQ1bDggNEEyIDIgMCAwIDEgMjIgNy4yNHY5LjUzYTIgMiAwIDAgMS0xLjExIDEuNzlsLTggNGEyIDIgMCAwIDEtMS43OSAwbC04LTRhMiAyIDAgMCAxLTEuMS0xLjhWNy4yNGEyIDIgMCAwIDEgMS4xMS0xLjc5bDgtNGEyIDIgMCAwIDEgMS43OCAweiIvPgo8cG9seWxpbmUgcG9pbnRzPSIyLjMyIDYuMTYgMTIgMTEgMjEuNjggNi4xNiIvPgo8bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjIyLjc2IiB5Mj0iMTEiLz4KPC9zdmc+"
+        className="align-text-top w-12 ml-2 bg-gray-400 rounded-full p-2"
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="align-text-bottom">
+    <Box className="p-2 rounded bg-gray-200 ">
+      An example of a box:
+      <Box
+        is="img"
+        src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBjbGFzcz0iZmVhdGhlciBmZWF0aGVyLWJveCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJjdXJyZW50Q29sb3IiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIiB2aWV3Qm94PSIwIDAgMjQgMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMi44OSAxLjQ1bDggNEEyIDIgMCAwIDEgMjIgNy4yNHY5LjUzYTIgMiAwIDAgMS0xLjExIDEuNzlsLTggNGEyIDIgMCAwIDEtMS43OSAwbC04LTRhMiAyIDAgMCAxLTEuMS0xLjhWNy4yNGEyIDIgMCAwIDEgMS4xMS0xLjc5bDgtNGEyIDIgMCAwIDEgMS43OCAweiIvPgo8cG9seWxpbmUgcG9pbnRzPSIyLjMyIDYuMTYgMTIgMTEgMjEuNjggNi4xNiIvPgo8bGluZSB4MT0iMTIiIHgyPSIxMiIgeTE9IjIyLjc2IiB5Mj0iMTEiLz4KPC9zdmc+"
+        className="align-text-bottom w-12 ml-2 bg-gray-400 rounded-full p-2"
+      />
+    </Box>
+  </InfoBox>
+</Grid>
