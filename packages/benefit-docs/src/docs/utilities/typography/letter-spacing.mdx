@@ -1,0 +1,28 @@
+---
+name: Letter Spacing
+property: letter-spacing
+parent: Typography
+route: /typography/letter-spacing
+previousRoute: /typography/font-weight
+previousLabel: Font Weight
+nextRoute: /typography/line-height
+nextLabel: Line Height
+---
+
+<UtilityInfo pattern="tracking-{size}" themeProperty="letterSpacing" />
+
+---
+
+<ConfigConsumer>
+  {({ config }) => (
+    <Grid minWidth="150px">
+      {Object.keys(config.theme.letterSpacing).map(size => (
+        <InfoBox key={`tracking-${size}`} pattern={`tracking-${size}`}>
+          <Box className={`bg-white font-sans tracking-${size}`}>
+            Pack my box with five dozen liquor jugs.
+          </Box>
+        </InfoBox>
+      ))}
+    </Grid>
+  )}
+</ConfigConsumer>

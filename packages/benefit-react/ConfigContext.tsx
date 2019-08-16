@@ -14,6 +14,7 @@ export interface ContextInterface {
   config: Config
   utilities: { [key: string]: string }
   styleWith: (classNames: string, isImportant: boolean) => string
+  updateConfig?: any
 }
 
 const { config, utilities, styleWith } = createBenefit()
@@ -29,6 +30,16 @@ type State = Readonly<ContextInterface>
 export class ConfigProvider extends React.Component {
   state: State
 
+  updateConfig = (newConfig: () => Config) => {
+    const { config, utilities, styleWith } = createBenefit(newConfig)
+
+    this.setState({
+      config,
+      utilities,
+      styleWith,
+    })
+  }
+
   constructor(props: { config: () => Config }) {
     super(props)
 
@@ -38,6 +49,7 @@ export class ConfigProvider extends React.Component {
       config,
       utilities,
       styleWith,
+      updateConfig: this.updateConfig,
     }
   }
 

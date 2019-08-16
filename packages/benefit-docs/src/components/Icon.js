@@ -1,6 +1,5 @@
 /** @jsx jsx */
-import { css } from "emotion"
-import { jsx } from "benefit-react"
+import { jsx, css } from "benefit-react"
 import sprites from "../svg/sprites.svg"
 
 const iconStyles = css`

@@ -1,0 +1,28 @@
+---
+name: Font Weight
+property: font-weight
+parent: Typography
+route: /typography/font-weight
+previousRoute: /typography/font-size
+previousLabel: Font Size
+nextRoute: /typography/letter-spacing
+nextLabel: Letter Spacing
+---
+
+<UtilityInfo pattern="font-{weight}" themeProperty="fontWeight" />
+
+---
+
+<ConfigConsumer>
+  {({ config }) => (
+    <Grid>
+      {Object.keys(config.theme.fontWeight).map(weight => (
+        <InfoBox key={`font-${weight}`} pattern={`font-${weight}`}>
+          <Box className={`bg-white font-sans font-${weight}`}>
+            Pack my box with five dozen liquor jugs.
+          </Box>
+        </InfoBox>
+      ))}
+    </Grid>
+  )}
+</ConfigConsumer>

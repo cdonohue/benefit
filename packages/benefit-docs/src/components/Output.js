@@ -14,10 +14,10 @@ const { utilities, styleWith } = benefit()
 export default function Output({
   utilityClasses = ["bg-blue-500", "text-white", "p-8"],
 }) {
-  const styles = utilityClasses.map((className) => {
+  const styles = utilityClasses.map(className => {
     const declarations = utilities[className]
 
-    const rules = Object.keys(declarations).map((property) =>
+    const rules = Object.keys(declarations).map(property =>
       formatDeclaration(property, declarations[property])
     )
 
@@ -49,7 +49,7 @@ export default function Output({
         <Icon name="arrow-down" />
       </div>
       <div className="bg-white rounded shadow-xl overflow-hidden">
-        <Grid minWidth="200px" className="p-4 bg-gray-700 mb-0" important>
+        <Grid minWidth="200px" className="p-4 bg-gray-700 mb-0">
           {styles.map((block, i) => (
             <div
               key={`ouput-declaration-${i + 1}`}

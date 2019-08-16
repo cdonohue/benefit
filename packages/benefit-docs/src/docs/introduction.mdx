@@ -6,15 +6,38 @@ nextLabel: Getting Started
 showLogo: true
 ---
 
-## Style web applications using generated utility classes
+> `benefit` is a utility CSS-in-JS library that provides a set of low-level, configurable, ready-to-use styles. These styles are generated for you as you use them, so you don't have to worry about including stylesheets or eliminating unused styles.
 
-`benefit` is a _5Kb_, utility CSS library that is compatible with TailwindCSS.
+### Let's look at a quick example:
 
-- Small runtime
-- No build step
-- Element [normalization](/customization/normalize)
-- Style isolation
-- Fully [Customizable](/customization/overview)
-- Works with [TailwindCSS](https://tailwindcss.com) class names out of box
+Here, we are applying 5 utility classes to a `<div>`. Click any class to remove it and try adding some new ones (like `bg-pink-400` or `italic`).
 
-And... it only inlines the CSS for the utilities that you actually use:
+---
+
+<Playground
+  utilities={["bg-blue-500", "p-4", "text-white", "shadow", "rounded"]}
+/>
+
+As the class names are interpreted, style rules are inserted into your markup and cached for another element to take advantage of. This way, any utility only gets inserted once.
+
+### Now, we'll start from scratch
+
+Let's start off with an unstyled `<div>` with some alert content. The goal is for us to make this look like an error that is displayed to the user.
+
+- First, we'll add `bg-red-800` to style the background
+- Next, add `text-white`
+- Add some padding with `p-4`
+- Round the corners using `rounded`
+- Raise the error off of the page a bit by adding `shadow-xl`
+
+<Playground
+  content={
+    <>
+      <Icon name="alert-circle" className="mr-2 rounded-full" /> This is an
+      alert message
+    </>
+  }
+  hiddenUtilities={["flex", "items-center"]}
+/>
+
+> Read more about utilities for [Background Color](/background/background-color), [Text Color](), [Padding](), [Border Radius](), and [Box Shadow]()

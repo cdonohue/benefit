@@ -17,19 +17,20 @@ function resolveApp(relativePath) {
   return path.resolve(fs.realpathSync(process.cwd()), relativePath)
 }
 
-function ensureBuildFolder() {
-  return util.promisify(mkdirp)(resolveApp("build"))
-}
-
-function ensureDistFolder() {
-  return util.promisify(mkdirp)(resolveApp("dist"))
-}
-
 function ensureBuildFolders(name) {
   return (
     util.promisify(mkdirp)(resolveApp("build")) &&
     util.promisify(mkdirp)(resolveApp("dist"))
   )
+}
+
+async function moveTypes() {
+  try {
+    await fs.copy(paths.appDist + "/src", paths.appDist, {
+      overwrite: true,
+    })
+    await fs.remove(paths.appDist + "/src")
+  } catch (e) {}
 }
 
 function writeEntryFile(name) {

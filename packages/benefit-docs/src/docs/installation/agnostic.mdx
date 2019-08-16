@@ -1,0 +1,23 @@
+---
+name: Framework Agnostic
+route: /installation/agnostic
+parent: Installation
+previousRoute: /
+previousLabel: Introduction
+nextRoute: /installation/react
+nextLabel: React
+---
+
+```bash
+npm i benefit
+```
+
+`createBenefit` is a function that will return a `styleWith` property that you can call as a function. Use this when you want to output any utility classes to your elements/components.
+
+```js
+import { createBenefit } from "benefit"
+
+const { styleWith } = createBenefit()
+
+<div class={styleWith("bg-blue-400 text-black p-4")}>...</div>
+```

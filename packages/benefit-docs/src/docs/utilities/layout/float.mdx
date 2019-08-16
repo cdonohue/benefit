@@ -1,0 +1,64 @@
+---
+name: Float
+property: float
+parent: Layout
+route: /layout/float
+previousRoute: /layout/display
+previousLabel: Display
+nextRoute: /layout/object-fit
+nextLabel: Object Fit
+---
+
+<UtilityInfo pattern="float-{left|right|none}" />
+
+---
+
+<Grid>
+  <InfoBox pattern="float-left">
+    <Box className="text-gray-800">
+      <Box className="text-sm py-2 px-4 rounded-sm bg-gray-500 text-white mr-2 inline-block float-left">
+        I'm floated
+      </Box>
+      <Box is="p">
+        Church-key mixtape poutine next level direct trade shabby chic everyday
+        carry. Live-edge ugh kitsch forage lomo. Street art synth normcore,
+        gentrify meh adaptogen shabby chic air plant. You probably haven't heard
+        of them prism echo park kinfolk, sustainable portland pabst cold-pressed
+        gastropub art party scenester ethical. Copper mug slow-carb next level,
+        distillery iPhone letterpress vape vexillologist shabby chic.
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="float-right">
+    <Box className="text-gray-800">
+      <Box className="text-sm py-2 px-4 rounded-sm bg-gray-500 text-white mr-2 inline-block float-right">
+        I'm floated
+      </Box>
+      <Box is="p">
+        Church-key mixtape poutine next level direct trade shabby chic everyday
+        carry. Live-edge ugh kitsch forage lomo. Street art synth normcore,
+        gentrify meh adaptogen shabby chic air plant. You probably haven't heard
+        of them prism echo park kinfolk, sustainable portland pabst cold-pressed
+        gastropub art party scenester ethical. Copper mug slow-carb next level,
+        distillery iPhone letterpress vape vexillologist shabby chic.
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="float-none" isDefault>
+    <Box className="text-gray-800">
+      <Box className="text-sm py-2 px-4 rounded-sm bg-gray-500 text-white mr-2 inline-block float-none">
+        I'm not floated
+      </Box>
+      <Box is="p">
+        Church-key mixtape poutine next level direct trade shabby chic everyday
+        carry. Live-edge ugh kitsch forage lomo. Street art synth normcore,
+        gentrify meh adaptogen shabby chic air plant. You probably haven't heard
+        of them prism echo park kinfolk, sustainable portland pabst cold-pressed
+        gastropub art party scenester ethical. Copper mug slow-carb next level,
+        distillery iPhone letterpress vape vexillologist shabby chic.
+      </Box>
+    </Box>
+  </InfoBox>
+</Grid>
+
+> Use the `clearfix` utility class on a parent element when you want to contain your floated element.

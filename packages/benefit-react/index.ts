@@ -11,6 +11,7 @@ import {
   flattenColorConfig,
   css,
   global,
+  keyframes,
   parseDeclarations,
   theme,
 } from "benefit"
@@ -26,6 +27,7 @@ export {
   createVariant,
   createVariantsFromMap,
   css,
+  keyframes,
   flattenColorConfig,
   parseDeclarations,
   global,

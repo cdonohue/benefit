@@ -1,8 +1,12 @@
 import stylis from "stylis"
 
+const processor = new stylis({
+  keyframe: false,
+})
+
 export default function getProcessedRules(
   selector: string,
   cssRules: string
 ): string {
-  return stylis(selector.replace(":", "\\:").replace("/", "\\/"), cssRules)
+  return processor(selector.replace(":", "\\:").replace("/", "\\/"), cssRules)
 }

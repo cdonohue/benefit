@@ -3,8 +3,7 @@
   "version": "1.1.1",
   "main": "index.js",
   "module": "benefit.esm.js",
-  "types": "dist/foo.d.ts",
-  "unpkg": "benefit.umd.js",
+  "types": "index.d.ts",
   "repository": "https://github.com/cdonohue/benefit.git",
   "contributors": [
     "Chad Donohue <chad.donohue@gmail.com>",

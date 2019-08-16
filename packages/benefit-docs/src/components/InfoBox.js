@@ -1,5 +1,5 @@
-import React from "react"
-import { Box } from "benefit-react"
+/** @jsx jsx */
+import { jsx } from "benefit-react"
 
 export default function LayoutBox({
   color = "gray",
@@ -11,7 +11,7 @@ export default function LayoutBox({
 }) {
   return (
     <div
-      className={`bg-white p-4 relative rounded shadow overflow-hidden ${className}`}
+      className={`bg-white p-4 relative rounded shadow h-full overflow-hidden`}
     >
       {isDefault && (
         <div
@@ -21,12 +21,12 @@ export default function LayoutBox({
         </div>
       )}
       {caption && (
-        <h4 className={`text-${color}-800 text-base font-semibold mb-1`}>
+        <h4 className={`text-${color}-700 text-base font-semibold`}>
           {caption}
         </h4>
       )}
       {pattern && (
-        <span className="font-mono text-blue-500 text-sm block">{pattern}</span>
+        <span className="font-mono text-blue-500 text-xs block">{pattern}</span>
       )}
       <div className="mt-2">{children}</div>
     </div>

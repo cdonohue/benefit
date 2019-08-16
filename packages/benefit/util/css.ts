@@ -2,29 +2,47 @@ import createStyleTag from "./createStyleTag"
 import createHash from "./createHash"
 import getProcessedRules from "./getProcessedRules"
 import isBrowser from "./isBrowser"
+import initializeContainers from "./initializeContainers"
 
-export function createCss(config?: any) {
+function createCss(isGlobal: boolean = false, isKeyframes: boolean = false) {
   return (strings: TemplateStringsArray, ...values: any[]) => {
-    const processedValues = values.map((value) => {
-      if (typeof value === "function") {
-        return value(config)
+    const styles = strings.map((str, i) => `${str}${values[i] || ""}`).join("")
+
+    const label = isGlobal ? "global" : isKeyframes ? "keyframes" : "css"
+
+    const hashId = `benefit-${label}-${createHash(styles)}`
+
+    // Wrap with keyframes
+    const addsKeyframes = isKeyframes
+      ? `
+      @keyframes ${hashId} {
+        ${styles}
       }
+    `
+      : styles
 
-      return value
-    })
+    // Wrap with global
+    const addsGlobal = isGlobal
+      ? `
+      :global() {
+        ${addsKeyframes}
+      }
+    `
+      : addsKeyframes
 
-    const styles = strings
-      .map((str, i) => `${str}${processedValues[i] || ""}`)
-      .join("")
+    const scope = `${!(isGlobal || isKeyframes) ? "." : ""}${hashId}`
 
-    const hashId = `benefit-${createHash(styles)}`
+    const processedStyles = getProcessedRules(scope, addsGlobal)
 
-    const processedStyles = getProcessedRules(`.${hashId}`, styles)
+    initializeContainers()
 
     if (isBrowser()) {
       // Check for duplicates
       if (!document.getElementById(hashId)) {
-        document.head.appendChild(createStyleTag(hashId, processedStyles))
+        const container = document.getElementById(`benefit-${label}`)
+        if (container) {
+          container.appendChild(createStyleTag(hashId, processedStyles))
+        }
       }
     }
 
@@ -32,6 +50,8 @@ export function createCss(config?: any) {
   }
 }
 
-const css = createCss()
+export const css = createCss()
 
-export default css
+export const global = createCss(true)
+
+export const keyframes = createCss(false, true)

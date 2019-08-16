@@ -5,11 +5,14 @@ import parseDeclarations from "./util/parseDeclarations"
 import getProcessedRules from "./util/getProcessedRules"
 import createStyleTag from "./util/createStyleTag"
 import createHash from "./util/createHash"
-
+import { global } from "./util/css"
+import getPreflightStyles from "./util/getPreflightStyles"
 import createCache from "./util/createCache"
+import initializeContainers from "./util/initializeContainers"
 
 interface Options {
   prefix?: string
+  preflight?: boolean
   theme?: { [key: string]: any }
   normalize?: (theme?: { [key: string]: any }) => { [key: string]: any }
   utilities?: Array<(theme?: { [key: string]: any }) => { [key: string]: any }>
@@ -26,6 +29,7 @@ export default function createBenefit(
 
   const {
     prefix = "",
+    preflight = true,
     theme = {},
     utilities = [],
     variants = [],
@@ -62,16 +66,15 @@ export default function createBenefit(
     {}
   )
 
-  console.log(sortedUtilityClasses)
-
   let cache: any
 
   if (isBrowser) {
-    let container = document.getElementById("benefit-utilities")
-    if (!container) {
-      container = document.createElement("div")
-      container.setAttribute("id", "benefit-utilities")
-      document.head.appendChild(container)
+    initializeContainers()
+
+    if (preflight) {
+      global`
+        ${getPreflightStyles()}
+      `
     }
 
     // const preloadedUtilities =
@@ -152,7 +155,10 @@ export default function createBenefit(
     classNames: string = "",
     isImportant: boolean = false
   ): string => {
-    const { declarations } = getDeclarationsForClasses(classNames, isImportant)
+    const { declarations, ignoredClasses } = getDeclarationsForClasses(
+      classNames,
+      isImportant
+    )
 
     declarations.forEach((declaration) => {
       if (isBrowser) {
@@ -182,7 +188,10 @@ export default function createBenefit(
       }
     })
 
-    return classNames.trim()
+    return declarations
+      .map((d) => d.className)
+      .concat(ignoredClasses)
+      .join(" ")
   }
 
   return {

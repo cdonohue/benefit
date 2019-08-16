@@ -35,17 +35,15 @@ export default function Color({ className, name, colors }) {
       </div>
       {!isSingleColor && (
         <div className="flex">
-          {Object.keys(colors).map((shade) => {
+          {Object.keys(colors).map(shade => {
             const shadeContrast = polychrome(colors[shade])
               .contrast()
               .hex()
             return (
               <div
                 style={{ color: shadeContrast, fontSize: "8px" }}
-                className={`p-1 font-thin text-center flex-grow text-xs bg-${name}-${shade}`}
-              >
-                {shade}
-              </div>
+                className={`p-2 font-thin text-center flex-grow text-xs bg-${name}-${shade}`}
+              ></div>
             )
           })}
         </div>
