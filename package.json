@@ -5,6 +5,8 @@
   ],
   "scripts": {
     "dev": "yarn workspace benefit-docs develop",
+    "preserve": "yarn workspace benefit-docs build",
+    "serve": "yarn workspace benefit-docs serve",
     "build": "yarn build:benefit && yarn build:benefit-react",
     "build:benefit": "yarn workspace benefit build",
     "build:benefit-react": "yarn workspace benefit-react build"
