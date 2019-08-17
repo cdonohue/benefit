@@ -8,6 +8,12 @@ nextRoute: /customization/apply
 nextLabel: Apply
 ---
 
+import {
+  createUtilitiesFromMap,
+  createVariant,
+  createVariantsFromMap,
+} from "benefit-react"
+
 The `variants` key lets you map utility classes to different states. Common use cases for this would be `hover`, `active`, `focus`, etc.
 
 Similar to the `utilities` key, this holds an array of functions that will each be passed an object representing all `utilities` currently available and the current `theme`.

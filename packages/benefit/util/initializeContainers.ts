@@ -1,7 +1,7 @@
 import isBrowser from "./isBrowser"
 
 export default function initializeContainers(): void {
-  if (isBrowser) {
+  if (isBrowser()) {
     let benefitContainer = document.getElementById("benefit-container")
     let globalContainer = document.getElementById("benefit-global")
     let keyframesContainer = document.getElementById("benefit-keyframes")

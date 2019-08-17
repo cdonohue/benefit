@@ -8,6 +8,8 @@ nextRoute: /customization/variants
 nextLabel: Variants
 ---
 
+import { createUtilitiesFromMap } from "benefit-react"
+
 The `utilities` key is responsible for generating all of the class names and style rules. This is an array of functions. Each function will be passed the [`theme`](/customization/theme) defined in the config above. You are free to iterate on any values, or just return an object with class names mapped to style rules.
 
 ```js
