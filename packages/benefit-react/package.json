@@ -1,6 +1,6 @@
 {
   "name": "benefit-react",
-  "version": "1.1.1",
+  "version": "2.0.0-0",
   "main": "dist/index.js",
   "module": "dist/benefit-react.esm.js",
   "types": "dist/index.d.ts",
