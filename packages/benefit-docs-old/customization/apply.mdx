@@ -1,0 +1,68 @@
+---
+name: Apply
+route: /customization/apply
+parent: Customization
+previousRoute: /customization/variants
+previousLabel: Variants
+nextRoute: /layout/container
+nextLabel: Container
+---
+
+import { ConfigProvider, Box } from "benefit-react"
+import {
+  createUtilitiesFromMap,
+  createVariant,
+  createVariantsFromMap,
+} from "benefit"
+
+Once you start noticing patterns of repeated classes in your component/application, you can use the `apply` key to map a more appropriate name to an array of utility classes.
+
+```js
+import { ConfigProvider, jsx } from "benefit"
+
+return (
+  <ConfigProvider
+    config={(config) => {
+      return {
+        ...config,
+        apply: {
+          "hero-banner": [
+            "p-8",
+            "text-2xl",
+            "text-center",
+            "uppercase",
+            "bg-blue-500",
+            "text-white",
+            "tracking-tight",
+          ],
+        },
+      }
+    }}
+  >
+    <section className="hero-banner">Business at the speed of light</section>
+  </ConfigProvider>
+)
+```
+
+<ConfigProvider
+  config={(config) => {
+    return {
+      ...config,
+      apply: {
+        "hero-banner": [
+          "p-8",
+          "text-2xl",
+          "text-center",
+          "uppercase",
+          "bg-blue-500",
+          "text-white",
+          "tracking-tight",
+        ],
+      },
+    }
+  }}
+>
+  <Box is="section" className="hero-banner">
+    Business at the speed of light
+  </Box>
+</ConfigProvider>

@@ -1,0 +1,29 @@
+---
+name: Border Style
+property: border-style
+parent: Border
+route: /border/border-style
+previousRoute: /border/border-radius
+previousLabel: Border Radius
+nextRoute: /border/border-width
+nextLabel: Border Width
+---
+
+<UtilityInfo pattern="border-{style}" />
+
+---
+
+<Grid minWidth="192px">
+  <InfoBox pattern="border-solid" isDefault>
+    <Box className="h-16 border-gray-400 border border-solid bg-gray-100" />
+  </InfoBox>
+  <InfoBox pattern="border-dashed">
+    <Box className="h-16 border-gray-400 border border-dashed bg-gray-100" />
+  </InfoBox>
+  <InfoBox pattern="border-dotted">
+    <Box className="h-16 border-gray-400 border border-dotted bg-gray-100" />
+  </InfoBox>
+  <InfoBox pattern="border-none">
+    <Box className="h-16 border-gray-400 border border-none bg-gray-100" />
+  </InfoBox>
+</Grid>

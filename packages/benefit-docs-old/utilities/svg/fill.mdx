@@ -1,0 +1,38 @@
+---
+name: Fill
+property: fill
+parent: Svg
+route: /svg/fill
+previousRoute: /interactivity/user-select
+previousLabel: User Select
+nextRoute: /svg/stroke
+nextLabel: Stroke
+---
+
+import Icon from "../../components/Icons"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
+import { Box } from "benefit-react"
+
+<UtilityInfo pattern="fill-{color}" themeProperty="fill" />
+
+---
+
+<Grid minWidth="150px">
+  <InfoBox caption="No Fill" pattern="(blank)">
+    <Box className="flex items-center justify-center p-4 rounded bg-gray-200">
+      <Icon name="feather" className="w-16 h-16" />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="fill-current" caption="Blue">
+    <Box className="text-blue-400 flex items-center justify-center p-4 rounded bg-gray-200">
+      <Icon name="feather" className="w-16 h-16 fill-current" />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="fill-current" caption="Red">
+    <Box className="text-red-400 flex items-center justify-center p-4 rounded bg-gray-200">
+      <Icon name="feather" className="w-16 h-16 fill-current" />
+    </Box>
+  </InfoBox>
+</Grid>

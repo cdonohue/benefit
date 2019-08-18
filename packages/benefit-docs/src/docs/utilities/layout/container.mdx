@@ -1,0 +1,26 @@
+---
+name: Container
+property: max-width
+parent: Layout
+route: /layout/container
+previousRoute: /customization/utilities
+previousLabel: Utilities
+nextRoute: /layout/display
+nextLabel: Display
+---
+
+<UtilityInfo pattern="container" themeProperty="screens" />
+
+---
+
+Containers provide a nice, responsive way to wrap your content. Add a `container` class to make an element's `max-width` match the `min-width` of the current breakpoint. All containers have a `width: 100%` applied.
+
+```html
+<div className="mx-auto container bg-gray-200 rounded p-4">
+  <h1 className="text-2xl tracking-tighter uppercase font-bold text-center">
+    Business at the speed of light.
+  </h1>
+</div>
+```
+
+> The above `container` has a utility of `mx-auto` added so it is centered horizontally within the parent.

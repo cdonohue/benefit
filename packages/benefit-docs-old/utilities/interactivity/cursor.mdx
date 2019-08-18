@@ -1,0 +1,27 @@
+---
+name: Cursor
+property: cursor
+parent: Interactivity
+route: /interactivity/cursor
+previousRoute: /interactivity/appearance
+previousLabel: Appearance
+nextRoute: /interactivity/outline
+nextLabel: Outline
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "benefit-react"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="cursor-{type}" themeProperty="cursor" />
+
+---
+
+<InfoBox pattern="cursor-help">
+  <Box className="border text-gray-500 uppercase text-center rounded p-8 bg-gray-100 cursor-help">
+    Hover here to see the cursor change
+  </Box>
+</InfoBox>

@@ -1,15 +1,45 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/*"
+  "name": "benefit",
+  "version": "1.1.1",
+  "main": "index.js",
+  "umd:main": "benefit.umd.js",
+  "module": "benefit.esm.js",
+  "source": "src/index.ts",
+  "types": "dist/foo.d.ts",
+  "unpkg": "benefit.umd.js",
+  "repository": "https://github.com/cdonohue/benefit.git",
+  "contributors": [
+    "Chad Donohue <chad.donohue@gmail.com>",
+    "Eric Clemmons <eric@smarterspam.com>"
+  ],
+  "description": "5kB utility CSS library that is compatible with TailwindCSS",
+  "license": "MIT",
+  "keywords": [
+    "atomic",
+    "css",
+    "css-in-js",
+    "design",
+    "emotion",
+    "jsx",
+    "system",
+    "tailwind",
+    "tailwindcss",
+    "utility-classes"
   ],
   "scripts": {
-    "dev": "yarn workspace benefit-docs develop",
-    "build:docs": "yarn workspace benefit-docs build",
-    "build": "yarn build:benefit && yarn build:benefit-react",
-    "build:benefit": "yarn workspace benefit build",
-    "build:benefit-react": "yarn workspace benefit-react build"
+    "prebuild": "rimraf dist",
+    "build": "node bin/build",
+    "prestart": "yarn build",
+    "start": "docz dev",
+    "predocs:build": "yarn build",
+    "docs:build": "docz build",
+    "prerelease": "yarn build",
+    "postversion": "cp -rf package.json dist && cp -rf README.md dist && cp -rf LICENSE dist && cp benefit-logo.svg dist",
+    "release": "np --contents dist",
+    "pretest": "yarn build",
+    "test": "jest"
   },
+  "sideEffects": false,
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -24,7 +54,10 @@
     "babel-plugin-transform-async-to-promises": "^0.8.13",
     "bundlesize": "^0.18.0",
     "chalk": "^2.4.2",
+    "cli-box": "^6.0.9",
     "cli-table": "^0.3.1",
+    "docz": "~1.0.4",
+    "emotion": "^10.0.14",
     "fs-extra": "^8.1.0",
     "gzip-size": "^5.1.1",
     "husky": "^2.4.1",
@@ -32,7 +65,9 @@
     "jest-puppeteer": "^4.1.1",
     "microbundle": "~0.9.0",
     "mkdirp": "^0.5.1",
-    "np": "5.0.3",
+    "np": "~4.0.2",
+    "parcel-bundler": "^1.12.3",
+    "polychrome": "~4.1.2",
     "prettier": "^1.18.2",
     "pretty-quick": "^1.11.1",
     "progress-estimator": "^0.2.2",
@@ -55,5 +90,8 @@
     "tsdx": "^0.7.2",
     "tslib": "^1.10.0",
     "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "stylis": "^3.5.4"
   }
 }

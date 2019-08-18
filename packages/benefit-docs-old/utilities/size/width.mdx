@@ -1,0 +1,91 @@
+---
+name: Width
+property: width
+parent: Size
+route: /size/width
+previousRoute: /size/height
+previousLabel: Height
+nextRoute: /tables/border-collapse
+nextLabel: Border Collapse
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import { Box, ConfigConsumer } from "benefit-react"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="w-{size}" themeProperty="width" />
+
+---
+
+<Grid minWidth="128px">
+  <InfoBox pattern="w-1/2" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-1/2`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-2/3" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-2/3`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-1/4" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-1/4`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-3/4" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-3/4`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-1/5" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-1/5`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-2/5" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-2/5`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-3/5" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-3/5`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-4/5" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-4/5`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-1/6" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-1/6`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-5/6" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-5/6`}
+    />
+  </InfoBox>
+  <InfoBox pattern="w-full" color="blue">
+    <Box
+      className={`bg-blue-200 rounded border-blue-300 text-blue-400 h-6 font-mono border-4 w-full`}
+    />
+  </InfoBox>
+</Grid>
+
+## Min Width
+
+<UtilityInfo pattern="min-w-{size}" themeProperty="minWidth" />
+
+---
+
+## Max Width
+
+<UtilityInfo pattern="max-w-{size}" themeProperty="maxWidth" />
+
+---

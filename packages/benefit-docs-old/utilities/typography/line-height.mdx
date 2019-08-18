@@ -1,0 +1,38 @@
+---
+name: Line Height
+property: line-height
+parent: Typography
+route: /typography/line-height
+previousRoute: /typography/letter-spacing
+previousLabel: Letter Spacing
+nextRoute: /typography/lists
+nextLabel: Lists
+---
+
+import { Playground } from "docz"
+import { Box, ConfigConsumer } from "benefit-react"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="leading-{size}" themeProperty="lineHeight" />
+
+---
+
+<ConfigConsumer>
+  {({ config }) => (
+    <Grid>
+      {Object.keys(config.theme.lineHeight).map((size) => (
+        <InfoBox key={`leading-${size}`} pattern={`leading-${size}`}>
+          <Box className={`bg-white font-sans leading-${size}`}>
+        Portland flannel trust fund plaid kitsch. Hot chicken everyday carry williamsburg YOLO green juice lomo. Bicycle rights man bun +1 shabby chic migas salvia listicle polaroid paleo.
+        </Box>
+        </InfoBox>
+      ))}
+    </Grid>
+
+)}
+
+</ConfigConsumer>

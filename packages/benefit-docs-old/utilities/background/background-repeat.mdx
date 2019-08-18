@@ -1,0 +1,77 @@
+---
+name: Background Repeat
+property: background-repeat
+parent: Background
+route: /background/background-repeat
+previousRoute: /background/background-position
+previousLabel: Background Position
+nextRoute: /background/background-size
+nextLabel: Background Size
+---
+
+import { Playground } from "docz"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import { Box } from "benefit-react"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="bg-{round|space|repeat(-x|-y)|no-repeat}" />
+
+---
+
+<Grid minWidth="320px">
+  <InfoBox pattern="bg-repeat">
+    <Box
+      className="h-64 rounded bg-repeat"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-no-repeat">
+    <Box
+      className="h-64 rounded bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-repeat-x">
+    <Box
+      className="h-64 rounded bg-repeat-x"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-repeat-y">
+    <Box
+      className="h-64 rounded bg-repeat-y"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-round">
+    <Box
+      className="h-64 rounded bg-round"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-space">
+    <Box
+      className="h-64 rounded bg-space"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1481819613568-3701cbc70156?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=100&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+</Grid>

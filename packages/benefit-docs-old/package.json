@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "benefit-docs-old",
+  "version": "1.1.1",
+  "scripts": {
+    "start": "docz dev",
+    "build": "docz build"
+  },
+  "dependencies": {
+    "benefit": "*",
+    "benefit-react": "*"
+  },
+  "devDependencies": {
+    "docz": "1.2.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "emotion": "10.0.14",
+    "polychrome": "4.1.2",
+    "ts-loader": "6.0.4"
+  }
+}

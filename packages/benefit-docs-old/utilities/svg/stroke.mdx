@@ -1,0 +1,36 @@
+---
+name: Stroke
+property: stroke
+parent: Svg
+route: /svg/stroke
+previousRoute: /svg/fill
+previousLabel: Fill
+---
+
+import Icon from "../../components/Icons"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
+import { Box } from "benefit-react"
+
+<UtilityInfo pattern="stroke-{color}" themeProperty="stroke" />
+
+---
+
+<Grid minWidth="150px">
+  <InfoBox caption="No Stroke" pattern="(blank)">
+    <Box className="flex items-center justify-center p-4 rounded bg-gray-200">
+      <Icon name="feather" className="w-16 h-16" />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="stroke-current" caption="Blue">
+    <Box className="text-blue-400 flex items-center justify-center p-4 rounded bg-gray-200">
+      <Icon name="feather" className="w-16 h-16 stroke-current" />
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="stroke-current" caption="Red">
+    <Box className="text-red-400 flex items-center justify-center p-4 rounded bg-gray-200">
+      <Icon name="feather" className="w-16 h-16 stroke-current" />
+    </Box>
+  </InfoBox>
+</Grid>

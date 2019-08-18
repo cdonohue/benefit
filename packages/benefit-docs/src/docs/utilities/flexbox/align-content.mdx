@@ -1,0 +1,72 @@
+---
+name: Align Content
+property: align-content
+parent: Flexbox
+route: /flexbox/align-content
+previousRoute: /border/border-width
+previousLabel: Border Width
+nextRoute: /flexbox/align-items
+nextLabel: Align Items
+---
+
+<UtilityInfo pattern="content-{start|center|end|around|between}" />
+
+---
+
+<Grid minWidth="250px">
+  <InfoBox caption="Start" pattern="content-start">
+    <Box className="flex flex-wrap h-32 content-start bg-gray-200 p-1 rounded">
+      {[1, 2, 3, 4, 5].map(item => (
+        <Box key={`flex-content-start-${item}`} className="w-1/3 p-1">
+          <Box className="bg-gray-500 rounded-sm text-gray-100 text-sm bold flex items-center justify-center p-2">
+            {item}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Center" pattern="content-center">
+    <Box className="flex flex-wrap h-32 content-center bg-gray-200 p-1 rounded">
+      {[1, 2, 3, 4, 5].map(item => (
+        <Box key={`flex-content-center-${item}`} className="w-1/3 p-1">
+          <Box className="bg-gray-500 rounded-sm text-gray-100 text-sm bold flex items-center justify-center p-2">
+            {item}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="End" pattern="content-end">
+    <Box className="flex flex-wrap h-32 content-end bg-gray-200 p-1 rounded">
+      {[1, 2, 3, 4, 5].map(item => (
+        <Box key={`flex-content-end-${item}`} className="w-1/3 p-1">
+          <Box className="bg-gray-500 rounded-sm text-gray-100 text-sm bold flex items-center justify-center p-2">
+            {item}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Space Around" pattern="content-around">
+    <Box className="flex flex-wrap h-32 content-around bg-gray-200 p-1 rounded">
+      {[1, 2, 3, 4, 5].map(item => (
+        <Box key={`flex-content-around-${item}`} className="w-1/3 p-1">
+          <Box className="bg-gray-500 rounded-sm text-gray-100 text-sm bold flex items-center justify-center p-2">
+            {item}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Space Between" pattern="content-between">
+    <Box className="flex flex-wrap h-32 content-between bg-gray-200 p-1 rounded">
+      {[1, 2, 3, 4, 5].map(item => (
+        <Box key={`flex-content-between-${item}`} className="w-1/3 p-1">
+          <Box className="bg-gray-500 rounded-sm text-gray-100 text-sm bold flex items-center justify-center p-2">
+            {item}
+          </Box>
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+</Grid>

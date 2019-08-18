@@ -1,0 +1,35 @@
+---
+name: Text Color
+property: color
+parent: Typography
+route: /typography/text-color
+previousRoute: /typography/text-alignment
+previousLabel: Text Alignment
+nextRoute: /typography/vertical-alignment
+nextLabel: Vertical Alignment
+---
+
+import { Playground } from "docz"
+import { Box } from "benefit-react"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="text-{color}" themeProperty="textColor" hasColors />
+
+---
+
+_Shown here using the `blue` palette_
+
+<Grid>
+  {[...Array(9).keys()].reverse().map((level) => (
+    <InfoBox key={level} pattern={`text-blue-${(level + 1) * 100}`}>
+      <Box
+        key={level}
+        className={`p-4 border rounded-sm text-blue-${(level + 1) * 100}`}
+      >
+        Pack my box with five dozen liquor jugs.
+      </Box>
+    </InfoBox>
+  ))}
+</Grid>

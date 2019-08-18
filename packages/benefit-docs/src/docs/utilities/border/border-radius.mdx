@@ -1,0 +1,74 @@
+---
+name: Border Radius
+property: border-radius
+parent: Border
+route: /border/border-radius
+previousRoute: /border/border-color
+previousLabel: Border Color
+nextRoute: /border/border-style
+nextLabel: Border Style
+---
+
+<UtilityInfo
+  label="All Sides"
+  pattern="rounded{-size?}"
+  themeProperty="borderRadius"
+/>
+
+---
+
+<Grid minWidth="128px">
+  <InfoBox caption="None" pattern="rounded-none">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-none" />
+  </InfoBox>
+  <InfoBox caption="Small" pattern="rounded-sm">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-sm" />
+  </InfoBox>
+  <InfoBox caption="Default" pattern="rounded">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded" />
+  </InfoBox>
+  <InfoBox caption="Large" pattern="rounded-lg">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-lg" />
+  </InfoBox>
+  <InfoBox caption="Full" pattern="rounded-full">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-full" />
+  </InfoBox>
+</Grid>
+
+<UtilityInfo label="Separate Sides" pattern="rounded-{t|r|b|l}{-size?}" />
+
+---
+
+<Grid minWidth="128px">
+  <InfoBox caption="Top" pattern="rounded-t">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-t" />
+  </InfoBox>
+  <InfoBox caption="Right" pattern="rounded-r">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-r" />
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="rounded-b">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-b" />
+  </InfoBox>
+  <InfoBox caption="Left" pattern="rounded-l">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-l" />
+  </InfoBox>
+</Grid>
+
+<UtilityInfo label="Separate Corners" pattern="rounded-{tl|tr|br|bl}{-size?}" />
+
+---
+
+<Grid minWidth="128px">
+  <InfoBox caption="Top Left" pattern="rounded-tl">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-tl" />
+  </InfoBox>
+  <InfoBox caption="Top Right" pattern="rounded-tr">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-tr" />
+  </InfoBox>
+  <InfoBox caption="Bottom Right" pattern="rounded-br">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-br" />
+  </InfoBox>
+  <InfoBox caption="Bottom Left" pattern="rounded-bl">
+    <Box className="h-8 px-2 bg-gray-300 border-4 border-gray-400 rounded-bl" />
+  </InfoBox>
+</Grid>

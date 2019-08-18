@@ -1,0 +1,90 @@
+---
+name: Object Position
+property: object-position
+parent: Layout
+route: /layout/object-position
+previousRoute: /layout/object-fit
+previousLabel: Object Fit
+nextRoute: /layout/overflow
+nextLabel: Overflow
+---
+
+import { Box } from "benefit-react"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo
+  pattern="object-{left|right|center?}-{top|bottom?}"
+  themeProperty="objectPosition"
+/>
+
+---
+
+<Grid minWidth="175px">
+  <InfoBox caption="Center" pattern="object-center">
+    <Box
+      className="object-center object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Top" pattern="object-top">
+    <Box
+      className="object-top object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Right Top" pattern="object-right-top">
+    <Box
+      className="object-right-top object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Right" pattern="object-right">
+    <Box
+      className="object-right object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Right Bottom" pattern="object-right-bottom">
+    <Box
+      className="object-right-bottom object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="object-bottom">
+    <Box
+      className="object-bottom object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Left Bottom" pattern="object-left-bottom">
+    <Box
+      className="object-left-bottom object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Left" pattern="object-left">
+    <Box
+      className="object-left object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+  <InfoBox caption="Left Top" pattern="object-left">
+    <Box
+      className="object-left-top object-scale-down w-full h-24 rounded-sm bg-gray-200"
+      is="img"
+      src="https://images.unsplash.com/photo-1517423568366-8b83523034fd?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=50&fit=max&ixid=eyJhcHBfaWQiOjF9"
+    />
+  </InfoBox>
+</Grid>

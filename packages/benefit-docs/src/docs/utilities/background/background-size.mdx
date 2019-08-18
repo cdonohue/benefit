@@ -1,0 +1,44 @@
+---
+name: Background Size
+property: background-size
+parent: Background
+route: /background/background-size
+previousRoute: /background/background-repeat
+previousLabel: Background Repeat
+nextRoute: /border/border-color
+nextLabel: Border Color
+---
+
+<UtilityInfo pattern="bg-{auto|cover|contain}" />
+
+---
+
+<Grid minWidth="200px">
+  <InfoBox pattern="bg-auto">
+    <Box
+      className="h-32 rounded bg-auto"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1453872302360-eed3c5f8ff66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-cover">
+    <Box
+      className="h-32 rounded bg-cover"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1453872302360-eed3c5f8ff66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+  <InfoBox pattern="bg-contain">
+    <Box
+      className="h-32 rounded bg-contain"
+      style={{
+        backgroundImage:
+          "url(https://images.unsplash.com/photo-1453872302360-eed3c5f8ff66?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjF9)",
+      }}
+    />
+  </InfoBox>
+</Grid>

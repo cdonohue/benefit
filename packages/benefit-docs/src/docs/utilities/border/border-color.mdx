@@ -1,0 +1,27 @@
+---
+name: Border Color
+property: border-color
+parent: Border
+route: /border/border-color
+previousRoute: /background/background-size
+previousLabel: Background Size
+nextRoute: /border/border-radius
+nextLabel: Border Radius
+---
+
+<UtilityInfo pattern="border-{color}" themeProperty="borderColor" hasColors />
+
+---
+
+_Shown here using the `blue` palette_
+
+<Grid minWidth="200px">
+  {[...Array(9).keys()].reverse().map(level => (
+    <InfoBox pattern={`border-blue-${(level + 1) * 100}`}>
+      <Box
+        key={level}
+        className={`border rounded-sm h-16 border-blue-${(level + 1) * 100}`}
+      />
+    </InfoBox>
+  ))}
+</Grid>

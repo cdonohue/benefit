@@ -1,0 +1,86 @@
+---
+name: Overflow
+property: overflow
+parent: Layout
+route: /layout/overflow
+previousRoute: /layout/object-position
+previousLabel: Object Position
+nextRoute: /layout/position
+nextLabel: Position
+---
+
+<UtilityInfo pattern="overflow-{x|y?}-{visible|auto|hidden|scroll}" />
+
+---
+
+<Grid minWidth="225px">
+  <InfoBox caption="Visible" pattern="overflow{-x|y?}-visible" isDefault>
+    <Box className="border-4 border-gray-300 text-black text-sm p-2 rounded h-24">
+      Hot chicken health goth leggings twee. Normcore chia mustache drinking
+      vinegar. Small batch 90's wolf microdosing gochujang, shabby chic af pug
+      green juice. Live-edge vexillologist vegan bespoke mixtape ennui af
+      selvage. Narwhal shaman DIY, banh mi plaid 90's activated charcoal man bun
+      tousled stumptown. Jean shorts mixtape skateboard disrupt portland pop-up
+      kombucha kickstarter hexagon dreamcatcher ugh kogi.
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Auto" pattern="overflow{-x|y?}-auto">
+    <Box className="border-4 border-gray-300 text-black text-sm p-2 rounded h-24 overflow-auto">
+      Hot chicken health goth leggings twee. Normcore chia mustache drinking
+      vinegar. Small batch 90's wolf microdosing gochujang, shabby chic af pug
+      green juice. Live-edge vexillologist vegan bespoke mixtape ennui af
+      selvage. Narwhal shaman DIY, banh mi plaid 90's activated charcoal man bun
+      tousled stumptown. Jean shorts mixtape skateboard disrupt portland pop-up
+      kombucha kickstarter hexagon dreamcatcher ugh kogi.
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Hidden" pattern="overflow{-x|y?}-hidden">
+    <Box className="border-4 border-gray-300 text-black text-sm p-2 rounded h-24 overflow-hidden">
+      Hot chicken health goth leggings twee. Normcore chia mustache drinking
+      vinegar. Small batch 90's wolf microdosing gochujang, shabby chic af pug
+      green juice. Live-edge vexillologist vegan bespoke mixtape ennui af
+      selvage. Narwhal shaman DIY, banh mi plaid 90's activated charcoal man bun
+      tousled stumptown. Jean shorts mixtape skateboard disrupt portland pop-up
+      kombucha kickstarter hexagon dreamcatcher ugh kogi.
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Scroll Always" pattern="overflow-{-x|y?}-scroll">
+    <Box className="border-4 border-gray-300 text-black text-sm p-2 rounded h-24 overflow-scroll">
+      Hot chicken health goth leggings twee. Normcore chia mustache drinking
+      vinegar. Small batch 90's wolf microdosing gochujang, shabby chic af pug
+      green juice. Live-edge vexillologist vegan bespoke mixtape ennui af
+      selvage. Narwhal shaman DIY, banh mi plaid 90's activated charcoal man bun
+      tousled stumptown. Jean shorts mixtape skateboard disrupt portland pop-up
+      kombucha kickstarter hexagon dreamcatcher ugh kogi.
+    </Box>
+  </InfoBox>
+</Grid>
+
+<UtilityInfo pattern="scrolling-{touch|auto}" className="mt-8" />
+
+---
+
+<Grid minWidth="300px">
+  <InfoBox caption="Momentum Scroll" pattern="scrolling-touch">
+    <Tablet>
+      Hot chicken health goth leggings twee. Normcore chia mustache drinking
+      vinegar. Small batch 90's wolf microdosing gochujang, shabby chic af pug
+      green juice. Live-edge vexillologist vegan bespoke mixtape ennui af
+      selvage. Narwhal shaman DIY, banh mi plaid 90's activated charcoal man bun
+      tousled stumptown. Jean shorts mixtape skateboard disrupt portland pop-up
+      kombucha kickstarter hexagon dreamcatcher ugh kogi.
+    </Tablet>
+  </InfoBox>
+  <InfoBox caption="Non-momentum" pattern="scrolling-auto" isDefault>
+    <BrowserBox>
+      <Box className="text-sm scrolling-auto">
+        Hot chicken health goth leggings twee. Normcore chia mustache drinking
+        vinegar. Small batch 90's wolf microdosing gochujang, shabby chic af pug
+        green juice. Live-edge vexillologist vegan bespoke mixtape ennui af
+        selvage. Narwhal shaman DIY, banh mi plaid 90's activated charcoal man
+        bun tousled stumptown. Jean shorts mixtape skateboard disrupt portland
+        pop-up kombucha kickstarter hexagon dreamcatcher ugh kogi.
+      </Box>
+    </BrowserBox>
+  </InfoBox>
+</Grid>

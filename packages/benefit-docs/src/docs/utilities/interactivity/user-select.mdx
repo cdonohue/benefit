@@ -1,0 +1,37 @@
+---
+name: User Select
+property: user-select
+parent: Interactivity
+route: /interactivity/user-select
+previousRoute: /interactivity/resize
+previousLabel: Resize
+nextRoute: /svg/fill
+nextLabel: Fill
+---
+
+<UtilityInfo pattern="select-{all|auto|none|text}" />
+
+---
+
+<Grid minWidth="250px">
+  <InfoBox pattern="select-all">
+    <Box className="bg-gray-200 p-4 rounded select-all overflow-hidden">
+      You should be able to select this text.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="select-auto">
+    <Box className="bg-gray-200 p-4 rounded select-auto overflow-hidden">
+      You should be able to select this text.
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="select-none">
+    <Box className="bg-gray-200 p-4 rounded select-none overflow-hidden">
+      You can try but you can't select this text!
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="select-text">
+    <Box className="bg-gray-200 p-4 rounded select-text overflow-hidden">
+      You should be able to select this text.
+    </Box>
+  </InfoBox>
+</Grid>

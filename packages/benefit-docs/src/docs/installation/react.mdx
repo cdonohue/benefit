@@ -1,0 +1,54 @@
+---
+name: React
+route: /installation/react
+parent: Installation
+previousRoute: /installation/agnostic
+previousLabel: Installation
+nextRoute: /customization/overview
+nextLabel: Customization
+---
+
+```bash
+npm i benefit-react
+```
+
+> Requires `react` >= `16.3`
+
+You have two ways of integrating `benefit-react` into your project:
+
+### JSX Pragma
+
+This option requires some additional configuration, but does not require you to wrap each component that you intend to use utility classes with.
+
+> Similar to a comment containing linter configuration, this configures the jsx babel plugin to use the `jsx` function instead of `React.createElement`.
+>
+> [JSX Pragma Documentation](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx#pragma)
+
+Set the jsx pragma at the top of your source file and import the `jsx` function from `benefit-react`
+
+```js
+/** @jsx jsx */
+import { jsx } from "benefit-react"
+
+export default function MyComponent() {
+  return <div className="bg-blue-400 text-black p-4">...</div>
+}
+```
+
+### Box component
+
+As an alternative to the `jsx` approach, you can also import the `Box` component and use that as you would render any other component. The same example from above using a `Box` would look like the following:
+
+```js
+import { Box } from "benefit/react"
+
+export default function MyComponent() {
+  return (
+    <Box is="div" className="bg-blue-400 text-black p-4">
+      ...
+    </Box>
+  )
+}
+```
+
+_The `jsx` function is really just passing all of your elements through the `Box` component and applying utility styles. It's up to you which one to use. The `jsx` pragma approach just saves you a bit of typing_

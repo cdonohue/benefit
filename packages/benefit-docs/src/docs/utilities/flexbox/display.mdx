@@ -1,0 +1,41 @@
+---
+name: Flex Display
+property: display
+parent: Flexbox
+route: /flexbox/flex-display
+previousRoute: /flexbox/flex-direction
+previousLabel: Flex Direction
+nextRoute: /flexbox/flex-grow
+nextLabel: Flex Grow
+---
+
+<UtilityInfo pattern="flex|inline-flex" />
+
+---
+
+<Grid>
+  <InfoBox pattern="flex">
+    <Box className="flex bg-gray-200 p-1 rounded">
+      {[1, 2, 3].map(item => (
+        <Box
+          key={`display-flex-${item}`}
+          className="text-sm bold flex items-center justify-center bg-gray-500 rounded-sm text-gray-100 h-8 m-1 flex-grow"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+  <InfoBox pattern="inline-flex">
+    <Box className="flex bg-gray-200 p-1 rounded">
+      {[1, 2, 3].map(item => (
+        <Box
+          key={`display-inline-flex-${item}`}
+          className="text-sm bold flex items-center justify-center bg-gray-500 rounded-sm text-gray-100 h-8 w-8 m-1"
+        >
+          {item}
+        </Box>
+      ))}
+    </Box>
+  </InfoBox>
+</Grid>

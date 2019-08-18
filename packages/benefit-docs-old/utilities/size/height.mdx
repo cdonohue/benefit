@@ -1,0 +1,71 @@
+---
+name: Height
+property: height
+parent: Size
+route: /size/height
+previousRoute: /space/padding
+previousLabel: Padding
+nextRoute: /size/width
+nextLabel: Width
+---
+
+import { Playground } from "docz"
+import ConfigPropertyList from "../../components/ConfigPropertyList"
+import Grid from "../../components/Grid"
+import InfoBox from "../../components/InfoBox"
+import { Box, ConfigConsumer } from "benefit-react"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="h-{size}" themeProperty="height" />
+
+---
+
+<Grid minWidth="72px">
+  <InfoBox pattern="h-2" className="justify-between flex flex-col">
+    <Box
+      className={`bg-blue-200 rounded border-blue-400 text-blue-600 w-full font-mono border-4 h-2`}
+    />
+  </InfoBox>
+  <InfoBox pattern="h-4" className="justify-between flex flex-col">
+    <Box
+      className={`bg-blue-200 rounded border-blue-400 text-blue-600 w-full font-mono border-4 h-4`}
+    />
+  </InfoBox>
+  <InfoBox pattern="h-6" className="justify-between flex flex-col">
+    <Box
+      className={`bg-blue-200 rounded border-blue-400 text-blue-600 w-full font-mono border-4 h-6`}
+    />
+  </InfoBox>
+  <InfoBox pattern="h-8" className="justify-between flex flex-col">
+    <Box
+      className={`bg-blue-200 rounded border-blue-400 text-blue-600 w-full font-mono border-4 h-8`}
+    />
+  </InfoBox>
+  <InfoBox pattern="h-10" className="justify-between flex flex-col">
+    <Box
+      className={`bg-blue-200 rounded border-blue-400 text-blue-600 w-full font-mono border-4 h-10`}
+    />
+  </InfoBox>
+  <InfoBox pattern="h-12" className="justify-between flex flex-col">
+    <Box
+      className={`bg-blue-200 rounded border-blue-400 text-blue-600 w-full font-mono border-4 h-12`}
+    />
+  </InfoBox>
+  <InfoBox pattern="h-16" className="justify-between flex flex-col">
+    <Box
+      className={`bg-blue-200 rounded border-blue-400 text-blue-600 w-full font-mono border-4 h-16`}
+    />
+  </InfoBox>
+</Grid>
+
+## Min Height
+
+<UtilityInfo pattern="min-h-{size}" themeProperty="minHeight" />
+
+---
+
+## Max Height
+
+<UtilityInfo pattern="max-h-{size}" themeProperty="maxHeight" />
+
+---

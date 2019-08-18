@@ -1,0 +1,174 @@
+---
+name: Utilities
+route: /customization/utilities
+parent: Customization
+previousRoute: /customization/normalize
+previousLabel: Normalize
+nextRoute: /customization/variants
+nextLabel: Variants
+---
+
+import { ConfigProvider, Box } from "benefit-react"
+import { createUtilitiesFromMap } from "benefit"
+
+The `utilities` key is responsible for generating all of the class names and style rules. This is an array of functions. Each function will be passed the `theme` defined in the config above. You are free to iterate on any values, or just return an object with class names mapped to style rules.
+
+```js
+utilities: [
+  (theme) => /* generate your utilities */
+]
+```
+
+Here's how you would add a single utility, like `bg-primary` to use as a class name.
+
+```js
+import { ConfigProvider, jsx } from "benefit"
+
+return (
+  <ConfigProvider
+    config={(config) => {
+      return {
+        ...config,
+        utilities: [
+          (theme) => {
+            "bg-primary": {
+              "background-color": theme.colors.primary
+            }
+          }
+        ]
+      }
+    }}
+  >
+    ...
+  </ConfigProvider>
+)
+```
+
+`benefit` becomes more powerful, though, when you want to map over `theme` values and generate styles. We'll use a helper function (`createUtilitiesFromMap`) to surround elements with emojis.
+
+```js
+import { ConfigProvider, jsx, createUtilitiesFromMap } from "benefit"
+
+return (
+  <ConfigProvider
+    config={(config) => {
+      return {
+        theme: {
+          emoji: {
+            smile: "😄",
+            grimacing: "😬",
+            scream: "😱",
+            joy: "😂",
+          },
+        },
+        utilities: [
+          (theme) =>
+            createUtilitiesFromMap(
+              theme.emoji,
+              (value) => ({
+                "&::before": {
+                  content: `"${value}"`,
+                },
+                "&::after": {
+                  content: `"${value}"`,
+                },
+              }),
+              "emoji"
+            ),
+        ],
+      }
+    }}
+  >
+    ...
+  </ConfigProvider>
+)
+```
+
+This generates the following utility classes:
+`emoji-smile`
+`emoji-grimacing`
+`emoji-scream`
+`emoji-joy`
+
+Let's try surrounding a paragraph with one of our new utility classes:
+
+```js
+<p className="emoji-smile">
+  Bitters enamel pin pour-over, 8-bit bushwick shaman activated charcoal fam
+  viral everyday carry taiyaki meh. Venmo salvia bespoke fanny pack, green juice
+  meh iceland live-edge authentic DIY mumblecore. Waistcoat kickstarter neutra
+  bushwick.
+</p>
+```
+
+<Box className="border p-4 rounded-sm">
+  <ConfigProvider
+    config={(config) => {
+      return {
+        ...config,
+        theme: {
+          emoji: {
+            smile: "😄",
+            grimacing: "😬",
+            scream: "😱",
+            joy: "😂",
+          },
+        },
+        utilities: [
+          (theme) =>
+            createUtilitiesFromMap(
+              theme.emoji,
+              (value) => ({
+                "&::before": {
+                  content: `"${value}"`,
+                },
+                "&::after": {
+                  content: `"${value}"`,
+                },
+              }),
+              "emoji"
+            ),
+        ],
+      }
+    }}
+  >
+    <Box is="p" className="emoji-smile">
+      Bitters enamel pin pour-over, 8-bit bushwick shaman activated charcoal fam
+      viral everyday carry taiyaki meh. Venmo salvia bespoke fanny pack, green
+      juice meh iceland live-edge authentic DIY mumblecore. Waistcoat
+      kickstarter neutra bushwick.
+    </Box>
+  </ConfigProvider>
+</Box>
+
+Before we move on to variants, here's some info about that helper function above:
+
+<Box className="rounded bg-white shadow">
+  <Box is="code" className="font-mono p-4 block border-b">
+    createUtilitiesFromMap(<Box className="inline text-purple-600">map</Box>,{" "}
+    <Box className="inline text-orange-600">generateDeclarations</Box>,{" "}
+    <Box className="inline text-green-600">prefix</Box>)
+  </Box>
+  <Box className="p-4">
+    <Box className="bg-purple-100 rounded p-2 mb-2 border border-purple-200">
+      <Box className="inline text-purple-600 font-mono">map</Box> defines the
+      object to map over.
+    </Box>
+    <Box className="bg-orange-100 rounded p-2 mb-2 border border-orange-200">
+      <Box className="inline text-orange-600 font-mono">
+        generateDeclarations
+      </Box>{" "}
+      is a function that will be passed each iterated value of the map. Make
+      sure to return an object containing css properties and values.
+    </Box>
+    <Box className="bg-green-100 rounded p-2 mb-2 border border-green-200">
+      <Box className="inline text-green-600 font-mono">prefix</Box> is an
+      optional argument that you can provide to prepend each generated class
+      name.
+    </Box>
+    <Box className="p-2 mb-2 italic">
+      The returned object from this method will be a flattened set of keys
+      associating utility class names with their corresponding css declarations.
+    </Box>
+  </Box>
+</Box>

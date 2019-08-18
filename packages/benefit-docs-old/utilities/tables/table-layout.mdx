@@ -1,0 +1,94 @@
+---
+name: Table Layout
+property: table-layout
+parent: Tables
+route: /tables/table-layout
+previousRoute: /tables/border-collapse
+previousLabel: Border Collapse
+nextRoute: /effects/box-shadow
+nextLabel: Box Shadow
+---
+
+import { Box } from "benefit-react"
+import InfoBox from "../../components/InfoBox"
+import Grid from "../../components/Grid"
+import UtilityInfo from "../../components/UtilityInfo"
+
+<UtilityInfo pattern="table-{auto|fixed}" />
+
+---
+
+<Grid minWidBox="200px">
+  <InfoBox caption="Auto" pattern="table-auto" isDefault>
+    <Box is="table" className="border bg-white table-auto w-full">
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          Ed
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Wood
+        </Box>
+      </tr>
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          Albert
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Schweitzer
+        </Box>
+      </tr>
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          Jane
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Fonda
+        </Box>
+      </tr>
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          William
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Shakespeare
+        </Box>
+      </tr>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Fixed" pattern="table-fixed">
+    <Box is="table" className="border bg-white table-fixed w-48">
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          Ed
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Wood
+        </Box>
+      </tr>
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          Albert
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Schweitzer
+        </Box>
+      </tr>
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          Jane
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Fonda
+        </Box>
+      </tr>
+      <tr>
+        <Box is="td" className="truncate border p-2">
+          William
+        </Box>
+        <Box is="td" className="truncate border p-2">
+          Shakespeare
+        </Box>
+      </tr>
+    </Box>
+  </InfoBox>
+</Grid>

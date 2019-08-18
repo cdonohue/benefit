@@ -1,0 +1,25 @@
+---
+name: Visibility
+property: visibility
+parent: Layout
+route: /layout/visibility
+previousRoute: /layout/position
+previousLabel: Position
+nextRoute: /layout/z-index
+nextLabel: Z Index
+---
+
+<UtilityInfo pattern="{visible|invisible}" />
+
+---
+
+<Grid minWidth="200px">
+  <InfoBox caption="Visible" pattern="visible" isDefault>
+    <Box className="w-full h-20 bg-gray-500 border border-2 border-gray-500 rounded visible" />
+  </InfoBox>
+  <InfoBox caption="Invisible" pattern="invisible">
+    <Box className="w-full h-20 border border-2 border-dashed rounded" />
+  </InfoBox>
+</Grid>
+
+> Dotted lines are only shown here to demonstrate that while the `invisible` element is hidden from view, it still takes up space in the document.

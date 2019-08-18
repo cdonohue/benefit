@@ -1,0 +1,68 @@
+---
+name: Margin
+property: margin
+parent: Space
+route: /space/margin
+previousRoute: /flexbox/justify-content
+previousLabel: Justify Content
+nextRoute: /space/padding
+nextLabel: Padding
+---
+
+<UtilityInfo pattern="m{side?}-{size}" themeProperty="margin" />
+
+---
+
+<Grid minWidth="120px">
+  <InfoBox caption="All" pattern="m-{size}">
+    <Box className="bg-gray-300 rounded border border-gray-300">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-gray-400 border-4 m-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Horizontal" pattern="mx-{size}">
+    <Box className="bg-gray-300 rounded border border-gray-300">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-gray-400 border-4 mx-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Vertical" pattern="my-{size}">
+    <Box className="bg-gray-300 rounded border border-gray-300">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-gray-400 border-4 my-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Top" pattern="mt-{size}">
+    <Box className="bg-gray-300 rounded border border-gray-300">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-gray-400 border-4 mt-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Right" pattern="mr-{size}">
+    <Box className="bg-gray-300 rounded border border-gray-300">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-gray-400 border-4 mr-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="mb-{size}">
+    <Box className="bg-gray-300 rounded border border-gray-300">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-gray-400 border-4 mb-4`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Left" pattern="ml-{size}">
+    <Box className="bg-gray-300 rounded border border-gray-300">
+      <Box
+        className={`h-8 px-2 bg-white rounded border-gray-400 border-4 ml-4`}
+      />
+    </Box>
+  </InfoBox>
+</Grid>
+
+Negative margin utilities are also available. Use `-m{side?}-{size}`

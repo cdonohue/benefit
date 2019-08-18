@@ -1,0 +1,213 @@
+---
+name: Position
+property: position
+parent: Layout
+route: /layout/position
+previousRoute: /layout/overflow
+previousLabel: Overflow
+nextRoute: /layout/visibility
+nextLabel: Visibility
+---
+
+<UtilityInfo pattern="{static|relative|absolute|fixed|sticky}" />
+
+---
+
+Use any of the classes below to position elements. A few examples are listed below in an attempt to show the many relationships of combining the different position values.
+
+<Grid minWidth="250px">
+  <InfoBox caption="Static Parent">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className={`h-20 p-2 bg-gray-500 rounded static`}>
+        <Box className="mb-2">static</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-200 rounded inline-flex bottom-0 right-0 justify-center items-center absolute`}
+        >
+          <Box className="inline">absolute</Box>
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Relative Parent">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className={`h-20 p-2 bg-gray-500 rounded relative`}>
+        <Box className="mb-2">relative</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-200 rounded inline-flex bottom-0 right-0 justify-center items-center absolute`}
+        >
+          <Box className="inline">absolute</Box>
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Static Sibling">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className="mb-2">relative</Box>
+      <Box className={`h-20 p-2 bg-gray-500 rounded static`}>
+        <Box className="mb-2">static</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-200 rounded inline-flex bottom-0 right-0 justify-center items-center static`}
+        >
+          static
+        </Box>
+        <Box
+          className={`h-8 ml-2 px-4 w-auto bg-white text-gray-700 rounded inline-flex bottom-0 left-0 justify-center items-center static`}
+        >
+          static
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Absolute Sibling">
+    <Box
+      className={`bg-gray-200 rounded p-2 font-mono text-sm relative`}
+    >
+      <Box className="mb-2">relative</Box>
+      <Box className={`h-20 p-2 bg-gray-500 rounded static`}>
+        <Box className="mb-2">static</Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-gray-700 text-gray-200 rounded inline-flex bottom-0 right-0 justify-center items-center absolute`}
+        >
+          absolute
+        </Box>
+        <Box
+          className={`h-8 px-4 w-auto bg-white text-gray-700 rounded inline-flex bottom-0 left-0 justify-center items-center static`}
+        >
+          static
+        </Box>
+      </Box>
+    </Box>
+  </InfoBox>
+
+<InfoBox caption="Fixed">
+  <BrowserBox>
+    <Box className="font-mono text-sm bg-gray-700 absolute rounded-t-sm top-0 inset-x-0 p-1 text-gray-200 z-10">
+      fixed
+    </Box>
+    <Box className="absolute inset-0 overflow-auto p-1 pt-8">
+      <Box className="text-gray-400">Scroll down!</Box>
+      Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated
+      charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko.
+      Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar
+      keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu
+      hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical
+      seitan man bun leggings small batch synth.
+    </Box>
+  </BrowserBox>
+</InfoBox>
+
+  <InfoBox caption="Sticky">
+    <Box className="overflow-auto rounded bg-gray-200 h-32 text-sm">
+      <div>
+        <Box className="font-mono text-sm bg-gray-700 sticky rounded-sm top-0 inset-x-0 p-1 text-gray-200 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">1</Box>sticky</Box>
+        <Box className="p-2">Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.</Box>
+      </div>
+      <div>
+       <Box className="font-mono text-sm bg-gray-700 sticky rounded-sm top-0 inset-x-0 p-1 text-gray-200 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">2</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+      </div>
+      <div><Box className="font-mono text-sm bg-gray-700 sticky rounded-sm top-0 inset-x-0 p-1 text-gray-200 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">3</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+      </div>
+        <div><Box className="font-mono text-sm bg-gray-700 sticky rounded-sm top-0 inset-x-0 p-1 text-gray-200 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">4</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+      </div>
+      <div><Box className="font-mono text-sm bg-gray-700 sticky rounded-sm top-0 inset-x-0 p-1 text-gray-200 flex items-center"><Box className="text-xs flex items-center justify-center bg-white text-gray-700 rounded-sm mr-1 w-4 h-4">5</Box>sticky</Box>
+        Trust fund fam synth ugh 3 wolf moon, raw denim vegan gochujang swag activated charcoal lomo poke taiyaki. Marfa fixie 90's whatever yr la croix four loko. Whatever celiac fashion axe locavore squid trust fund kinfolk drinking vinegar keffiyeh, cliche four loko echo park af blog fam. Wayfarers echo park tofu hammock, gastropub fixie heirloom tacos helvetica godard. Four loko ethical seitan man bun leggings small batch synth.
+      </div>
+      </Box>
+  </InfoBox>
+</Grid>
+
+## Pinning
+
+Anchor `absolute` elements to sides by using the following utilities targeting multiple sides:
+
+<UtilityInfo pattern="inset-{x|y?}-{0|auto}" themeProperty="inset" />
+
+Also, individual side utilities are available:
+
+<UtilityInfo pattern="{top|right|bottom|left}-{0|auto}" themeProperty="inset" />
+
+---
+
+<Grid minWidth="225px">
+  <InfoBox caption="Top" pattern="inset-x-0 top-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute inset-x-0 top-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Right" pattern="inset-y-0 right-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute inset-y-0 right-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom" pattern="inset-x-0 bottom-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute inset-x-0 bottom-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Left" pattern="inset-y-0 left-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute inset-y-0 left-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="All" pattern="inset-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute inset-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Top Left" pattern="left-0 top-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute left-0 top-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Top Right" pattern="right-0 top-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute right-0 top-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom Right" pattern="right-0 bottom-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute right-0 bottom-0`}
+      />
+    </Box>
+  </InfoBox>
+  <InfoBox caption="Bottom Left" pattern="left-0 bottom-0">
+    <Box className={`h-16 bg-gray-200 rounded text-sm relative`}>
+      <Box
+        style={{ minHeight: "1rem", minWidth: "1rem" }}
+        className={`bg-gray-500 rounded absolute left-0 bottom-0`}
+      />
+    </Box>
+  </InfoBox>
+</Grid>
