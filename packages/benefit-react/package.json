@@ -1,14 +1,31 @@
 {
   "name": "benefit-react",
   "version": "1.1.1",
-  "main": "index.js",
-  "module": "benefit-react.esm.js",
+  "main": "dist/index.js",
+  "module": "dist/benefit-react.esm.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/cdonohue/benefit.git",
   "contributors": [
     "Chad Donohue <chad.donohue@gmail.com>",
     "Eric Clemmons <eric@smarterspam.com>"
   ],
+  "description": "Utility CSS library that provides a set of low-level, configurable, ready-to-use styles.",
   "license": "MIT",
+  "keywords": [
+    "atomic",
+    "css",
+    "css-in-js",
+    "design",
+    "emotion",
+    "jsx",
+    "system",
+    "tailwind",
+    "tailwindcss",
+    "utility-classes"
+  ],
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": ">=16.3.0"
   },
@@ -19,7 +36,7 @@
     "prebuild": "rimraf dist",
     "build": "node ../../scripts/build benefit-react",
     "prerelease": "yarn build",
-    "postversion": "cp -rf package.json dist && cp -rf README.md dist && cp -rf LICENSE dist && cp benefit-logo.svg dist",
-    "release": "np --contents dist"
-  }
+    "release": "np"
+  },
+  "sideEffects": false
 }

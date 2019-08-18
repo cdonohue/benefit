@@ -1,15 +1,15 @@
 {
   "name": "benefit",
   "version": "1.1.1",
-  "main": "index.js",
-  "module": "benefit.esm.js",
-  "types": "index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/benefit.esm.js",
+  "types": "dist/index.d.ts",
   "repository": "https://github.com/cdonohue/benefit.git",
   "contributors": [
     "Chad Donohue <chad.donohue@gmail.com>",
     "Eric Clemmons <eric@smarterspam.com>"
   ],
-  "description": "5kB utility CSS library that is compatible with TailwindCSS",
+  "description": "Utility CSS library that provides a set of low-level, configurable, ready-to-use styles.",
   "license": "MIT",
   "keywords": [
     "atomic",
@@ -17,23 +17,24 @@
     "css-in-js",
     "design",
     "emotion",
-    "jsx",
     "system",
     "tailwind",
     "tailwindcss",
     "utility-classes"
   ],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "node ../../scripts/build benefit",
     "prerelease": "yarn build",
-    "postversion": "cp -rf package.json dist && cp -rf README.md dist && cp -rf LICENSE dist && cp benefit-logo.svg dist",
-    "release": "np --contents dist",
+    "release": "np",
     "pretest": "yarn build",
     "test": "jest"
   },
   "sideEffects": false,
   "dependencies": {
-    "stylis": "^3.5.4"
+    "stylis": "3.5.4"
   }
 }
