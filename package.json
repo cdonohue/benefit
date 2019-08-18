@@ -9,7 +9,7 @@
     "build": "yarn build:benefit && yarn build:benefit-react",
     "build:benefit": "yarn workspace benefit build",
     "build:benefit-react": "yarn workspace benefit-react build",
-    "release:benefit": "yarn workspace benefit-react release",
+    "release:benefit": "yarn workspace benefit release",
     "release:benefit-react": "yarn workspace benefit-react release"
   },
   "devDependencies": {
