@@ -1,6 +1,6 @@
 {
   "name": "benefit",
-  "version": "1.1.1",
+  "version": "2.0.0-0",
   "main": "dist/index.js",
   "module": "dist/benefit.esm.js",
   "types": "dist/index.d.ts",
