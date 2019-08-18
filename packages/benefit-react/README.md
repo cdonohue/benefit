@@ -1,21 +1,3 @@
-[![Benefit Logo](benefit-logo.svg)](https://benefit.netlify.com)
-
----
-
-## Style web applications using generated utility classes
-
-`benefit` is a utility CSS-in-JS library that provides a set of low-level, configurable, ready-to-use styles.
-
-[Documentation](https://benefit.netlify.com)
-
-`benefit` is framework agnostic, use `benefit-react` for additional enhancements for React.
-
----
-
-### React-specific
-
-#### Install dependencies
-
 Add `benefit-react` to your project.
 
 ```bash
@@ -53,30 +35,4 @@ function MyComponent() {
     </div>
   )
 }
-```
-
-![Benefit Example](/docs/images/benefit-example.png)
-
-### Framework agnostic
-
-Add `benefit` to your project.
-
-```bash
-yarn add benefit
-```
-
-Import and use the `createBenefit` function to create your utility classes
-
-```
-import { createBenefit } from "benefit"
-
-const { styleWith } = createBenefit()
-```
-
-Use `styleWith(...)` to pass in utility classes
-
-```
-<div class={styleWith("p-4 bg-white text-blue-700")}>
-  ...
-</div>
 ```
