@@ -29,9 +29,7 @@
     "prebuild": "rimraf dist",
     "build": "node ../../scripts/build benefit",
     "prerelease": "yarn build",
-    "release": "np",
-    "pretest": "yarn build",
-    "test": "jest"
+    "release": "np"
   },
   "sideEffects": false,
   "dependencies": {
