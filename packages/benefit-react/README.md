@@ -1,10 +1,10 @@
-Add `benefit-react` to your project.
+## Installation
 
 ```bash
 yarn add benefit-react
 ```
 
-#### Setup transpilation
+## Setup transpilation
 
 Set the jsx pragma at the top of your source file where you intend to use `benefit-react`.
 

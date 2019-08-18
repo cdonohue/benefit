@@ -1,4 +1,4 @@
-Add `benefit` to your project.
+## Installation
 
 ```bash
 yarn add benefit
