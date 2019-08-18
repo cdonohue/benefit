@@ -3268,10 +3268,11 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
-benefit@*:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/benefit/-/benefit-1.1.1.tgz#13a316064a07e1daa12644814c0577880facc772"
-  integrity sha512-DiOfRQi6HwhLbegPIlFWeIFACqMgVZDqGSOsVhDBUs+95Y0ASd7c2w40RK96DU7OvY0DYUNozBngngQtpYUd5A==
+benefit-react@*:
+  version "2.0.0-0"
+
+benefit-react@2.0.0:
+  version "2.0.0-0"
 
 better-assert@~1.0.0:
   version "1.0.2"
