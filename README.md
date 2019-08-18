@@ -55,8 +55,6 @@ function MyComponent() {
 }
 ```
 
-![Benefit Example](/docs/images/benefit-example.png)
-
 ### Framework agnostic
 
 Add `benefit` to your project.
