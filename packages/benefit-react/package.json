@@ -30,7 +30,8 @@
     "react": ">=16.3.0"
   },
   "devDependencies": {
-    "benefit": "*"
+    "benefit": "2.0.0-3",
+    "np": "5.0.3"
   },
   "scripts": {
     "prebuild": "rimraf dist",

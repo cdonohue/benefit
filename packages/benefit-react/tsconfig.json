@@ -25,8 +25,7 @@
       "*": ["node_modules/*"]
     },
     "jsx": "react",
-    "esModuleInterop": true,
-    "downlevelIteration": true
+    "esModuleInterop": true
   },
   "references": [{ "path": "../benefit" }]
 }
