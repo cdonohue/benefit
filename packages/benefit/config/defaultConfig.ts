@@ -4,6 +4,7 @@ import variants from "./variants"
 
 export default {
   prefix: "",
+
   theme,
   utilities,
   variants,

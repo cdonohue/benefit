@@ -5,14 +5,14 @@ import parseDeclarations from "./util/parseDeclarations"
 import getProcessedRules from "./util/getProcessedRules"
 import createStyleTag from "./util/createStyleTag"
 import createHash from "./util/createHash"
-import { global } from "./util/css"
+import { injectGlobal } from "./util/css"
+import isBrowser from "./util/isBrowser"
 import getPreflightStyles from "./util/getPreflightStyles"
 import createCache from "./util/createCache"
 import initializeContainers from "./util/initializeContainers"
 
 interface Options {
   prefix?: string
-  preflight?: boolean
   theme?: { [key: string]: any }
   normalize?: (theme?: { [key: string]: any }) => { [key: string]: any }
   utilities?: Array<(theme?: { [key: string]: any }) => { [key: string]: any }>
@@ -23,13 +23,11 @@ interface Options {
 export default function createBenefit(
   configFn: (defaultConfig?: Options) => Options = () => defaultConfig
 ) {
-  const isBrowser = typeof window !== "undefined"
   // const isDevMode = process.env.NODE_ENV === "development"
   const config = configFn(defaultConfig)
 
   const {
     prefix = "",
-    preflight = true,
     theme = {},
     utilities = [],
     variants = [],
@@ -70,12 +68,6 @@ export default function createBenefit(
 
   if (isBrowser) {
     initializeContainers()
-
-    if (preflight) {
-      global`
-        ${getPreflightStyles()}
-      `
-    }
 
     // const preloadedUtilities =
     //   process.env.NODE_ENV === "development"
@@ -151,6 +143,16 @@ export default function createBenefit(
     }
   }
 
+  const injectPreflight = () => {
+    if (isBrowser()) {
+      initializeContainers()
+
+      injectGlobal`
+        ${getPreflightStyles()}
+      `
+    }
+  }
+
   const styleWith = (
     classNames: string = "",
     isImportant: boolean = false
@@ -197,6 +199,7 @@ export default function createBenefit(
   return {
     config,
     cssForUtility,
+    injectPreflight,
     getDeclarationsForClasses,
     styleWith,
     utilities: utilityClasses,
