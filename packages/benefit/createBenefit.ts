@@ -64,7 +64,7 @@ export default function createBenefit(
 
   let cache: any
 
-  if (isBrowser) {
+  if (isBrowser()) {
     initializeContainers()
 
     // const preloadedUtilities =
@@ -151,7 +151,7 @@ export default function createBenefit(
     )
 
     declarations.forEach((declaration) => {
-      if (isBrowser) {
+      if (isBrowser()) {
         const newUtilityIndex = cache.addUtility(declaration)
         const existingStyle = document.getElementById(declaration.id)
 
