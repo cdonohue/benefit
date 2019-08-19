@@ -1,4 +1,5 @@
 import { ConfigConsumer, ConfigProvider } from "./ConfigContext"
+import Preflight from "./Preflight"
 import Box from "./Box"
 import jsx from "./jsx"
 
@@ -10,7 +11,8 @@ import {
   createVariantsFromMap,
   flattenColorConfig,
   css,
-  global,
+  injectGlobal,
+  injectPreflight,
   keyframes,
   parseDeclarations,
   theme,
@@ -30,6 +32,8 @@ export {
   keyframes,
   flattenColorConfig,
   parseDeclarations,
-  global,
+  injectGlobal,
+  injectPreflight,
+  Preflight,
   theme,
 }

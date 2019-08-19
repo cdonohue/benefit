@@ -52,6 +52,6 @@ function createCss(isGlobal: boolean = false, isKeyframes: boolean = false) {
 
 export const css = createCss()
 
-export const global = createCss(true)
+export const injectGlobal = createCss(true)
 
 export const keyframes = createCss(false, true)

@@ -5,14 +5,12 @@ import parseDeclarations from "./util/parseDeclarations"
 import getProcessedRules from "./util/getProcessedRules"
 import createStyleTag from "./util/createStyleTag"
 import createHash from "./util/createHash"
-import { global } from "./util/css"
-import getPreflightStyles from "./util/getPreflightStyles"
+import isBrowser from "./util/isBrowser"
 import createCache from "./util/createCache"
 import initializeContainers from "./util/initializeContainers"
 
 interface Options {
   prefix?: string
-  preflight?: boolean
   theme?: { [key: string]: any }
   normalize?: (theme?: { [key: string]: any }) => { [key: string]: any }
   utilities?: Array<(theme?: { [key: string]: any }) => { [key: string]: any }>
@@ -23,13 +21,11 @@ interface Options {
 export default function createBenefit(
   configFn: (defaultConfig?: Options) => Options = () => defaultConfig
 ) {
-  const isBrowser = typeof window !== "undefined"
   // const isDevMode = process.env.NODE_ENV === "development"
   const config = configFn(defaultConfig)
 
   const {
     prefix = "",
-    preflight = true,
     theme = {},
     utilities = [],
     variants = [],
@@ -68,14 +64,8 @@ export default function createBenefit(
 
   let cache: any
 
-  if (isBrowser) {
+  if (isBrowser()) {
     initializeContainers()
-
-    if (preflight) {
-      global`
-        ${getPreflightStyles()}
-      `
-    }
 
     // const preloadedUtilities =
     //   process.env.NODE_ENV === "development"
@@ -161,7 +151,7 @@ export default function createBenefit(
     )
 
     declarations.forEach((declaration) => {
-      if (isBrowser) {
+      if (isBrowser()) {
         const newUtilityIndex = cache.addUtility(declaration)
         const existingStyle = document.getElementById(declaration.id)
 

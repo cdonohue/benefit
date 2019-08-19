@@ -2,7 +2,8 @@ import createBenefit from "./createBenefit"
 import createUtilitiesFromMap from "./config/createUtilitiesFromMap"
 import createVariant from "./config/createVariant"
 import createVariantsFromMap from "./config/createVariantsFromMap"
-import { css, global, keyframes } from "./util/css"
+import { css, injectGlobal, keyframes } from "./util/css"
+import injectPreflight from "./util/injectPreflight"
 import baseStyles from "./util/baseStyles"
 import flattenColorConfig from "./config/flattenColorConfig"
 import parseDeclarations from "./util/parseDeclarations"
@@ -16,7 +17,8 @@ export {
   createVariantsFromMap,
   css,
   flattenColorConfig,
-  global,
+  injectGlobal,
+  injectPreflight,
   keyframes,
   parseDeclarations,
   theme,
