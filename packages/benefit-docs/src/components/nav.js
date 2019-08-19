@@ -10,20 +10,6 @@ const growLeft = keyframes`
   }
 `
 
-const iconLookup = {
-  Layout: "layout",
-  Typography: "type",
-  Background: "image",
-  Border: "square",
-  Flexbox: "columns",
-  Space: "maximize",
-  Size: "move",
-  Tables: "align-justify",
-  Effects: "loader",
-  Interactivity: "mouse-pointer",
-  Svg: "pen-tool",
-}
-
 const Nav = () => {
   const allDocs = useStaticQuery(graphql`
     query docsIndex {
@@ -129,7 +115,7 @@ const Nav = () => {
 
         function renderCategoryMenu(name, icon) {
           return (
-            <>
+            <React.Fragment key={`${name}-${icon}`}>
               {renderMenuHeading(name, icon)}
               <ul>
                 {docs
@@ -160,7 +146,7 @@ const Nav = () => {
                     </li>
                   ))}
               </ul>
-            </>
+            </React.Fragment>
           )
         }
 
