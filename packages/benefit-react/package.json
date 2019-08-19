@@ -30,7 +30,7 @@
     "react": ">=16.3.0"
   },
   "devDependencies": {
-    "benefit": "2.0.0",
+    "benefit": "2.0.1",
     "np": "5.0.3"
   },
   "scripts": {
