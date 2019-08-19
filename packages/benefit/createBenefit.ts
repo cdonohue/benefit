@@ -5,9 +5,7 @@ import parseDeclarations from "./util/parseDeclarations"
 import getProcessedRules from "./util/getProcessedRules"
 import createStyleTag from "./util/createStyleTag"
 import createHash from "./util/createHash"
-import { injectGlobal } from "./util/css"
 import isBrowser from "./util/isBrowser"
-import getPreflightStyles from "./util/getPreflightStyles"
 import createCache from "./util/createCache"
 import initializeContainers from "./util/initializeContainers"
 
@@ -143,16 +141,6 @@ export default function createBenefit(
     }
   }
 
-  const injectPreflight = () => {
-    if (isBrowser()) {
-      initializeContainers()
-
-      injectGlobal`
-        ${getPreflightStyles()}
-      `
-    }
-  }
-
   const styleWith = (
     classNames: string = "",
     isImportant: boolean = false
@@ -199,7 +187,6 @@ export default function createBenefit(
   return {
     config,
     cssForUtility,
-    injectPreflight,
     getDeclarationsForClasses,
     styleWith,
     utilities: utilityClasses,
