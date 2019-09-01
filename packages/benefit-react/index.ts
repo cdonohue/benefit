@@ -1,5 +1,7 @@
-import { ConfigConsumer, ConfigProvider } from "./ConfigContext"
+import ConfigContext, { ConfigConsumer, ConfigProvider } from "./ConfigContext"
 import Preflight from "./Preflight"
+import StylesContainer from "./StylesContainer"
+import withStyles from "./withStyles"
 import Box from "./Box"
 import jsx from "./jsx"
 
@@ -20,8 +22,11 @@ import {
 
 export {
   baseStyles,
+  ConfigContext,
   ConfigConsumer,
   ConfigProvider,
+  StylesContainer,
+  withStyles,
   Box,
   jsx,
   createBenefit,
