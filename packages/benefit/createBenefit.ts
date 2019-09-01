@@ -3,11 +3,9 @@ import createUtilityMap from "./util/createUtilityMap"
 import createVariantMap from "./util/createVariantMap"
 import parseDeclarations from "./util/parseDeclarations"
 import getProcessedRules from "./util/getProcessedRules"
-import createStyleTag from "./util/createStyleTag"
 import createHash from "./util/createHash"
-import isBrowser from "./util/isBrowser"
-import createCache from "./util/createCache"
-import initializeContainers from "./util/initializeContainers"
+import registry from "./util/registry"
+import insertStyle from "./util/insertStyle"
 
 interface Options {
   prefix?: string
@@ -20,7 +18,17 @@ interface Options {
 
 export default function createBenefit(
   configFn: (defaultConfig?: Options) => Options = () => defaultConfig
-) {
+): {
+  config: any
+  cssForUtility: any
+  getDeclarationsForClasses: any
+  benefitRegistry: any
+  styleWith: any
+  utilities: any
+} {
+  const benefitRegistry = registry.getInstance()
+  benefitRegistry.addListener(insertStyle)
+
   // const isDevMode = process.env.NODE_ENV === "development"
   const config = configFn(defaultConfig)
 
@@ -62,39 +70,6 @@ export default function createBenefit(
     {}
   )
 
-  let cache: any
-
-  if (isBrowser()) {
-    initializeContainers()
-
-    // const preloadedUtilities =
-    //   process.env.NODE_ENV === "development"
-    //     ? Object.keys(utilityClasses).map((className) => {
-    //         return {
-    //           index: Object.keys(sortedUtilityClasses[className]),
-    //           className,
-    //           rules: parseDeclarations(utilityClasses[className]).join(""),
-    //         }
-    //       })
-    //     : []
-
-    cache = createCache()
-    // DEV ENVIRONMENT
-    // if (process.env.NODE_ENV === "development") {
-    //   const fragment = document.createDocumentFragment()
-
-    //   cache.getUtilities().forEach((u: any) => {
-    //     const utilityStyle = createStyleTag(
-    //       u.className,
-    //       getProcessedRules(`.${u.className}`, u.rules)
-    //     )
-    //     fragment.appendChild(utilityStyle)
-    //   })
-
-    //   container.appendChild(fragment)
-    // }
-  }
-
   const getDeclarationsForClasses = (
     classNames: string = "",
     isImportant: boolean
@@ -126,9 +101,9 @@ export default function createBenefit(
 
         activeDeclarations.push({
           index: sortedUtilityClasses[className],
-          id: `benefit-${createHash(rules)}`,
+          id: `benefit-utility-${createHash(rules)}`,
           className,
-          rules,
+          rules: getProcessedRules(`.${className}`, rules),
         })
       } else {
         ignoredClasses.push(className)
@@ -151,31 +126,7 @@ export default function createBenefit(
     )
 
     declarations.forEach((declaration) => {
-      if (isBrowser()) {
-        const newUtilityIndex = cache.addUtility(declaration)
-        const existingStyle = document.getElementById(declaration.id)
-
-        if (newUtilityIndex > -1 && !existingStyle) {
-          const stylesheetRule = getProcessedRules(
-            `.${declaration.className}`,
-            declaration.rules
-          )
-
-          const styleTag = createStyleTag(declaration.id, stylesheetRule, {
-            label: "utility",
-          })
-
-          const addedStyles = document.querySelectorAll(
-            "[data-benefit-utility]"
-          )
-
-          const container = document.getElementById("benefit-utilities")
-
-          if (container) {
-            container.insertBefore(styleTag, addedStyles[newUtilityIndex])
-          }
-        }
-      }
+      benefitRegistry.add("utilities", declaration)
     })
 
     return declarations
@@ -187,6 +138,7 @@ export default function createBenefit(
   return {
     config,
     cssForUtility,
+    benefitRegistry,
     getDeclarationsForClasses,
     styleWith,
     utilities: utilityClasses,
