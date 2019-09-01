@@ -18,6 +18,7 @@ import {
   createVariant,
   createVariantsFromMap,
   Preflight,
+  StylesContainer,
 } from "benefit-react"
 import UtilityInfo from "./UtilityInfo"
 import Grid from "./Grid"
@@ -93,6 +94,7 @@ export default function PageTemplate({ data: { mdx } }) {
   return (
     <React.Fragment>
       <Preflight />
+      <StylesContainer />
       <div
         className={`font-base font-sans ${
           isMenuOpen ? "overflow-y-hidden" : "overflow-y-scroll"
