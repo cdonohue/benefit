@@ -120,6 +120,7 @@ We'll add a new `hover:emoji-scream` class and change the emoji.
       return {
         ...config,
         theme: {
+          ...config.theme,
           emoji: {
             smile: "😄",
             grimacing: "😬",
@@ -128,6 +129,7 @@ We'll add a new `hover:emoji-scream` class and change the emoji.
           },
         },
         utilities: [
+          ...config.utilities,
           theme =>
             createUtilitiesFromMap(
               theme.emoji,
@@ -143,6 +145,7 @@ We'll add a new `hover:emoji-scream` class and change the emoji.
             ),
         ],
         variants: [
+          ...config.variants,
           utilities =>
             createVariant(utilities, value => ({ "&:hover": value }), "hover"),
         ],
@@ -286,6 +289,7 @@ Let's now test our emojis at different screen sizes by adding a some variant cla
           },
         },
         utilities: [
+          ...config.utilities,
           theme =>
             createUtilitiesFromMap(
               theme.emoji,
@@ -301,6 +305,7 @@ Let's now test our emojis at different screen sizes by adding a some variant cla
             ),
         ],
         variants: [
+          ...config.variants,
           (utilities, theme) =>
             createVariantsFromMap(
               utilities,

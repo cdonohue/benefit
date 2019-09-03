@@ -10,14 +10,12 @@ import {
   css,
   theme,
   injectGlobal,
-  injectPreflight,
   keyframes,
   ConfigConsumer,
   ConfigProvider,
   createUtilitiesFromMap,
   createVariant,
   createVariantsFromMap,
-  Preflight,
   StylesContainer,
 } from "benefit-react"
 import UtilityInfo from "./UtilityInfo"
@@ -67,8 +65,6 @@ const fadeInRight = keyframes`
   }
 `
 
-// injectPreflight()
-
 injectGlobal`
   html {
     font-size: 12px;
@@ -92,8 +88,12 @@ export default function PageTemplate({ data: { mdx } }) {
   }, [])
 
   return (
-    <React.Fragment>
-      <Preflight />
+    <ConfigProvider
+      config={config => ({
+        ...config,
+        injectPreflight: true,
+      })}
+    >
       <StylesContainer />
       <div
         className={`font-base font-sans ${
@@ -448,7 +448,7 @@ export default function PageTemplate({ data: { mdx } }) {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </ConfigProvider>
   )
 }
 
