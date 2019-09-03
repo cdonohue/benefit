@@ -1,7 +1,7 @@
 import React from "react"
 import { ConfigConsumer } from "./ConfigContext"
 
-export default function StylesContainer() {
+function renderStyleContainers(props: any) {
   return (
     <ConfigConsumer>
       {({ benefitRegistry }) => {
@@ -9,20 +9,37 @@ export default function StylesContainer() {
           css,
           global,
           keyframes,
+          preflight,
           utilities,
         } = benefitRegistry.getRegistry()
 
         return (
           <div id="benefit-container">
-            <script
-              {...{
-                dangerouslySetInnerHTML: {
-                  __html: `window.benefit = ${JSON.stringify(
-                    benefitRegistry.getRegistry()
-                  )}`,
-                },
-              }}
-            ></script>
+            {!props.isBrowser && (
+              <script
+                {...{
+                  dangerouslySetInnerHTML: {
+                    __html: `window.benefit = ${JSON.stringify(
+                      benefitRegistry.getRegistry()
+                    )}`,
+                  },
+                }}
+              ></script>
+            )}
+            <div id="benefit-preflight">
+              {preflight.map((s: any) => (
+                <style
+                  data-benefit-preflight
+                  {...{
+                    id: s.id,
+                    key: `${s.id}`,
+                    dangerouslySetInnerHTML: {
+                      __html: s.rules,
+                    },
+                  }}
+                ></style>
+              ))}
+            </div>
             <div id="benefit-global">
               {global.map((s: any) => (
                 <style
@@ -85,4 +102,17 @@ export default function StylesContainer() {
       }}
     </ConfigConsumer>
   )
+}
+
+export default function StylesContainer() {
+  const isBrowser = typeof window !== "undefined"
+
+  if (
+    !isBrowser ||
+    (isBrowser && !document.getElementById("benefit-container"))
+  ) {
+    return renderStyleContainers(isBrowser)
+  }
+
+  return null
 }

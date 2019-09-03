@@ -1,7 +1,5 @@
 import ConfigContext, { ConfigConsumer, ConfigProvider } from "./ConfigContext"
-import Preflight from "./Preflight"
 import StylesContainer from "./StylesContainer"
-import withStyles from "./withStyles"
 import Box from "./Box"
 import jsx from "./jsx"
 
@@ -14,7 +12,6 @@ import {
   flattenColorConfig,
   css,
   injectGlobal,
-  injectPreflight,
   keyframes,
   parseDeclarations,
   theme,
@@ -26,7 +23,6 @@ export {
   ConfigConsumer,
   ConfigProvider,
   StylesContainer,
-  withStyles,
   Box,
   jsx,
   createBenefit,
@@ -38,7 +34,5 @@ export {
   flattenColorConfig,
   parseDeclarations,
   injectGlobal,
-  injectPreflight,
-  Preflight,
   theme,
 }

@@ -3,6 +3,7 @@ import isBrowser from "./isBrowser"
 export default function initializeContainers(): void {
   if (isBrowser()) {
     let benefitContainer = document.getElementById("benefit-container")
+    let preflightContainer = document.getElementById("benefit-preflight")
     let globalContainer = document.getElementById("benefit-global")
     let keyframesContainer = document.getElementById("benefit-keyframes")
     let utilityContainer = document.getElementById("benefit-utilities")
@@ -12,6 +13,12 @@ export default function initializeContainers(): void {
       benefitContainer = document.createElement("div")
       benefitContainer.setAttribute("id", "benefit-container")
       document.head.appendChild(benefitContainer)
+    }
+
+    if (!preflightContainer) {
+      preflightContainer = document.createElement("div")
+      preflightContainer.setAttribute("id", "benefit-preflight")
+      benefitContainer.appendChild(preflightContainer)
     }
 
     if (!globalContainer) {

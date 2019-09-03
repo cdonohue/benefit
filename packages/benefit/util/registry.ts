@@ -1,3 +1,9 @@
+declare global {
+  interface Window {
+    benefit: any
+  }
+}
+
 interface entry {
   className: string
   id: string
@@ -6,6 +12,7 @@ interface entry {
 }
 
 const keys = {
+  PREFLIGHT: "preflight",
   GLOBAL: "global",
   KEYFRAMES: "keyframes",
   UTILITIES: "utilities",
@@ -61,8 +68,15 @@ function insertUtility(
 }
 
 function createRegistry(fromRegistry: any = {}) {
-  const { global = [], keyframes = [], utilities = [], css = [] } = fromRegistry
+  const {
+    preflight = [],
+    global = [],
+    keyframes = [],
+    utilities = [],
+    css = [],
+  } = fromRegistry
   const _registry: { [key: string]: any } = {
+    preflight,
     global,
     keyframes,
     utilities,
@@ -139,8 +153,7 @@ const registry = (function() {
   let instance: any
 
   function create() {
-    if (typeof window !== "undefined") {
-      console.log("Attempting to create from global...")
+    if (typeof window !== "undefined" && window.benefit) {
       return createRegistry(window.benefit)
     }
     return createRegistry()
