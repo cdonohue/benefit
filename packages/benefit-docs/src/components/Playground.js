@@ -38,7 +38,7 @@ export default function Playground(props) {
           <div className="bg-gray-700 w-2 h-2 mr-1 rounded-full" />
           <div className="bg-gray-500 w-2 h-2 mr-1 rounded-full" />
           <div className="bg-gray-300 w-2 h-2 mr-2 rounded-full" />
-          <div className="bg-white px-1 py-px w-full flex-1 rounded-sm text-xs">
+          <div className="bg-white px-1 py-px w-full flex-1 rounded-sm text-xs text-gray-400">
             {"http://localhost:3000"}
           </div>
         </div>
