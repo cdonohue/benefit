@@ -1,31 +1,26 @@
 import App from "next/app"
 import Head from "next/head"
 import { ConfigProvider, StylesContainer } from "benefit-react"
+import polychrome from "polychrome"
 
 export default class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    let pageProps = {}
-
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
-    }
-
-    return {
-      pageProps: { ...pageProps },
-    }
-  }
-
   render() {
     const { Component, pageProps } = this.props
 
+    const primary = "#232323"
+
     const colors = {
-      primary: "yellow",
+      primary,
+      "primary-contrast": polychrome(primary)
+        .contrast()
+        .hex(),
     }
 
     return (
       <ConfigProvider
         config={(config) => ({
           ...config,
+          injectPreflight: true,
           theme: {
             ...config.theme,
             backgroundColor: {
@@ -39,9 +34,6 @@ export default class MyApp extends App {
           },
         })}
       >
-        <Head>
-          <StylesContainer />
-        </Head>
         <Component {...pageProps} />
       </ConfigProvider>
     )
