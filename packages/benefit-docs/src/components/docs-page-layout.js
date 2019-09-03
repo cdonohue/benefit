@@ -10,14 +10,12 @@ import {
   css,
   theme,
   injectGlobal,
-  injectPreflight,
   keyframes,
   ConfigConsumer,
   ConfigProvider,
   createUtilitiesFromMap,
   createVariant,
   createVariantsFromMap,
-  Preflight,
 } from "benefit-react"
 import UtilityInfo from "./UtilityInfo"
 import Grid from "./Grid"
@@ -66,8 +64,6 @@ const fadeInRight = keyframes`
   }
 `
 
-// injectPreflight()
-
 injectGlobal`
   html {
     font-size: 12px;
@@ -91,8 +87,12 @@ export default function PageTemplate({ data: { mdx } }) {
   }, [])
 
   return (
-    <React.Fragment>
-      <Preflight />
+    <ConfigProvider
+      config={config => ({
+        ...config,
+        injectPreflight: true,
+      })}
+    >
       <div
         className={`font-base font-sans ${
           isMenuOpen ? "overflow-y-hidden" : "overflow-y-scroll"
@@ -446,7 +446,7 @@ export default function PageTemplate({ data: { mdx } }) {
           </div>
         </div>
       </div>
-    </React.Fragment>
+    </ConfigProvider>
   )
 }
 

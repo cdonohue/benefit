@@ -69,3 +69,4 @@ yarn-error.log
 
 dist
 build
+.next

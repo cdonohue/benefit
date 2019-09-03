@@ -1,7 +1,13 @@
-/**
- * Implement Gatsby's SSR (Server Side Rendering) APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/ssr-apis/
- */
+import React, { Fragment } from "react"
+import { renderToString } from "react-dom/server"
+import { StylesContainer } from "benefit-react"
 
-// You can delete this file if you're not using it
+export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
+  const app = () => (
+    <Fragment>
+      <StylesContainer />
+      {bodyComponent}
+    </Fragment>
+  )
+  replaceBodyHTMLString(renderToString(<app />))
+}

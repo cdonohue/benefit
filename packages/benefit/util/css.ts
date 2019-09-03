@@ -1,8 +1,8 @@
-import createStyleTag from "./createStyleTag"
 import createHash from "./createHash"
 import getProcessedRules from "./getProcessedRules"
-import isBrowser from "./isBrowser"
-import initializeContainers from "./initializeContainers"
+import registry from "./registry"
+
+const benefitRegistry = registry.getInstance()
 
 function createCss(isGlobal: boolean = false, isKeyframes: boolean = false) {
   return (strings: TemplateStringsArray, ...values: any[]) => {
@@ -34,17 +34,9 @@ function createCss(isGlobal: boolean = false, isKeyframes: boolean = false) {
 
     const processedStyles = getProcessedRules(scope, addsGlobal)
 
-    initializeContainers()
+    const registryEntry = { id: hashId, rules: processedStyles }
 
-    if (isBrowser()) {
-      // Check for duplicates
-      if (!document.getElementById(hashId)) {
-        const container = document.getElementById(`benefit-${label}`)
-        if (container) {
-          container.appendChild(createStyleTag(hashId, processedStyles))
-        }
-      }
-    }
+    benefitRegistry.add(label, registryEntry)
 
     return hashId
   }
