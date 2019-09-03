@@ -94,7 +94,6 @@ export default function PageTemplate({ data: { mdx } }) {
         injectPreflight: true,
       })}
     >
-      <StylesContainer />
       <div
         className={`font-base font-sans ${
           isMenuOpen ? "overflow-y-hidden" : "overflow-y-scroll"
