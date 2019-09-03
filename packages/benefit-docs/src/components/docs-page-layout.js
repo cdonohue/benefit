@@ -16,7 +16,6 @@ import {
   createUtilitiesFromMap,
   createVariant,
   createVariantsFromMap,
-  StylesContainer,
 } from "benefit-react"
 import UtilityInfo from "./UtilityInfo"
 import Grid from "./Grid"
