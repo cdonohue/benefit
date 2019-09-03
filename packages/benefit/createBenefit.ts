@@ -101,16 +101,16 @@ export default function createBenefit(
       const className = classList[i]
 
       if (utilityClasses[className]) {
-        const rules = parseDeclarations(
-          utilityClasses[className],
-          isImportant
-        ).join("")
+        const rules = getProcessedRules(
+          `.${className}`,
+          parseDeclarations(utilityClasses[className], isImportant).join("")
+        )
 
         activeDeclarations.push({
           index: sortedUtilityClasses[className],
           id: `benefit-utility-${createHash(rules)}`,
           className,
-          rules: getProcessedRules(`.${className}`, rules),
+          rules,
         })
       } else {
         ignoredClasses.push(className)
