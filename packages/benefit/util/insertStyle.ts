@@ -30,20 +30,21 @@ export default function insertStyle(type: any, entry: any, index: any) {
       )
 
       if (existingIndex) {
-        existingIndex.remove()
-      }
+        existingIndex.id = entry.id
+        existingIndex.innerHTML = entry.rules
+      } else {
+        const styleTag = createStyleTag(entry.id, entry.rules, {
+          label: "utility",
+          index: entry.index,
+        })
 
-      const styleTag = createStyleTag(entry.id, entry.rules, {
-        label: "utility",
-        index: entry.index,
-      })
+        const addedStyles = document.querySelectorAll("[data-benefit-utility]")
 
-      const addedStyles = document.querySelectorAll("[data-benefit-utility]")
+        const container = document.getElementById("benefit-utilities")
 
-      const container = document.getElementById("benefit-utilities")
-
-      if (container) {
-        container.insertBefore(styleTag, addedStyles[index])
+        if (container) {
+          container.insertBefore(styleTag, addedStyles[index])
+        }
       }
     } else {
       if (!document.getElementById(entry.id)) {
