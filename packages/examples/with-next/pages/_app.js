@@ -1,6 +1,5 @@
 import App from "next/app"
-import Head from "next/head"
-import { ConfigProvider, StylesContainer } from "benefit-react"
+import { ConfigProvider, registry } from "benefit-react"
 import polychrome from "polychrome"
 
 export default class MyApp extends App {
