@@ -11,7 +11,7 @@ interface entry {
   rules: string
 }
 
-const keys = {
+export const keys = {
   PREFLIGHT: "preflight",
   GLOBAL: "global",
   KEYFRAMES: "keyframes",
