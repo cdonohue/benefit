@@ -2,16 +2,16 @@ import ConfigContext, { ConfigConsumer, ConfigProvider } from "./ConfigContext"
 import StylesContainer from "./StylesContainer"
 import Box from "./Box"
 import jsx from "./jsx"
+import Preflight from "./Preflight"
 
 import {
-  baseStyles,
   createBenefit,
   createUtilitiesFromMap,
   createVariant,
   createVariantsFromMap,
   flattenColorConfig,
   css,
-  injectGlobal,
+  global,
   registry,
   keyframes,
   parseDeclarations,
@@ -19,7 +19,6 @@ import {
 } from "benefit"
 
 export {
-  baseStyles,
   ConfigContext,
   ConfigConsumer,
   ConfigProvider,
@@ -35,6 +34,7 @@ export {
   keyframes,
   flattenColorConfig,
   parseDeclarations,
-  injectGlobal,
+  global,
+  Preflight,
   theme,
 }
