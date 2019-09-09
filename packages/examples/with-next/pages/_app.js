@@ -1,5 +1,5 @@
 import App from "next/app"
-import { ConfigProvider } from "benefit-react"
+import { ConfigProvider, Preflight, global } from "benefit-react"
 import polychrome from "polychrome"
 
 export default class MyApp extends App {
@@ -19,7 +19,6 @@ export default class MyApp extends App {
       <ConfigProvider
         config={(config) => ({
           ...config,
-          injectPreflight: true,
           theme: {
             ...config.theme,
             backgroundColor: {
@@ -33,6 +32,7 @@ export default class MyApp extends App {
           },
         })}
       >
+        <Preflight />
         <Component {...pageProps} />
       </ConfigProvider>
     )
