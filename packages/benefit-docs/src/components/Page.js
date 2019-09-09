@@ -3,8 +3,7 @@ import React, { useState, useEffect, Fragment } from "react"
 import { graphql, Link } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import Nav from "./nav"
-import Layout from "./Layout"
+import Layout from "./PageLayout"
 import {
   jsx,
   Box,
@@ -17,7 +16,6 @@ import {
   createUtilitiesFromMap,
   createVariant,
   createVariantsFromMap,
-  Preflight,
 } from "benefit-react"
 import UtilityInfo from "./UtilityInfo"
 import Grid from "./Grid"
@@ -27,7 +25,6 @@ import Phone from "./Phone"
 import Tablet from "./Tablet"
 import Playground from "./Playground"
 import Icon from "./Icon"
-import Logo from "../images/benefit-logo.svg"
 import CodeBlock from "./CodeBlock"
 
 const fadeInUp = keyframes`
