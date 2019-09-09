@@ -138,6 +138,7 @@ const Nav = () => {
                   .map(({ node: doc }) => (
                     <li key={doc.id}>
                       <Link
+                        activeClassName="active"
                         to={doc.frontmatter.route}
                         className={`px-4 md:px-8 py-2 no-underline hover:text-white block relative overflow-hidden flex items-center ${styledLink}`}
                       >
@@ -185,11 +186,11 @@ const Nav = () => {
             }
           }
 
-          &:hover:not([aria-current]) {
+          &:hover:not(.active) {
             color: white !important;
           }
 
-          &[aria-current] {
+          &.active {
             color: white !important;
             text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.26);
             &::before {
@@ -201,6 +202,7 @@ const Nav = () => {
         return (
           <div className="">
             <Link
+              activeClassName="active"
               className={`px-4 md:px-8 py-2 no-underline hover:text-white block relative overflow-hidden flex items-center ${styledLink}`}
               to="/"
             >
@@ -212,16 +214,18 @@ const Nav = () => {
             <ul>
               <li>
                 <Link
+                  activeClassName="active"
                   className={`px-4 md:px-8 py-2 no-underline hover:text-white block relative overflow-hidden flex items-center ${styledLink}`}
-                  to="/customization/overview"
+                  to="/customization/overview/"
                 >
                   Overview
                 </Link>
               </li>
               <li>
                 <Link
+                  activeClassName="active"
                   className={`px-4 md:px-8 py-2 no-underline hover:text-white block relative overflow-hidden flex items-center ${styledLink}`}
-                  to="/customization/theme"
+                  to="/customization/theme/"
                 >
                   Theme
                 </Link>
@@ -236,24 +240,27 @@ const Nav = () => {
               </li> */}
               <li>
                 <Link
+                  activeClassName="active"
                   className={`px-4 md:px-8 py-2 no-underline hover:text-white block relative overflow-hidden flex items-center ${styledLink}`}
-                  to="/customization/utilities"
+                  to="/customization/utilities/"
                 >
                   Utilities
                 </Link>
               </li>
               <li>
                 <Link
+                  activeClassName="active"
                   className={`px-4 md:px-8 py-2 no-underline hover:text-white block relative overflow-hidden flex items-center ${styledLink}`}
-                  to="/customization/variants"
+                  to="/customization/variants/"
                 >
                   Variants
                 </Link>
               </li>
               <li>
                 <Link
+                  activeClassName="active"
                   className={`px-4 md:px-8 py-2 no-underline hover:text-white block relative overflow-hidden flex items-center ${styledLink}`}
-                  to="/customization/apply"
+                  to="/customization/apply/"
                 >
                   Apply
                 </Link>

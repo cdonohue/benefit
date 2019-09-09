@@ -6,11 +6,9 @@ import getProcessedRules from "./util/getProcessedRules"
 import createHash from "./util/createHash"
 import registry from "./util/registry"
 import insertStyle from "./util/insertStyle"
-import { preflightDeclarations } from "./util/preflight"
 
 interface Options {
   prefix?: string
-  injectPreflight?: boolean
   theme?: { [key: string]: any }
   normalize?: (theme?: { [key: string]: any }) => { [key: string]: any }
   utilities?: Array<(theme?: { [key: string]: any }) => { [key: string]: any }>
@@ -36,16 +34,11 @@ export default function createBenefit(
 
   const {
     prefix = "",
-    injectPreflight = false,
     theme = {},
     utilities = [],
     variants = [],
     apply = {},
   } = config
-
-  if (injectPreflight) {
-    benefitRegistry.add("preflight", preflightDeclarations)
-  }
 
   const generatedUtilities: any = createUtilityMap(utilities, theme)
 

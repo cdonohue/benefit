@@ -1,49 +1,52 @@
 import createHash from "./createHash"
 import getProcessedRules from "./getProcessedRules"
-import registry from "./registry"
+import registry, { keys } from "./registry"
 
 const benefitRegistry = registry.getInstance()
 
-function createCss(isGlobal: boolean = false, isKeyframes: boolean = false) {
+function createBenefitFragment(category: string, transformFn?: any) {
   return (strings: TemplateStringsArray, ...values: any[]) => {
     const styles = strings.map((str, i) => `${str}${values[i] || ""}`).join("")
 
-    const label = isGlobal ? "global" : isKeyframes ? "keyframes" : "css"
+    const hashId = `benefit-${category}-${createHash(styles)}`
 
-    const hashId = `benefit-${label}-${createHash(styles)}`
+    const scope = `${category === keys.CSS ? "." : ""}${hashId}`
 
-    // Wrap with keyframes
-    const addsKeyframes = isKeyframes
-      ? `
-      @keyframes ${hashId} {
-        ${styles}
-      }
-    `
-      : styles
+    const styleDeclarations = transformFn ? transformFn(styles, hashId) : styles
 
-    // Wrap with global
-    const addsGlobal = isGlobal
-      ? `
-      :global() {
-        ${addsKeyframes}
-      }
-    `
-      : addsKeyframes
-
-    const scope = `${!(isGlobal || isKeyframes) ? "." : ""}${hashId}`
-
-    const processedStyles = getProcessedRules(scope, addsGlobal)
+    const processedStyles = getProcessedRules(scope, styleDeclarations)
 
     const registryEntry = { id: hashId, rules: processedStyles }
 
-    benefitRegistry.add(label, registryEntry)
+    benefitRegistry.add(category, registryEntry)
 
     return hashId
   }
 }
 
-export const css = createCss()
+export const preflight = createBenefitFragment(
+  keys.PREFLIGHT,
+  (styles: string) => `
+    :global() {
+      ${styles}
+    }
+  `
+)
 
-export const injectGlobal = createCss(true)
-
-export const keyframes = createCss(false, true)
+export const global = createBenefitFragment(
+  keys.GLOBAL,
+  (styles: string) => `
+    :global() {
+      ${styles}
+    }
+  `
+)
+export const keyframes = createBenefitFragment(
+  keys.KEYFRAMES,
+  (styles: string, hashId: string) => `
+    @keyframes ${hashId} {
+      ${styles}
+    }
+  `
+)
+export const css = createBenefitFragment(keys.CSS)

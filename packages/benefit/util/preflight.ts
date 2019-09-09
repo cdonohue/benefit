@@ -1,5 +1,3 @@
-import createHash from "./createHash"
-
 export const preflightStyles = `
 html {
   line-height: 1.15; 
@@ -328,8 +326,3 @@ video {
   height: auto;
 }
 `
-
-export const preflightDeclarations = {
-  id: `benefit-preflight-${createHash(preflightStyles)}`,
-  rules: preflightStyles,
-}

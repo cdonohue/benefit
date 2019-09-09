@@ -3,7 +3,6 @@ import { createBenefit } from "benefit"
 
 export interface Config {
   prefix?: string
-  injectPreflight?: boolean
   theme?: { [key: string]: any }
   normalize?: any
   utilities?: Array<(theme?: { [key: string]: any }) => { [key: string]: any }>
