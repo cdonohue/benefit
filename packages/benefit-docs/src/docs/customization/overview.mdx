@@ -1,17 +1,17 @@
 ---
 name: Overview
-route: /customization/overview
+route: /customization/overview/
 parent: Customization
-previousRoute: /getting-started
+previousRoute: /installation/react/
 previousLabel: Getting Started
-nextRoute: /customization/theme
+nextRoute: /customization/theme/
 nextLabel: Theme
 ---
 
 `benefit` exposes the methods used to build its own default configuration. You have the option of keeping as much or as little as you want of it. Similar to how you would override a `webpack` config in other tools, just supply a function that will return your configuration.
 
 ```js
-const myConfig = (config) => {
+const myConfig = config => {
   /* modify existing config and return */
 }
 ```
@@ -21,7 +21,7 @@ Your configuration function can be passed into the `benefit` function...
 ```js
 import benefit from "benefit"
 
-const myConfig = (config) => {
+const myConfig = config => {
   /* modify existing config and return */
 }
 
@@ -35,7 +35,7 @@ const { styleWith } = benefit(myConfig)
 ```js
 import { ConfigProvider } from "benefit/react"
 
-const myConfig = (config) => {
+const myConfig = config => {
   /* modify existing config and return */
 }
 const App = () => (

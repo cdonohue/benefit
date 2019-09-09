@@ -1,10 +1,10 @@
 ---
 name: Normalize
-route: /customization/normalize
+route: /customization/normalize/
 parent: Customization
-previousRoute: /customization/theme
+previousRoute: /customization/theme/
 previousLabel: Theme
-nextRoute: /customization/utilities
+nextRoute: /customization/utilities/
 nextLabel: Utilities
 ---
 
@@ -16,7 +16,7 @@ We'll use the defaults as an example here to showcase using the defined `theme` 
 function myConfig(config) {
   return {
     ...config,
-    normalize: (theme) => {
+    normalize: theme => {
       return {
         margin: "0",
         padding: "0",
