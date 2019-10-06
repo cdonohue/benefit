@@ -1,5 +1,5 @@
 import ConfigContext, { ConfigConsumer, ConfigProvider } from "./ConfigContext"
-import StylesContainer from "./StylesContainer"
+import ServerStyleManager from "./ServerStyleManager"
 import Box from "./Box"
 import jsx from "./jsx"
 import Preflight from "./Preflight"
@@ -11,7 +11,8 @@ import {
   createVariantsFromMap,
   flattenColorConfig,
   css,
-  global,
+  injectGlobal,
+  injectPreflight,
   registry,
   keyframes,
   parseDeclarations,
@@ -22,7 +23,7 @@ export {
   ConfigContext,
   ConfigConsumer,
   ConfigProvider,
-  StylesContainer,
+  ServerStyleManager,
   Box,
   jsx,
   registry,
@@ -34,7 +35,8 @@ export {
   keyframes,
   flattenColorConfig,
   parseDeclarations,
-  global,
+  injectGlobal,
+  injectPreflight,
   Preflight,
   theme,
 }
