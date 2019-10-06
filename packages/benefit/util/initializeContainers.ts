@@ -28,6 +28,7 @@ export default function initializeContainers(): void {
     initializeContainer("preflight")
     initializeContainer("global")
     initializeContainer("keyframes")
+    initializeContainer("normalize")
     initializeContainer("utilities")
     initializeContainer("css")
   }

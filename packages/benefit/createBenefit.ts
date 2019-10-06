@@ -6,11 +6,12 @@ import getProcessedRules from "./util/getProcessedRules"
 import createHash from "./util/createHash"
 import registry from "./util/registry"
 import insertStyle from "./util/insertStyle"
+import { injectNormalize } from "./util/css"
 
 interface Options {
   prefix?: string
   theme?: { [key: string]: any }
-  normalize?: (theme?: { [key: string]: any }) => { [key: string]: any }
+  normalize?: (theme: { [key: string]: any }) => { [key: string]: any }
   utilities?: Array<(theme?: { [key: string]: any }) => { [key: string]: any }>
   variants?: any
   apply?: any
@@ -29,12 +30,12 @@ export default function createBenefit(
   const benefitRegistry = registry.getInstance()
   benefitRegistry.addListener(insertStyle)
 
-  // const isDevMode = process.env.NODE_ENV === "development"
   const config = configFn(defaultConfig)
 
   const {
     prefix = "",
     theme = {},
+    normalize = () => ({}),
     utilities = [],
     variants = [],
     apply = {},
@@ -49,6 +50,10 @@ export default function createBenefit(
   )
 
   const prefixStr = prefix ? `${prefix}-` : ""
+
+  const normalizeDeclarations = normalize(theme)
+  const shouldNormalize = Object.keys(normalizeDeclarations).length
+  const normalizeStyles = parseDeclarations(normalizeDeclarations).join("")
 
   const utilityClasses: any = {}
   Object.keys(generatedUtilities).forEach(
@@ -89,6 +94,13 @@ export default function createBenefit(
 
     const ignoredClasses = []
     const activeDeclarations = []
+
+    if (shouldNormalize) {
+      const normalizeClass = injectNormalize`
+        ${normalizeStyles}
+      `
+      classList.push(normalizeClass)
+    }
 
     for (let i = 0; i < classList.length; i++) {
       const className = classList[i]

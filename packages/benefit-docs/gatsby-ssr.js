@@ -1,11 +1,11 @@
 import React, { Fragment } from "react"
 import { renderToString } from "react-dom/server"
-import { StylesContainer } from "benefit-react"
+import { ServerStyleManager } from "benefit-react"
 
 export const replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
   const app = () => (
     <Fragment>
-      <StylesContainer />
+      <ServerStyleManager />
       {bodyComponent}
     </Fragment>
   )

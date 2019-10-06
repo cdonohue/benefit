@@ -1,7 +1,21 @@
 /** @jsx jsx */
-import { jsx, css, theme as benefitTheme } from "benefit-react"
+import {
+  jsx,
+  css,
+  theme as benefitTheme,
+  ConfigConsumer,
+  Box,
+} from "benefit-react"
 import Highlight, { defaultProps } from "prism-react-renderer"
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live"
+import { transform } from "@babel/standalone"
+import prettier from "prettier/standalone"
+
+const stripLastLine = css`
+  /* .token-line:last-child {
+    display: none;
+  } */
+`
 
 var theme /*: PrismTheme */ = {
   plain: {
@@ -82,29 +96,57 @@ export default ({ children, className, live }) => {
   const language = className.replace(/language-/, "")
   if (live) {
     return (
-      <div className="rounded overflow-hidden mb-4 focus-within:shadow-outline">
-        <LiveProvider code={children} theme={theme}>
-          <div className="bg-gray-800 p-4">
-            <LivePreview />
-          </div>
-          <div
-            className="relative border-t-4 border-blue-600"
-            css={css`
-              & textarea {
-                outline: none !important;
+      <div className="shadow-lg">
+        <div className="rounded overflow-hidden mb-4 focus-within:shadow-outline">
+          <LiveProvider
+            code={children}
+            theme={theme}
+            scope={{ jsx, css }}
+            transformCode={code => {
+              try {
+                const transformedCode = transform(code, {
+                  plugins: [
+                    [
+                      "transform-react-jsx",
+                      {
+                        pragma: "jsx",
+                      },
+                    ],
+                  ],
+                }).code
+
+                return prettier.format(transformedCode, {
+                  semi: false,
+                  parser: "babylon",
+                })
+              } catch {
+                return code
               }
-            `}
+            }}
           >
-            <LiveEditor />
-          </div>
-          <LiveError />
-        </LiveProvider>
+            <div className="bg-white p-4 font-sans">
+              <LivePreview />
+            </div>
+
+            <div
+              className={`relative leading-tight ${stripLastLine}`}
+              css={css`
+                & textarea {
+                  outline: none !important;
+                }
+              `}
+            >
+              <LiveEditor />
+              <LiveError />
+            </div>
+          </LiveProvider>
+        </div>
       </div>
     )
   }
 
   return (
-    <div className="overflow-hidden rounded relative mb-4 border-t-4 border-blue-300">
+    <div className="overflow-hidden rounded relative mb-4 border-t-4 border-blue-300 shadow-lg">
       <div className="inline-block absolute right-0 bg-blue-300 text-blue-800 font-bold py-px px-2 rounded-bl text-xs uppercase font-mono">
         {language}
       </div>
@@ -116,13 +158,8 @@ export default ({ children, className, live }) => {
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (
           <pre
-            className={`${className} whitespace-pre-wrap text-xs p-4`}
+            className={`${className} ${stripLastLine} whitespace-pre-wrap text-xs p-4`}
             style={{ ...style }}
-            css={css`
-              & .token-line:last-child {
-                display: none;
-              }
-            `}
           >
             {tokens.map((line, i) => (
               <div key={i} {...getLineProps({ line, key: i })}>
