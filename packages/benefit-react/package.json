@@ -1,6 +1,6 @@
 {
   "name": "benefit-react",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "dist/index.js",
   "module": "dist/benefit-react.esm.js",
   "types": "dist/index.d.ts",
@@ -30,7 +30,7 @@
     "react": ">=16.3.0"
   },
   "devDependencies": {
-    "benefit": "2.1.0",
+    "benefit": "2.2.0",
     "np": "5.0.3"
   },
   "scripts": {
