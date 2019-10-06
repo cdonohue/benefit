@@ -15,6 +15,7 @@ export const keys = {
   PREFLIGHT: "preflight",
   GLOBAL: "global",
   KEYFRAMES: "keyframes",
+  NORMALIZE: "normalize",
   UTILITIES: "utilities",
   CSS: "css",
 }
@@ -72,6 +73,7 @@ function createRegistry(fromRegistry: any = {}) {
     preflight = [],
     global = [],
     keyframes = [],
+    normalize = [],
     utilities = [],
     css = [],
   } = fromRegistry
@@ -79,6 +81,7 @@ function createRegistry(fromRegistry: any = {}) {
     preflight,
     global,
     keyframes,
+    normalize,
     utilities,
     css,
   }
