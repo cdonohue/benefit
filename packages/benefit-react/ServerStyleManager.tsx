@@ -21,12 +21,13 @@ function createContainer(label: string, styles: any[]) {
   )
 }
 
-export default function StylesContainer() {
+export default function ServerStyleManager() {
   const benefitRegistry = registry.getInstance()
   const {
     css,
     global,
     keyframes,
+    normalize,
     preflight,
     utilities,
   } = benefitRegistry.getRegistry()
@@ -45,6 +46,7 @@ export default function StylesContainer() {
       {createContainer("preflight", preflight)}
       {createContainer("global", global)}
       {createContainer("keyframes", keyframes)}
+      {createContainer("normalize", normalize)}
       {createContainer("utilities", utilities)}
       {createContainer("css", css)}
     </div>
