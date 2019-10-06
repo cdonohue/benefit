@@ -1238,10 +1238,10 @@ base@^0.11.1:
     mixin-deep "^1.2.0"
     pascalcase "^0.1.1"
 
-benefit-react@2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/benefit-react/-/benefit-react-2.0.1.tgz#a623d6b6a6319ec3eaae501f60c92d3042846385"
-  integrity sha512-Gs2zWSayPcSE3h1j9hBA2h9uQl9xGhg/mfOf5xsd8GZSVTpLnLnD2Fb8A9sUwLod3F1LdH28wYkG1yAWk3gaOw==
+benefit-react@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/benefit-react/-/benefit-react-2.1.0.tgz#bc6ca524bb6da77fb905d1bb49b7cd4c459de75e"
+  integrity sha512-BewttrEmJ2MoxwB/iISd59/4tF2GogBate8Pwynb8CEq0TGRtYCAf7jiQjiZJD9STOoqLw9tg8ZS04JmCE6FPA==
 
 big.js@^5.2.2:
   version "5.2.2"
@@ -3450,6 +3450,11 @@ pkg-dir@^3.0.0:
   integrity sha512-/E57AYkoeQ25qkxMj5PBOVgF8Kiu/h7cYS30Z5+R7WaiCCBfLq58ZI/dSeaEKb9WVJV5n/03QwrN3IeWIFllvw==
   dependencies:
     find-up "^3.0.0"
+
+polychrome@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/polychrome/-/polychrome-4.1.2.tgz#bbc487fc71b3e802bad903397b948d62656486d3"
+  integrity sha1-u8SH/HGz6AK62QM5e5SNYmVkhtM=
 
 posix-character-classes@^0.1.0:
   version "0.1.1"

@@ -7,7 +7,7 @@
   "dependencies": {
     "@babel/core": "^7.5.5",
     "@babel/plugin-transform-react-jsx": "^7.3.0",
-    "@babel/standalone": "^7.5.5",
+    "@babel/standalone": "^7.6.0",
     "@mdx-js/mdx": "^1.1.1",
     "@mdx-js/react": "^1.1.1",
     "benefit-react": "2.1.0",

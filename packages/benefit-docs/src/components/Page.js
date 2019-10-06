@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React, { useState, useEffect, Fragment } from "react"
+
 import { graphql, Link } from "gatsby"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -9,7 +9,6 @@ import {
   Box,
   css,
   theme,
-  global,
   keyframes,
   ConfigConsumer,
   ConfigProvider,
@@ -60,16 +59,6 @@ const fadeInRight = keyframes`
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-`
-
-global`
-  html {
-    font-size: 12px;
-
-    @media (min-width: 768px) {
-      font-size: 16px;
-    }
   }
 `
 

@@ -3,15 +3,14 @@ import { useState, useEffect, Fragment } from "react"
 import { Link } from "gatsby"
 
 import Nav from "./nav"
-import { jsx, css, theme, global } from "benefit-react"
+import { jsx, css, theme, injectGlobal, Preflight } from "benefit-react"
 
 import Icon from "./Icon"
 import Logo from "../images/benefit-logo.svg"
-import { Preflight } from "benefit-react"
 
-global`
+injectGlobal`
   html {
-    font-size: 12px;
+    font-size: 14px;
     @media (min-width: 768px) {
       font-size: 16px;
     }
@@ -23,10 +22,10 @@ export default function Layout({ children }) {
 
   useEffect(() => {
     const sideMenu = document.querySelector(".side-menu")
-    sideMenu.scrollTop = localStorage.getItem("menuScroll") || 0
+    sideMenu.scrollTop = sessionStorage.getItem("menuScroll") || 0
 
-    sideMenu.onscroll = ({ target }) => {
-      localStorage.setItem("menuScroll", target.scrollTop)
+    return () => {
+      sessionStorage.setItem("menuScroll", sideMenu.scrollTop)
     }
   }, [])
 
