@@ -8,7 +8,7 @@ function getMainContainer() {
 
   const benefitContainer = document.createElement("div")
   benefitContainer.setAttribute("id", "benefit-container")
-  document.body.prepend(benefitContainer)
+  document.body.insertBefore(benefitContainer, document.body.firstChild)
 
   return benefitContainer
 }
