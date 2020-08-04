@@ -34,8 +34,5 @@
   "sideEffects": false,
   "dependencies": {
     "stylis": "3.5.4"
-  },
-  "devDependencies": {
-    "np": "5.0.3"
   }
 }
